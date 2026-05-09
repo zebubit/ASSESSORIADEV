@@ -316,6 +316,28 @@ footer{background:var(--dark2);padding:56px 60px 40px;border-top:1px solid rgba(
 /* ANIM */
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 
+/* AUTORIDADE SOCIAL */
+.sp-strip{background:var(--dark2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 60px;display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;}
+.sp-card{flex-shrink:0;width:300px;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.06);cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s;}
+.sp-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 56px rgba(0,0,0,.6);}
+.sp-card img{width:100%;height:auto;display:block;}
+.sp-card-overlay{position:absolute;bottom:0;left:0;right:0;padding:16px 14px 14px;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 100%);}
+.sp-follow-btn{display:block;width:100%;text-align:center;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#bc1888);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:9px 0;border-radius:8px;text-decoration:none;transition:opacity .2s;}
+.sp-follow-btn:hover{opacity:.88;}
+.sp-insta-top{position:absolute;top:12px;right:12px;width:28px;height:28px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.sp-insta-top svg{width:14px;height:14px;fill:#fff;}
+.sp-vline{width:1px;height:64px;background:var(--border);flex-shrink:0;}
+.sp-right{display:flex;flex-direction:column;gap:28px;}
+.sp-big{text-align:left;}
+.sp-big-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--gold);line-height:1;letter-spacing:-.03em;}
+.sp-big-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-top:6px;}
+.sp-desc-block{max-width:280px;}
+.sp-desc-block p{font-size:.9rem;color:var(--text-muted);line-height:1.75;}
+.sp-desc-block strong{color:var(--text);font-weight:400;}
+.sp-handle{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;letter-spacing:.08em;color:rgba(201,168,76,.6);margin-top:8px;}
+.sp-verified{display:inline-block;width:14px;height:14px;background:linear-gradient(135deg,#4facfe,#00f2fe);border-radius:50%;flex-shrink:0;}
+@media(max-width:768px){.sp-strip{padding:40px 24px;gap:32px;}.sp-vline{display:none;}.sp-card{width:240px;}.sp-big-num{font-size:2.4rem;}}
+
 /* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:16px 24px;}
@@ -1006,6 +1028,37 @@ header::after {
   </div>
 </div>
 
+<!-- AUTORIDADE SOCIAL -->
+<div class="sp-strip">
+
+  <a class="sp-card" href="https://instagram.com/dionefol" target="_blank" rel="noopener" aria-label="Seguir @dionefol no Instagram">
+    <img src="assets/dione-insta.webp" alt="Perfil @dionefol no Instagram">
+    <div class="sp-insta-top">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </div>
+    <div class="sp-card-overlay">
+      <span class="sp-follow-btn">+ Seguir</span>
+    </div>
+  </a>
+
+  <div class="sp-vline"></div>
+
+  <div class="sp-right">
+    <div class="sp-big">
+      <div class="sp-big-num">1,1M</div>
+      <div class="sp-big-label">seguidores no Instagram</div>
+    </div>
+    <div class="sp-desc-block">
+      <p>Fundador da Zebubit, <strong>Dione Folador</strong> é criador de conteúdo verificado com mais de <strong>1,1 milhão de seguidores</strong> — referência em Investimentos & Cripto no Brasil.</p>
+      <div class="sp-handle">
+        <span class="sp-verified"></span>
+        @dionefol · Conta verificada
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <!-- PORTFÓLIO SCROLL -->
 <section class="portfolio-section" id="projetos">
   <div class="portfolio-header">
@@ -1131,17 +1184,17 @@ header::after {
       </div>
     </a>
 
-    <!-- 07: Nova Aliança -->
-    <a class="pcard" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20v%C3%ADdeo%20da%20%2ANova%20Alian%C3%A7a%20Bakery%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F">
+    <!-- 07: CSM -->
+    <a class="pcard" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20v%C3%ADdeo%20da%20%2ACSM%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F">
       <div class="pcard-img" style="background:#080808;">
-        <video autoplay muted loop playsinline poster="assets/videos/posters/nova-alianca.jpg">
-          <source src="assets/videos/nova-alianca.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline poster="assets/videos/posters/csm.jpg">
+          <source src="assets/videos/csm.mp4" type="video/mp4">
         </video>
       </div>
       <div class="pcard-body">
-        <div class="pcard-seg">Padaria & Café · Newark, EUA</div>
-        <div class="pcard-title">Nova Aliança Bakery</div>
-        <p class="pcard-desc">Padaria portuguesa em Newark, NJ. Pães artesanais, pastéis de nata, cafés e almoço caseiro. Site bilíngue com cardápio e localização.</p>
+        <div class="pcard-seg">Empresa · Institucional · Uberaba, MG</div>
+        <div class="pcard-title">CSM</div>
+        <p class="pcard-desc">Site institucional com design profissional, apresentação de serviços e estrutura para captação de leads via WhatsApp.</p>
         <div class="pcard-foot">
           <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <span class="pcard-badge">Demo</span>
@@ -1207,17 +1260,17 @@ header::after {
       </div>
     </a>
 
-    <!-- 11: Daniela Jordão -->
-    <a class="pcard" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20v%C3%ADdeo%20da%20%2ADaniela%20Jord%C3%A3o%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F">
+    <!-- 11: Vitor Daher -->
+    <a class="pcard" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20v%C3%ADdeo%20do%20%2AVitor%20Daher%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F">
       <div class="pcard-img" style="background:#080808;">
-        <video autoplay muted loop playsinline poster="assets/videos/posters/daniela-jordao.jpg">
-          <source src="assets/videos/daniela-jordao.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline poster="assets/videos/posters/vitor-rachid.jpg">
+          <source src="assets/videos/vitor-rachid.mp4" type="video/mp4">
         </video>
       </div>
       <div class="pcard-body">
-        <div class="pcard-seg">Advocacia · Uberaba, MG</div>
-        <div class="pcard-title">Daniela Jordão</div>
-        <p class="pcard-desc">Escritório de advocacia em Uberaba com 25 anos de experiência, OAB/MG, foco em atendimento humanizado e consulta gratuita via WhatsApp.</p>
+        <div class="pcard-seg">Advocacia Criminal · Uberlândia, MG</div>
+        <div class="pcard-title">Vitor Daher</div>
+        <p class="pcard-desc">Defesa criminal de alto padrão em Uberlândia. Atuação no TRF-6, STJ e STF. Site com posicionamento premium e captação via WhatsApp.</p>
         <div class="pcard-foot">
           <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <span class="pcard-badge">Demo</span>
@@ -1226,17 +1279,17 @@ header::after {
       </div>
     </a>
 
-    <!-- 12: Alonzo -->
-    <a class="pcard" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20v%C3%ADdeo%20da%20%2AAlonzo%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F">
+    <!-- 12: Laetom -->
+    <a class="pcard" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20v%C3%ADdeo%20do%20%2ALaetom%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar%20para%20o%20meu%20neg%C3%B3cio.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F">
       <div class="pcard-img" style="background:#080808;">
-        <video autoplay muted loop playsinline poster="assets/videos/posters/alonzo.jpg">
-          <source src="assets/videos/alonzo.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline poster="assets/videos/posters/laetom.jpg">
+          <source src="assets/videos/laetom.mp4" type="video/mp4">
         </video>
       </div>
       <div class="pcard-body">
-        <div class="pcard-seg">Peluquería & Estética · Madrid, Espanha</div>
-        <div class="pcard-title">Alonzo</div>
-        <p class="pcard-desc">Salão de beleza e estética em Madri com visual monocromático impactante, portfólio de serviços e agendamento integrado.</p>
+        <div class="pcard-seg">Hairstylist · Beleza · Londres, UK</div>
+        <div class="pcard-title">Laetom</div>
+        <p class="pcard-desc">Site de hairstylist de alto padrão em Londres, com portfólio de trabalhos, lista de serviços e agendamento.</p>
         <div class="pcard-foot">
           <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <span class="pcard-badge">Demo</span>
