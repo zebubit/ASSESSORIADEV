@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zebubit — Linear Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* INSPIRED BY: Linear App — minimal, grid dots, ultra clean */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0A0A0A; --bg2:#111; --bg3:#161616;
+  --gold:#C9A84C; --gold-l:#E8D07A;
+  --white:#EFEFEF; --muted:#666; --muted2:#888;
+  --border:rgba(255,255,255,.07);
+  --r:8px;
+}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;cursor:none;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* DOT GRID */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:32px 32px;
+  -webkit-mask-image:radial-gradient(ellipse 100% 100% at 50% 0%,black 30%,transparent 90%);
+  mask-image:radial-gradient(ellipse 100% 100% at 50% 0%,black 30%,transparent 90%);}
+
+/* CURSOR */
+#cd,#cr{position:fixed;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);}
+#cd{width:5px;height:5px;background:var(--gold);}
+#cr{width:24px;height:24px;border:1px solid rgba(201,168,76,.5);transition:width .2s,height .2s;}
+body.hov #cr{width:40px;height:40px;border-color:var(--gold);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;padding:0 32px;justify-content:space-between;}
+nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--border);}
+.nl{font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:500;letter-spacing:.04em;color:var(--white);}
+.nl em{color:var(--gold);font-style:normal;}
+.nlinks{display:flex;gap:28px;list-style:none;}
+.nlinks a{font-size:.75rem;color:var(--muted2);transition:color .15s;letter-spacing:.01em;}
+.nlinks a:hover{color:var(--white);}
+.ncta{background:var(--white);color:#000;font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:7px 18px;border-radius:6px;transition:opacity .15s;}
+.ncta:hover{opacity:.85;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 32px 60px;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:5px 14px;border-radius:100px;font-size:.7rem;color:var(--muted2);letter-spacing:.06em;margin-bottom:40px;}
+.hero-badge span{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;}
+h1{font-size:clamp(2.8rem,7vw,7rem);font-weight:800;line-height:1.0;letter-spacing:-.04em;margin-bottom:28px;max-width:900px;}
+h1 .hl{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.25);}
+h1 .gold{background:linear-gradient(135deg,var(--gold),var(--gold-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1rem;color:var(--muted2);max-width:480px;line-height:1.75;margin-bottom:48px;font-weight:400;}
+.hero-actions{display:flex;gap:16px;align-items:center;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;padding:10px 22px;border-radius:7px;transition:all .15s;}
+.btn-primary{background:var(--white);color:#000;}
+.btn-primary:hover{background:#ddd;}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--muted2);}
+.btn-outline:hover{border-color:rgba(255,255,255,.2);color:var(--white);}
+.hero-bottom{position:absolute;bottom:40px;left:0;right:0;display:flex;justify-content:center;gap:48px;}
+.hb-item{text-align:center;}
+.hb-num{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:500;color:var(--white);}
+.hb-label{font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
+
+/* SECTION */
+section{padding:100px 32px;max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.sl{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.sl::before{content:'';width:16px;height:1px;background:var(--gold);}
+h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:48px;}
+h2 .g{color:var(--gold);}
+
+/* FEATURE GRID */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.feat{background:var(--bg);padding:32px;transition:background .2s;}
+.feat:hover{background:var(--bg2);}
+.feat-icon{width:36px;height:36px;border-radius:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.feat-icon svg{stroke:var(--gold);}
+.feat h3{font-size:.95rem;font-weight:600;margin-bottom:10px;letter-spacing:-.01em;}
+.feat p{font-size:.82rem;color:var(--muted2);line-height:1.7;}
+.feat-tag{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.1em;opacity:.6;}
+
+/* WORK */
+.work-list{display:flex;flex-direction:column;border-top:1px solid var(--border);}
+.work-row{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--border);gap:24px;transition:padding .2s;cursor:default;}
+.work-row:hover{padding-left:16px;}
+.wr-num{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);width:32px;flex-shrink:0;}
+.wr-title{font-size:.95rem;font-weight:500;}
+.wr-seg{font-size:.75rem;color:var(--muted2);}
+.wr-stack{display:flex;gap:6px;}
+.wr-stack span{font-size:.6rem;padding:3px 8px;border-radius:4px;border:1px solid var(--border);color:var(--muted2);}
+.wr-arr{color:var(--muted);font-size:.8rem;transition:transform .2s,color .2s;}
+.work-row:hover .wr-arr{transform:translateX(4px);color:var(--gold);}
+
+/* CTA */
+.cta{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:80px 60px;text-align:center;position:relative;overflow:hidden;max-width:900px;margin:0 auto;}
+.cta::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.cta h2{font-size:clamp(2rem,4vw,3.5rem);margin-bottom:16px;font-weight:700;letter-spacing:-.03em;}
+.cta p{font-size:.9rem;color:var(--muted2);margin-bottom:36px;max-width:400px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;max-width:100%;position:relative;z-index:1;}
+footer p{font-size:.72rem;color:var(--muted);}
+.fl{display:flex;gap:20px;}
+.fl a{font-size:.7rem;color:var(--muted);transition:color .15s;}
+.fl a:hover{color:var(--white);}
+
+@media(max-width:768px){
+  nav .nlinks{display:none;}
+  h1{font-size:2.5rem;}
+  .feat-grid{grid-template-columns:1fr;}
+  section{padding:64px 20px;}
+  .cta{padding:48px 24px;}
+}
+</style>
+</head>
+<body>
+<div id="cd"></div><div id="cr"></div>
+
+<nav>
+  <span class="nl">Zebu<em>bit</em></span>
+  <ul class="nlinks">
+    <li><a href="#">Serviços</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Processo</a></li>
+    <li><a href="#">Sobre</a></li>
+  </ul>
+  <a href="https://wa.me/5534996982526" class="ncta" target="_blank">Falar agora</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-badge"><span></span>Agência de Tecnologia — Uberaba, MG</div>
+  <h1>Sites que <span class="gold">convertem.</span><br>Código que <span class="hl">dura.</span></h1>
+  <p class="hero-sub">Construímos presença digital séria para negócios que não toleram mediocridade. Design, código e estratégia — do início ao resultado.</p>
+  <div class="hero-actions">
+    <a href="https://wa.me/5534996982526" class="btn btn-primary" target="_blank">Iniciar projeto →</a>
+    <a href="#portfolio" class="btn btn-outline">Ver portfolio</a>
+  </div>
+  <div class="hero-bottom">
+    <div class="hb-item"><div class="hb-num">48+</div><div class="hb-label">Projetos entregues</div></div>
+    <div class="hb-item"><div class="hb-num">12</div><div class="hb-label">Anos de mercado</div></div>
+    <div class="hb-item"><div class="hb-num">&lt;2s</div><div class="hb-label">Load time médio</div></div>
+    <div class="hb-item"><div class="hb-num">100%</div><div class="hb-label">Responsivos</div></div>
+  </div>
+</header>
+
+<section>
+  <div class="sl">O que fazemos</div>
+  <h2>Tudo que seu negócio<br>precisa no <span class="g">digital.</span></h2>
+  <div class="feat-grid">
+    <div class="feat">
+      <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h3>Sites & Landing Pages</h3>
+      <p>Design editorial premium com código limpo, mobile-first e performance garantida. Sites que impressionam e convertem.</p>
+      <div class="feat-tag">// HTML · CSS · JS</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <h3>Automações & Integrações</h3>
+      <p>WhatsApp, Google Sheets, APIs — conectamos seus sistemas para trabalhar 24h sem parar. Zero humano, zero erro.</p>
+      <div class="feat-tag">// n8n · Sheets API</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
+      <h3>Soluções com IA</h3>
+      <p>Chatbots, agentes Claude e automação inteligente integrados ao seu fluxo de trabalho.</p>
+      <div class="feat-tag">// Claude · LLMs</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg></div>
+      <h3>SEO Técnico</h3>
+      <p>Core Web Vitals no verde, ranqueamento orgânico e presença que cresce sem pagar por clique.</p>
+      <div class="feat-tag">// Lighthouse · Schema</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>OSINT & Segurança</h3>
+      <p>Inteligência digital aplicada. Pesquisa, coleta e análise de dados abertos para decisões estratégicas.</p>
+      <div class="feat-tag">// OSINT · OPSEC</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+      <h3>Consultoria Estratégica</h3>
+      <p>Diagnóstico digital completo, roadmap e execução. Para empresas que querem crescer com tecnologia séria.</p>
+      <div class="feat-tag">// Strategy · Roadmap</div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="sl">Portfolio</div>
+  <h2>Trabalhos <span class="g">recentes.</span></h2>
+  <div class="work-list">
+    <div class="work-row">
+      <span class="wr-num">01</span>
+      <span class="wr-title">Garcia &amp; Miotto Advogados</span>
+      <span class="wr-seg">Advocacia Previdenciária</span>
+      <div class="wr-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+      <span class="wr-arr">→</span>
+    </div>
+    <div class="work-row">
+      <span class="wr-num">02</span>
+      <span class="wr-title">Araújo Padaria</span>
+      <span class="wr-seg">Alimentação & Varejo</span>
+      <div class="wr-stack"><span>HTML</span><span>vídeo</span><span>WebP</span></div>
+      <span class="wr-arr">→</span>
+    </div>
+    <div class="work-row">
+      <span class="wr-num">03</span>
+      <span class="wr-title">Bar do Latif</span>
+      <span class="wr-seg">Bar Árabe Premium</span>
+      <div class="wr-stack"><span>HTML</span><span>Sheets</span><span>WebP</span></div>
+      <span class="wr-arr">→</span>
+    </div>
+    <div class="work-row">
+      <span class="wr-num">04</span>
+      <span class="wr-title">Villa Cascais</span>
+      <span class="wr-seg">Restaurante Português</span>
+      <div class="wr-stack"><span>HTML</span><span>vídeo</span><span>API</span></div>
+      <span class="wr-arr">→</span>
+    </div>
+    <div class="work-row">
+      <span class="wr-num">05</span>
+      <span class="wr-title">Mangiare</span>
+      <span class="wr-seg">Restaurante Italiano</span>
+      <div class="wr-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+      <span class="wr-arr">→</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cta">
+    <div class="sl" style="justify-content:center;">Próximo passo</div>
+    <h2>Pronto para começar?</h2>
+    <p>Fale com a gente. Sem formulário burocrático. Resposta em menos de 2h.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/5534996982526?text=Olá! Vi o portfólio da Zebubit e quero um orçamento." class="btn btn-primary" target="_blank">Falar no WhatsApp →</a>
+      <a href="mailto:zebubit@gmail.com" class="btn btn-outline">Enviar e-mail</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Zebubit — Uberaba, MG</p>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#333;">v4-linear</p>
+  <div class="fl">
+    <a href="../politica-de-privacidade.html">Privacidade</a>
+    <a href="../termos-de-uso.html">Termos</a>
+    <a href="mailto:zebubit@gmail.com">zebubit@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.feat,.work-row').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+});
+// Animate rows on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.style.opacity='1',e.target.style.transform='none';}),{threshold:.1});
+document.querySelectorAll('.feat,.work-row').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .5s,transform .5s';io.observe(el);});
+</script>
+</body>
+</html>
