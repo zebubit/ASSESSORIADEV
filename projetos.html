@@ -24,28 +24,28 @@ a{text-decoration:none;color:inherit;}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,6,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);}
 .nav-logo span{color:var(--gold);}
-.nav-back{font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s;display:flex;align-items:center;gap:8px;}
+.nav-back{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s;display:flex;align-items:center;gap:8px;}
 .nav-back:hover{color:var(--white);}
 .nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 
 /* HERO */
 .proj-hero{padding:140px 60px 72px;max-width:1400px;margin:0 auto;}
-.proj-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.proj-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
 .proj-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);}
 .proj-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;}
 .proj-hero h1 em{color:var(--gold);font-style:italic;}
-.proj-hero p{font-size:.95rem;color:var(--text-muted);max-width:560px;line-height:1.85;}
+.proj-hero p{font-size:1rem;color:var(--text-muted);max-width:560px;line-height:1.85;}
 
 /* LEGENDA */
 .proj-legend{display:flex;align-items:center;gap:24px;margin-top:32px;flex-wrap:wrap;}
-.legend-item{display:flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
 .legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .legend-dot.live{background:#4ade80;box-shadow:0 0 6px rgba(74,222,128,.5);}
 .legend-dot.demo{background:rgba(201,168,76,.4);border:1px solid var(--gold);}
 
 /* FILTROS */
 .filters{padding:0 60px 40px;max-width:1400px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;}
-.filter-btn{background:transparent;border:1px solid rgba(201,168,76,.2);color:var(--muted);padding:8px 20px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:100px;transition:all .25s;}
+.filter-btn{background:transparent;border:1px solid rgba(201,168,76,.2);color:var(--muted);padding:8px 20px;font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:100px;transition:all .25s;}
 .filter-btn:hover{border-color:rgba(201,168,76,.5);color:var(--white);}
 .filter-btn.active{background:var(--gold);border-color:var(--gold);color:var(--black);}
 
@@ -57,20 +57,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 60px;height:68px;
 .pcard.in-view{opacity:1;transform:none;}
 .pcard.in-view:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(201,168,76,.35);}
 .pcard.hidden{display:none;}
-.pcard-img{height:260px;background:var(--dark4);position:relative;overflow:hidden;}
+.pcard-img{height:260px;background:var(--dark4);position:relative;overflow:hidden;border-radius:12px 12px 0 0;-webkit-transform:translateZ(0);transform:translateZ(0);}
 .pcard-img video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .pcard-body{padding:20px 22px 18px;}
-.pcard-seg{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;opacity:.8;}
-.pcard-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;line-height:1.25;margin-bottom:10px;}
+.pcard-seg{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;opacity:.8;}
+.pcard-title{font-family:'Playfair Display',serif;font-size:1.22rem;font-weight:700;line-height:1.25;margin-bottom:10px;}
 .pcard-foot{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--border);flex-wrap:wrap;gap:8px;}
 .pcard-stack{display:flex;gap:5px;flex-wrap:wrap;}
-.pcard-stack span{font-size:.55rem;padding:3px 8px;border-radius:100px;border:1px solid var(--border);color:var(--text-muted);}
-.pcard-badge{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);border:1px solid rgba(255,255,255,.08);padding:2px 10px;border-radius:100px;}
+.pcard-stack span{font-size:.65rem;padding:3px 8px;border-radius:100px;border:1px solid var(--border);color:var(--text-muted);}
+.pcard-badge{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);border:1px solid rgba(255,255,255,.08);padding:2px 10px;border-radius:100px;}
 .pcard-badge.live{color:#4ade80;border-color:rgba(74,222,128,.3);background:rgba(74,222,128,.06);}
-.pcard-link{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
+.pcard-link{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
 
 /* CONTAGEM */
-.proj-count{padding:0 60px;max-width:1400px;margin:0 auto 20px;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--text-muted);}
+.proj-count{padding:0 60px;max-width:1400px;margin:0 auto 20px;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.1em;color:var(--text-muted);}
 #count-num{color:var(--gold);}
 
 /* EMPTY STATE */
@@ -87,9 +87,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 60px;height:68px;
 
 /* FOOTER */
 footer{background:var(--dark);border-top:1px solid var(--border);padding:32px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-footer p{font-size:.75rem;color:var(--muted);}
+footer p{font-size:.82rem;color:var(--muted);}
 .foot-links{display:flex;gap:24px;}
-.foot-links a{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
+.foot-links a{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
 .foot-links a:hover{color:var(--white);}
 
 @media(max-width:1024px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
@@ -122,7 +122,7 @@ footer p{font-size:.75rem;color:var(--muted);}
 </div>
 
 <div class="filters">
-  <button class="filter-btn active" data-filter="all">Todos (<span id="total-count">18</span>)</button>
+  <button class="filter-btn active" data-filter="all">Todos (<span id="total-count">31</span>)</button>
   <button class="filter-btn" data-filter="gastronomia">Gastronomia</button>
   <button class="filter-btn" data-filter="juridico">Jurídico</button>
   <button class="filter-btn" data-filter="saude">Saúde & Fitness</button>
@@ -130,7 +130,7 @@ footer p{font-size:.75rem;color:var(--muted);}
   <button class="filter-btn" data-filter="outros">Outros</button>
 </div>
 
-<p class="proj-count">Exibindo <span id="count-num">18</span> projetos</p>
+<p class="proj-count">Exibindo <span id="count-num">31</span> projetos</p>
 
 <div class="proj-grid" id="projGrid">
 
@@ -414,7 +414,7 @@ footer p{font-size:.75rem;color:var(--muted);}
       </div>
       <div class="pcard-body">
         <div class="pcard-seg">Direito Previdenciário · Brasil</div>
-        <div class="pcard-title">Mioto Advogados</div>
+        <div class="pcard-title">Garcia & Miotto Advogados</div>
         <div class="pcard-foot">
           <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <span class="pcard-badge">Demo</span>
@@ -432,6 +432,227 @@ footer p{font-size:.75rem;color:var(--muted);}
       <div class="pcard-body">
         <div class="pcard-seg">Restaurante · Massas · Uberaba, MG</div>
         <div class="pcard-title">Macarrão e Cia</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="gastronomia" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vim%20pelo%20portf%C3%B3lio%20da%20Zebubit%20e%20vi%20o%20projeto%20da%20%2APadaria%20Ara%C3%BAjo%2A.%20Gostaria%20de%20ter%20um%20site%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/araujo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Padaria & Pizzaria · Uberaba, MG</div>
+        <div class="pcard-title">Araújo</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="outros" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20da%20%2ACSM%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/csm.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Empresa · Institucional · Uberaba, MG</div>
+        <div class="pcard-title">CSM</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="gastronomia" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20do%20%2ADu%20Puro%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/du-puro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Bar · Gastronomia · Uberaba, MG</div>
+        <div class="pcard-title">Du Puro</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="juridico" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20da%20%2AJoyce%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/joyce.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Advocacia · Jurídico · Uberaba, MG</div>
+        <div class="pcard-title">Joyce</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="gastronomia" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20do%20%2AL%27%C3%81telie%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/latelie.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Bistrô · Gastronomia · Uberaba, MG</div>
+        <div class="pcard-title">L'Átelie</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="beleza" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20do%20%2ALaetom%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/laetom.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Hairstylist · Beleza · Londres, UK</div>
+        <div class="pcard-title">Laerton</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="gastronomia" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20do%20%2ABar%20do%20Latif%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/latif.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Bar · Cozinha Árabe · Uberaba, MG</div>
+        <div class="pcard-title">Bar do Latif</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="gastronomia" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20da%20%2AMaria%20Parm%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/maria-parm.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Restaurante · Massas · Uberaba, MG</div>
+        <div class="pcard-title">Maria Parmegiana</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="juridico" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20da%20%2ASuellen%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/suellen.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Advocacia · Jurídico · Uberaba, MG</div>
+        <div class="pcard-title">Suellen</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="juridico" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20do%20%2ADr.%20Andrey%20Blanco%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline poster="assets/videos/posters/andrey-blanco.jpg">
+          <source src="assets/videos/andrey-blanco.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Advocacia Armamentista · Jurídico · Uberaba, MG</div>
+        <div class="pcard-title">Dr. Andrey Blanco</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="juridico" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20do%20%2AVitor%20Rachid%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline poster="assets/videos/posters/vitor-rachid.jpg">
+          <source src="assets/videos/vitor-rachid.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Advocacia Criminal · Jurídico · Uberaba, MG</div>
+        <div class="pcard-title">Vitor Rachid</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="outros" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20da%20%2AChloe%20Est%C3%A9tica%20Animal%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline poster="assets/videos/posters/chloe.jpg">
+          <source src="assets/videos/chloe.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Estética Animal · Pet Shop · Cuiabá, MT</div>
+        <div class="pcard-title">Chloe</div>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge">Demo</span>
+          <span class="pcard-link">Quero similar ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" data-cat="gastronomia" href="https://wa.me/5534996982526?text=Ol%C3%A1%21%20Vi%20o%20projeto%20do%20%2ABread%20of%20Life%2A%20no%20portf%C3%B3lio%20da%20Zebubit%20e%20gostaria%20de%20ter%20algo%20similar.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">
+      <div class="pcard-img">
+        <video autoplay muted loop playsinline poster="assets/videos/posters/breadoflife.jpg">
+          <source src="assets/videos/breadoflife.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Padaria & Restaurante · Link in Bio · EUA</div>
+        <div class="pcard-title">Bread of Life</div>
         <div class="pcard-foot">
           <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
           <span class="pcard-badge">Demo</span>
@@ -481,6 +702,8 @@ footer p{font-size:.75rem;color:var(--muted);}
     countEl.textContent = visible;
     emptyEl.classList.toggle('show', visible === 0);
   }
+
+  filter('all');
 
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
