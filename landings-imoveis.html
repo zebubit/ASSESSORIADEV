@@ -32,8 +32,20 @@ html{scroll-behavior:smooth;}
 body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6;}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5;}
 
+/* PROMO STRIP */
+.promo-strip{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#FF5A1F,#FF8E53,#FF5A1F);background-size:220% 100%;color:#fff;padding:10px 24px;text-align:center;font-size:13px;font-weight:600;letter-spacing:.02em;text-decoration:none;display:block;animation:promoSheen 5s linear infinite;box-shadow:0 1px 0 rgba(0,0,0,.25);}
+.promo-strip:hover{filter:brightness(1.05);}
+.promo-strip strong{color:#fff;font-weight:800;}
+.promo-strip .old{opacity:.75;text-decoration:line-through;font-weight:400;margin:0 4px;}
+.promo-strip .arrow{display:inline-block;margin-left:6px;font-weight:800;}
+.promo-strip .flame{display:inline-block;margin-right:4px;animation:promoFlame 1.5s ease-in-out infinite;}
+.promo-strip .sep{opacity:.55;margin:0 8px;}
+.promo-strip .hide-mob{display:inline;}
+@keyframes promoSheen{0%{background-position:0% 50%;}100%{background-position:220% 50%;}}
+@keyframes promoFlame{0%,100%{transform:scale(1);}50%{transform:scale(1.18);}}
+
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(8,8,8,.95),transparent);}
+nav{position:fixed;top:40px;left:0;right:0;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(8,8,8,.95),transparent);}
 .nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;letter-spacing:.05em;color:var(--text);text-decoration:none;}
 .nav-logo em{color:var(--gold);font-style:normal;}
 .nav-links{display:flex;gap:36px;list-style:none;}
@@ -93,6 +105,16 @@ section{padding:100px 60px;position:relative;}
 .pricing-card:hover{border-color:var(--gold);}
 .pricing-card.featured{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,168,76,.08),transparent);}
 .pricing-card.featured::before{content:"MAIS ESCOLHIDO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:10px;font-weight:700;letter-spacing:.15em;padding:5px 14px;border-radius:4px;}
+.pricing-card.promo{border-color:#FF6B35;background:linear-gradient(180deg,rgba(255,107,53,.08),transparent);box-shadow:0 0 40px rgba(255,107,53,.10);}
+.pricing-card.promo:hover{border-color:#FF8E53;}
+.pricing-card.promo::before{content:"🔥 PROMO · ATÉ 01 DE JUNHO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FF5A1F;color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;padding:5px 14px;border-radius:4px;white-space:nowrap;box-shadow:0 4px 14px rgba(255,90,31,.35);}
+.pricing-card.promo .pricing-icon{background:rgba(255,107,53,.12);color:#FF8E53;}
+.pricing-card.promo .pricing-label{color:#FF8E53;}
+.price-old{font-family:'DM Sans',sans-serif;font-size:18px;color:var(--text-muted);text-decoration:line-through;display:block;font-weight:400;margin-bottom:4px;line-height:1;}
+.pricing-card.promo .pricing-price{color:#FF8E53;}
+.pricing-card.promo .pricing-btn{background:#FF5A1F;color:#fff;border-color:#FF5A1F;}
+.pricing-card.promo .pricing-btn:hover{background:#FF8E53;border-color:#FF8E53;color:#fff;}
+.promo-deadline{font-size:11px;color:#FF8E53;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:4px;margin-bottom:18px;}
 .pricing-icon{width:56px;height:56px;background:rgba(201,168,76,.08);border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:20px;}
 .pricing-card.featured .pricing-icon{background:rgba(201,168,76,.15);}
 .pricing-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
@@ -165,9 +187,11 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 
 /* RESPONSIVE */
 @media (max-width:900px){
-  nav{padding:16px 24px;}
+  .promo-strip{font-size:11.5px;padding:8px 12px;letter-spacing:0;}
+  .promo-strip .hide-mob{display:none;}
+  nav{padding:16px 24px;top:36px;}
   .nav-links{display:none;}
-  header{padding:120px 24px 60px;min-height:auto;}
+  header{padding:130px 24px 60px;min-height:auto;}
   section{padding:60px 24px;}
   .showcase-grid{grid-template-columns:1fr;}
   .steps{grid-template-columns:1fr;}
@@ -179,6 +203,16 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 </style>
 </head>
 <body>
+
+<!-- PROMO STRIP -->
+<a href="#pacotes" class="promo-strip" aria-label="Promoção exclusiva do pacote Essencial">
+  <span class="flame">🔥</span>
+  <strong>Promoção Exclusiva</strong><span class="sep hide-mob">·</span><span class="hide-mob"> Pacote </span><strong>Essencial por R$ 147</strong>
+  <span class="old">R$ 297</span>
+  <span class="sep">·</span> só até <strong>01 de junho</strong>
+  <span class="hide-mob"> · Quero aproveitar</span>
+  <span class="arrow">→</span>
+</a>
 
 <!-- NAV -->
 <nav>
@@ -333,14 +367,16 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   <div class="pricing-grid">
 
     <!-- ESSENCIAL -->
-    <div class="pricing-card">
+    <div class="pricing-card promo">
       <div class="pricing-icon">
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M6 26 L6 12 L18 6 L30 12 L30 26 L20 26 L20 20 L16 20 L16 26 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
       </div>
       <div class="pricing-label">Essencial</div>
       <div class="pricing-name">Para começar</div>
-      <div class="pricing-price">R$ 297<small> pagamento único</small></div>
-      <div class="pricing-sub">Pensado pra quem quer divulgar um imóvel com elegância e sem rodeio.</div>
+      <span class="price-old">de R$ 297 por</span>
+      <div class="pricing-price">R$ 147<small> pagamento único</small></div>
+      <div class="promo-deadline">Promoção exclusiva · só até 01 de junho</div>
+      <div class="pricing-sub">Pensado pra quem quer divulgar um imóvel com elegância e sem rodeio. Aproveite a condição de lançamento.</div>
       <ul class="pricing-features">
         <li>Landing page completa</li>
         <li>Até quinze fotos no carrossel</li>
@@ -354,7 +390,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
         <li class="disabled">Gráfico de valorização</li>
         <li class="disabled">Inteligência artificial no Instagram</li>
       </ul>
-      <button class="pricing-btn" onclick="iniciarBriefing('basico')">Quero o Essencial</button>
+      <button class="pricing-btn" onclick="iniciarBriefing('basico')">Quero o Essencial por R$ 147</button>
     </div>
 
     <!-- COMPLETO -->
@@ -517,7 +553,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
     <div id="step1">
       <div class="step-question">Qual pacote te interessa?</div>
       <div class="step-options">
-        <button class="option-btn" data-pacote="basico" onclick="selectOption(this, 'step1', 'Essencial por R$ 297')">Essencial, por R$ 297</button>
+        <button class="option-btn" data-pacote="basico" onclick="selectOption(this, 'step1', 'Essencial PROMO por R$ 147 (de R$ 297) até 01/06')">Essencial, <strong style="color:#FF8E53;">por R$ 147</strong> <span style="text-decoration:line-through;opacity:.6;font-size:12px;">R$ 297</span> <span style="color:#FF8E53;font-size:11px;margin-left:4px;">🔥 promo até 01/06</span></button>
         <button class="option-btn" data-pacote="pro" onclick="selectOption(this, 'step1', 'Completo por R$ 547')">Completo, por R$ 547 <span style="color:var(--gold);font-size:11px;margin-left:4px;">★ mais escolhido</span></button>
         <button class="option-btn" data-pacote="plus" onclick="selectOption(this, 'step1', 'Captação IA por R$ 997')">Captação IA, por R$ 997</button>
         <button class="option-btn" data-pacote="conversar" onclick="selectOption(this, 'step1', 'Quer conversar primeiro')">Quero conversar antes de decidir</button>
