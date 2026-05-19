@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landings Pra Imóvel — Zebubit · Pronta em 48 horas</title>
+<meta name="description" content="Landing page profissional para corretores e proprietários de imóveis. Pronta em 48 horas. Inclui galeria, simulador, mapa, formulário inteligente e integração com ARKON IA.">
+<link rel="canonical" href="https://zebubit.com.br/landings-imoveis">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zebubit.com.br/landings-imoveis">
+<meta property="og:title" content="Landings Pra Imóvel — Pronta em 48 horas">
+<meta property="og:description" content="Site profissional pro seu imóvel: galeria, simulador, formulário inteligente e IA atendendo no Instagram e WhatsApp.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-dim: rgba(201,168,76,0.15);
+  --dark: #080808;
+  --dark2: #101010;
+  --dark3: #181818;
+  --dark4: #202020;
+  --text: #EDE8DC;
+  --text-muted: #A89880;
+  --white: #FAF7F2;
+  --border: rgba(201,168,76,0.12);
+  --green: #4ade80;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(8,8,8,.95),transparent);}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;letter-spacing:.05em;color:var(--text);text-decoration:none;}
+.nav-logo em{color:var(--gold);font-style:normal;}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--dark);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:10px 24px;text-decoration:none;transition:all .3s;}
+.nav-cta:hover{background:var(--gold-light);}
+
+/* HERO */
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 60px 80px;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;top:-100px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,.1) 0%,transparent 65%);pointer-events:none;}
+header::after{content:'';position:absolute;bottom:-50px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(201,168,76,.05) 0%,transparent 65%);pointer-events:none;}
+.tag{display:inline-block;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:6px 16px;margin-bottom:36px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(44px,7vw,92px);font-weight:900;line-height:.98;letter-spacing:-.02em;max-width:1000px;}
+h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{margin-top:36px;font-size:18px;font-weight:300;color:var(--text-muted);max-width:620px;line-height:1.75;}
+.hero-cta{margin-top:48px;display:flex;gap:20px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--dark);text-decoration:none;font-weight:500;font-size:14px;letter-spacing:.05em;padding:16px 40px;display:inline-block;transition:all .3s;text-transform:uppercase;}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-outline{color:var(--text);text-decoration:none;font-size:14px;letter-spacing:.05em;padding:16px 0;border-bottom:1px solid var(--text-muted);transition:all .3s;}
+.btn-outline:hover{color:var(--gold);border-color:var(--gold);}
+
+/* SECTION BASE */
+section{padding:100px 60px;position:relative;}
+.section-tag{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.section-h{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:900;line-height:1.05;letter-spacing:-.01em;margin-bottom:20px;max-width:760px;}
+.section-h em{font-style:italic;color:var(--gold);}
+.section-desc{font-size:17px;color:var(--text-muted);max-width:600px;line-height:1.75;margin-bottom:60px;}
+
+/* SHOWCASE */
+.showcase{background:var(--dark2);}
+.showcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.showcase-card{background:var(--dark);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .4s;position:relative;}
+.showcase-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+.showcase-img{aspect-ratio:9/16;background:#222;overflow:hidden;position:relative;max-height:520px;}
+.showcase-img iframe{width:100%;height:100%;border:0;pointer-events:none;transform:scale(.55);transform-origin:top left;width:calc(100%/.55);height:calc(100%/.55);}
+.showcase-img-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a1a,#2a2218);color:var(--text-muted);font-size:13px;text-align:center;padding:20px;}
+.showcase-body{padding:24px 28px;}
+.showcase-pill{display:inline-block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid var(--border);padding:4px 12px;border-radius:4px;margin-bottom:12px;}
+.showcase-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px;}
+.showcase-desc{font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;}
+.showcase-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px;transition:all .3s;}
+.showcase-link:hover{color:var(--gold-light);}
+
+/* COMO FUNCIONA */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.step{position:relative;padding:32px 28px;border:1px solid var(--border);border-radius:8px;background:linear-gradient(180deg,rgba(201,168,76,.03),transparent);}
+.step-icon{width:56px;height:56px;background:rgba(201,168,76,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:22px;}
+.step-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:10px;opacity:.45;letter-spacing:.05em;}
+.step-h{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em;}
+.step-text{font-size:14px;color:var(--text-muted);line-height:1.7;}
+
+/* PACOTES */
+.pricing{background:var(--dark2);}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+.pricing-card{background:var(--dark);border:1px solid var(--border);border-radius:12px;padding:36px 32px;display:flex;flex-direction:column;position:relative;transition:all .3s;}
+.pricing-card:hover{border-color:var(--gold);}
+.pricing-card.featured{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,168,76,.08),transparent);}
+.pricing-card.featured::before{content:"MAIS ESCOLHIDO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:10px;font-weight:700;letter-spacing:.15em;padding:5px 14px;border-radius:4px;}
+.pricing-icon{width:56px;height:56px;background:rgba(201,168,76,.08);border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:20px;}
+.pricing-card.featured .pricing-icon{background:rgba(201,168,76,.15);}
+.pricing-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.pricing-name{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;letter-spacing:-.02em;margin-bottom:14px;}
+.pricing-price{font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:var(--text);letter-spacing:-.02em;line-height:1;}
+.pricing-price small{font-size:14px;color:var(--text-muted);font-weight:400;font-family:'DM Sans',sans-serif;letter-spacing:0;}
+.pricing-sub{font-size:13px;color:var(--text-muted);margin-top:6px;margin-bottom:24px;line-height:1.6;}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex-grow:1;}
+.pricing-features li{font-size:14px;color:var(--text);display:flex;gap:10px;line-height:1.5;}
+.pricing-features li::before{content:"✓";color:var(--gold);font-weight:700;flex-shrink:0;}
+.pricing-features li.disabled{color:var(--text-muted);opacity:.5;}
+.pricing-features li.disabled::before{content:"—";color:var(--text-muted);}
+.pricing-btn{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:14px 22px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;text-align:center;transition:all .3s;display:block;cursor:pointer;font-family:inherit;}
+.pricing-btn:hover{background:var(--gold);color:var(--dark);}
+.pricing-card.featured .pricing-btn{background:var(--gold);color:var(--dark);}
+.pricing-card.featured .pricing-btn:hover{background:var(--gold-light);}
+
+/* DIFERENCIAIS */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.diff-card{padding:32px 28px;border:1px solid var(--border);border-radius:8px;background:rgba(201,168,76,.02);display:flex;gap:20px;}
+.diff-icon{width:48px;height:48px;background:rgba(201,168,76,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;}
+.diff-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-.01em;}
+.diff-text{font-size:14px;color:var(--text-muted);line-height:1.7;}
+
+/* FAQ */
+.faq{background:var(--dark2);}
+.faq-item{border-bottom:1px solid var(--border);padding:24px 0;}
+.faq-item:first-child{border-top:1px solid var(--border);}
+.faq-q{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;list-style:none;}
+.faq-q::-webkit-details-marker{display:none;}
+.faq-q::after{content:"+";color:var(--gold);font-size:28px;font-weight:300;transition:transform .3s;line-height:1;}
+.faq-item[open] .faq-q::after{content:"−";}
+.faq-a{font-size:15px;color:var(--text-muted);line-height:1.75;margin-top:16px;max-width:780px;}
+
+/* BRIEFING FORM */
+.briefing{position:relative;}
+.briefing-card{background:linear-gradient(135deg,var(--dark2),var(--dark3));border:1px solid var(--gold);border-radius:14px;padding:48px 44px;max-width:680px;margin:0 auto;}
+.progress-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;margin:0 0 12px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--gold);transition:width .4s ease;}
+.step-counter{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);text-align:right;margin-bottom:14px;}
+.step-question{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;line-height:1.25;margin-bottom:22px;letter-spacing:-.01em;}
+.step-options{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
+.option-btn{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);padding:16px 20px;border-radius:8px;font-size:15px;text-align:left;cursor:pointer;transition:all .25s;font-family:inherit;font-weight:400;}
+.option-btn:hover{background:rgba(201,168,76,.1);border-color:var(--gold);}
+.option-btn.selected{background:rgba(201,168,76,.18);border-color:var(--gold);color:var(--gold);font-weight:500;}
+.form-input{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);padding:16px 20px;border-radius:8px;font-size:15px;font-family:inherit;margin-bottom:12px;}
+.form-input::placeholder{color:var(--text-muted);}
+.form-input:focus{outline:none;border-color:var(--gold);}
+.form-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;}
+.btn-back{background:transparent;border:none;color:var(--text-muted);font-size:13px;letter-spacing:.1em;cursor:pointer;font-family:inherit;padding:8px 0;text-transform:uppercase;}
+.btn-back:hover{color:var(--gold);}
+.btn-next{background:var(--gold);color:var(--dark);border:none;padding:14px 30px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;font-family:inherit;flex:1;transition:all .3s;}
+.btn-next:hover{background:var(--gold-light);}
+.btn-next:disabled{opacity:.4;cursor:not-allowed;}
+
+.success-icon{width:64px;height:64px;background:rgba(74,222,128,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:var(--green);}
+.success-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;text-align:center;margin-bottom:10px;}
+.success-text{font-size:15px;color:var(--text-muted);text-align:center;line-height:1.7;max-width:480px;margin:0 auto;}
+
+/* FOOTER */
+footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px solid var(--border);}
+.footer-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:32px;letter-spacing:.05em;color:var(--text);}
+.footer-logo em{color:var(--gold);font-style:normal;}
+.footer-sub{font-size:13px;color:var(--text-muted);margin:14px 0 24px;letter-spacing:.1em;text-transform:uppercase;}
+.footer-contact{display:flex;justify-content:center;gap:24px;font-size:13px;color:var(--text-muted);flex-wrap:wrap;}
+.footer-contact a{color:var(--text-muted);text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;gap:8px;}
+.footer-contact a:hover{color:var(--gold);}
+.footer-contact a svg{flex-shrink:0;}
+.footer-copy{margin-top:32px;font-size:11px;color:var(--text-muted);opacity:.6;letter-spacing:.1em;}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  nav{padding:16px 24px;}
+  .nav-links{display:none;}
+  header{padding:120px 24px 60px;min-height:auto;}
+  section{padding:60px 24px;}
+  .showcase-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .diff-grid{grid-template-columns:1fr;}
+  .briefing-card{padding:32px 24px;}
+  footer{padding:40px 24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Zebu<em>bit</em></a>
+  <ul class="nav-links">
+    <li><a href="#showcase">Exemplos</a></li>
+    <li><a href="#funciona">Como funciona</a></li>
+    <li><a href="#pacotes">Pacotes</a></li>
+    <li><a href="#briefing">Começar</a></li>
+  </ul>
+  <a href="#briefing" class="nav-cta">Quero a minha</a>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="tag">Novo no estúdio Zebubit</div>
+  <h1>Sua landing de imóvel <em>pronta em dois dias</em>.</h1>
+  <p class="hero-sub">Um site bonito de verdade, que carrega rápido no celular, mostra suas fotos com elegância, calcula financiamento, abre o mapa, atende pelo WhatsApp e ainda usa inteligência artificial pra responder no Instagram enquanto você dorme. Feito sob medida pra corretores e proprietários que cansaram de mensalidade cara e plataforma engessada.</p>
+  <div class="hero-cta">
+    <a href="#pacotes" class="btn-gold">Ver pacotes</a>
+    <a href="#showcase" class="btn-outline">Ver exemplos reais →</a>
+  </div>
+</header>
+
+<!-- SHOWCASE -->
+<section class="showcase" id="showcase">
+  <div class="section-tag">Cases reais</div>
+  <h2 class="section-h">Veja landings que estão <em>no ar agora mesmo</em>.</h2>
+  <p class="section-desc">Sites que entregamos para clientes nos últimos dias, todos rodando em produção. Abra no celular pra sentir como fica do outro lado.</p>
+  <div class="showcase-grid">
+    <div class="showcase-card">
+      <div class="showcase-img">
+        <iframe src="https://casa-estancia-ipes.netlify.app" loading="lazy"></iframe>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-pill">Residencial de alto padrão</div>
+        <div class="showcase-name">Casa de quatro suítes no Estância dos Ipês</div>
+        <div class="showcase-desc">Casa de luxo em Uberaba, com 29 fotos, manifesto de estilo de vida, descritivo do condomínio, mapa exato e formulário multistep que envia o lead direto pro WhatsApp do proprietário.</div>
+        <a href="https://casa-estancia-ipes.netlify.app" target="_blank" class="showcase-link">Abrir landing →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img">
+        <iframe src="https://terreno-lourdes-uberaba.netlify.app" loading="lazy"></iframe>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-pill">Terreno em oportunidade</div>
+        <div class="showcase-name">Terreno de esquina com duas casas no Bairro Lourdes</div>
+        <div class="showcase-desc">Terreno de 360 metros quadrados com duas casas semiacabadas. Mostra três cenários de uso (moradia, aluguel, comercial), quatro formas de pagamento, 28 fotos e a planta baixa do projeto.</div>
+        <a href="https://terreno-lourdes-uberaba.netlify.app" target="_blank" class="showcase-link">Abrir landing →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="funciona">
+  <div class="section-tag">Processo</div>
+  <h2 class="section-h">Como funciona em <em>três passos</em>.</h2>
+  <p class="section-desc">Sem reunião longa, sem prazo elástico. Você escolhe, preenche um formulário rápido, paga, e em dois dias tem sua landing no ar.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M6 18 L34 18" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/><path d="M12 24 L16 24 M20 24 L28 24 M12 28 L24 28" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="step-num">01</div>
+      <div class="step-h">Você escolhe o pacote</div>
+      <div class="step-text">Tem opção pra quem quer só anunciar um imóvel rápido e tem opção pra corretor montar uma máquina de captação. Você decide o tamanho do projeto sem precisar conversar antes.</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 8 L26 8 L32 14 L32 32 L8 32 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M26 8 L26 14 L32 14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M13 20 L27 20 M13 24 L27 24 M13 28 L21 28" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="step-num">02</div>
+      <div class="step-h">Preenche o briefing</div>
+      <div class="step-text">Um formulário guiado de quatro etapas. Dados do imóvel, suas fotos, contato e a forma de pagamento que prefere oferecer. Em dez minutos está pronto e a gente já recebe.</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.5"/><path d="M20 7 C16 12 16 28 20 33 M20 7 C24 12 24 28 20 33" stroke="currentColor" stroke-width="1.4"/><path d="M7 20 L33 20" stroke="currentColor" stroke-width="1.4"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+      </div>
+      <div class="step-num">03</div>
+      <div class="step-h">Sua landing no ar</div>
+      <div class="step-text">Em dois dias a gente devolve o link funcionando, com SEO configurado, pronta pra você divulgar no Instagram e no WhatsApp. Trinta dias de suporte vão junto.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTES -->
+<section class="pricing" id="pacotes">
+  <div style="text-align:center;">
+    <div class="section-tag" style="display:inline-block;">Pacotes</div>
+    <h2 class="section-h" style="margin:0 auto 20px;">Escolha o que <em>combina com você</em>.</h2>
+    <p class="section-desc" style="margin:0 auto 60px;">Sem mensalidade obrigatória, sem letras miúdas, sem fidelidade longa. Você paga pelo desenvolvimento uma vez só e a hospedagem fica por um preço honesto.</p>
+  </div>
+  <div class="pricing-grid">
+
+    <!-- ESSENCIAL -->
+    <div class="pricing-card">
+      <div class="pricing-icon">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M6 26 L6 12 L18 6 L30 12 L30 26 L20 26 L20 20 L16 20 L16 26 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="pricing-label">Essencial</div>
+      <div class="pricing-name">Para começar</div>
+      <div class="pricing-price">R$ 297<small> pagamento único</small></div>
+      <div class="pricing-sub">Pensado pra quem quer divulgar um imóvel com elegância e sem rodeio.</div>
+      <ul class="pricing-features">
+        <li>Landing page completa</li>
+        <li>Até quinze fotos no carrossel</li>
+        <li>Galeria responsiva no celular</li>
+        <li>Mapa do imóvel integrado</li>
+        <li>Formulário básico de contato</li>
+        <li>Botão de WhatsApp direto</li>
+        <li>Hospedagem inclusa por seis meses</li>
+        <li>Endereço fulano.zebubit.com.br</li>
+        <li class="disabled">Simulador de pagamento</li>
+        <li class="disabled">Gráfico de valorização</li>
+        <li class="disabled">Inteligência artificial no Instagram</li>
+      </ul>
+      <button class="pricing-btn" onclick="iniciarBriefing('basico')">Quero o Essencial</button>
+    </div>
+
+    <!-- COMPLETO -->
+    <div class="pricing-card featured">
+      <div class="pricing-icon">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" stroke="currentColor" stroke-width="1.6"/><path d="M12 18 L16 22 L24 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="pricing-label">Completo</div>
+      <div class="pricing-name">O queridinho</div>
+      <div class="pricing-price">R$ 497<small> pagamento único</small></div>
+      <div class="pricing-sub">A versão completa, igualzinha às landings que você viu nos cases ali em cima.</div>
+      <ul class="pricing-features">
+        <li>Tudo do Essencial</li>
+        <li>Até trinta fotos no carrossel</li>
+        <li>Simulador de pagamento interativo</li>
+        <li>Gráfico de valorização do bairro</li>
+        <li>Formulário guiado em quatro passos</li>
+        <li>Mensagem montada que cai direto no seu WhatsApp</li>
+        <li>Domínio próprio configurado</li>
+        <li>Hospedagem inclusa por doze meses</li>
+        <li>SEO otimizado pro Google</li>
+        <li>Suporte por sessenta dias</li>
+        <li class="disabled">Inteligência artificial no Instagram</li>
+      </ul>
+      <button class="pricing-btn" onclick="iniciarBriefing('pro')">Quero o Completo</button>
+    </div>
+
+    <!-- CAPTAÇÃO IA -->
+    <div class="pricing-card">
+      <div class="pricing-icon">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4 L22 14 L32 14 L24 21 L27 31 L18 25 L9 31 L12 21 L4 14 L14 14 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="pricing-label">Captação IA</div>
+      <div class="pricing-name">Modo automático</div>
+      <div class="pricing-price">R$ 997<small> setup único</small></div>
+      <div class="pricing-sub">Pra quem quer leads chegando vinte e quatro horas por dia sem precisar fazer nada.</div>
+      <ul class="pricing-features">
+        <li>Tudo do Completo</li>
+        <li>Fotos ilimitadas</li>
+        <li>ARKON respondendo no Instagram com inteligência artificial</li>
+        <li>WhatsApp humanizado por IA</li>
+        <li>Notificação imediata quando o lead é quente</li>
+        <li>Fluxos n8n personalizados pra você</li>
+        <li>Dashboard de captação</li>
+        <li>Hospedagem inclusa por doze meses</li>
+        <li>Domínio próprio configurado</li>
+        <li>Suporte por noventa dias</li>
+        <li>Ajustes ilimitados no primeiro mês</li>
+      </ul>
+      <button class="pricing-btn" onclick="iniciarBriefing('plus')">Quero o Captação IA</button>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:36px;font-size:13px;color:var(--text-muted);">A hospedagem é renovada por vinte e nove reais ao mês depois que o período incluso acaba, e você pode cancelar quando quiser.</p>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section>
+  <div class="section-tag">Por que Zebubit</div>
+  <h2 class="section-h">O que <em>ninguém faz</em> igual.</h2>
+  <p class="section-desc">Aqui ninguém usa Wix, Webflow ou template pronto. Cada landing nasce escrita à mão, leve, otimizada pra subir no Google e única que nem o seu imóvel.</p>
+  <div class="diff-grid">
+
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.5"/><path d="M14 14 L14 8 M14 14 L18 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="14" cy="14" r="1.5" fill="currentColor"/><path d="M14 2 L14 4 M14 24 L14 26 M2 14 L4 14 M24 14 L26 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="diff-name">Pronto em dois dias</div>
+        <div class="diff-text">Quem trabalha com isso costuma demorar uma semana ou duas. Aqui, dois dias úteis depois do pagamento e do briefing completo, sua landing já está no ar. Se quiser pra ontem, a gente entrega em vinte e quatro horas por cem reais a mais.</div>
+      </div>
+    </div>
+
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="5" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="14" cy="14" r="4.5" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="8" r="1.3" fill="currentColor"/><path d="M14 11 L14 14 L16 16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="diff-name">ARKON, nossa IA exclusiva</div>
+        <div class="diff-text">Uma plataforma nossa que conversa pelo Instagram do cliente vinte e quatro horas por dia. Responde comentário, DM, dúvida de preço, encaminha pro WhatsApp. Captura lead enquanto você está em outra reunião ou dormindo. Não existe igual no mercado.</div>
+      </div>
+    </div>
+
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M10 6 L4 14 L10 22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M18 6 L24 14 L18 22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M16 4 L12 24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="diff-name">Código feito à mão</div>
+        <div class="diff-text">Sua landing carrega três vezes mais rápido do que site feito em plataforma. Resultado: melhor posição no Google, melhor experiência no celular e mais gente preenchendo o formulário em vez de fechar a aba.</div>
+      </div>
+    </div>
+
+    <div class="diff-card">
+      <div class="diff-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="6" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 11 L24 11" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="16" r="1.2" fill="currentColor"/><path d="M11 16 L20 16 M11 19 L18 19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="diff-name">Formulário que pensa por você</div>
+        <div class="diff-text">O lead chega no seu WhatsApp com a mensagem já formatada, contendo nome, telefone, perfil de compra e forma de pagamento que ele prefere. Você só precisa abrir o app e dar bom dia.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-tag">Perguntas frequentes</div>
+  <h2 class="section-h">O que você <em>precisa saber</em>.</h2>
+  <div style="max-width:900px;">
+    <details class="faq-item">
+      <summary class="faq-q">Quanto tempo leva pra ficar pronto?</summary>
+      <div class="faq-a">Dois dias úteis depois do pagamento confirmado e do briefing completo, com as fotos já enviadas. Se precisar pra ontem, a gente entrega em vinte e quatro horas mediante uma taxa adicional de cem reais.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Preciso ter um domínio próprio?</summary>
+      <div class="faq-a">Não precisa. No pacote Essencial você fica com um endereço dentro do nosso domínio, algo como casadofulano.zebubit.com.br. Nos pacotes Completo e Captação IA, a gente já configura seu próprio domínio. Se você ainda não tem, te ajudamos a registrar no Registro.br por uns quarenta reais ao ano.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">E se eu quiser trocar fotos depois?</summary>
+      <div class="faq-a">No primeiro mês, qualquer alteração é por nossa conta. Depois disso, cobramos cinquenta reais pra trocar até dez fotos ou cento e cinquenta reais pra mudanças maiores, do tipo reorganizar seções inteiras. No pacote Captação IA, no primeiro mês você pode ajustar quantas vezes quiser.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">A landing manda os leads direto pro meu WhatsApp?</summary>
+      <div class="faq-a">Sim. Quando alguém preenche o formulário, o WhatsApp abre no celular da pessoa com a mensagem já formatada, contendo nome, telefone, perfil e a forma de pagamento que ela prefere. Aí ela só aperta enviar. E você ainda recebe uma cópia no e-mail.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Funciona pra qualquer tipo de imóvel?</summary>
+      <div class="faq-a">Funciona pra casa, apartamento, terreno, sala comercial, prédio inteiro, chácara, fazenda, hotel, pousada. A gente adapta o template pra cada caso, porque um terreno pede destaque em dimensões e potencial de construção, enquanto uma casa precisa mostrar bem os cômodos e o lazer.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">O que é o ARKON do pacote Captação IA?</summary>
+      <div class="faq-a">É a nossa plataforma de automação. Ela conecta a sua landing ao seu Instagram e ao seu WhatsApp. Quando alguém comenta uma dúvida embaixo do seu post, tipo perguntando preço, o ARKON responde em segundos com um tom natural e direciona a conversa pro WhatsApp. Já está funcionando hoje em contas reais.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Tem mensalidade obrigatória?</summary>
+      <div class="faq-a">Não. Você paga uma vez pelo desenvolvimento. A hospedagem fica inclusa por seis ou doze meses, dependendo do pacote. Depois disso, são vinte e nove reais ao mês, e você cancela quando quiser. O ARKON tem uma mensalidade própria de noventa e sete reais que começa só no segundo mês do pacote Captação IA.</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q">Como funciona o pagamento?</summary>
+      <div class="faq-a">Você paga via Mercado Pago, no cartão à vista ou em até doze vezes, no PIX ou no boleto. Se preferir PIX direto pra Zebubit, ganha cinco por cento de desconto. Assim que confirmar, te mando o link do briefing completo.</div>
+    </details>
+  </div>
+</section>
+
+<!-- BRIEFING -->
+<section class="briefing" id="briefing">
+  <div style="text-align:center;">
+    <div class="section-tag" style="display:inline-block;">Começar agora</div>
+    <h2 class="section-h" style="margin:0 auto 20px;">Bora <em>fazer a sua</em>.</h2>
+    <p class="section-desc" style="margin:0 auto 50px;">São dois minutos. A gente recebe sua solicitação, te chama no WhatsApp pra confirmar tudo e já manda o link do pagamento.</p>
+  </div>
+
+  <div class="briefing-card" id="briefingCard">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:25%"></div></div>
+    <div class="step-counter">Passo <span id="stepNum">1</span> de 4</div>
+
+    <div id="step1">
+      <div class="step-question">Qual pacote te interessa?</div>
+      <div class="step-options">
+        <button class="option-btn" data-pacote="basico" onclick="selectOption(this, 'step1', 'Essencial por R$ 297')">Essencial, por R$ 297</button>
+        <button class="option-btn" data-pacote="pro" onclick="selectOption(this, 'step1', 'Completo por R$ 497')">Completo, por R$ 497 <span style="color:var(--gold);font-size:11px;margin-left:4px;">★ mais escolhido</span></button>
+        <button class="option-btn" data-pacote="plus" onclick="selectOption(this, 'step1', 'Captação IA por R$ 997')">Captação IA, por R$ 997</button>
+        <button class="option-btn" data-pacote="conversar" onclick="selectOption(this, 'step1', 'Quer conversar primeiro')">Quero conversar antes de decidir</button>
+      </div>
+    </div>
+
+    <div id="step2" style="display:none;">
+      <div class="step-question">Que tipo de imóvel você quer divulgar?</div>
+      <div class="step-options">
+        <button class="option-btn" onclick="selectOption(this, 'step2', 'Casa')">Casa</button>
+        <button class="option-btn" onclick="selectOption(this, 'step2', 'Apartamento')">Apartamento</button>
+        <button class="option-btn" onclick="selectOption(this, 'step2', 'Terreno / Lote')">Terreno / lote</button>
+        <button class="option-btn" onclick="selectOption(this, 'step2', 'Imóvel comercial')">Comercial, tipo loja, sala ou prédio</button>
+        <button class="option-btn" onclick="selectOption(this, 'step2', 'Rural / Fazenda')">Rural / fazenda / chácara</button>
+        <button class="option-btn" onclick="selectOption(this, 'step2', 'Outro')">Outro</button>
+      </div>
+    </div>
+
+    <div id="step3" style="display:none;">
+      <div class="step-question">Você é...</div>
+      <div class="step-options">
+        <button class="option-btn" onclick="selectOption(this, 'step3', 'Corretor de imóveis')">Corretor de imóveis</button>
+        <button class="option-btn" onclick="selectOption(this, 'step3', 'Proprietário particular')">Proprietário particular</button>
+        <button class="option-btn" onclick="selectOption(this, 'step3', 'Imobiliária')">Imobiliária</button>
+        <button class="option-btn" onclick="selectOption(this, 'step3', 'Investidor / Outro')">Investidor / outro</button>
+      </div>
+    </div>
+
+    <div id="step4" style="display:none;">
+      <div class="step-question">Como te chamamos?</div>
+      <form name="briefing-landing-imoveis" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="nome" />
+        <input type="tel" name="telefone" />
+        <input type="email" name="email" />
+        <input type="text" name="pacote" />
+        <input type="text" name="tipo_imovel" />
+        <input type="text" name="perfil" />
+      </form>
+      <input class="form-input" type="text" id="nomeInput" placeholder="Seu nome completo" oninput="checkStep4()">
+      <input class="form-input" type="tel" id="telInput" placeholder="WhatsApp com DDD" oninput="checkStep4()">
+      <input class="form-input" type="email" id="emailInput" placeholder="E-mail" oninput="checkStep4()">
+      <p style="font-size:12px;color:var(--text-muted);margin-top:8px;line-height:1.6;">Quando você apertar enviar, o WhatsApp da Zebubit abre numa aba nova com sua mensagem montada. É só dar enviar lá também.</p>
+    </div>
+
+    <div id="stepSuccess" style="display:none;">
+      <div class="success-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.6"/><path d="M10 16 L14 20 L22 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="success-title">Recebemos sua solicitação.</div>
+      <div class="success-text">O WhatsApp da Zebubit acabou de abrir em outra aba com sua mensagem já formatada. <strong style="color:var(--text);">Só dar enviar lá que a gente cuida do resto.</strong></div>
+      <div style="text-align:center;margin-top:24px;">
+        <a href="#" id="waLink" target="_blank" class="btn-gold">Abrir WhatsApp →</a>
+      </div>
+    </div>
+
+    <div class="form-nav" id="formNav">
+      <button class="btn-back" id="btnBack" onclick="prevStep()" style="visibility:hidden;">← Voltar</button>
+      <button class="btn-next" id="btnNext" onclick="nextStep()" disabled>Próximo</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Zebu<em>bit</em></div>
+  <div class="footer-sub">Assessoria, Tecnologia e Inteligência Artificial</div>
+  <div class="footer-contact">
+    <a href="https://wa.me/5534993421500" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12 L3 9 C2 7 2 4 4 3 C7 1 11 2 12 5 C13 8 11 11 8 12 L2 12 Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      (34) 99342 1500
+    </a>
+    <a href="mailto:zebubit@gmail.com">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 4 L7 8 L12.5 4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+      zebubit@gmail.com
+    </a>
+    <a href="https://instagram.com/dionefol" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="3" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="7" r="2.4" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="4" r="0.6" fill="currentColor"/></svg>
+      @dionefol
+    </a>
+    <a href="https://zebubit.com.br">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 7 L12.5 7 M7 1.5 C5 4 5 10 7 12.5 M7 1.5 C9 4 9 10 7 12.5" stroke="currentColor" stroke-width="1.2"/></svg>
+      zebubit.com.br
+    </a>
+  </div>
+  <div class="footer-copy">Zebubit Assessoria e Tecnologia, em Uberaba/MG, atendendo o Brasil inteiro de forma remota.</div>
+</footer>
+
+<script>
+let currentStep = 1;
+const answers = {};
+
+function iniciarBriefing(pacote) {
+  document.getElementById('briefing').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    const btnMap = { basico: 0, pro: 1, plus: 2 };
+    const btns = document.querySelectorAll('#step1 .option-btn');
+    if (btns[btnMap[pacote]]) btns[btnMap[pacote]].click();
+  }, 600);
+}
+
+function selectOption(btn, step, value) {
+  btn.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  answers[step] = value;
+  document.getElementById('btnNext').disabled = false;
+}
+
+function checkStep4() {
+  const nome = document.getElementById('nomeInput').value.trim();
+  const tel = document.getElementById('telInput').value.trim();
+  const email = document.getElementById('emailInput').value.trim();
+  document.getElementById('btnNext').disabled = !(nome.length >= 3 && tel.length >= 10 && email.includes('@'));
+  if (nome.length >= 3 && tel.length >= 10 && email.includes('@')) {
+    document.getElementById('btnNext').textContent = 'Enviar para Zebubit';
+  }
+}
+
+function nextStep() {
+  if (currentStep === 4) {
+    const nome = document.getElementById('nomeInput').value;
+    const tel = document.getElementById('telInput').value;
+    const email = document.getElementById('emailInput').value;
+
+    const fd = new FormData();
+    fd.append('form-name', 'briefing-landing-imoveis');
+    fd.append('nome', nome);
+    fd.append('telefone', tel);
+    fd.append('email', email);
+    fd.append('pacote', answers.step1 || '');
+    fd.append('tipo_imovel', answers.step2 || '');
+    fd.append('perfil', answers.step3 || '');
+    fetch('/', { method: 'POST', body: new URLSearchParams(fd).toString(), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).catch(() => {});
+
+    const msg = `Olá Zebubit! Quero uma landing pra meu imóvel.\n\n` +
+                `👤 *Nome:* ${nome}\n` +
+                `📞 *WhatsApp:* ${tel}\n` +
+                `✉️ *E-mail:* ${email}\n` +
+                `\n📦 *Pacote:* ${answers.step1}\n` +
+                `🏠 *Tipo de imóvel:* ${answers.step2}\n` +
+                `👔 *Perfil:* ${answers.step3}\n\n` +
+                `Vim pelo site zebubit.com.br/landings-imoveis`;
+    const waUrl = `https://wa.me/5534993421500?text=${encodeURIComponent(msg)}`;
+
+    document.getElementById('step4').style.display = 'none';
+    document.getElementById('stepSuccess').style.display = 'block';
+    document.getElementById('formNav').style.display = 'none';
+    document.querySelector('.progress-bar').style.display = 'none';
+    document.querySelector('.step-counter').style.display = 'none';
+    document.getElementById('waLink').href = waUrl;
+    window.open(waUrl, '_blank');
+    return;
+  }
+  document.getElementById('step' + currentStep).style.display = 'none';
+  currentStep++;
+  document.getElementById('step' + currentStep).style.display = 'block';
+  document.getElementById('stepNum').textContent = currentStep;
+  document.getElementById('progressFill').style.width = (currentStep * 25) + '%';
+  document.getElementById('btnBack').style.visibility = 'visible';
+  document.getElementById('btnNext').disabled = currentStep === 4 ? true : !answers['step' + currentStep];
+  document.getElementById('btnNext').textContent = currentStep === 4 ? 'Enviar para Zebubit' : 'Próximo';
+}
+
+function prevStep() {
+  if (currentStep === 1) return;
+  document.getElementById('step' + currentStep).style.display = 'none';
+  currentStep--;
+  document.getElementById('step' + currentStep).style.display = 'block';
+  document.getElementById('stepNum').textContent = currentStep;
+  document.getElementById('progressFill').style.width = (currentStep * 25) + '%';
+  if (currentStep === 1) document.getElementById('btnBack').style.visibility = 'hidden';
+  document.getElementById('btnNext').disabled = false;
+  document.getElementById('btnNext').textContent = 'Próximo';
+}
+</script>
+</body>
+</html>
