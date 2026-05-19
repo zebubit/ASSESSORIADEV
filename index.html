@@ -1003,6 +1003,39 @@ header::after {
 #lang-bar button.active{opacity:1;color:var(--gold);}
 #lang-bar button:hover{opacity:.8;}
 nav{top:28px;}
+
+/* ===== LAUNCH SECTION (Landings pra Imóveis) ===== */
+.launch-section{padding:100px 60px;background:linear-gradient(180deg,var(--dark) 0%,var(--dark2) 100%);position:relative;overflow:hidden;}
+.launch-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 65%);pointer-events:none;}
+.launch-section::after{content:'';position:absolute;bottom:-50px;left:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(201,168,76,.05) 0%,transparent 65%);pointer-events:none;}
+.launch-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;max-width:1400px;margin:0 auto;position:relative;z-index:1;}
+.launch-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:.25em;text-transform:uppercase;padding:8px 16px;margin-bottom:28px;border-radius:4px;}
+.launch-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:launchPulse 2s ease infinite;}
+@keyframes launchPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
+.launch-h{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,68px);font-weight:900;line-height:1;letter-spacing:-.02em;margin-bottom:24px;}
+.launch-h em{font-style:italic;color:var(--gold);}
+.launch-sub{font-size:17px;color:var(--text-muted);line-height:1.8;margin-bottom:32px;max-width:520px;}
+.launch-features{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px;}
+.launch-feat{font-size:12px;letter-spacing:.05em;color:var(--text);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:8px 14px;border-radius:20px;}
+.launch-feat strong{color:var(--gold);}
+.launch-cta-row{display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+.launch-btn{background:var(--gold);color:var(--dark);text-decoration:none;font-weight:500;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:16px 36px;display:inline-block;transition:all .3s;}
+.launch-btn:hover{background:var(--gold-light);transform:translateY(-2px);}
+.launch-price{font-size:13px;color:var(--text-muted);}
+.launch-price strong{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:var(--text);letter-spacing:-.01em;margin-right:4px;}
+.launch-right{position:relative;}
+.mock-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.mock-card{aspect-ratio:9/16;background:var(--dark3);border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;transform:rotate(-2deg);transition:all .4s;box-shadow:0 20px 50px rgba(0,0,0,.4);}
+.mock-card:nth-child(2){transform:rotate(3deg) translateY(20px);}
+.mock-card:hover{transform:rotate(0) translateY(-6px);border-color:var(--gold);}
+.mock-card iframe{border:0;pointer-events:none;transform:scale(.5);transform-origin:top left;width:200%;height:200%;}
+.mock-pill{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);color:var(--gold);font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:5px 10px;border-radius:4px;z-index:2;border:1px solid rgba(201,168,76,.3);}
+@media (max-width:900px){
+  .launch-section{padding:60px 24px;}
+  .launch-grid{grid-template-columns:1fr;gap:50px;}
+  .launch-right{order:-1;}
+  .mock-grid{max-width:340px;margin:0 auto;}
+}
 </style>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 </head>
@@ -1027,6 +1060,7 @@ nav{top:28px;}
   </div>
   <ul class="nav-links">
     <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
+    <li><a href="#landings-imoveis" style="color:var(--gold);">Landings Imóveis</a></li>
     <li><a href="#equipe" data-i18n="nav.team">Equipe</a></li>
     <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
     <li><a href="#automacao" data-i18n="nav.automation">Automação</a></li>
@@ -1488,6 +1522,42 @@ nav{top:28px;}
     </a>
   </div>
 
+</section>
+
+<!-- LANÇAMENTO: LANDINGS PRA IMÓVEIS -->
+<section class="launch-section" id="landings-imoveis">
+  <div class="launch-grid">
+    <div class="launch-left">
+      <div class="launch-badge">
+        <span class="dot"></span>
+        Novo no estúdio
+      </div>
+      <h2 class="launch-h">Landings pra <em>imóveis</em>, prontas em dois dias.</h2>
+      <p class="launch-sub">Um produto novo da Zebubit, pensado pra corretores e proprietários que querem vender mais sem depender de plataforma cara, formulário do Instagram ou design genérico de imobiliária.</p>
+      <div class="launch-features">
+        <div class="launch-feat"><strong>48h</strong> pra entregar</div>
+        <div class="launch-feat">Galeria, mapa, simulador</div>
+        <div class="launch-feat">WhatsApp inteligente</div>
+        <div class="launch-feat"><strong>ARKON</strong> opcional</div>
+      </div>
+      <div class="launch-cta-row">
+        <a href="/landings-imoveis.html" class="launch-btn">Conheça o produto</a>
+        <div class="launch-price">A partir de <strong>R$ 297</strong></div>
+      </div>
+    </div>
+    <div class="launch-right">
+      <div class="mock-grid">
+        <div class="mock-card">
+          <span class="mock-pill">Alto Padrão</span>
+          <iframe src="https://casa-estancia-ipes.netlify.app" loading="lazy"></iframe>
+        </div>
+        <div class="mock-card">
+          <span class="mock-pill">Terreno</span>
+          <iframe src="https://terreno-lourdes-uberaba.netlify.app" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- EQUIPE -->
