@@ -1,3 +1,7 @@
 NAO NESSESSARIO/
 .DS_Store
 assets/videos/posters/_jpg_backup/
+
+# Pasta fonte dos vídeos originais (não deve ir pro git, é pesada)
+CAPTURA VIDEOS  /
+CAPTURA VIDEOS/
