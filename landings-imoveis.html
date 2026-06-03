@@ -13,8 +13,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
 <style>
 :root {
   --gold: #C9A84C;
@@ -203,6 +203,52 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   .briefing-card{padding:32px 24px;}
   footer{padding:40px 24px;}
 }
+
+/* ============================================== */
+/* CARDS DE PALETA APLICADA (de temas-landings)   */
+/* ============================================== */
+.temas-grid{max-width:1100px;margin:0 auto 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;position:relative;z-index:1;}
+.theme-card{
+  --primary:#C9A84C;--primary-light:#E8C97A;--dark:#080808;--dark2:#101010;
+  --text:#EDE8DC;--text-muted:#A89880;--serif:'Playfair Display',serif;--sans:'DM Sans',sans-serif;
+  border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.25);
+  background:var(--dark);color:var(--text);transition:transform .3s,box-shadow .3s;position:relative;
+}
+.theme-card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(0,0,0,0.4);}
+.theme-header{padding:18px 22px;background:rgba(255,255,255,0.04);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,0.06);}
+.theme-name{font-size:13px;font-weight:700;letter-spacing:0.05em;}
+.theme-name em{color:var(--primary);font-style:normal;font-weight:800;}
+.theme-nicho{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);}
+.mini-hero{aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--dark2);}
+.mini-hero img{width:100%;height:100%;object-fit:cover;}
+.mini-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.2) 0%,transparent 30%,rgba(0,0,0,0.85) 100%);}
+.mini-hero-content{position:absolute;bottom:18px;left:20px;right:20px;z-index:2;color:#fff;}
+.mini-hero-label{display:inline-block;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);margin-bottom:6px;}
+.mini-hero-title{font-family:var(--serif);font-size:22px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;}
+.mini-hero-title em{font-style:italic;color:var(--primary);}
+.mini-pills{display:flex;gap:5px;margin-top:10px;}
+.mini-pill{background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);padding:3px 8px;border-radius:12px;font-size:9px;color:#fff;}
+.mini-price{padding:16px 22px;background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);border-bottom:1px solid rgba(255,255,255,0.04);}
+.mini-price-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;}
+.mini-price-value{font-family:var(--serif);font-size:22px;font-weight:900;color:var(--primary);letter-spacing:-0.02em;}
+.mini-price-sub{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.mini-body{padding:18px 22px;background:var(--dark);}
+.mini-section-title{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary);margin-bottom:8px;}
+.mini-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.mini-list li{font-size:11px;color:var(--text);display:flex;gap:8px;line-height:1.4;}
+.mini-list li::before{content:"✓";color:var(--primary);font-weight:700;flex-shrink:0;font-size:11px;}
+.mini-cta{padding:14px 22px 22px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.mini-btn{background:var(--primary);color:var(--dark);text-decoration:none;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:10px 18px;border-radius:6px;transition:all 0.2s;}
+.mini-btn:hover{background:var(--primary-light);}
+.mini-tag{font-size:10px;color:var(--text-muted);}
+.mini-tag strong{color:var(--primary);}
+.theme-luxo{--primary:#C9A84C;--primary-light:#E8C97A;--dark:#080808;--dark2:#141414;--text:#EDE8DC;--text-muted:#A89880;--serif:'Playfair Display',serif;}
+.theme-litoral{--primary:#2DD4BF;--primary-light:#67E8F9;--dark:#0F1B2D;--dark2:#1A2A45;--text:#E0F2FE;--text-muted:#94B4D4;--serif:'Playfair Display',serif;}
+.theme-rural{--primary:#B7A872;--primary-light:#D4C896;--dark:#1F2419;--dark2:#2A3023;--text:#ECE5D0;--text-muted:#9F9B7E;--serif:'Playfair Display',serif;}
+.theme-urbano{--primary:#D97847;--primary-light:#F5A074;--dark:#0E0E0E;--dark2:#1A1A1A;--text:#F5F1EC;--text-muted:#8E8B86;--serif:'Inter',sans-serif;}
+.theme-familiar{--primary:#E89B7A;--primary-light:#F5B999;--dark:#1F1916;--dark2:#2D2521;--text:#FCE7D8;--text-muted:#B89A88;--serif:'Playfair Display',serif;}
+.theme-comercial{--primary:#C0A582;--primary-light:#DCC4A2;--dark:#1A2540;--dark2:#243054;--text:#E2E8F0;--text-muted:#94A3B8;--serif:'Inter',sans-serif;}
+@media(max-width:600px){.temas-grid{gap:18px;}}
 </style>
 </head>
 <body>
@@ -314,39 +360,244 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
     <p class="section-desc" style="margin:0 auto;">Sua landing pode ter cara de mansão, de pousada de praia, de fazenda, de loft urbano, de casa familiar ou de espaço corporativo. O mesmo template, seis personalidades.</p>
   </div>
 
+  <!-- CARDS DE PALETA APLICADA (imagem real do imóvel em cada tema) -->
+  <div class="temas-grid">
+
+    <div onclick="location.href='#pacotes'" style="cursor:pointer;" class="theme-card theme-luxo">
+      <div class="theme-header">
+        <div class="theme-name">Luxo <em>Clássico</em></div>
+        <div class="theme-nicho">Alto Padrão</div>
+      </div>
+      <div class="mini-hero">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Casa de luxo alto padrão" width="600" height="400" loading="lazy" decoding="async">
+        <div class="mini-hero-overlay"></div>
+        <div class="mini-hero-content">
+          <div class="mini-hero-label">Estância dos Ipês · Uberaba</div>
+          <div class="mini-hero-title">Casa 4 suítes <em>com piscina</em></div>
+          <div class="mini-pills"><div class="mini-pill">350m²</div><div class="mini-pill">4 suítes</div></div>
+        </div>
+      </div>
+      <div class="mini-price">
+        <div class="mini-price-label">Valor</div>
+        <div class="mini-price-value">R$ 2.389.000</div>
+        <div class="mini-price-sub">Financiamento próprio · permuta</div>
+      </div>
+      <div class="mini-body">
+        <div class="mini-section-title">Destaques</div>
+        <ul class="mini-list">
+          <li>Piscina aquecida com ofurô</li>
+          <li>Pé direito duplo, 350m²</li>
+          <li>Semi mobiliada e pronta pra morar</li>
+        </ul>
+      </div>
+      <div class="mini-cta">
+        <span class="mini-btn">Falar com vendedor</span>
+        <div class="mini-tag">Pra: <strong>mansão, casa alto padrão</strong></div>
+      </div>
+    </div>
+
+    <div onclick="location.href='#pacotes'" style="cursor:pointer;" class="theme-card theme-litoral">
+      <div class="theme-header">
+        <div class="theme-name">Litoral <em>Brisa</em></div>
+        <div class="theme-nicho">Casa de Praia</div>
+      </div>
+      <div class="mini-hero">
+        <img src="https://images.unsplash.com/photo-1582610116397-edb318620f90?w=600&q=80" alt="Casa de praia frente mar" width="600" height="400" loading="lazy" decoding="async">
+        <div class="mini-hero-overlay"></div>
+        <div class="mini-hero-content">
+          <div class="mini-hero-label">Frente Mar · Porto Belo/SC</div>
+          <div class="mini-hero-title">Casa pé na <em>areia</em></div>
+          <div class="mini-pills"><div class="mini-pill">280m²</div><div class="mini-pill">3 suítes</div></div>
+        </div>
+      </div>
+      <div class="mini-price">
+        <div class="mini-price-label">Valor</div>
+        <div class="mini-price-value">R$ 3.200.000</div>
+        <div class="mini-price-sub">Vista mar a 30 metros da praia</div>
+      </div>
+      <div class="mini-body">
+        <div class="mini-section-title">Destaques</div>
+        <ul class="mini-list">
+          <li>Pé na areia, vista 180°</li>
+          <li>Deck com piscina infinita</li>
+          <li>Cinco minutos do centro</li>
+        </ul>
+      </div>
+      <div class="mini-cta">
+        <span class="mini-btn">Falar com vendedor</span>
+        <div class="mini-tag">Pra: <strong>praia, beira-mar</strong></div>
+      </div>
+    </div>
+
+    <div onclick="location.href='#pacotes'" style="cursor:pointer;" class="theme-card theme-rural">
+      <div class="theme-header">
+        <div class="theme-name">Rural <em>Sofisticado</em></div>
+        <div class="theme-nicho">Fazenda · Sítio</div>
+      </div>
+      <div class="mini-hero">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80" alt="Fazenda casa sede" width="600" height="400" loading="lazy" decoding="async">
+        <div class="mini-hero-overlay"></div>
+        <div class="mini-hero-content">
+          <div class="mini-hero-label">Zona Rural · Conquista/MG</div>
+          <div class="mini-hero-title">Fazenda <em>120 hectares</em></div>
+          <div class="mini-pills"><div class="mini-pill">120ha</div><div class="mini-pill">Sede + curral</div></div>
+        </div>
+      </div>
+      <div class="mini-price">
+        <div class="mini-price-label">Valor</div>
+        <div class="mini-price-value">R$ 4.800.000</div>
+        <div class="mini-price-sub">À vista ou parcelado em até três safras</div>
+      </div>
+      <div class="mini-body">
+        <div class="mini-section-title">Destaques</div>
+        <ul class="mini-list">
+          <li>Nascente própria e córrego</li>
+          <li>Pasto formado, pronto pra gado</li>
+          <li>Casa sede com varanda gourmet</li>
+        </ul>
+      </div>
+      <div class="mini-cta">
+        <span class="mini-btn">Falar com vendedor</span>
+        <div class="mini-tag">Pra: <strong>fazenda, sítio, chácara</strong></div>
+      </div>
+    </div>
+
+    <div onclick="location.href='#pacotes'" style="cursor:pointer;" class="theme-card theme-urbano">
+      <div class="theme-header">
+        <div class="theme-name">Urbano <em>Moderno</em></div>
+        <div class="theme-nicho">Apartamento · Loft</div>
+      </div>
+      <div class="mini-hero">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Loft urbano moderno" width="600" height="400" loading="lazy" decoding="async">
+        <div class="mini-hero-overlay"></div>
+        <div class="mini-hero-content">
+          <div class="mini-hero-label">Centro Empresarial · Uberlândia</div>
+          <div class="mini-hero-title">Loft no <em>20º andar</em></div>
+          <div class="mini-pills"><div class="mini-pill">95m²</div><div class="mini-pill">2 vagas</div></div>
+        </div>
+      </div>
+      <div class="mini-price">
+        <div class="mini-price-label">Valor</div>
+        <div class="mini-price-value">R$ 890.000</div>
+        <div class="mini-price-sub">Vista 360° da cidade · pet friendly</div>
+      </div>
+      <div class="mini-body">
+        <div class="mini-section-title">Destaques</div>
+        <ul class="mini-list">
+          <li>Pé direito alto e janelas grandes</li>
+          <li>Coworking e academia no prédio</li>
+          <li>Walk to work, tudo a pé</li>
+        </ul>
+      </div>
+      <div class="mini-cta">
+        <span class="mini-btn">Falar com vendedor</span>
+        <div class="mini-tag">Pra: <strong>apartamento, loft, cobertura</strong></div>
+      </div>
+    </div>
+
+    <div onclick="location.href='#pacotes'" style="cursor:pointer;" class="theme-card theme-familiar">
+      <div class="theme-header">
+        <div class="theme-name">Familiar <em>Quente</em></div>
+        <div class="theme-nicho">Casa de Família</div>
+      </div>
+      <div class="mini-hero">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Casa familiar em condomínio" width="600" height="400" loading="lazy" decoding="async">
+        <div class="mini-hero-overlay"></div>
+        <div class="mini-hero-content">
+          <div class="mini-hero-label">Condomínio Fechado · Uberaba</div>
+          <div class="mini-hero-title">Casa 3 quartos <em>com quintal</em></div>
+          <div class="mini-pills"><div class="mini-pill">180m²</div><div class="mini-pill">3 quartos</div></div>
+        </div>
+      </div>
+      <div class="mini-price">
+        <div class="mini-price-label">Valor</div>
+        <div class="mini-price-value">R$ 680.000</div>
+        <div class="mini-price-sub">Aceita financiamento bancário · entrada flexível</div>
+      </div>
+      <div class="mini-body">
+        <div class="mini-section-title">Destaques</div>
+        <ul class="mini-list">
+          <li>Quintal grande pras crianças</li>
+          <li>Condomínio com playground e piscina</li>
+          <li>Escola e padaria a quinhentos metros</li>
+        </ul>
+      </div>
+      <div class="mini-cta">
+        <span class="mini-btn">Falar com vendedor</span>
+        <div class="mini-tag">Pra: <strong>casa familiar, condomínio</strong></div>
+      </div>
+    </div>
+
+    <div onclick="location.href='#pacotes'" style="cursor:pointer;" class="theme-card theme-comercial">
+      <div class="theme-header">
+        <div class="theme-name">Comercial <em>Corporativo</em></div>
+        <div class="theme-nicho">Loja · Sala · Galpão</div>
+      </div>
+      <div class="mini-hero">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt="Imóvel comercial corporativo" width="600" height="400" loading="lazy" decoding="async">
+        <div class="mini-hero-overlay"></div>
+        <div class="mini-hero-content">
+          <div class="mini-hero-label">Avenida Principal · Uberaba</div>
+          <div class="mini-hero-title">Sala comercial <em>de esquina</em></div>
+          <div class="mini-pills"><div class="mini-pill">180m²</div><div class="mini-pill">Esquina</div></div>
+        </div>
+      </div>
+      <div class="mini-price">
+        <div class="mini-price-label">Valor</div>
+        <div class="mini-price-value">R$ 1.200.000</div>
+        <div class="mini-price-sub">Estuda permuta e parcelamento direto</div>
+      </div>
+      <div class="mini-body">
+        <div class="mini-section-title">Destaques</div>
+        <ul class="mini-list">
+          <li>Fluxo de cinco mil pessoas por dia</li>
+          <li>Vitrines amplas pra três fachadas</li>
+          <li>Estacionamento próprio no subsolo</li>
+        </ul>
+      </div>
+      <div class="mini-cta">
+        <span class="mini-btn">Falar com vendedor</span>
+        <div class="mini-tag">Pra: <strong>loja, sala, galpão</strong></div>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;font-size:13px;color:var(--text-muted);max-width:600px;margin:0 auto 32px;position:relative;z-index:1;">Ou veja só a paleta de cores de cada estilo:</p>
+
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;max-width:1100px;margin:0 auto 40px;">
 
-    <div style="background:linear-gradient(180deg,#080808,#141414);border:1px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="window.location.href='/temas-landings.html'">
+    <div style="background:linear-gradient(180deg,#080808,#141414);border:1px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="location.href='#pacotes'">
       <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#E8C97A);margin:0 auto 16px;box-shadow:0 4px 12px rgba(201,168,76,0.3);"></div>
       <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:4px;">Luxo Clássico</div>
       <div style="font-size:11px;color:var(--text-muted);">Alto padrão</div>
     </div>
 
-    <div style="background:linear-gradient(180deg,#0F1B2D,#1A2A45);border:1px solid rgba(45,212,191,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="window.location.href='/temas-landings.html'">
+    <div style="background:linear-gradient(180deg,#0F1B2D,#1A2A45);border:1px solid rgba(45,212,191,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="location.href='#pacotes'">
       <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#2DD4BF,#67E8F9);margin:0 auto 16px;box-shadow:0 4px 12px rgba(45,212,191,0.3);"></div>
       <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:4px;color:#E0F2FE;">Litoral Brisa</div>
       <div style="font-size:11px;color:#94B4D4;">Praia, beira-mar</div>
     </div>
 
-    <div style="background:linear-gradient(180deg,#1F2419,#2A3023);border:1px solid rgba(183,168,114,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="window.location.href='/temas-landings.html'">
+    <div style="background:linear-gradient(180deg,#1F2419,#2A3023);border:1px solid rgba(183,168,114,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="location.href='#pacotes'">
       <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#B7A872,#D4C896);margin:0 auto 16px;box-shadow:0 4px 12px rgba(183,168,114,0.3);"></div>
       <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:4px;color:#ECE5D0;">Rural Sofisticado</div>
       <div style="font-size:11px;color:#9F9B7E;">Fazenda, sítio</div>
     </div>
 
-    <div style="background:linear-gradient(180deg,#0E0E0E,#1A1A1A);border:1px solid rgba(217,120,71,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="window.location.href='/temas-landings.html'">
+    <div style="background:linear-gradient(180deg,#0E0E0E,#1A1A1A);border:1px solid rgba(217,120,71,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="location.href='#pacotes'">
       <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#D97847,#F5A074);margin:0 auto 16px;box-shadow:0 4px 12px rgba(217,120,71,0.3);"></div>
       <div style="font-family:'Inter',sans-serif;font-size:16px;font-weight:800;margin-bottom:4px;color:#F5F1EC;">Urbano Moderno</div>
       <div style="font-size:11px;color:#8E8B86;">Apartamento, loft</div>
     </div>
 
-    <div style="background:linear-gradient(180deg,#1F1916,#2D2521);border:1px solid rgba(232,155,122,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="window.location.href='/temas-landings.html'">
+    <div style="background:linear-gradient(180deg,#1F1916,#2D2521);border:1px solid rgba(232,155,122,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="location.href='#pacotes'">
       <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#E89B7A,#F5B999);margin:0 auto 16px;box-shadow:0 4px 12px rgba(232,155,122,0.3);"></div>
       <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:4px;color:#FCE7D8;">Familiar Quente</div>
       <div style="font-size:11px;color:#B89A88;">Casa familiar</div>
     </div>
 
-    <div style="background:linear-gradient(180deg,#1A2540,#243054);border:1px solid rgba(192,165,130,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="window.location.href='/temas-landings.html'">
+    <div style="background:linear-gradient(180deg,#1A2540,#243054);border:1px solid rgba(192,165,130,0.2);border-radius:14px;padding:24px 20px;text-align:center;transition:transform .3s;cursor:pointer;" onclick="location.href='#pacotes'">
       <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#C0A582,#DCC4A2);margin:0 auto 16px;box-shadow:0 4px 12px rgba(192,165,130,0.3);"></div>
       <div style="font-family:'Inter',sans-serif;font-size:16px;font-weight:800;margin-bottom:4px;color:#E2E8F0;">Comercial Corporativo</div>
       <div style="font-size:11px;color:#94A3B8;">Loja, sala, galpão</div>
@@ -355,7 +606,6 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   </div>
 
   <div style="text-align:center;position:relative;z-index:1;">
-    <a href="temas-landings.html" class="btn-gold" style="display:inline-block;">Ver as seis paletas aplicadas</a>
     <p style="font-size:12px;color:var(--text-muted);margin-top:14px;">A escolha da paleta entra a partir do pacote Completo. Quem está no Captação IA recebe paleta totalmente personalizada com a identidade visual da própria marca.</p>
   </div>
 </section>
