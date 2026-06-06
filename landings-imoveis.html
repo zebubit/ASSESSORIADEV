@@ -110,7 +110,7 @@ section{padding:100px 60px;position:relative;}
 .pricing-card.featured::before{content:"MAIS ESCOLHIDO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:10px;font-weight:700;letter-spacing:.15em;padding:5px 14px;border-radius:4px;}
 .pricing-card.promo{border-color:#FF6B35;background:linear-gradient(180deg,rgba(255,107,53,.08),transparent);box-shadow:0 0 40px rgba(255,107,53,.10);}
 .pricing-card.promo:hover{border-color:#FF8E53;}
-.pricing-card.promo::before{content:"🔥 PROMO · ATÉ 01 DE JUNHO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FF5A1F;color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;padding:5px 14px;border-radius:4px;white-space:nowrap;box-shadow:0 4px 14px rgba(255,90,31,.35);}
+.pricing-card.promo::before{content:"🔥 PROMO · ATÉ 01 DE AGOSTO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FF5A1F;color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;padding:5px 14px;border-radius:4px;white-space:nowrap;box-shadow:0 4px 14px rgba(255,90,31,.35);}
 .pricing-card.promo .pricing-icon{background:rgba(255,107,53,.12);color:#FF8E53;}
 .pricing-card.promo .pricing-label{color:#FF8E53;}
 .price-old{font-family:'DM Sans',sans-serif;font-size:18px;color:var(--text-muted);text-decoration:line-through;display:block;font-weight:400;margin-bottom:4px;line-height:1;}
@@ -258,7 +258,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   <span class="flame">🔥</span>
   <strong>Promoção Exclusiva</strong><span class="sep hide-mob">·</span><span class="hide-mob"> Pacote </span><strong>Essencial por R$ 147</strong>
   <span class="old">R$ 297</span>
-  <span class="sep">·</span> só até <strong>01 de junho</strong>
+  <span class="sep">·</span> só até <strong>01 de agosto</strong>
   <span class="hide-mob"> · Quero aproveitar</span>
   <span class="arrow">→</span>
 </a>
@@ -610,6 +610,41 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   </div>
 </section>
 
+<!-- DUAS PORTAS: faça você mesmo (BioVenda) vs a gente faz (Zebubit) -->
+<section style="padding:80px 24px 10px;position:relative;z-index:1;">
+  <div style="text-align:center;">
+    <div class="section-tag" style="display:inline-block;">Como você prefere</div>
+    <h2 class="section-h" style="margin:0 auto 18px;">Duas formas de ter <em>sua landing</em>.</h2>
+    <p class="section-desc" style="margin:0 auto 50px;">Faça você mesmo, rápido e barato. Ou deixa com a gente, do jeito que você viu nos cases aqui em cima.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;max-width:920px;margin:0 auto;">
+    <div style="border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:34px 30px;background:linear-gradient(180deg,rgba(200,255,0,.05),transparent);">
+      <div style="font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#C8FF00;">Faça você mesmo</div>
+      <h3 style="font-size:27px;font-weight:800;margin:10px 0 4px;color:#fff;">BioVenda</h3>
+      <div style="font-size:15px;color:var(--text-muted);margin-bottom:18px;">a partir de <strong style="color:#fff;">R$ 69/mês</strong></div>
+      <ul style="list-style:none;padding:0;margin:0 0 26px;color:var(--text-muted);font-size:14px;line-height:2;">
+        <li>✓ Você cria e edita sozinho, em minutos</li>
+        <li>✓ Várias landings na mesma conta</li>
+        <li>✓ Troca o imóvel quando quiser</li>
+        <li>✓ Captação de leads no WhatsApp</li>
+      </ul>
+      <a href="https://biovenda.app.br" target="_blank" rel="noopener" style="display:block;text-align:center;background:#C8FF00;color:#0a0a0a;font-weight:800;padding:14px;border-radius:10px;text-decoration:none;">Criar agora →</a>
+    </div>
+    <div style="border:1px solid var(--gold);border-radius:18px;padding:34px 30px;background:linear-gradient(180deg,rgba(201,168,76,.06),transparent);">
+      <div style="font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);">A gente faz pra você</div>
+      <h3 style="font-size:27px;font-weight:800;margin:10px 0 4px;color:#fff;">Zebubit</h3>
+      <div style="font-size:15px;color:var(--text-muted);margin-bottom:18px;">a partir de <strong style="color:#fff;">R$ 147</strong></div>
+      <ul style="list-style:none;padding:0;margin:0 0 26px;color:var(--text-muted);font-size:14px;line-height:2;">
+        <li>✓ Feita à mão, sob medida, pronta pra usar</li>
+        <li>✓ SEO, domínio e tudo configurado</li>
+        <li>✓ Captação com IA (ARKON) no Instagram</li>
+        <li>✓ Você não mexe em nada</li>
+      </ul>
+      <a href="#pacotes" style="display:block;text-align:center;background:var(--gold);color:#15110a;font-weight:800;padding:14px;border-radius:10px;text-decoration:none;">Ver pacotes →</a>
+    </div>
+  </div>
+</section>
+
 <!-- PACOTES -->
 <section class="pricing" id="pacotes">
   <div style="text-align:center;">
@@ -628,7 +663,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
       <div class="pricing-name">Para começar</div>
       <span class="price-old">de R$ 297 por</span>
       <div class="pricing-price">R$ 147<small> pagamento único</small></div>
-      <div class="promo-deadline">Promoção exclusiva · só até 01 de junho</div>
+      <div class="promo-deadline">Promoção exclusiva · só até 01 de agosto</div>
       <div class="pricing-sub">Pensado pra quem quer divulgar um imóvel com elegância e sem rodeio. Aproveite a condição de lançamento.</div>
       <ul class="pricing-features">
         <li>Landing page completa</li>
