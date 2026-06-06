@@ -1019,9 +1019,9 @@ header::after {
 nav{top:28px;}
 
 /* ===== LAUNCH SECTION (Landings pra Imóveis) ===== */
-.launch-section{padding:100px 60px;background:linear-gradient(180deg,var(--dark) 0%,var(--dark2) 100%);position:relative;overflow:hidden;}
+.launch-section{padding:100px 60px;background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,255,0,.07), transparent 60%), linear-gradient(180deg,#0c0e07 0%,var(--dark2) 100%);position:relative;overflow:hidden;border-top:1px solid rgba(200,255,0,.20);border-bottom:1px solid rgba(201,168,76,.16);}
 .launch-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 65%);pointer-events:none;}
-.launch-section::after{content:'';position:absolute;bottom:-50px;left:-100px;width:350px;height:350px;background:radial-gradient(circle,rgba(201,168,76,.05) 0%,transparent 65%);pointer-events:none;}
+.launch-section::after{content:'';position:absolute;bottom:-50px;left:-100px;width:380px;height:380px;background:radial-gradient(circle,rgba(200,255,0,.07) 0%,transparent 65%);pointer-events:none;}
 .launch-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;max-width:1400px;margin:0 auto;position:relative;z-index:1;}
 .launch-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:.25em;text-transform:uppercase;padding:8px 16px;margin-bottom:28px;border-radius:4px;}
 .launch-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:launchPulse 2s ease infinite;}
@@ -1556,9 +1556,9 @@ html{overflow-x:hidden;max-width:100%;}
 <section class="launch-section" id="landings-imoveis">
   <div class="launch-grid">
     <div class="launch-left">
-      <div class="launch-badge">
-        <span class="dot"></span>
-        Novo no estúdio
+      <div class="launch-badge" style="background:rgba(200,255,0,.12);border-color:#C8FF00;color:#C8FF00;">
+        <span class="dot" style="background:#C8FF00;"></span>
+        Novo · você mesmo pode criar
       </div>
       <h2 class="launch-h">Imóvel, <em>link na bio</em> e loja de vendas.</h2>
       <p class="launch-sub">Landing de imóvel, link na bio ou loja com checkout, no nosso design premium. Você mesmo cria e edita, ou deixa tudo por nossa conta.</p>
