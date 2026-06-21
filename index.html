@@ -2686,6 +2686,16 @@ document.querySelectorAll('#lang-bar button').forEach(b =>
     .chat-window-toggle { bottom: 96px !important; right: 20px !important; }
     .chat-window-wrapper, .chat-window { bottom: 96px !important; }
   }
+  /* Tooltip "Pergunte à IA" ao passar o cursor na bolinha */
+  .chat-window-toggle::after{
+    content:"Pergunte à IA";
+    position:absolute; right:74px; top:50%; transform:translateY(-50%);
+    background:#11151c; color:#fff; font-size:13px; font-weight:600; white-space:nowrap;
+    padding:8px 14px; border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,.35);
+    opacity:0; pointer-events:none; transition:opacity .25s;
+  }
+  .chat-window-toggle:hover::after{ opacity:1; }
+  @media (max-width: 640px){ .chat-window-toggle::after{ display:none; } }
 </style>
 <script type="module">
   import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
