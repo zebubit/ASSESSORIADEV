@@ -2679,6 +2679,13 @@ document.querySelectorAll('#lang-bar button').forEach(b =>
     --chat--message--user--background: #e6bd4f;
     --chat--message--user--color: #11151c;
   }
+  /* afasta o chat pra cima do botão flutuante do WhatsApp (.float-wa: bottom 32px, altura 60px) */
+  .chat-window-toggle { bottom: 104px !important; right: 34px !important; }
+  .chat-window-wrapper, .chat-window { bottom: 104px !important; }
+  @media (max-width: 640px){
+    .chat-window-toggle { bottom: 96px !important; right: 20px !important; }
+    .chat-window-wrapper, .chat-window { bottom: 96px !important; }
+  }
 </style>
 <script type="module">
   import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
