@@ -2664,5 +2664,35 @@ document.querySelectorAll('#lang-bar button').forEach(b =>
 // ── FIM MULTILÍNGUE ──
 
 </script>
+
+<!-- Atendente IA comercial (chat flutuante, via n8n) -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>
+  :root {
+    --chat--color-primary: #e6bd4f;
+    --chat--color-primary-shade-50: #d4ab3d;
+    --chat--color-primary-shade-100: #c29a2c;
+    --chat--toggle--background: #e6bd4f;
+    --chat--toggle--hover--background: #d4ab3d;
+    --chat--toggle--active--background: #c29a2c;
+    --chat--header--background: #11151c;
+    --chat--message--user--background: #e6bd4f;
+    --chat--message--user--color: #11151c;
+  }
+</style>
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  createChat({
+    webhookUrl: 'https://n8n.dionefolador.com/webhook/2eb0b17d-0002-4abc-9def-000000000002/chat',
+    mode: 'window',
+    showWelcomeScreen: false,
+    initialMessages: ['Olá! Sou o assistente da Zebubit 👋 O que você precisa pro seu negócio?'],
+    i18n: { en: {
+      title: 'Zebubit', subtitle: 'Tire suas dúvidas',
+      inputPlaceholder: 'Escreva sua mensagem...', getStarted: 'Nova conversa',
+      footer: '', closeButtonTooltip: ''
+    } }
+  });
+</script>
 </body>
 </html>
