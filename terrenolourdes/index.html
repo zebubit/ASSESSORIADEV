@@ -197,8 +197,10 @@
   <!-- PRICE CARD -->
   <div class="price-card">
     <div class="price-label">Valor</div>
-    <div class="price-value">R$ 350.000</div>
-    <div class="price-sub">À vista · financiamento próprio · permuta · financiamento bancário (parcial)</div>
+    <div style="font-size:16px;color:#8a8170;text-decoration:line-through;margin-bottom:3px;">De R$ 378.000</div>
+    <div class="price-value">R$ 340.000</div>
+    <div style="display:inline-block;margin:9px 0 4px;background:#1f8a4c;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:100px;">↓ Baixou R$ 38 mil · oportunidade</div>
+    <div class="price-sub">Aceita financiamento, permuta e automóveis</div>
     <div class="badge-particular">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="display:inline;vertical-align:middle;margin-right:4px;"><path d="M2 6 L5 9 L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <strong>Negociação direta com o proprietário</strong> · sem corretagem
@@ -495,7 +497,7 @@
         </div>
         <div>
           <div style="font-size:15px; font-weight:800; color:#1a1a1a; margin-bottom:3px;">Misto: entrada de R$ 200 mil + financiamento bancário</div>
-          <div style="font-size:12.5px; color:#555; line-height:1.5;">Você dá <strong style="color:#1a1a1a;">R$ 200.000 à vista</strong> e financia os <strong style="color:#1a1a1a;">R$ 150.000 restantes</strong> via banco (Caixa, BB, Itaú etc.) com sua aprovação de crédito.</div>
+          <div style="font-size:12.5px; color:#555; line-height:1.5;">Você dá <strong style="color:#1a1a1a;">R$ 200.000 à vista</strong> e financia os <strong style="color:#1a1a1a;">R$ 140.000 restantes</strong> via banco (Caixa, BB, Itaú etc.) com sua aprovação de crédito.</div>
         </div>
       </div>
     </div>
@@ -553,7 +555,7 @@
       <div id="step2" style="display:none;">
         <div class="step-question">Como pretende negociar?</div>
         <div class="step-options">
-          <button class="option-btn" onclick="selectOption(this, 'step2', 'vista')">Pagamento à vista (R$ 350.000)</button>
+          <button class="option-btn" onclick="selectOption(this, 'step2', 'vista')">Pagamento à vista (R$ 340.000)</button>
           <button class="option-btn" onclick="selectOption(this, 'step2', 'financ-direto')">Financiamento direto com o proprietário</button>
           <button class="option-btn" onclick="selectOption(this, 'step2', 'permuta-carros')">Permuta com automóveis</button>
           <button class="option-btn" onclick="selectOption(this, 'step2', 'misto-banco')">R$ 200 mil à vista + financiamento bancário</button>
@@ -639,7 +641,7 @@ const answers = {};
 
 const labels = {
   step1: { moradia: 'Quer morar', aluguel: 'Quer renda com aluguel', comercial: 'Uso comercial', investimento: 'Investimento', avaliando: 'Ainda avaliando' },
-  step2: { vista: 'À vista (R$ 350.000)', 'financ-direto': 'Financiamento direto com o proprietário', 'permuta-carros': 'Permuta com automóveis', 'misto-banco': 'R$ 200 mil à vista + financiamento bancário', conversar: 'Quer conversar primeiro' },
+  step2: { vista: 'À vista (R$ 340.000)', 'financ-direto': 'Financiamento direto com o proprietário', 'permuta-carros': 'Permuta com automóveis', 'misto-banco': 'R$ 200 mil à vista + financiamento bancário', conversar: 'Quer conversar primeiro' },
   step3: { urgente: 'O quanto antes', '30dias': 'Próximos 30 dias', '3meses': 'Em até 3 meses', pesquisando: 'Ainda pesquisando' }
 };
 
