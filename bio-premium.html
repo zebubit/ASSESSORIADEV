@@ -183,6 +183,40 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   h1{font-size:38px;}
 }
 
+
+/* ===== PAGAR COM PIX ===== */
+.pay-or{display:flex;align-items:center;gap:14px;margin:16px auto 14px;max-width:380px;color:var(--text-muted);font-size:12px;letter-spacing:.15em;text-transform:uppercase;}
+.pay-or::before,.pay-or::after{content:'';flex:1;height:1px;background:var(--border);}
+.btn-pix{background:#0a0a0a;color:#32BCAD;border:1px solid #32BCAD;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:.05em;padding:16px 40px;display:block;width:100%;max-width:520px;margin:0 auto;border-radius:10px;cursor:pointer;transition:all .3s;text-transform:uppercase;}
+.btn-pix:hover{background:#32BCAD;color:#062b27;transform:translateY(-2px);}
+.pix-overlay{position:fixed;inset:0;z-index:1000;background:rgba(4,4,4,.86);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px;}
+.pix-overlay.on{display:flex;}
+.pix-card{background:var(--dark2);border:1px solid var(--border);border-radius:18px;max-width:420px;width:100%;padding:30px 28px 26px;position:relative;text-align:center;max-height:94vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.6);}
+.pix-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-muted);font-size:26px;cursor:pointer;line-height:1;transition:color .2s;}
+.pix-close:hover{color:var(--gold);}
+.pix-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#32BCAD;margin-bottom:6px;}
+.pix-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;letter-spacing:-.01em;margin-bottom:2px;}
+.pix-val{font-family:'Playfair Display',serif;font-size:40px;font-weight:900;color:var(--gold);line-height:1.1;margin-bottom:14px;}
+.pix-timer{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#FF8E53;border:1px solid rgba(255,142,83,.3);background:rgba(255,142,83,.07);padding:7px 16px;border-radius:50px;margin-bottom:18px;font-weight:600;}
+.pix-timer b{font-variant-numeric:tabular-nums;letter-spacing:.05em;}
+.pix-qr{width:210px;height:210px;background:#fff;border-radius:12px;padding:10px;margin:0 auto 18px;display:block;}
+.pix-codewrap{text-align:left;margin-bottom:8px;}
+.pix-codelbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px;display:block;}
+.pix-code{width:100%;background:var(--dark);border:1px solid var(--border);border-radius:9px;color:var(--text-muted);font-size:11px;font-family:monospace;padding:11px 12px;resize:none;height:64px;line-height:1.5;word-break:break-all;}
+.pix-copy{width:100%;background:var(--gold);color:var(--dark);border:none;border-radius:9px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;padding:13px;margin:10px 0 16px;cursor:pointer;transition:all .25s;text-transform:uppercase;}
+.pix-copy:hover{background:var(--gold-light);}
+.pix-copy.done{background:var(--green);color:#062b16;}
+.pix-recv{font-size:12px;color:var(--text-muted);margin-bottom:18px;line-height:1.6;}
+.pix-recv b{color:var(--text);}
+.pix-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;padding:15px;border-radius:11px;transition:all .3s;}
+.pix-wa:hover{background:#20bd5a;}
+.pix-wa svg{width:20px;height:20px;}
+.pix-note{font-size:11.5px;color:var(--text-muted);margin-top:14px;line-height:1.6;}
+.pix-expired{display:none;color:#FF8E53;font-weight:600;font-size:13px;margin-bottom:14px;}
+.pix-card.expired .pix-qr,.pix-card.expired .pix-codewrap,.pix-card.expired .pix-copy{opacity:.25;pointer-events:none;filter:grayscale(1);}
+.pix-card.expired .pix-expired{display:block;}
+@media(max-width:560px){.pix-card{padding:26px 20px 22px;}.pix-val{font-size:34px;}.pix-qr{width:180px;height:180px;}}
+
 /* Tema do chat Bio (idêntico ao BioVenda) */
 :root{
   --chat--body--background:#0a0a0a;
@@ -418,6 +452,8 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 
     <a href="#" class="btn-buy" data-buy>Quero a minha por R$127</a>
     <div class="price-guarantee">Pagamento seguro via Mercado Pago · atendimento humano no WhatsApp</div>
+    <div class="pay-or"><span>ou</span></div>
+    <button type="button" class="btn-pix" onclick="openPix()">⚡ Pagar com Pix agora · R$127</button>
   </div>
 </section>
 
@@ -490,6 +526,65 @@ document.querySelectorAll('[data-buy]').forEach(a => { a.href = destino; if(LINK
   }
   tick(); setInterval(tick, 1000);
 })();
+
+/* ===== PIX MODAL ===== */
+(function(){
+  let pixInt=null;
+  function fmt(s){ const m=Math.floor(s/60), x=s%60; return m+':'+String(x).padStart(2,'0'); }
+  window.openPix=function(){
+    const ov=document.getElementById('pixOverlay'), card=document.getElementById('pixCard');
+    card.classList.remove('expired');
+    document.getElementById('pixCopy').classList.remove('done');
+    document.getElementById('pixCopy').textContent='Copiar código Pix';
+    ov.classList.add('on'); document.body.style.overflow='hidden';
+    let left=15*60; const t=document.getElementById('pixTimer'); t.textContent=fmt(left);
+    clearInterval(pixInt);
+    pixInt=setInterval(function(){
+      left--; if(left<=0){ left=0; clearInterval(pixInt); card.classList.add('expired');
+        t.textContent='00:00';
+        document.getElementById('pixExpired').innerHTML='⚠️ Tempo esgotado. <a href="#" style="color:var(--gold)" onclick="openPix();return false;">Gerar novo Pix</a>.';
+        return; }
+      t.textContent=fmt(left);
+    },1000);
+  };
+  window.closePix=function(){
+    document.getElementById('pixOverlay').classList.remove('on');
+    document.body.style.overflow=''; clearInterval(pixInt);
+  };
+  window.copyPix=function(){
+    const code=document.getElementById('pixCode').value, btn=document.getElementById('pixCopy');
+    navigator.clipboard.writeText(code).then(function(){
+      btn.classList.add('done'); btn.textContent='✓ Código copiado!';
+      setTimeout(function(){ btn.classList.remove('done'); btn.textContent='Copiar código Pix'; },2200);
+    }).catch(function(){
+      const ta=document.getElementById('pixCode'); ta.select(); document.execCommand('copy');
+      btn.classList.add('done'); btn.textContent='✓ Copiado!';
+    });
+  };
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') window.closePix(); });
+})();
+
 </script>
+
+<!-- MODAL PIX -->
+<div class="pix-overlay" id="pixOverlay" onclick="if(event.target===this)closePix()">
+  <div class="pix-card" id="pixCard">
+    <button class="pix-close" onclick="closePix()" aria-label="Fechar">&times;</button>
+    <div class="pix-kicker">Pagamento via Pix</div>
+    <div class="pix-title">Escaneie e pague</div>
+    <div class="pix-val">R$ 127,00</div>
+    <div class="pix-timer">⏳ Este Pix expira em <b id="pixTimer">15:00</b></div>
+    <div class="pix-expired" id="pixExpired">⚠️ Tempo esgotado. Toque em “Gerar novo Pix”.</div>
+    <img class="pix-qr" id="pixQr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcgAAAHIAQAAAADi2kdHAAAEdUlEQVR4nO1c224rMQgEq///y1RmuKVStU1fimt8dBrvxpbiEPAwjJeFftnWbyfSzHxq63HEd21m/q9v6IOI0VNHZWHRa9l92hf7vt7cl2X0Wetcl8z8CEuq2YjDaNrjeE/NvC/9zlnrXDfNZIYBiUXgjmplIRFm4v3i7hmjT1znZTN5uydezQlZHVLds8TiHp/2vbaunCn7D796LMHGvoc2+rTvtHXR/knFSoF/gIRY/XM7rAXbHH3WOtclM0k3TO388B+ayFnrXJfM5PTNzFsyU2H11r2FatyVY9e5LpnJMJ3aUfdKzVY0uhbsQ4BDOsguD1vnumgmayDdVgT6sSRz5y6iCYzmKzAq6/Xkn63xECkAMuRjZEIBu2IdHYQILCf+bi+ZKQqKLJLuBpcMn6RNKWg41pALBHzgOq+YyXBI3Ru1bxwQ3hW8BVtiYOShZ61zXYWHJPCPwSHYUl6QkaElN/lZ61z3zJT9ypultRKLR1nlbxUDWZqqgMhGn7fOK2Yy9k3wQRl0I/Ryuqnln56GnrXOdclMsqQEzA9c06srioqQsAAxld7wQ735BHFYVP2VLF1xviGA0V992jUzHxpHnmIR1si9F6AkUdqO0tl8t53zFamWVUcsCQtZCuNWtV12fKWtfkiAepT0w77pGQy7UxrU1R5exp5t8a045+NwNtNPst00mQbfQ8eebfEQlZ2xRFdnECocchng2LNx/ZOdnrWyJypojmsZ0Td9dPi+/vF2txB+ZaSliLVAQcHRj382rpexoR/fM63aErUzKWIiVM5GT93XnqKdTETCD7XQDfc0TVhqc8c/G+sTyEQJENt6XvJFZcLAQs7eD77tq+8T64LMDR43BiR3mzdH3/fY1p/NlBCVVGtCQOQJqBka/P34Z+P6p+xQiiJnAF1NY9iqoN7fu6jem/yzsT35JbP0/JNfJUXkp8zMUWf/7Fz/JETRVGqWAijFGIwHcpr9szO+JeMUAG0tL9lSW96XpuqDTDfI3uFv29bLxOg9Z/xqnYyT66txeeplnfVDUphcx0PGLrBzfsnt4nL8s7G+j/UctpJAVgBNvk/ADCkS8nrL5Cud8RBlxhnKzBSISaIim6F3xz/7nhfk1GrabVedSJQ9s5qGgWPPtnoTQmEFW2OioyD9KiLy00pjz+74lvN4Q9bH2CUnIaQ2Xx17dj6PRKkjSWlmEcXXcrbF34m3jfV9VKQkziZQPGFK8dFGwL7DTr5yhv5WvohwJc7eOzzyjHTibWt8K7lZFuuhOcQt+qGJt73tqS2FX36Sl+qRhwJz9f/sn33zld02+06loWbGTsA70J3nJ7TX98nu6HMXVSRUH2FTWzw0DFYd/+yr16SUEKlBjbGl1Fr7dmoCzuETftDWn8/kqIHCFQVqhC00caU12PoWn/adtu56/hBalMeQcLqTehoTucrUyw44jyRBAlkF2xEu1aO8efOs3+268fmaEoppf8aU4H5IiVxkNPqh/vnnv/7drpn50NbTgG/bzHxqv/+GPgGZ9+fnQlWohAAAAABJRU5ErkJggg==" alt="QR Code Pix R$127">
+    <div class="pix-codewrap">
+      <span class="pix-codelbl">Pix Copia e Cola</span>
+      <textarea class="pix-code" id="pixCode" readonly>00020126580014br.gov.bcb.pix0136eb62e168-f620-4c0d-8f14-7e30f9eed4fd5204000053039865406127.005802BR5913DIONE FOLADOR6007UBERABA62460508Mentotia50300017br.gov.bcb.brcode01051.0.06304E420</textarea>
+    </div>
+    <button class="pix-copy" id="pixCopy" onclick="copyPix()">Copiar código Pix</button>
+    <div class="pix-recv">Recebedor: <b>Dione Folador</b> · Uberaba/MG<br>Confirmação manual em poucos minutos.</div>
+    <a class="pix-wa" href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Acabei%20de%20pagar%20a%20Bio%20Premium%20no%20Pix%20(R%24127).%20Segue%20o%20comprovante%3A" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> Já paguei · enviar comprovante</a>
+    <div class="pix-note">Depois de pagar, envie o comprovante no WhatsApp pra entrar na fila de produção (pronta em até 48h).</div>
+  </div>
+</div>
 </body>
 </html>

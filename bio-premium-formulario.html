@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dados da sua Bio Premium — Zebubit</title>
+<meta name="description" content="Pagamento confirmado! Preencha os dados da sua Bio Premium e nós montamos pra você em até 48 horas.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://zebubit.com.br/bio-premium-formulario">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --gold:#C9A84C;--gold-light:#E8C97A;--gold-dim:rgba(201,168,76,0.15);
+  --dark:#080808;--dark2:#101010;--dark3:#181818;--dark4:#202020;
+  --text:#EDE8DC;--text-muted:#A89880;--white:#FAF7F2;
+  --border:rgba(201,168,76,0.12);--green:#4ade80;--lime:#C8FF00;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5;}
+
+.wrap{max-width:760px;margin:0 auto;padding:64px 24px 100px;position:relative;}
+.wrap::before{content:'';position:absolute;top:-120px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.1) 0%,transparent 65%);pointer-events:none;}
+
+/* HEADER */
+.logo{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;letter-spacing:.05em;color:var(--text);text-align:center;display:block;text-decoration:none;}
+.logo em{color:var(--gold);font-style:normal;}
+.confirm{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);border:1px solid rgba(74,222,128,.35);background:rgba(74,222,128,.06);padding:8px 18px;border-radius:50px;margin:34px 0 22px;}
+.confirm .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);}
+h1{font-family:'Playfair Display',serif;font-size:clamp(30px,6vw,48px);font-weight:900;line-height:1.04;letter-spacing:-.02em;margin-bottom:18px;}
+h1 em{font-style:italic;color:var(--gold);}
+.lead{font-size:16px;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:14px;}
+.lead strong{color:var(--text);font-weight:500;}
+
+.center{text-align:center;}
+
+/* SECTION */
+.sec{margin-top:42px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.02);padding:30px 28px;}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.sec-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--gold);opacity:.5;line-height:1;}
+.sec-h{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;letter-spacing:-.01em;}
+.sec-desc{font-size:13px;color:var(--text-muted);margin:2px 0 22px;padding-left:40px;}
+
+/* FIELDS */
+.field{margin-bottom:20px;}
+.field:last-child{margin-bottom:0;}
+label{display:block;font-size:13px;letter-spacing:.04em;color:var(--text);margin-bottom:8px;font-weight:400;}
+label .req{color:var(--gold);margin-left:3px;}
+label .hint{display:block;font-size:11.5px;color:var(--text-muted);margin-top:3px;font-weight:300;letter-spacing:0;}
+input[type=text],input[type=tel],input[type=url],textarea,select{
+  width:100%;background:var(--dark);border:1px solid var(--border);border-radius:9px;
+  color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;
+  padding:13px 15px;transition:border-color .25s,box-shadow .25s;outline:none;
+}
+input::placeholder,textarea::placeholder{color:#5a5347;}
+input:focus,textarea:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.1);}
+textarea{resize:vertical;min-height:84px;line-height:1.6;}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23C9A84C' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;cursor:pointer;}
+.row{display:grid;grid-template-columns:1fr 2fr;gap:14px;}
+
+/* RADIO / CHECK */
+.opts{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+.opt-pill{position:relative;}
+.opt-pill input{position:absolute;opacity:0;pointer-events:none;}
+.opt-pill span{display:block;font-size:13.5px;color:var(--text-muted);border:1px solid var(--border);border-radius:50px;padding:9px 18px;cursor:pointer;transition:all .2s;user-select:none;}
+.opt-pill input:checked + span{color:var(--dark);background:var(--gold);border-color:var(--gold);font-weight:500;}
+.opt-pill:hover span{border-color:var(--gold);}
+
+.linkrow{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;margin-bottom:12px;}
+.linkrow .chk{position:relative;display:flex;align-items:center;gap:9px;min-width:150px;cursor:pointer;}
+.linkrow .chk input{width:20px;height:20px;accent-color:var(--gold);cursor:pointer;flex-shrink:0;}
+.linkrow .chk label{margin:0;font-size:14px;cursor:pointer;}
+.linkrow input[type=text],.linkrow input[type=url]{padding:10px 13px;font-size:14px;}
+@media(max-width:560px){.linkrow{grid-template-columns:1fr;gap:7px;}.row{grid-template-columns:1fr;}}
+
+/* SUBMIT */
+.submit-area{margin-top:40px;text-align:center;}
+.btn-send{background:#25D366;color:#fff;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;letter-spacing:.03em;padding:18px 44px;display:inline-flex;align-items:center;gap:12px;border:none;border-radius:12px;cursor:pointer;transition:all .3s;box-shadow:0 8px 30px rgba(37,211,102,.25);}
+.btn-send:hover{background:#20bd5a;transform:translateY(-2px);}
+.btn-send svg{width:22px;height:22px;}
+.send-note{font-size:12.5px;color:var(--text-muted);margin-top:16px;line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto;}
+.send-note strong{color:var(--gold-light);}
+.err{color:#FF8E53;font-size:13px;margin-top:12px;min-height:18px;}
+
+/* FOTOS CALLOUT */
+.callout{margin-top:28px;border:1px dashed rgba(201,168,76,.3);border-radius:12px;background:linear-gradient(180deg,rgba(201,168,76,.04),transparent);padding:22px 24px;display:flex;gap:16px;align-items:flex-start;}
+.callout .ico{font-size:26px;flex-shrink:0;}
+.callout p{font-size:13.5px;color:var(--text-muted);line-height:1.7;}
+.callout strong{color:var(--text);font-weight:500;}
+
+/* FOOTER */
+footer{text-align:center;padding:50px 24px;border-top:1px solid var(--border);background:var(--dark2);}
+.footer-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;color:var(--text);}
+.footer-logo em{color:var(--gold);font-style:normal;}
+.footer-copy{margin-top:18px;font-size:11px;color:var(--text-muted);opacity:.7;letter-spacing:.1em;}
+.footer-copy a{color:var(--gold);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a href="https://zebubit.com.br/bio-premium" class="logo">Zebu<em>bit</em> <span style="color:var(--text-muted);font-weight:400;">×</span> Bio<span style="color:var(--lime);">Venda</span></a>
+
+  <div class="center">
+    <span class="confirm"><span class="dot"></span> Pagamento confirmado</span>
+  </div>
+
+  <h1>Agora vamos montar a <em>sua bio</em>.</h1>
+  <p class="lead">Responda os campos abaixo com calma. É rápido. Ao final, é só tocar em <strong>Enviar pelo WhatsApp</strong> que tudo chega organizado pra gente. Sua bio fica pronta em até <strong>48 horas</strong>.</p>
+  <p class="lead" style="font-size:13px;">Campos com <span style="color:var(--gold)">*</span> são os essenciais. O resto, preencha só o que tiver.</p>
+
+  <form id="bioForm">
+
+    <!-- 1. IDENTIDADE -->
+    <div class="sec">
+      <div class="sec-head"><span class="sec-num">01</span><span class="sec-h">Identidade</span></div>
+      <p class="sec-desc">Quem você é e como quer ser chamado(a) na bio.</p>
+
+      <div class="field">
+        <label>Nome do negócio ou seu nome <span class="req">*</span></label>
+        <input type="text" id="nome" placeholder="Ex: Studio Ana Paula / Confort Poltronas">
+      </div>
+      <div class="field">
+        <label>@ do seu Instagram <span class="req">*</span></label>
+        <input type="text" id="insta" placeholder="@seuinstagram">
+      </div>
+      <div class="field">
+        <label>Uma frase curta que te apresenta
+          <span class="hint">O que você faz, em uma linha. Ex: "Estética avançada e bem-estar em Uberaba".</span>
+        </label>
+        <input type="text" id="slogan" placeholder="Sua frase de apresentação">
+      </div>
+    </div>
+
+    <!-- 2. CONTATO -->
+    <div class="sec">
+      <div class="sec-head"><span class="sec-num">02</span><span class="sec-h">Contato</span></div>
+      <p class="sec-desc">O WhatsApp é o botão principal da sua bio, onde o cliente fala com você.</p>
+
+      <div class="field">
+        <label>WhatsApp com DDD <span class="req">*</span>
+          <span class="hint">Pode escrever assim mesmo: (34) 99999-9999.</span>
+        </label>
+        <input type="tel" id="whats" placeholder="(34) 99999-9999">
+      </div>
+      <div class="field">
+        <label>Você atende em um endereço fixo?</label>
+        <div class="opts">
+          <label class="opt-pill"><input type="radio" name="temend" value="sim" onclick="toggleEnd(true)"><span>Sim, tenho endereço</span></label>
+          <label class="opt-pill"><input type="radio" name="temend" value="nao" onclick="toggleEnd(false)"><span>Não, só atendo por WhatsApp</span></label>
+        </div>
+      </div>
+      <div class="field" id="endField" style="display:none;">
+        <label>Qual o endereço?
+          <span class="hint">Rua, número, bairro e cidade.</span>
+        </label>
+        <input type="text" id="endereco" placeholder="Rua Exemplo, 123 - Centro, Uberaba">
+      </div>
+    </div>
+
+    <!-- 3. VISUAL -->
+    <div class="sec">
+      <div class="sec-head"><span class="sec-num">03</span><span class="sec-h">Visual</span></div>
+      <p class="sec-desc">As cores e o estilo da sua marca. Se não souber, deixa por nossa conta.</p>
+
+      <div class="field">
+        <label>Cor principal da sua marca
+          <span class="hint">Pode escrever o nome (ex: "dourado e preto") ou deixar em branco.</span>
+        </label>
+        <input type="text" id="cor" placeholder="Ex: rosê e dourado / azul marinho / deixa com vocês">
+      </div>
+      <div class="field">
+        <label>Que clima você quer passar?</label>
+        <div class="opts">
+          <label class="opt-pill"><input type="radio" name="estilo" value="Elegante e sofisticado"><span>Elegante e sofisticado</span></label>
+          <label class="opt-pill"><input type="radio" name="estilo" value="Clean e minimalista"><span>Clean e minimalista</span></label>
+          <label class="opt-pill"><input type="radio" name="estilo" value="Moderno e vibrante"><span>Moderno e vibrante</span></label>
+          <label class="opt-pill"><input type="radio" name="estilo" value="Aconchegante e acolhedor"><span>Aconchegante</span></label>
+          <label class="opt-pill"><input type="radio" name="estilo" value="Deixa por conta da Zebubit"><span>Deixa com vocês</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Você tem logo?</label>
+        <div class="opts">
+          <label class="opt-pill"><input type="radio" name="temlogo" value="Sim, vou enviar pelo WhatsApp"><span>Sim, tenho</span></label>
+          <label class="opt-pill"><input type="radio" name="temlogo" value="Não tenho logo"><span>Não tenho</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. BOTOES -->
+    <div class="sec">
+      <div class="sec-head"><span class="sec-num">04</span><span class="sec-h">Botões e links</span></div>
+      <p class="sec-desc">Marque o que você quer na sua bio e cole o link ao lado. Deixe em branco o que não usar.</p>
+
+      <div class="linkrow">
+        <div class="chk"><input type="checkbox" id="ck_loja"><label for="ck_loja">Loja / Catálogo</label></div>
+        <input type="url" id="loja" placeholder="Link da loja ou catálogo">
+      </div>
+      <div class="linkrow">
+        <div class="chk"><input type="checkbox" id="ck_agenda"><label for="ck_agenda">Agendamento</label></div>
+        <input type="url" id="agenda" placeholder="Link de agendamento (ou diga 'pelo WhatsApp')">
+      </div>
+      <div class="linkrow">
+        <div class="chk"><input type="checkbox" id="ck_cardapio"><label for="ck_cardapio">Cardápio</label></div>
+        <input type="url" id="cardapio" placeholder="Link do cardápio">
+      </div>
+      <div class="linkrow">
+        <div class="chk"><input type="checkbox" id="ck_tiktok"><label for="ck_tiktok">TikTok</label></div>
+        <input type="text" id="tiktok" placeholder="@ ou link do TikTok">
+      </div>
+      <div class="linkrow">
+        <div class="chk"><input type="checkbox" id="ck_youtube"><label for="ck_youtube">YouTube</label></div>
+        <input type="url" id="youtube" placeholder="Link do canal">
+      </div>
+      <div class="linkrow">
+        <div class="chk"><input type="checkbox" id="ck_outro"><label for="ck_outro">Outro link</label></div>
+        <input type="text" id="outro" placeholder="Ex: Site, Pix, grupo de WhatsApp...">
+      </div>
+    </div>
+
+    <!-- 5. EXTRAS -->
+    <div class="sec">
+      <div class="sec-head"><span class="sec-num">05</span><span class="sec-h">Toques finais</span></div>
+      <p class="sec-desc">Detalhes que deixam sua bio com a sua cara.</p>
+
+      <div class="field">
+        <label>Quer uma música tocando ao abrir a bio?
+          <span class="hint">Diga o nome da música/artista, ou "não quero música".</span>
+        </label>
+        <input type="text" id="musica" placeholder="Ex: nome da música, ou 'sem música'">
+      </div>
+      <div class="field">
+        <label>Horário de funcionamento
+          <span class="hint">Ex: Seg a Sex 9h às 18h, Sáb 9h às 12h.</span>
+        </label>
+        <input type="text" id="horario" placeholder="Seus horários de atendimento">
+      </div>
+      <div class="field">
+        <label>Mais alguma observação?
+          <span class="hint">Algo especial que você quer na sua bio? Conte aqui.</span>
+        </label>
+        <textarea id="obs" placeholder="Opcional"></textarea>
+      </div>
+    </div>
+
+    <!-- CALLOUT FOTOS -->
+    <div class="callout">
+      <span class="ico">📸</span>
+      <p><strong>Sobre as fotos e a logo:</strong> não dá pra anexar imagem por aqui. Depois de tocar em enviar, mande sua <strong>foto de perfil, logo e fotos da galeria</strong> direto na nossa conversa do WhatsApp. É só arrastar as imagens. Pode mandar quantas quiser.</p>
+    </div>
+
+    <div class="submit-area">
+      <button type="button" class="btn-send" onclick="enviar()">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Enviar pelo WhatsApp
+      </button>
+      <div class="err" id="err"></div>
+      <p class="send-note">Ao tocar no botão, vamos abrir o WhatsApp da Zebubit com <strong>todos os seus dados já preenchidos</strong>. É só apertar enviar lá dentro. Simples assim.</p>
+    </div>
+
+  </form>
+</div>
+
+<footer>
+  <div class="footer-logo">Zebu<em>bit</em></div>
+  <div class="footer-copy">Desenvolvido por <a href="https://zebubit.com.br" target="_blank">Zebubit Assessoria</a></div>
+</footer>
+
+<script>
+const WHATS_NUM = "5534993421500";
+
+function toggleEnd(show){
+  document.getElementById('endField').style.display = show ? 'block' : 'none';
+}
+
+function val(id){ const e=document.getElementById(id); return e ? e.value.trim() : ''; }
+function radio(name){ const e=document.querySelector('input[name="'+name+'"]:checked'); return e ? e.value : ''; }
+function checked(id){ return document.getElementById(id).checked; }
+
+function enviar(){
+  const err = document.getElementById('err');
+  const nome = val('nome'), insta = val('insta'), whats = val('whats');
+
+  if(!nome || !insta || !whats){
+    err.textContent = "Preencha pelo menos o nome, o @ do Instagram e o WhatsApp para continuar.";
+    document.querySelector('.sec').scrollIntoView({behavior:'smooth'});
+    return;
+  }
+  err.textContent = "";
+
+  let m = "*NOVA BIO PREMIUM — DADOS DO CLIENTE*\n";
+  m += "Pagamento confirmado ✅\n";
+  m += "\n*— Identidade —*\n";
+  m += "Nome: " + nome + "\n";
+  m += "Instagram: " + insta + "\n";
+  if(val('slogan')) m += "Frase: " + val('slogan') + "\n";
+
+  m += "\n*— Contato —*\n";
+  m += "WhatsApp: " + whats + "\n";
+  const te = radio('temend');
+  if(te === 'sim') m += "Endereço: " + (val('endereco') || '(vai informar)') + "\n";
+  else if(te === 'nao') m += "Atende: só por WhatsApp\n";
+
+  m += "\n*— Visual —*\n";
+  if(val('cor')) m += "Cores: " + val('cor') + "\n";
+  if(radio('estilo')) m += "Estilo: " + radio('estilo') + "\n";
+  if(radio('temlogo')) m += "Logo: " + radio('temlogo') + "\n";
+
+  let links = "";
+  if(checked('ck_loja'))     links += "• Loja/Catálogo: " + (val('loja')||'(vai enviar)') + "\n";
+  if(checked('ck_agenda'))   links += "• Agendamento: " + (val('agenda')||'(vai enviar)') + "\n";
+  if(checked('ck_cardapio')) links += "• Cardápio: " + (val('cardapio')||'(vai enviar)') + "\n";
+  if(checked('ck_tiktok'))   links += "• TikTok: " + (val('tiktok')||'(vai enviar)') + "\n";
+  if(checked('ck_youtube'))  links += "• YouTube: " + (val('youtube')||'(vai enviar)') + "\n";
+  if(checked('ck_outro'))    links += "• Outro: " + (val('outro')||'(vai enviar)') + "\n";
+  if(links){ m += "\n*— Botões/Links —*\n" + links; }
+
+  let extras = "";
+  if(val('musica'))  extras += "Música: " + val('musica') + "\n";
+  if(val('horario')) extras += "Horário: " + val('horario') + "\n";
+  if(val('obs'))     extras += "Obs: " + val('obs') + "\n";
+  if(extras){ m += "\n*— Toques finais —*\n" + extras; }
+
+  m += "\n📸 Vou enviar minha foto de perfil, logo e fotos da galeria aqui na conversa.";
+
+  const url = "https://wa.me/" + WHATS_NUM + "?text=" + encodeURIComponent(m);
+  window.open(url, "_blank");
+}
+</script>
+</body>
+</html>
