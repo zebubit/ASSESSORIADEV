@@ -98,6 +98,22 @@ footer{text-align:center;padding:50px 24px;border-top:1px solid var(--border);ba
 .footer-logo em{color:var(--gold);font-style:normal;}
 .footer-copy{margin-top:18px;font-size:11px;color:var(--text-muted);opacity:.7;letter-spacing:.1em;}
 .footer-copy a{color:var(--gold);text-decoration:none;}
+
+/* ADICIONAL MUSICA */
+.music-toggle{width:100%;background:var(--dark);border:1px dashed rgba(201,168,76,.45);color:var(--gold);font-family:'DM Sans',sans-serif;font-size:14.5px;font-weight:500;padding:14px;border-radius:10px;cursor:pointer;transition:all .25s;}
+.music-toggle:hover{border-color:var(--gold);background:rgba(201,168,76,.05);}
+.music-toggle.on{background:rgba(74,222,128,.08);border:1px solid var(--green);border-style:solid;color:var(--green);}
+.music-panel{display:none;margin-top:14px;border:1px solid var(--border);border-radius:12px;background:rgba(0,0,0,.25);padding:20px;text-align:center;}
+.music-panel.on{display:block;}
+.music-pay-h{font-size:13.5px;color:var(--text);margin-bottom:14px;}
+.music-pay-h b{color:var(--gold);font-weight:700;}
+.music-qr{width:160px;height:160px;background:#fff;border-radius:10px;padding:8px;margin:0 auto 14px;display:block;}
+.music-code{width:100%;background:var(--dark);border:1px solid var(--border);border-radius:8px;color:var(--text-muted);font-size:10.5px;font-family:monospace;padding:10px;resize:none;height:56px;line-height:1.5;word-break:break-all;text-align:left;}
+.music-copy{width:100%;background:var(--gold);color:var(--dark);border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.03em;padding:11px;margin:9px 0 0;cursor:pointer;transition:all .25s;text-transform:uppercase;}
+.music-copy:hover{background:var(--gold-light);}
+.music-copy.done{background:var(--green);color:#062b16;}
+.music-panel input[type=text]{margin-top:6px;}
+.music-note{font-size:11.5px;color:var(--text-muted);margin-top:14px;line-height:1.6;}
 </style>
 </head>
 <body>
@@ -229,10 +245,21 @@ footer{text-align:center;padding:50px 24px;border-top:1px solid var(--border);ba
       <p class="sec-desc">Detalhes que deixam sua bio com a sua cara.</p>
 
       <div class="field">
-        <label>Quer uma música tocando ao abrir a bio?
-          <span class="hint">Diga o nome da música/artista, ou "não quero música".</span>
+        <label>🎵 Música personalizada ao abrir a bio <span style="color:var(--gold);font-size:12px;">+ R$19,90</span>
+          <span class="hint">Toque premium opcional: a sua bio abre com uma trilha, dando um clima especial. Quem ouve, lembra.</span>
         </label>
-        <input type="text" id="musica" placeholder="Ex: nome da música, ou 'sem música'">
+        <button type="button" class="music-toggle" id="musicToggle" onclick="toggleMusic()">＋ Quero música na minha bio (+R$19,90)</button>
+        <div class="music-panel" id="musicPanel">
+          <p class="music-pay-h">Pague o adicional de <b>R$19,90</b> no Pix:</p>
+          <img class="music-qr" src="data:image/png;base64,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" alt="QR Pix música R$19,90">
+          <textarea class="music-code" id="musicCode" readonly>00020126580014br.gov.bcb.pix0136eb62e168-f620-4c0d-8f14-7e30f9eed4fd520400005303986540519.905802BR5913DIONE FOLADOR6007UBERABA62460508Mentotia50300017br.gov.bcb.brcode01051.0.063041470</textarea>
+          <button type="button" class="music-copy" id="musicCopy" onclick="copyMusicPix()">Copiar código Pix da música</button>
+          <label style="margin-top:16px;">Qual música você quer?
+            <span class="hint">Nome da música e do artista. Se não souber, a gente sugere uma que combine com a sua marca.</span>
+          </label>
+          <input type="text" id="musica" placeholder="Ex: Nome da música - Artista">
+          <p class="music-note">Confirmação manual: pagou o Pix da música, é só continuar. Conferimos junto com o pagamento principal.</p>
+        </div>
       </div>
       <div class="field">
         <label>Horário de funcionamento
@@ -321,7 +348,9 @@ function enviar(){
   if(links){ m += "\n*— Botões/Links —*\n" + links; }
 
   let extras = "";
-  if(val('musica'))  extras += "Música: " + val('musica') + "\n";
+  if(document.getElementById('musicPanel').classList.contains('on')){
+    extras += "🎵 MÚSICA — adicional R$19,90 (pago à parte): " + (val('musica')||'(vai dizer qual)') + "\n";
+  }
   if(val('horario')) extras += "Horário: " + val('horario') + "\n";
   if(val('obs'))     extras += "Obs: " + val('obs') + "\n";
   if(extras){ m += "\n*— Toques finais —*\n" + extras; }
@@ -331,6 +360,25 @@ function enviar(){
   const url = "https://wa.me/" + WHATS_NUM + "?text=" + encodeURIComponent(m);
   window.open(url, "_blank");
 }
+
+function toggleMusic(){
+  var p=document.getElementById('musicPanel'), b=document.getElementById('musicToggle');
+  var on=p.classList.toggle('on'); b.classList.toggle('on', on);
+  b.textContent = on ? '✓ Música adicionada (+R$19,90) — toque para remover' : '＋ Quero música na minha bio (+R$19,90)';
+  if(!on){ document.getElementById('musica').value=''; }
+  else { p.scrollIntoView({behavior:'smooth', block:'center'}); }
+}
+function copyMusicPix(){
+  var code=document.getElementById('musicCode').value, btn=document.getElementById('musicCopy');
+  navigator.clipboard.writeText(code).then(function(){
+    btn.classList.add('done'); btn.textContent='✓ Código copiado!';
+    setTimeout(function(){ btn.classList.remove('done'); btn.textContent='Copiar código Pix da música'; },2200);
+  }).catch(function(){
+    var ta=document.getElementById('musicCode'); ta.select(); document.execCommand('copy');
+    btn.classList.add('done'); btn.textContent='✓ Copiado!';
+  });
+}
+
 </script>
 </body>
 </html>
