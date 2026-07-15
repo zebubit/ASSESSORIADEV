@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atendente IA · Rosana Ades · Vitaluz (demo)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#17121a;--bg2:#1e1722;--card:#251c2b;--rose:#d98ca0;--rose2:#eab8c6;--gold:#d9b48c;--wa:#25d366;
+    --text:#f4ecef;--muted:#c3aeb7;--line:rgba(217,140,160,.22)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Manrope',system-ui,sans-serif;background:
+    radial-gradient(1000px 600px at 50% -10%,#2e1e2b 0%,var(--bg) 55%),var(--bg);
+    color:var(--text);min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:16px}
+
+  .demo-wrap{width:100%;max-width:440px}
+  .demo-tag{text-align:center;color:var(--muted);font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+  .demo-tag b{color:var(--rose2)}
+
+  .phone{background:#120d15;border:1px solid var(--line);border-radius:26px;overflow:hidden;
+    box-shadow:0 30px 70px rgba(0,0,0,.6);display:flex;flex-direction:column;height:min(760px,86vh)}
+  .head{background:linear-gradient(180deg,#271d2d,#1a1220);display:flex;align-items:center;gap:12px;padding:15px 16px;border-bottom:1px solid var(--line)}
+  .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--rose2));
+    display:flex;align-items:center;justify-content:center;color:#2a121c;font-family:'Playfair Display',serif;font-weight:700;font-size:20px}
+  .hname{font-family:'Playfair Display',serif;font-size:16px;line-height:1.15}
+  .hname small{display:block;font-family:'Manrope';color:var(--wa);font-size:12px;font-weight:500;margin-top:2px}
+
+  .body{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:10px;
+    background-image:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);background-size:16px 16px}
+  .bub{max-width:85%;padding:10px 14px;border-radius:15px;font-size:14.5px;line-height:1.5;white-space:pre-line;animation:pop .3s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .bub.in{background:#2b2130;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .bub.out{background:#0b3d2b;border:1px solid rgba(37,211,102,.25);border-bottom-right-radius:4px;align-self:flex-end;color:#dffbe9}
+  .bub.in b{color:var(--rose2)}
+  .typing{align-self:flex-start;display:flex;gap:5px;padding:12px 15px;background:#2b2130;border:1px solid var(--line);border-radius:15px;border-bottom-left-radius:4px}
+  .typing span{width:7px;height:7px;border-radius:50%;background:#c3aeb7;animation:blink 1.1s infinite}
+  .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+
+  .chips{display:flex;gap:8px;flex-wrap:wrap;padding:0 14px 10px}
+  .chip{background:rgba(217,140,160,.1);border:1px solid var(--line);color:var(--rose2);font-size:13px;font-weight:600;
+    padding:8px 14px;border-radius:50px;cursor:pointer;transition:.2s}
+  .chip:hover{background:rgba(217,140,160,.2);border-color:var(--rose)}
+
+  .lnk{display:inline-flex;align-items:center;gap:7px;margin-top:8px;background:linear-gradient(135deg,var(--rose),var(--rose2));
+    color:#2a121c;font-weight:700;font-size:13.5px;padding:9px 15px;border-radius:11px;text-decoration:none}
+
+  .inbar{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:#140e17}
+  .inbar input{flex:1;background:#251c2b;border:1px solid var(--line);border-radius:50px;color:var(--text);
+    padding:11px 16px;font-size:14px;font-family:'Manrope';outline:none}
+  .inbar input:focus{border-color:var(--rose)}
+  .inbar button{width:44px;height:44px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--rose),var(--rose2));
+    color:#2a121c;font-size:18px;cursor:pointer;flex:0 0 auto}
+
+  .note{text-align:center;color:var(--muted);font-size:11.5px;margin-top:12px;line-height:1.5}
+  .note b{color:var(--rose2)}
+</style>
+</head>
+<body>
+  <div class="demo-wrap">
+    <div class="demo-tag">Demonstração · Atendente de IA <b>Zebubit</b></div>
+    <div class="phone">
+      <div class="head">
+        <div class="av">R</div>
+        <div class="hname">Rosana Ades · Vitaluz<small>● online agora</small></div>
+      </div>
+      <div class="body" id="chat"></div>
+      <div class="chips" id="chips"></div>
+      <div class="inbar">
+        <input id="inp" placeholder="Escreva sua mensagem..." autocomplete="off">
+        <button id="send" aria-label="Enviar">➤</button>
+      </div>
+    </div>
+    <div class="note">Demonstração do Atendente de IA da <b>Zebubit</b> para a Rosana Ades · Vitaluz.<br>Um atendimento que acolhe, informa e agenda no WhatsApp, 24h.</div>
+  </div>
+
+<script>
+  const chat=document.getElementById('chat'), chipsEl=document.getElementById('chips'),
+        inp=document.getElementById('inp'), send=document.getElementById('send');
+
+  /* ====== CONFIG (troque pelas URLs/infos reais) ====== */
+  const WHATS='5511981009279';                                  // WhatsApp da Rosana
+  const SITE_URL='https://rosanaades.com.br';                   // site (conhecer os cuidados)
+  const INSTA_URL='https://www.instagram.com/rosanaades_oficial';
+  const AGENDA_URL='https://wa.me/'+WHATS+'?text='+encodeURIComponent('Olá Rosana! Gostaria de agendar uma sessão');
+  const MAPS_URL='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Vitaluz Rosana Ades, Rua Tupi, 397, Santa Cecília, São Paulo SP');
+  const WA_HUMANO='https://wa.me/'+WHATS+'?text='+encodeURIComponent('Oi! Vim pelo atendimento e gostaria de conversar');
+  const ENDERECO='Rua Tupi, 397, sala 41 - Santa Cecília, São Paulo, SP';
+  const HORARIO='de segunda a sexta, com hora marcada';        // CONFIRMAR horário real
+  /* ==================================================== */
+
+  const btn=(url,txt)=>'<br><a class="lnk" href="'+url+'" target="_blank" rel="noopener">'+txt+'</a>';
+  const HUMANO='Falar com a Rosana';
+
+  function add(text,who){const b=document.createElement('div');b.className='bub '+who;b.innerHTML=text;chat.appendChild(b);chat.scrollTop=chat.scrollHeight;return b;}
+  function typing(){const t=document.createElement('div');t.className='typing';t.innerHTML='<span></span><span></span><span></span>';chat.appendChild(t);chat.scrollTop=chat.scrollHeight;return t;}
+  function setChips(arr){chipsEl.innerHTML='';(arr||[]).forEach(c=>{const s=document.createElement('div');s.className='chip';s.textContent=c;s.onclick=()=>handle(c);chipsEl.appendChild(s);});}
+
+  function botSay(msgs,chips){
+    const list=Array.isArray(msgs)?msgs:[msgs];
+    setChips([]);
+    let i=0;
+    (function nxt(){
+      if(i>=list.length){ if(chips) setChips(chips); return; }
+      const t=typing();
+      setTimeout(()=>{ t.remove(); add(list[i++],'in'); setTimeout(nxt, 380); }, 700+Math.random()*350);
+    })();
+  }
+
+  let ag=null;
+  function agendaFlow(text){
+    if(ag.step==='servico'){ ag.servico=text; ag.step='dia';
+      botSay('Que bom que você buscou esse cuidado 🤍\nPara qual dia ficaria melhor pra você?',['Segunda','Quarta','Sexta','Outro dia']); return; }
+    if(ag.step==='dia'){ ag.dia=text; ag.step='hora';
+      botSay('Anotado com carinho: <b>'+ag.dia+'</b>. E qual horário te acolhe melhor?',['9h','11h','14h','16h']); return; }
+    if(ag.step==='hora'){ ag.hora=text; ag.step='nome';
+      botSay('Perfeito. Por último, me diz o seu <b>nome</b> 💗'); return; }
+    if(ag.step==='nome'){ ag.nome=text.replace(/[^\wÀ-ú\s]/g,'').trim()||'Cliente'; const r=ag; ag=null;
+      botSay(['✅ <b>Sua sessão está reservada.</b>\n💗 '+r.servico+'\n🗓️ '+r.dia+' às '+r.hora+'\n👤 '+r.nome,
+        'A Rosana vai te receber com todo o cuidado e segurança. 🤍\nAntes da sessão ela conversa com você pra entender o que o seu corpo precisa. Qualquer coisa, estou por aqui.'],
+        ['Onde fica','Conhecer os cuidados',HUMANO]); return; }
+  }
+
+  function handle(text){
+    text=(text||'').trim(); if(!text) return;
+    add(text,'out'); inp.value=''; setChips([]);
+    if(ag){ agendaFlow(text); return; }
+    const t=text.toLowerCase();
+
+    if(/(atendente|humano|pessoa|equipe|falar com|rosana)/.test(t)){
+      botSay('Claro 🤍 Você pode falar com a Rosana ou a nossa equipe <b>quando precisar</b>, é só tocar aqui 👇'+btn(WA_HUMANO,'💬 Falar no WhatsApp'),['Conhecer os cuidados','Agendar sessão']); return;
+    }
+    if(/(aqui comigo|agendar aqui|marca aqui)/.test(t)){
+      ag={step:'servico'};
+      botSay('Com todo o carinho 💗\nQual atendimento você gostaria? (oncológica, cuidados paliativos, craniossacral, silêncio neural)',['Oncológica','Cuidados Paliativos','Craniossacral','Silêncio Neural']); return;
+    }
+    if(/(pelo whatsapp)/.test(t)){
+      botSay('Perfeito. Toca aqui pra agendar pelo WhatsApp 👇'+btn(AGENDA_URL,'🗓️ Agendar sessão'),['Conhecer os cuidados','Horário',HUMANO]); return;
+    }
+    if(/(agend|marcar|sess[aã]o|hor[aá]rio dispon|consulta)/.test(t)){
+      botSay('Vou te ajudar com todo o cuidado 🤍\nPosso agendar de dois jeitos: eu mesmo <b>já reservo aqui no chat</b>, ou te levo direto pro <b>WhatsApp</b>. Como você prefere?',['Agendar aqui comigo','Agendar pelo WhatsApp',HUMANO]); return;
+    }
+    if(/(oncol[oó]g|c[aâ]ncer|quimio|tumor)/.test(t)){
+      botSay('A <b>Massagem Oncológica</b> é um toque seguro e suave para quem enfrenta o câncer, aliviando dores e tensões com toda a segurança. A pressão, o ritmo e o tempo são ajustados ao que o seu corpo aguenta hoje 🤍\nA Rosana é pioneira nesse cuidado. Quer agendar uma sessão?',['Agendar sessão','Conhecer os cuidados',HUMANO]); return;
+    }
+    if(/(paliativ|terminal|acompanha)/.test(t)){
+      botSay('Nos <b>Cuidados Paliativos</b>, oferecemos conforto, alívio e presença em momentos delicados, com muito respeito e acolhimento à pessoa e à família 🤍 Quer conversar sobre um atendimento?',['Agendar sessão','Conhecer os cuidados',HUMANO]); return;
+    }
+    if(/(craniossacr|cabe[cç]a|enxaqueca)/.test(t)){
+      botSay('A <b>Terapia Craniossacral</b> é um toque muito suave que ajuda a relaxar o sistema nervoso, aliviar tensões e trazer mais equilíbrio 💗 Gostaria de agendar?',['Agendar sessão','Conhecer os cuidados',HUMANO]); return;
+    }
+    if(/(sil[eê]ncio|neural|ansiedad|estresse|dormir|sono)/.test(t)){
+      botSay('O <b>Silêncio Neural</b> é uma experiência de profundo relaxamento, pensada pra acalmar a mente, aliviar o estresse e devolver o descanso 🤍 Quer experimentar?',['Agendar sessão','Conhecer os cuidados',HUMANO]); return;
+    }
+    if(/(servi[cç]o|cuidado|o que faz|tratament|massagem|terapia|especialidad)/.test(t)){
+      botSay('Aqui na Vitaluz cada corpo pede um toque diferente 💗 Cuidamos de você com:\n• <b>Massagem Oncológica</b>\n• <b>Cuidados Paliativos</b>\n• <b>Terapia Craniossacral</b>\n• <b>Silêncio Neural</b>\n\nTécnicas integrativas (massagem, acupuntura, auriculoterapia e cromoterapia) se somam pelo seu bem-estar. Conheça de perto 👇'+btn(SITE_URL,'🌸 Conhecer os cuidados')+'\n\nSobre qual você gostaria de saber, ou já quer agendar?',['Agendar sessão','Oncológica',HUMANO]); return;
+    }
+    if(/(pre[cç]o|valor|quanto|custa|tabela)/.test(t)){
+      botSay('Cada atendimento é ajustado ao que o seu corpo precisa naquele momento 🤍 Por isso a Rosana conversa com você antes, pra entender a sua situação e cuidar do jeito certo, com segurança. Quer que eu agende essa conversa?',['Agendar sessão','Conhecer os cuidados',HUMANO]); return;
+    }
+    if(/(hor[aá]rio|que horas|abre|fecha|funciona|aberto|atende)/.test(t)){
+      botSay('A Rosana atende <b>'+HORARIO+'</b> 🕊️\nAssim ela dedica o tempo certo a cada pessoa. Quer que eu reserve o seu?',['Agendar sessão','Onde fica',HUMANO]); return;
+    }
+    if(/(onde|endere[cç]o|local|fica|chegar|mapa|localiza)/.test(t)){
+      botSay('A Vitaluz fica na <b>'+ENDERECO+'</b> 📍👇'+btn(MAPS_URL,'📍 Ver no mapa'),['Agendar sessão','Conhecer os cuidados',HUMANO]); return;
+    }
+    if(/(ol[aá]|oi|boa noite|bom dia|boa tarde|e a[ií]|tudo bem)/.test(t)){
+      botSay('Olá, seja muito bem-vindo(a) à <b>Vitaluz · Sala de Cuidar</b> 🤍\nAqui a Rosana acolhe com massoterapia integrativa. Posso te explicar os cuidados, agendar uma sessão ou passar horário e localização. E se preferir, você fala com a Rosana quando quiser. Como posso te ajudar?',['Conhecer os cuidados','Agendar sessão','Horário',HUMANO]); return;
+    }
+    // fallback
+    botSay('Que bom que você chegou até aqui 🤍 Posso te levar até a Rosana pra um cuidado mais próximo, quando quiser 👇'+btn(WA_HUMANO,'💬 Falar com a Rosana')+'\n\nOu, se preferir, conheça os cuidados ou agende uma sessão.',['Conhecer os cuidados','Agendar sessão']);
+  }
+
+  send.onclick=()=>handle(inp.value);
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')handle(inp.value);});
+
+  setTimeout(()=>botSay(['Olá, seja muito bem-vindo(a) à <b>Vitaluz · Sala de Cuidar</b>, da Rosana Ades 🤍',
+    'Aqui o cuidado acolhe quem mais precisa. Posso te explicar os <b>cuidados</b>, <b>agendar uma sessão</b> ou passar <b>horário</b> e <b>localização</b>. E se preferir, você fala com a Rosana a qualquer momento. Como posso te ajudar?'],
+    ['Conhecer os cuidados','Agendar sessão','Horário',HUMANO]), 400);
+</script>
+</body>
+</html>
