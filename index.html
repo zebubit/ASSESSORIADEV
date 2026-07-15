@@ -122,6 +122,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:fl
 .nav-social:hover{color:var(--gold);opacity:1;}
 .nav-social svg{width:16px;height:16px;fill:currentColor;flex-shrink:0;}
 .nav-social-lbl{font-size:11px;letter-spacing:.06em;color:inherit;}
+.nav-social-lbl{display:none;}
+.nav-ai{display:inline-flex;align-items:center;gap:8px;color:var(--gold-light);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(201,168,76,.45);border-radius:50px;padding:9px 16px;text-decoration:none;white-space:nowrap;transition:all .3s;}
+.nav-ai:hover{background:rgba(201,168,76,.12);border-color:var(--gold);}
+.nav-ai .live{width:8px;height:8px;border-radius:50%;background:#27C93F;box-shadow:0 0 0 0 rgba(39,201,63,.6);animation:navpulse 1.8s infinite;flex-shrink:0;}
+@keyframes navpulse{0%{box-shadow:0 0 0 0 rgba(39,201,63,.5)}70%{box-shadow:0 0 0 8px rgba(39,201,63,0)}100%{box-shadow:0 0 0 0 rgba(39,201,63,0)}}
+.nav-ai .ai-short{display:none;}
+.nav-cta .cta-short{display:none;}
+@media(max-width:900px){
+  nav{padding:14px 14px;gap:10px;justify-content:flex-start;flex-wrap:nowrap;}
+  .nav-logo{margin-right:auto;min-width:0;}
+  .nav-logo span{display:none;}
+  .nav-ai{padding:8px 12px;font-size:11px;flex-shrink:0;}
+  .nav-ai .ai-full{display:none;}
+  .nav-ai .ai-short{display:inline;}
+  .nav-cta{font-size:11px;padding:8px 13px;white-space:nowrap;flex-shrink:0;}
+  .nav-cta .cta-full{display:none;}
+  .nav-cta .cta-short{display:inline;}
+}
 .nav-cta{background:var(--gold);color:var(--dark);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:10px 24px;text-decoration:none;transition:all .3s;}
 .nav-cta:hover{background:var(--gold-light);}
 
@@ -1106,11 +1124,10 @@ html{overflow-x:hidden;max-width:100%;}
   </div>
   <ul class="nav-links">
     <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
-    <li><a href="#landings-imoveis" style="color:var(--gold);">Landings Imóveis</a></li>
+    <li><a href="#landings-imoveis">Landings Imóveis</a></li>
     <li><a href="#equipe" data-i18n="nav.team">Equipe</a></li>
     <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
     <li><a href="#automacao" data-i18n="nav.automation">Automação</a></li>
-    <li><a href="atendente-ia/" style="color:var(--gold);">Atendente IA</a></li>
     <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
     <li><a href="#referencias" data-i18n="nav.refs">Referências</a></li>
   </ul>
@@ -1124,7 +1141,8 @@ html{overflow-x:hidden;max-width:100%;}
       <span class="nav-social-lbl">@zebubit</span>
     </a>
   </div>
-  <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Zebubit%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20site." class="nav-cta" target="_blank" data-i18n="nav.cta">Solicitar orçamento</a>
+  <a href="https://zebubit.com.br/atendente-ia/" class="nav-ai"><span class="live"></span><span class="ai-full">Atendente IA</span><span class="ai-short">IA</span></a>
+  <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Zebubit%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20site." class="nav-cta" target="_blank" data-i18n="nav.cta"><span class="cta-full">Solicitar orçamento</span><span class="cta-short">Orçamento</span></a>
 </nav>
 
 <!-- HERO -->
@@ -1794,7 +1812,7 @@ html{overflow-x:hidden;max-width:100%;}
         <li>Envio de catálogos e propostas</li>
         <li>Integração com seu sistema de vendas</li>
       </ul>
-      <a href="atendente-ia/" style="display:inline-flex;align-items:center;gap:10px;margin:2px 0 18px;background:linear-gradient(135deg,#C9A84C,#E8C97A);color:#080808;font-family:'Playfair Display',serif;font-weight:700;font-size:15px;padding:13px 24px;border-radius:12px;text-decoration:none;box-shadow:0 10px 26px rgba(201,168,76,.28);transition:.25s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Conhecer o Atendente de IA · planos e demo →</a>
+      <a href="https://zebubit.com.br/atendente-ia/" style="display:inline-flex;align-items:center;gap:10px;margin:2px 0 18px;background:linear-gradient(135deg,#C9A84C,#E8C97A);color:#080808;font-family:'Playfair Display',serif;font-weight:700;font-size:15px;padding:13px 24px;border-radius:12px;text-decoration:none;box-shadow:0 10px 26px rgba(201,168,76,.28);transition:.25s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Conhecer o Atendente de IA · planos e demo →</a>
       <div class="auto-card-img">
         <img src="fundo.webp" alt="Automação WhatsApp" width="1360" height="768" loading="lazy" decoding="async">
       </div>
@@ -2619,7 +2637,7 @@ const zbTranslations = {
   pt: {
     'nav.projects':'Projetos','nav.team':'Equipe','nav.services':'Serviços',
     'nav.automation':'Automação','nav.about':'Sobre','nav.refs':'Referências',
-    'nav.cta':'Solicitar orçamento',
+    'nav.cta':'<span class="cta-full">Solicitar orçamento</span><span class="cta-short">Orçamento</span>',
     'hero.tag':'Zebubit Assessoria e Tecnologia · Uberaba, MG',
     'hero.h1':'Sua empresa<br><em>presente</em><br>no digital',
     'hero.sub':'Sites profissionais, automações e agentes de IA para negócios que querem crescer, com assessoria real do início ao fim.',
@@ -2638,7 +2656,7 @@ const zbTranslations = {
   en: {
     'nav.projects':'Projects','nav.team':'Team','nav.services':'Services',
     'nav.automation':'Automation','nav.about':'About','nav.refs':'References',
-    'nav.cta':'Request a quote',
+    'nav.cta':'<span class="cta-full">Request a quote</span><span class="cta-short">Quote</span>',
     'hero.tag':'Zebubit Technology & Advisory · Uberaba, Brazil',
     'hero.h1':'Your business<br><em>visible</em><br>online',
     'hero.sub':'Professional websites, AI agents and automations for businesses that want to grow — with real advisory from start to finish.',
@@ -2657,7 +2675,7 @@ const zbTranslations = {
   es: {
     'nav.projects':'Proyectos','nav.team':'Equipo','nav.services':'Servicios',
     'nav.automation':'Automatización','nav.about':'Sobre','nav.refs':'Referencias',
-    'nav.cta':'Solicitar presupuesto',
+    'nav.cta':'<span class="cta-full">Solicitar presupuesto</span><span class="cta-short">Presupuesto</span>',
     'hero.tag':'Zebubit Tecnología y Asesoría · Uberaba, Brasil',
     'hero.h1':'Tu empresa<br><em>presente</em><br>en el digital',
     'hero.sub':'Sitios web profesionales, automatizaciones y agentes de IA para negocios que quieren crecer, con asesoría real de inicio a fin.',
