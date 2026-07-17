@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terreno de Esquina 360m² + 2 Casas · Bairro de Lourdes · Uberaba/MG</title>
-<meta name="description" content="Terreno de esquina 360m² no Bairro de Lourdes com 2 casas de 130m² semiacabadas. Excelente oportunidade em região valorizada de Uberaba/MG.">
+<meta name="description" content="BAIXOU R$ 100 MIL: de R$ 387.000 por R$ 287.000. Terreno de esquina 360m² no Bairro de Lourdes com 2 casas de 130m² semiacabadas, em região valorizada de Uberaba/MG. Aceita financiamento, permuta e automóveis.">
+<meta property="og:title" content="Terreno de Esquina 360m² + 2 Casas · Baixou R$ 100 mil · Uberaba/MG">
+<meta property="og:description" content="De R$ 387.000 por R$ 287.000. Esquina 360m² na parte alta do Bairro de Lourdes com 2 casas de 130m². Aceita financiamento, permuta e automóveis.">
+<meta property="og:image" content="https://zebubit.com.br/terrenolourdes/fotos/foto-02.jpg">
+<meta property="og:type" content="website">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -155,15 +159,31 @@
   .manifesto-sign { text-align: center; margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 11px; color: #888; letter-spacing: 2px; text-transform: uppercase; }
   .manifesto-sign strong { color: #c8a96e; font-weight: 700; }
 
+  /* ALERTA DE OPORTUNIDADE */
+  .alert-drop { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; background: linear-gradient(90deg, #a5162a, #e4002b 55%, #a5162a); padding: 11px 16px; text-align: center; }
+  .alert-flash { display: inline-flex; align-items: center; gap: 7px; background: rgba(0,0,0,0.22); color: #fff; font-weight: 900; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; animation: pulseAlert 1.1s ease-in-out infinite; }
+  .alert-flash::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #c8ff00; box-shadow: 0 0 9px #c8ff00; }
+  .alert-text { color: #fff; font-size: 12.5px; font-weight: 600; }
+  .alert-text s { color: rgba(255,255,255,0.65); }
+  .alert-text strong { color: #ffe08a; font-weight: 900; font-size: 14px; }
+  @keyframes pulseAlert { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.06); opacity: 0.82; } }
+
   @media (max-width: 380px) {
     .hero-title { font-size: 22px; }
     .container { box-shadow: none; }
     .manifesto-text { font-size: 15px; }
+    .alert-text { font-size: 11.5px; }
   }
 </style>
 </head>
 <body>
 <div class="container">
+
+  <!-- ALERTA DE OPORTUNIDADE -->
+  <div class="alert-drop">
+    <span class="alert-flash">● Baixou R$ 100 mil</span>
+    <span class="alert-text">De <s>R$ 387.000</s> por <strong>R$ 287.000</strong> · Oportunidade única</span>
+  </div>
 
   <!-- HERO -->
   <div class="hero">
@@ -197,9 +217,9 @@
   <!-- PRICE CARD -->
   <div class="price-card">
     <div class="price-label">Valor</div>
-    <div style="font-size:16px;color:#8a8170;text-decoration:line-through;margin-bottom:3px;">De R$ 378.000</div>
-    <div class="price-value">R$ 340.000</div>
-    <div style="display:inline-block;margin:9px 0 4px;background:#1f8a4c;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:100px;">↓ Baixou R$ 38 mil · oportunidade</div>
+    <div style="font-size:16px;color:#8a8170;text-decoration:line-through;margin-bottom:3px;">De R$ 387.000</div>
+    <div class="price-value">R$ 287.000</div>
+    <div style="display:inline-block;margin:9px 0 4px;background:#e4002b;color:#fff;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:100px;box-shadow:0 4px 14px rgba(228,0,43,.4);">↓ Baixou R$ 100 mil · oportunidade única</div>
     <div class="price-sub">Aceita financiamento, permuta e automóveis</div>
     <div class="badge-particular">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="display:inline;vertical-align:middle;margin-right:4px;"><path d="M2 6 L5 9 L10 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -555,7 +575,7 @@
       <div id="step2" style="display:none;">
         <div class="step-question">Como pretende negociar?</div>
         <div class="step-options">
-          <button class="option-btn" onclick="selectOption(this, 'step2', 'vista')">Pagamento à vista (R$ 340.000)</button>
+          <button class="option-btn" onclick="selectOption(this, 'step2', 'vista')">Pagamento à vista (R$ 287.000)</button>
           <button class="option-btn" onclick="selectOption(this, 'step2', 'financ-direto')">Financiamento direto com o proprietário</button>
           <button class="option-btn" onclick="selectOption(this, 'step2', 'permuta-carros')">Permuta com automóveis</button>
           <button class="option-btn" onclick="selectOption(this, 'step2', 'misto-banco')">R$ 200 mil à vista + financiamento bancário</button>
@@ -641,7 +661,7 @@ const answers = {};
 
 const labels = {
   step1: { moradia: 'Quer morar', aluguel: 'Quer renda com aluguel', comercial: 'Uso comercial', investimento: 'Investimento', avaliando: 'Ainda avaliando' },
-  step2: { vista: 'À vista (R$ 340.000)', 'financ-direto': 'Financiamento direto com o proprietário', 'permuta-carros': 'Permuta com automóveis', 'misto-banco': 'R$ 200 mil à vista + financiamento bancário', conversar: 'Quer conversar primeiro' },
+  step2: { vista: 'À vista (R$ 287.000)', 'financ-direto': 'Financiamento direto com o proprietário', 'permuta-carros': 'Permuta com automóveis', 'misto-banco': 'R$ 200 mil à vista + financiamento bancário', conversar: 'Quer conversar primeiro' },
   step3: { urgente: 'O quanto antes', '30dias': 'Próximos 30 dias', '3meses': 'Em até 3 meses', pesquisando: 'Ainda pesquisando' }
 };
 
