@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Hub: Grave vídeos do dia a dia e ganhe por hora aprovada</title>
+<meta name="description" content="Grave tarefas simples do seu dia a dia pelo celular e ganhe por cada hora aprovada no Hub. Cadastro gratuito, sem custo nenhum pra participar.">
+<link rel="canonical" href="https://biovenda.app.br/hub-bio">
+<meta property="og:title" content="Hub: Grave vídeos do dia a dia e ganhe por hora aprovada">
+<meta property="og:description" content="Grave tarefas simples do seu dia a dia pelo celular e ganhe por cada hora aprovada no Hub. Cadastro gratuito.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://biovenda.app.br/hub-bio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f8f7; --dark:#0d1512; --dark2:#131f1a; --card:#ffffff;
+    --emerald:#0c7d53; --emerald2:#12b877; --emerald-fraco:#e5f7ee;
+    --texto:#101815; --mut:#5c6b64; --linha:#e4ece7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--texto);overflow-x:hidden;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:1000;background:rgba(246,248,247,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--linha);padding:16px 6%;display:flex;align-items:center;justify-content:space-between;}
+  .nav-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em;}
+  .nav-brand .dot{width:10px;height:10px;border-radius:3px;background:var(--emerald);display:inline-block;}
+  .nav-cta{background:var(--dark);color:#fff;padding:10px 22px;border-radius:100px;font-weight:700;font-size:14px;transition:.2s;}
+  .nav-cta:hover{background:var(--emerald);}
+
+  /* HERO */
+  .hero{padding:64px 6% 56px;max-width:1160px;margin:0 auto;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--emerald-fraco);color:var(--emerald);padding:7px 16px;border-radius:100px;font-size:12.5px;font-weight:700;letter-spacing:.02em;margin-bottom:20px;}
+  .badge .p{width:7px;height:7px;border-radius:50%;background:var(--emerald2);animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  h1{font-size:clamp(34px,5vw,54px);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:18px;}
+  h1 .accent{color:var(--emerald);}
+  .hero-sub{font-size:17px;color:var(--mut);line-height:1.7;max-width:480px;margin-bottom:28px;}
+  .price-tag{display:flex;align-items:baseline;gap:8px;margin-bottom:28px;}
+  .price-tag .v{font-size:44px;font-weight:900;color:var(--emerald);letter-spacing:-.02em;}
+  .price-tag .l{font-size:14px;color:var(--mut);}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--emerald);color:#fff;padding:17px 30px;border-radius:100px;font-weight:800;font-size:15px;transition:.25s;box-shadow:0 10px 30px rgba(15,157,104,.28);}
+  .btn-primary:hover{background:var(--emerald2);transform:translateY(-2px);}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--linha);color:var(--texto);padding:16px 26px;border-radius:100px;font-weight:700;font-size:15px;transition:.2s;}
+  .btn-ghost:hover{border-color:var(--emerald);}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px;}
+  .hero-note{font-size:13px;color:var(--mut);}
+  .hero-visual{background:var(--dark) url('hero-robot.jpg');background-size:cover;background-position:center;border-radius:28px;padding:36px;position:relative;overflow:hidden;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;}
+  .hero-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,20,17,.92) 10%,rgba(11,20,17,.55) 55%,rgba(11,20,17,.15) 100%);}
+  .stat-row{display:flex;flex-direction:column;gap:18px;position:relative;z-index:1;}
+  .stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px;}
+  .stat-card .n{font-size:26px;font-weight:900;color:#fff;letter-spacing:-.02em;}
+  .stat-card .d{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:2px;}
+
+  /* SECTIONS */
+  .section{padding:64px 6%;max-width:1160px;margin:0 auto;}
+  .eyebrow{display:inline-block;color:var(--emerald);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px;}
+  .section-title{font-size:clamp(26px,3.6vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;}
+  .section-sub{font-size:16px;color:var(--mut);max-width:600px;line-height:1.7;margin-bottom:40px;}
+
+  /* PASSOS */
+  .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .passo{background:var(--card);border:1px solid var(--linha);border-radius:20px;padding:28px 24px;}
+  .passo .num{width:38px;height:38px;border-radius:12px;background:var(--emerald-fraco);color:var(--emerald);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin-bottom:16px;}
+  .passo h3{font-size:18px;font-weight:800;margin-bottom:8px;}
+  .passo p{font-size:14px;color:var(--mut);line-height:1.65;}
+
+  /* VIDEOS */
+  .videos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:520px;}
+  .video-card{background:var(--card);border:1px solid var(--linha);border-radius:20px;overflow:hidden;}
+  .video-card video{width:100%;aspect-ratio:9/16;background:#000;display:block;}
+  .video-caption{padding:14px 16px;font-size:13.5px;font-weight:600;color:var(--texto);}
+  .carousel-card{background:var(--card);border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);overflow:hidden;margin-top:22px;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);}
+  .carousel-card video{width:100%;aspect-ratio:6/1;object-fit:cover;background:#000;display:block;}
+  .carousel-card .video-caption{text-align:center;max-width:1160px;margin:0 auto;}
+
+  /* TAREFAS */
+  .tarefas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .tarefa-item{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:18px 20px;font-size:14.5px;font-weight:600;}
+  .tarefa-item span{display:block;font-size:12.5px;color:var(--mut);font-weight:500;margin-top:4px;}
+
+  /* CALCULADORA */
+  .calc-box{background:var(--dark);border-radius:24px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;color:#fff;}
+  .calc-left h3{font-size:22px;font-weight:800;margin-bottom:8px;}
+  .calc-left p{font-size:14px;color:rgba(255,255,255,.6);max-width:340px;line-height:1.6;}
+  .calc-right{text-align:center;}
+  .calc-right .v{font-size:40px;font-weight:900;color:var(--emerald2);}
+  .calc-right .l{font-size:12.5px;color:rgba(255,255,255,.55);margin-top:4px;}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--linha);padding:22px 0;cursor:pointer;}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px;}
+  .faq-q .plus{font-size:22px;color:var(--emerald);transition:.2s;flex-shrink:0;margin-left:16px;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:14.5px;color:var(--mut);line-height:1.7;}
+  .faq-item.open .faq-a{max-height:240px;margin-top:12px;}
+
+  /* CHECK GRID */
+  .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .check-col{border-radius:20px;padding:26px 28px;}
+  .check-col.ok{background:var(--emerald-fraco);border:1px solid rgba(15,157,104,.25);}
+  .check-col.no{background:#fdeeee;border:1px solid rgba(200,60,60,.2);}
+  .check-col h3{font-size:16px;font-weight:800;margin-bottom:14px;}
+  .check-col.ok h3{color:var(--emerald);}
+  .check-col.no h3{color:#b23a3a;}
+  .check-col ul{list-style:none;}
+  .check-col li{font-size:14px;color:var(--texto);line-height:1.6;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+  .check-col li:last-child{border-bottom:none;}
+  .tips-strip{display:flex;gap:14px;flex-wrap:wrap;}
+  .tip{background:var(--card);border:1px solid var(--linha);border-radius:100px;padding:12px 20px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .tip-ic{font-size:16px;}
+
+  /* CTA FINAL */
+  .cta-final{background:linear-gradient(135deg,var(--emerald),#0a7a51);border-radius:28px;padding:56px 6%;text-align:center;color:#fff;margin:0 6% 64px;}
+  .cta-final h2{font-size:clamp(26px,4vw,38px);font-weight:900;margin-bottom:14px;letter-spacing:-.02em;}
+  .cta-final p{font-size:16px;opacity:.92;max-width:480px;margin:0 auto 28px;}
+  .cta-final .btn-primary{background:#fff;color:var(--emerald);box-shadow:none;}
+  .cta-final .btn-primary:hover{background:#f0fbf6;}
+
+  footer{padding:32px 6%;text-align:center;font-size:12.5px;color:var(--mut);border-top:1px solid var(--linha);}
+  footer a{color:var(--emerald);font-weight:700;}
+
+  /* BONUS TOAST */
+  .bonus-toast{position:fixed;left:20px;bottom:-420px;z-index:900;width:320px;background:#fff;border:1px solid var(--linha);border-radius:20px;padding:20px 20px 22px;box-shadow:0 20px 50px rgba(13,21,18,.18);transition:bottom .5s cubic-bezier(.2,.8,.2,1);}
+  .bonus-toast.show{bottom:20px;}
+  .bonus-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:20px;color:var(--mut);cursor:pointer;line-height:1;}
+  .bonus-badge{display:inline-flex;align-items:center;gap:7px;background:var(--emerald-fraco);color:var(--emerald);font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:5px 12px;border-radius:100px;margin-bottom:12px;}
+  .bonus-badge .p{width:6px;height:6px;border-radius:50%;background:var(--emerald2);animation:pulse 1.6s infinite;}
+  .bonus-title{font-size:19px;font-weight:900;letter-spacing:-.01em;margin-bottom:6px;}
+  .bonus-sub{font-size:13px;color:var(--mut);line-height:1.5;margin-bottom:14px;}
+  .bonus-ticker{background:var(--bg);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;margin-bottom:16px;overflow:hidden;height:46px;position:relative;}
+  .bonus-item{display:flex;justify-content:space-between;align-items:center;opacity:1;transition:opacity .25s ease;}
+  .bonus-item.fade{opacity:0;}
+  .bonus-item-name{font-size:13.5px;font-weight:700;}
+  .bonus-item-value{font-size:14px;font-weight:900;color:var(--emerald);}
+  .bonus-cta{display:block;text-align:center;background:var(--dark);color:#fff;padding:13px;border-radius:100px;font-weight:800;font-size:13.5px;transition:.2s;}
+  .bonus-cta:hover{background:var(--emerald);}
+  @media(max-width:420px){.bonus-toast{left:12px;right:12px;width:auto;}}
+
+  /* CHAT WIDGET ICON */
+  .chat-window-toggle{
+    background-image:url('robot-icon.png') !important;
+    background-size:cover !important;
+    background-position:center !important;
+    background-color:transparent !important;
+  }
+  .chat-window-toggle svg{display:none !important;}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .passos{grid-template-columns:1fr;}
+    .tarefas-grid{grid-template-columns:1fr 1fr;}
+    .calc-box{grid-template-columns:1fr;text-align:center;}
+    .calc-left p{margin:0 auto;}
+    .check-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:520px){
+    .tarefas-grid{grid-template-columns:1fr;}
+    .videos-grid{grid-template-columns:1fr 1fr;max-width:100%;}
+    .carousel-card video{aspect-ratio:1.6/1;}
+    .hero-btns{flex-direction:column;align-items:stretch;}
+    .hero-btns a{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand"><span class="dot"></span> Grave e Ganhe</div>
+  <a class="nav-cta" href="https://ai.hub.xyz/r/B1AB4PET" target="_blank" rel="noopener">Cadastre-se</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="badge"><span class="p"></span> Cadastro 100% gratuito</div>
+      <h1>Grave tarefas do seu dia a dia e <span class="accent">ganhe por hora aprovada</span></h1>
+      <p class="hero-sub">Uma startup de IA (com sede em São Francisco e escritório novo em São Paulo) paga pessoas comuns pra gravar vídeos de tarefas simples de casa, usados pra treinar inteligência artificial. Sem custo nenhum pra participar.</p>
+      <div class="price-tag">
+        <span class="v">R$ 25–30</span>
+        <span class="l">por hora aprovada</span>
+      </div>
+      <div class="hero-btns">
+        <a class="btn-primary" href="https://ai.hub.xyz/r/B1AB4PET" target="_blank" rel="noopener">Quero me cadastrar ↗</a>
+        <a class="btn-ghost" href="#como-funciona">Ver como funciona</a>
+      </div>
+      <div class="hero-note">Kit de gravação enviado grátis · Pagamento direto pelo app</div>
+    </div>
+    <div class="hero-visual">
+      <div class="stat-row">
+        <div class="stat-card"><div class="n">R$ 25 a R$ 30</div><div class="d">por hora de gravação aprovada</div></div>
+        <div class="stat-card"><div class="n">Até 48h</div><div class="d">pra revisar e liberar o pagamento</div></div>
+        <div class="stat-card"><div class="n">Zero custo</div><div class="d">é a empresa que paga você, nunca o contrário</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="como-funciona">
+  <span class="eyebrow">Como funciona</span>
+  <h2 class="section-title">Três passos simples pra começar</h2>
+  <p class="section-sub">Do cadastro até o primeiro pagamento aprovado, o processo é todo pelo celular.</p>
+  <div class="passos">
+    <div class="passo">
+      <div class="num">1</div>
+      <h3>Peça seu kit gratuito</h3>
+      <p>Uma faixa de cabeça pra prender o celular e um suporte, enviados sem custo até você. É só o necessário pra começar a gravar em primeira pessoa.</p>
+    </div>
+    <div class="passo">
+      <div class="num">2</div>
+      <h3>Crie sua conta no app</h3>
+      <p>Baixe o aplicativo oficial, cadastre-se em poucos minutos e vincule seu código de indicação.</p>
+    </div>
+    <div class="passo">
+      <div class="num">3</div>
+      <h3>Grave e receba</h3>
+      <p>Filme suas tarefas reais do dia a dia. Cada gravação é revisada em até 48h e, aprovada, o valor cai direto pra você sacar no app.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pratica">
+  <span class="eyebrow">Veja na prática</span>
+  <h2 class="section-title">Vídeos oficiais mostrando como é</h2>
+  <p class="section-sub">Material oficial da própria empresa, mostrando o kit de gravação e o app na prática.</p>
+  <div class="videos-grid">
+    <div class="video-card">
+      <video controls playsinline preload="none" poster="videos/poster-record.jpg">
+        <source src="videos/record-tutorial.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Como usar o kit de gravação</p>
+    </div>
+    <div class="video-card">
+      <video controls playsinline preload="none" poster="videos/poster-website.jpg">
+        <source src="videos/website-tutorial.mp4" type="video/mp4">
+      </video>
+      <p class="video-caption">Como funciona o cadastro no app</p>
+    </div>
+  </div>
+
+  <div class="carousel-card">
+    <video autoplay muted loop playsinline preload="none" poster="videos/poster-carrossel.jpg">
+      <source src="videos/carrossel-tarefas.mp4" type="video/mp4">
+    </video>
+    <p class="video-caption">Gravações reais acontecendo agora em várias cidades</p>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">O que gravar</span>
+  <h2 class="section-title">Tarefas simples que você já faz em casa</h2>
+  <p class="section-sub">Nada de encenação — são tarefas reais, do começo ao fim, em categorias como:</p>
+  <div class="tarefas-grid">
+    <div class="tarefa-item">Arrumação e limpeza<span>cômodo, banheiro, aspirar, tirar o pó</span></div>
+    <div class="tarefa-item">Cozinha e preparo<span>organizar, preparar, lavar louça</span></div>
+    <div class="tarefa-item">Área externa e quintal<span>varrer, tirar mato, regar plantas</span></div>
+    <div class="tarefa-item">Manutenção da casa<span>pequenos reparos, montar móveis</span></div>
+    <div class="tarefa-item">Pets e cuidados<span>alimentar, escovar, passear (propriedade privada)</span></div>
+    <div class="tarefa-item">Cuidados com o carro<span>lavar, limpar por dentro, conferir pneus</span></div>
+    <div class="tarefa-item">Organização<span>prateleiras, gavetas, correspondência</span></div>
+    <div class="tarefa-item">Lavanderia e roupas<span>lavar, passar, dobrar, organizar</span></div>
+    <div class="tarefa-item">Home office<span>burocracia e organização do dia a dia</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <span class="eyebrow">Estimativa</span>
+  <h2 class="section-title">Quanto dá pra ganhar?</h2>
+  <div class="calc-box">
+    <div class="calc-left">
+      <h3>Gravando 3 horas por dia</h3>
+      <p>Com base no valor por hora aprovada, gravando todos os dias do mês. É estimativa: o valor real depende das suas horas efetivamente aprovadas.</p>
+    </div>
+    <div class="calc-right">
+      <div class="v">R$ 2.250</div>
+      <div class="l">estimativa por mês</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <span class="eyebrow">Dúvidas comuns</span>
+  <h2 class="section-title">Perguntas frequentes</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">É grátis participar? <span class="plus">+</span></div>
+      <div class="faq-a">Sim, 100% gratuito. É a empresa que paga você pelas horas gravadas e aprovadas — você nunca precisa depositar ou pagar nada pra participar.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Quando eu recebo? <span class="plus">+</span></div>
+      <div class="faq-a">Cada gravação passa por revisão, que pode levar até 48 horas. Depois de aprovada, o valor é creditado e você saca direto pelo aplicativo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Preciso de experiência? <span class="plus">+</span></div>
+      <div class="faq-a">Não. Se você sabe usar o celular e fazer tarefas simples de casa, já consegue começar.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">E se meu vídeo for rejeitado? <span class="plus">+</span></div>
+      <div class="faq-a">Material rejeitado não é pago, mas o app explica o motivo pra você corrigir e gravar de novo. São rejeitadas tarefas encenadas, telas paradas ou gravações sem uma tarefa real acontecendo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Preciso estar em algum lugar específico? <span class="plus">+</span></div>
+      <div class="faq-a">Sim, é necessário confirmar localização real nas Américas. Uso de VPN ou tentativa de esconder localização pode levar ao banimento da conta.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Meu celular é compatível? <span class="plus">+</span></div>
+      <div class="faq-a">Funciona em iPhone 12 ou mais novo, Google Pixel 6 ou mais novo, e Samsung Galaxy S21 ou mais novo (exceto modelos FE). Dá pra confirmar direto no app.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dicas">
+  <span class="eyebrow">Antes de gravar</span>
+  <h2 class="section-title">O que é aprovado e o que é rejeitado</h2>
+  <p class="section-sub">Seguindo essas regras, a aprovação é tranquila. Nada de complicação.</p>
+  <div class="check-grid">
+    <div class="check-col ok">
+      <h3>✓ O que é aprovado</h3>
+      <ul>
+        <li>Visão estável da testa, levemente para baixo</li>
+        <li>Mãos e dedos visíveis enquanto você trabalha</li>
+        <li>Imagem nítida e bem iluminada</li>
+        <li>Uma tarefa completa, em ritmo natural</li>
+      </ul>
+    </div>
+    <div class="check-col no">
+      <h3>✕ O que é rejeitado</h3>
+      <ul>
+        <li>Câmera tremida, inclinada ou obstruída, ou pouca luz</li>
+        <li>Mãos levantadas de propósito ou movimento robótico</li>
+        <li>Mãos fora do quadro mais de 10% do tempo</li>
+        <li>Sentado, pausas longas ou tarefas encenadas</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tips-strip">
+    <div class="tip"><span class="tip-ic">☀️</span> Boa iluminação, uniforme</div>
+    <div class="tip"><span class="tip-ic">🔇</span> Ambiente calmo</div>
+    <div class="tip"><span class="tip-ic">🧼</span> Lente limpa</div>
+    <div class="tip"><span class="tip-ic">🔋</span> Celular carregado</div>
+  </div>
+</section>
+
+<div class="cta-final">
+  <h2>Pronto pra começar a gravar?</h2>
+  <p>Cadastro gratuito, kit enviado até você, primeiro pagamento em até 48h após a aprovação.</p>
+  <a class="btn-primary" href="https://ai.hub.xyz/r/B1AB4PET" target="_blank" rel="noopener">Fazer meu cadastro agora ↗</a>
+</div>
+
+<footer>
+  Página independente de recomendação, feita por Dione. Não é o site oficial da empresa.<br>
+  Dúvidas? Use o chat no canto da tela.
+</footer>
+
+<div class="bonus-toast" id="bonusToast">
+  <button class="bonus-close" id="bonusClose" aria-label="Fechar">×</button>
+  <div class="bonus-badge"><span class="p"></span> BÔNUS ATIVO</div>
+  <div class="bonus-title">⚡ Ganhe até R$ 30/h agora</div>
+  <p class="bonus-sub">Grave estas tarefas turbinadas no app e ganhe mais por hora aprovada:</p>
+  <div class="bonus-ticker">
+    <div class="bonus-item" id="bonusItem">
+      <span class="bonus-item-name">Montar / desmontar móveis</span>
+      <span class="bonus-item-value">R$ 30/h</span>
+    </div>
+  </div>
+  <a class="bonus-cta" href="https://ai.hub.xyz/r/B1AB4PET" target="_blank" rel="noopener">Quero ver as tarefas turbinadas</a>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  createChat({
+    webhookUrl: 'https://n8n.dionefolador.com/webhook/hub-chat-2026-001/chat',
+    mode: 'window',
+    showWelcomeScreen: false,
+    initialMessages: ['Oi! Posso te ajudar a entender como funciona e como começar a gravar e ganhar. Qual sua dúvida?'],
+    i18n: { en: {
+      title: 'Tire suas dúvidas', subtitle: 'Resposta na hora',
+      inputPlaceholder: 'Escreva sua pergunta...', getStarted: 'Nova conversa',
+      footer: '', closeButtonTooltip: ''
+    } }
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Banner de bônus (tarefas turbinadas)
+  (function(){
+    const tarefas = [
+      { nome: 'Montar / desmontar móveis', valor: 'R$ 30/h' },
+      { nome: 'Limpeza de calhas', valor: 'R$ 30/h' },
+      { nome: 'Pendurar quadros e espelhos', valor: 'R$ 30/h' },
+      { nome: 'Higiene e banho de pet', valor: 'R$ 28/h' },
+      { nome: 'Organizar garagem', valor: 'R$ 27/h' },
+      { nome: 'Varrer a varanda', valor: 'R$ 25/h' }
+    ];
+    const toast = document.getElementById('bonusToast');
+    const closeBtn = document.getElementById('bonusClose');
+    const itemEl = document.getElementById('bonusItem');
+    let idx = 0;
+    let cycleTimer = null;
+
+    function renderItem(){
+      itemEl.classList.add('fade');
+      setTimeout(() => {
+        idx = (idx + 1) % tarefas.length;
+        itemEl.querySelector('.bonus-item-name').textContent = tarefas[idx].nome;
+        itemEl.querySelector('.bonus-item-value').textContent = tarefas[idx].valor;
+        itemEl.classList.remove('fade');
+      }, 250);
+    }
+
+    if (!sessionStorage.getItem('bonusToastClosed')) {
+      setTimeout(() => {
+        toast.classList.add('show');
+        cycleTimer = setInterval(renderItem, 2800);
+      }, 4000);
+    }
+
+    closeBtn.addEventListener('click', () => {
+      toast.classList.remove('show');
+      if (cycleTimer) clearInterval(cycleTimer);
+      sessionStorage.setItem('bonusToastClosed', '1');
+    });
+  })();
+</script>
+
+</body>
+</html>
