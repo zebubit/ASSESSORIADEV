@@ -58,6 +58,11 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .showcase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;}
 .showcase-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(20,23,31,.06);}
 .showcase-card img{width:100%;display:block;}
+.showcase-group{margin-bottom:56px;}
+.showcase-group:last-child{margin-bottom:0;}
+.showcase-group-h{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
+.showcase-group-h h3{font-size:20px;font-weight:700;}
+.showcase-group-h span{font-size:13.5px;color:var(--mut);}
 
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
 .step{padding:30px 26px;border-radius:16px;background:var(--soft);}
@@ -72,7 +77,7 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .diff-text{font-size:14px;color:var(--mut);line-height:1.65;}
 
 .pricing{background:var(--soft);border-radius:28px;margin:0 40px;max-width:1220px;margin-inline:auto;padding:80px 40px;}
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto;}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1080px;margin:0 auto;}
 .price-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:38px 32px;text-align:center;position:relative;}
 .price-card.featured{border-color:var(--blue);box-shadow:0 20px 50px rgba(66,133,244,.14);}
 .price-card.featured::before{content:"MAIS PEDIDO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
@@ -146,12 +151,31 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
 
 <section id="exemplos">
   <div class="eyebrow">Modelos disponíveis</div>
-  <h2 class="section-h">Escolha o formato certo pro seu balcão.</h2>
-  <p class="section-desc">Cartão discreto de bolso ou placa de destaque em pé, os dois já saem gravados com o seu link.</p>
-  <div class="showcase-grid">
-    <div class="showcase-card"><img src="cartao-nfc-img/placa-display-a6.png" alt="Placa de avaliação Google A6" loading="lazy"></div>
-    <div class="showcase-card"><img src="cartao-nfc-img/cartao-frente-verso.png" alt="Cartão NFC frente e verso" loading="lazy"></div>
-    <div class="showcase-card"><img src="cartao-nfc-img/cards-duas-cores.png" alt="Cartões de avaliação Google preto e azul" loading="lazy"></div>
+  <h2 class="section-h">3 formatos, pra cada tipo de balcão.</h2>
+  <p class="section-desc">Placa em pé, cartão de bolso ou card adesivo, os três já saem gravados com o seu link.</p>
+
+  <div class="showcase-group">
+    <div class="showcase-group-h"><h3>Placa de Acrílico</h3><span>15 x 10 cm, base em pé</span></div>
+    <div class="showcase-grid">
+      <div class="showcase-card"><img src="cartao-nfc-img/placa-display-a6.png" alt="Placa de avaliação Google A6, 15 por 10 cm" loading="lazy"></div>
+      <div class="showcase-card"><img src="cartao-nfc-img/placa-ambiente.png" alt="Placa de avaliação Google em uso no balcão" loading="lazy"></div>
+    </div>
+  </div>
+
+  <div class="showcase-group">
+    <div class="showcase-group-h"><h3>Cartão PVC</h3><span>tamanho de cartão de crédito, formato de bolso</span></div>
+    <div class="showcase-grid">
+      <div class="showcase-card"><img src="cartao-nfc-img/cartao-aproxime-avalie.png" alt="Cartão NFC formato cartão de crédito, Aproxime e Avalie" loading="lazy"></div>
+      <div class="showcase-card"><img src="cartao-nfc-img/cartao-frente-verso.png" alt="Cartão NFC frente e verso, explicação NFC e QR Code" loading="lazy"></div>
+    </div>
+  </div>
+
+  <div class="showcase-group">
+    <div class="showcase-group-h"><h3>Card Adesivo</h3><span>10 x 10 cm quadrado, cola em qualquer superfície</span></div>
+    <div class="showcase-grid">
+      <div class="showcase-card"><img src="cartao-nfc-img/cards-especificacao.png" alt="Card adesivo quadrado 10 por 10 cm, azul ou preto" loading="lazy"></div>
+      <div class="showcase-card"><img src="cartao-nfc-img/cards-duas-cores.png" alt="Cards de avaliação Google preto e azul" loading="lazy"></div>
+    </div>
   </div>
 </section>
 
@@ -205,19 +229,33 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
   <h2 class="section-h" style="text-align:center;margin:0 auto 16px;">Sem mensalidade. Pagamento único.</h2>
   <p class="section-desc" style="text-align:center;margin:0 auto 50px;">Manda o seu link, a gente grava e já entrega pronto pra usar.</p>
   <div class="price-grid">
-    <div class="price-card featured">
-      <div class="price-label">Formato compacto</div>
-      <div class="price-name">Cartão PVC</div>
+    <div class="price-card">
+      <div class="price-label">Formato adesivo</div>
+      <div class="price-name">Card 10x10cm</div>
       <div class="price-now">R$ 59</div>
       <div class="price-unit">1 unidade</div>
       <div class="price-combo">ou 2 unidades por R$99,90</div>
+      <ul class="price-features">
+        <li>Quadrado 10 x 10 cm</li>
+        <li>NFC + QR Code já gravados com seu link</li>
+        <li>Verso adesivo, cola em qualquer superfície</li>
+        <li>Azul ou preto</li>
+      </ul>
+      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20o%20Card%20adesivo%20Aproxime%20e%20Avalie." target="_blank" class="btn-buy">Quero o card · R$59</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-label">Formato bolso</div>
+      <div class="price-name">Cartão PVC</div>
+      <div class="price-now">R$ 79</div>
+      <div class="price-unit">1 unidade</div>
+      <div class="price-combo">ou 2 unidades por R$120</div>
       <ul class="price-features">
         <li>Tamanho de cartão de crédito</li>
         <li>NFC + QR Code já gravados com seu link</li>
         <li>PVC premium à prova d'água</li>
         <li>Cabe na carteira, no balcão ou na mesa</li>
       </ul>
-      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20o%20cart%C3%A3o%20Aproxime%20e%20Avalie%20em%20PVC." target="_blank" class="btn-buy">Quero o cartão · R$59</a>
+      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20o%20cart%C3%A3o%20Aproxime%20e%20Avalie%20em%20PVC." target="_blank" class="btn-buy">Quero o cartão · R$79</a>
     </div>
     <div class="price-card">
       <div class="price-label">Formato destaque</div>
