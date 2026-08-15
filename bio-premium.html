@@ -101,7 +101,11 @@ section{padding:100px 60px;position:relative;}
 
 /* SHOWCASE */
 .showcase{background:var(--dark2);}
-.showcase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.showcase-grid{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 6px 18px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+.showcase-grid::-webkit-scrollbar{height:7px;}
+.showcase-grid::-webkit-scrollbar-track{background:transparent;}
+.showcase-grid::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.showcase-grid .showcase-card{flex:0 0 240px;scroll-snap-align:start;}
 .showcase-card{background:var(--dark);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .4s;position:relative;}
 .showcase-card:hover{border-color:var(--gold);transform:translateY(-4px);}
 .showcase-img{aspect-ratio:9/16;background:#222;overflow:hidden;position:relative;max-height:520px;}
@@ -182,7 +186,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   .hero-text{max-width:100%;flex-basis:auto;}
   .hero-pay{width:100%;max-width:420px;flex-basis:auto;align-self:center;}
   section{padding:60px 24px;}
-  .showcase-grid{grid-template-columns:1fr 1fr;}
+  .showcase-grid .showcase-card{flex-basis:220px;}
   .steps{grid-template-columns:1fr;}
   .diff-grid{grid-template-columns:1fr;}
   .parceria-grid{grid-template-columns:1fr;}
@@ -190,7 +194,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   footer{padding:40px 24px;}
 }
 @media (max-width:560px){
-  .showcase-grid{grid-template-columns:1fr;}
+  .showcase-grid .showcase-card{flex-basis:78vw;}
   .cobrand{flex-wrap:wrap;justify-content:center;gap:6px 10px;padding:10px 18px;max-width:100%;}
   .cobrand img{width:38px;height:38px;}
   .cobrand strong{font-size:20px;}
@@ -298,8 +302,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
     <div><span class="hp-old">R$247</span><span class="hp-price"><small>R$</small>127</span></div>
     <span class="hp-sub">à vista no Pix · pagamento único, sem mensalidade</span>
     <button type="button" class="hp-pix" onclick="openPix()">⚡ Pagar com Pix agora</button>
-    <a href="#" class="hp-mp" data-buy>Pagar com cartão · Mercado Pago</a>
-    <span class="hp-safe">🔒 Pagamento seguro via Mercado Pago</span>
+    <span class="hp-safe">🔒 Pagamento direto, confirmação manual</span>
   </aside>
 </header>
 
@@ -321,6 +324,96 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
   <p class="section-desc">Páginas que entregamos pra clientes de verdade, cada uma com a identidade do dono. Abre no celular pra sentir como fica.</p>
   <div class="showcase-grid">
     <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/csm.png" alt="Bio Colégio São Mateus" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Educação</span>
+        <div class="showcase-name">Colégio São Mateus</div>
+        <div class="showcase-desc">Tradição, em Cuiabá.</div>
+        <a href="https://biovenda.app.br/saomateus" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/tati.png" alt="Bio Acqua Stilo Tati" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Natação</span>
+        <div class="showcase-name">Acqua Stilo · Tati</div>
+        <div class="showcase-desc">Escola de natação, 2 unidades em Cuiabá.</div>
+        <a href="https://biovenda.app.br/acquastilo" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/melyssa.png" alt="Bio Melyssa Raphaela" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Música</span>
+        <div class="showcase-name">Melyssa Raphaela</div>
+        <div class="showcase-desc">Preto e magenta, com música.</div>
+        <a href="https://biovenda.app.br/melyssaraphaela" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/jorgegarcia.png" alt="Bio Jorge Garcia" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Suplementos</span>
+        <div class="showcase-name">Jorge Garcia</div>
+        <div class="showcase-desc">Primal Pound, loja oficial de suplementos.</div>
+        <a href="https://biovenda.app.br/jorgegarcia" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/savana.png" alt="Bio Savana Barbershop" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Barbearia</span>
+        <div class="showcase-name">Savana Barbershop</div>
+        <div class="showcase-desc">Estilo clássico, em Uberaba.</div>
+        <a href="https://biovenda.app.br/savana" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/mangiare.png" alt="Bio Mangiare Ristorante" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Gastronomia</span>
+        <div class="showcase-name">Mangiare</div>
+        <div class="showcase-desc">Ristorante Italiano, Chef Sérgio Souza.</div>
+        <a href="https://biovenda.app.br/mangiare" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/vilamadalena.png" alt="Bio Vila Madalena" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Bar</span>
+        <div class="showcase-name">Vila Madalena</div>
+        <div class="showcase-desc">O bar mais charmoso de Uberaba.</div>
+        <a href="https://biovenda.app.br/vilamadalena" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/ndcell.png" alt="Bio NDCELL" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Assistência Técnica</span>
+        <div class="showcase-name">NDCELL</div>
+        <div class="showcase-desc">Celulares, em Uberaba.</div>
+        <a href="https://biovenda.app.br/ndcell" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/laerton.png" alt="Bio Laerton Duarte" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Hairstylist · Londres</span>
+        <div class="showcase-name">Laerton Duarte</div>
+        <div class="showcase-desc">Elegante e internacional.</div>
+        <a href="https://biovenda.app.br/laertonduarte" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/drluciano.png" alt="Bio Dr. Luciano" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Psiquiatria</span>
+        <div class="showcase-name">Dr. Luciano</div>
+        <div class="showcase-desc">Navy sóbrio e confiável.</div>
+        <a href="https://biovenda.app.br/drluciano" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
       <div class="showcase-img"><img src="bio-premium-img/dionefol.png" alt="Bio Dione Folador" loading="lazy"></div>
       <div class="showcase-body">
         <span class="showcase-pill">@dionefol · 1,1 mi</span>
@@ -339,57 +432,12 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
       </div>
     </div>
     <div class="showcase-card">
-      <div class="showcase-img"><img src="bio-premium-img/laerton.png" alt="Bio Laerton Duarte" loading="lazy"></div>
-      <div class="showcase-body">
-        <span class="showcase-pill">Hairstylist · Londres</span>
-        <div class="showcase-name">Laerton Duarte</div>
-        <div class="showcase-desc">Elegante e internacional.</div>
-        <a href="https://biovenda.app.br/laertonduarte" target="_blank" class="showcase-link">Abrir bio →</a>
-      </div>
-    </div>
-    <div class="showcase-card">
-      <div class="showcase-img"><img src="bio-premium-img/melyssa.png" alt="Bio Melyssa Raphaela" loading="lazy"></div>
-      <div class="showcase-body">
-        <span class="showcase-pill">Música</span>
-        <div class="showcase-name">Melyssa Raphaela</div>
-        <div class="showcase-desc">Preto e magenta, com música.</div>
-        <a href="https://biovenda.app.br/melyssaraphaela" target="_blank" class="showcase-link">Abrir bio →</a>
-      </div>
-    </div>
-    <div class="showcase-card">
       <div class="showcase-img"><img src="bio-premium-img/caclinic.png" alt="Bio CA Clinic" loading="lazy"></div>
       <div class="showcase-body">
         <span class="showcase-pill">Clínica</span>
         <div class="showcase-name">CA Clinic</div>
         <div class="showcase-desc">Dr. Carlos Alexandre, sóbrio e premium.</div>
         <a href="https://zebubit.github.io/ca-clinic/bio/" target="_blank" class="showcase-link">Abrir bio →</a>
-      </div>
-    </div>
-    <div class="showcase-card">
-      <div class="showcase-img"><img src="bio-premium-img/ndcell.png" alt="Bio NDCELL" loading="lazy"></div>
-      <div class="showcase-body">
-        <span class="showcase-pill">Assistência Técnica</span>
-        <div class="showcase-name">NDCELL</div>
-        <div class="showcase-desc">Celulares, em Uberaba.</div>
-        <a href="https://biovenda.app.br/ndcell" target="_blank" class="showcase-link">Abrir bio →</a>
-      </div>
-    </div>
-    <div class="showcase-card">
-      <div class="showcase-img"><img src="bio-premium-img/csm.png" alt="Bio Colégio São Mateus" loading="lazy"></div>
-      <div class="showcase-body">
-        <span class="showcase-pill">Educação</span>
-        <div class="showcase-name">Colégio São Mateus</div>
-        <div class="showcase-desc">Tradição, em Cuiabá.</div>
-        <a href="https://csmcuiabamt.com.br/bio/" target="_blank" class="showcase-link">Abrir bio →</a>
-      </div>
-    </div>
-    <div class="showcase-card">
-      <div class="showcase-img"><img src="bio-premium-img/drluciano.png" alt="Bio Dr. Luciano" loading="lazy"></div>
-      <div class="showcase-body">
-        <span class="showcase-pill">Psiquiatria</span>
-        <div class="showcase-name">Dr. Luciano</div>
-        <div class="showcase-desc">Navy sóbrio e confiável.</div>
-        <a href="https://biovenda.app.br/drluciano" target="_blank" class="showcase-link">Abrir bio →</a>
       </div>
     </div>
     <div class="showcase-card">
@@ -491,7 +539,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
     <details class="faq-item"><summary class="faq-q">Preciso entender de tecnologia?</summary><div class="faq-a">Não. Você só manda suas informações no WhatsApp e a gente monta tudo. Você recebe o link pronto pra colar na bio.</div></details>
     <details class="faq-item"><summary class="faq-q">Tem mensalidade?</summary><div class="faq-a">Não. É pagamento único. A hospedagem da sua bio já está inclusa.</div></details>
     <details class="faq-item"><summary class="faq-q">Posso pedir alterações depois?</summary><div class="faq-a">Sim, já vem 1 rodada de ajustes inclusa pra deixar do seu jeito. Mudanças maiores depois têm um valor à parte combinado na hora.</div></details>
-    <details class="faq-item"><summary class="faq-q">Como eu pago?</summary><div class="faq-a">Via Pix pelo Mercado Pago, com toda a segurança. Assim que confirma, você já entra na fila de produção.</div></details>
+    <details class="faq-item"><summary class="faq-q">Como eu pago?</summary><div class="faq-a">Via Pix, direto pra chave do Dione. Depois de pagar, é só mandar o comprovante no WhatsApp que você já entra na fila de produção.</div></details>
   </div>
 </section>
 
@@ -525,11 +573,8 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 </script>
 
 <script>
-/* ===== Link de pagamento (cole aqui o link do Mercado Pago de R$127) ===== */
-const LINK_PAGAMENTO = "https://mpago.la/1XzP3Hn"; // Mercado Pago · Bio Premium R$127
-const WHATS = "https://wa.me/5534993421500?text=" + encodeURIComponent("Olá! Quero garantir meu Link da Bio Premium por R$127 (promoção). Pode me enviar o link de pagamento?");
-const destino = LINK_PAGAMENTO || WHATS;
-document.querySelectorAll('[data-buy]').forEach(a => { a.href = destino; if(LINK_PAGAMENTO) a.target = "_blank"; });
+/* ===== Botões de compra abrem o Pix (Mercado Pago temporariamente fora do ar) ===== */
+document.querySelectorAll('[data-buy]').forEach(a => { a.addEventListener('click', function(e){ e.preventDefault(); openPix(); }); });
 
 /* ===== Contador evergreen de 3 dias (por visitante) ===== */
 (function(){
