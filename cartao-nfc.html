@@ -39,6 +39,7 @@ header{display:flex;align-items:center;gap:60px;padding:70px 40px 90px;max-width
 .hero-text{flex:1 1 480px;min-width:0;}
 .tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--blue);background:#eef3ff;
   border-radius:100px;padding:7px 16px;margin-bottom:24px;}
+.dot-on{width:9px;height:9px;border-radius:50%;background:var(--green);flex:none;display:inline-block;}
 h1{font-size:clamp(32px,4.6vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.02em;margin-bottom:20px;}
 h1 .accent{background:linear-gradient(90deg,var(--blue),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent;}
 .hero-sub{font-size:16.5px;color:var(--mut);max-width:520px;margin-bottom:34px;line-height:1.7;}
@@ -72,8 +73,10 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .reviews-track:hover{animation-play-state:paused;}
 @keyframes reviews-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .review-card{flex:0 0 320px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:0 10px 30px rgba(20,23,31,.06);}
-.review-stars{color:#FBBC05;font-size:15px;letter-spacing:2px;margin-bottom:10px;}
+.review-stars{display:flex;gap:2px;color:#FBBC05;margin-bottom:10px;}
+.review-stars svg{width:15px;height:15px;}
 .review-badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--green);background:#eafbf1;border-radius:100px;padding:4px 12px;margin-bottom:16px;}
+.review-badge svg{width:12px;height:12px;flex:none;}
 .review-text{font-size:14.5px;color:var(--ink);line-height:1.65;margin-bottom:20px;min-height:66px;}
 .review-who{display:flex;align-items:center;gap:12px;}
 .review-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;flex:none;}
@@ -152,7 +155,7 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
 
 <header>
   <div class="hero-text">
-    <div class="tag">🟢 NFC + QR Code · sem mensalidade</div>
+    <div class="tag"><span class="dot-on"></span> NFC + QR Code · sem mensalidade</div>
     <h1>Encoste o celular e já está <span class="accent">avaliando no Google</span>.</h1>
     <p class="hero-sub">Cartão ou placa com NFC e QR Code prontos pra usar. Seu cliente encosta o celular ou escaneia, e cai direto na avaliação do Google, na sua bio ou no WhatsApp, sem digitar nada, sem app, sem mensalidade.</p>
     <div class="hero-cta">
@@ -221,50 +224,50 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
   <div class="in" style="padding:0;max-width:none;">
     <div class="reviews-track" id="reviewsTrack">
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-badge">✓ Verificado no Google</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <div class="review-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg> Verificado no Google</div>
         <div class="review-text">"O melhor na área, confiança extrema... Mentoria top!"</div>
         <div class="review-who"><div class="review-avatar">NA</div><div><div class="review-name">Neto Alencar</div><div class="review-role">Avaliação no Google</div></div></div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-badge">✓ Verificado no Google</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <div class="review-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg> Verificado no Google</div>
         <div class="review-text">"Excelente trabalho."</div>
         <div class="review-who"><div class="review-avatar">WM</div><div><div class="review-name">William Marrion</div><div class="review-role">Avaliação no Google</div></div></div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-badge">✓ Verificado no Google</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <div class="review-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg> Verificado no Google</div>
         <div class="review-text">"Melhor marketing."</div>
         <div class="review-who"><div class="review-avatar">MB</div><div><div class="review-name">Monika Bernadelli</div><div class="review-role">Avaliação no Google</div></div></div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-badge">✓ Verificado no Google</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <div class="review-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg> Verificado no Google</div>
         <div class="review-text">"Trabalho sério e muito bem feito. Super indico."</div>
         <div class="review-who"><div class="review-avatar">GC</div><div><div class="review-name">Glauber Cápolis</div><div class="review-role">Green Center Garden</div></div></div>
       </div>
       <div class="review-card" aria-hidden="true">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-badge">✓ Verificado no Google</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <div class="review-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg> Verificado no Google</div>
         <div class="review-text">"O melhor na área, confiança extrema... Mentoria top!"</div>
         <div class="review-who"><div class="review-avatar">NA</div><div><div class="review-name">Neto Alencar</div><div class="review-role">Avaliação no Google</div></div></div>
       </div>
       <div class="review-card" aria-hidden="true">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-badge">✓ Verificado no Google</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <div class="review-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg> Verificado no Google</div>
         <div class="review-text">"Excelente trabalho."</div>
         <div class="review-who"><div class="review-avatar">WM</div><div><div class="review-name">William Marrion</div><div class="review-role">Avaliação no Google</div></div></div>
       </div>
       <div class="review-card" aria-hidden="true">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-badge">✓ Verificado no Google</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <div class="review-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg> Verificado no Google</div>
         <div class="review-text">"Melhor marketing."</div>
         <div class="review-who"><div class="review-avatar">MB</div><div><div class="review-name">Monika Bernadelli</div><div class="review-role">Avaliação no Google</div></div></div>
       </div>
       <div class="review-card" aria-hidden="true">
-        <div class="review-stars">★★★★★</div>
-        <div class="review-badge">✓ Verificado no Google</div>
+        <div class="review-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <div class="review-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg> Verificado no Google</div>
         <div class="review-text">"Trabalho sério e muito bem feito. Super indico."</div>
         <div class="review-who"><div class="review-avatar">GC</div><div><div class="review-name">Glauber Cápolis</div><div class="review-role">Green Center Garden</div></div></div>
       </div>
