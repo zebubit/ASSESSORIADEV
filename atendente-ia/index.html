@@ -108,6 +108,44 @@
   .plan .btn{width:100%;margin-top:auto}
   .plan.pop .btn{background:linear-gradient(135deg,var(--wa),var(--wa-dark));color:#08110a}
 
+  /* ativos */
+  .ativo{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
+  .ativo .tag{display:inline-block;color:var(--gold-soft);font-family:'Sora',sans-serif;font-weight:700;font-size:13px;
+    letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}
+  .ativo h3{font-size:19px;margin-bottom:8px}
+  .ativo p{color:var(--muted);font-size:14.5px}
+
+  /* antes x depois */
+  .compara{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto}
+  .compara .col{border-radius:var(--radius);padding:26px 24px;border:1px solid var(--line)}
+  .compara .col.antes{background:var(--card)}
+  .compara .col.depois{background:linear-gradient(180deg,rgba(37,211,102,.08),var(--card) 45%);border-color:rgba(37,211,102,.3)}
+  .compara .col h3{font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
+  .compara .col.antes h3{color:var(--muted)}
+  .compara .col.depois h3{color:var(--wa)}
+  .compara .col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .compara .col li{font-size:14.5px;color:#cfd6e2;padding-left:24px;position:relative}
+  .compara .col.antes li::before{content:"×";position:absolute;left:0;color:#e05a5a;font-weight:800}
+  .compara .col.depois li::before{content:"✓";position:absolute;left:0;color:var(--wa);font-weight:800}
+  @media (max-width:700px){ .compara{grid-template-columns:1fr} }
+
+  /* tabela comparativa */
+  .tabela-comp{overflow-x:auto;max-width:920px;margin:0 auto}
+  .tabela-comp table{width:100%;border-collapse:collapse;min-width:640px}
+  .tabela-comp th,.tabela-comp td{padding:14px 16px;border-bottom:1px solid var(--line);font-size:14px;text-align:center}
+  .tabela-comp th{font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:var(--muted)}
+  .tabela-comp td:first-child,.tabela-comp th:first-child{text-align:left;color:var(--text);font-weight:600}
+  .tabela-comp th.zeb,.tabela-comp td.zeb{background:rgba(230,189,79,.08);color:var(--gold-soft);font-weight:700}
+  .tabela-comp .sim{color:var(--wa);font-weight:800}
+  .tabela-comp .nao{color:var(--muted)}
+
+  /* onboarding */
+  .onb{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:920px;margin:0 auto}
+  .onb div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .onb div b{display:block;font-family:'Sora',sans-serif;font-size:16px;margin-bottom:6px;color:var(--text)}
+  .onb div p{color:var(--muted);font-size:14px}
+  @media (max-width:700px){ .onb{grid-template-columns:1fr} }
+
   /* faq */
   .faq{max-width:760px;margin:0 auto}
   .qa{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--card);overflow:hidden}
@@ -193,6 +231,46 @@
     </div>
   </section>
 
+  <!-- ATIVO -->
+  <section style="background:var(--bg2)"><div class="wrap">
+    <div class="eyebrow">O que você já tem</div>
+    <h2 class="h2">Sua lista de contatos vale mais do que o próximo anúncio</h2>
+    <p class="lead">Todo negócio já tem gente que perguntou, gente que compra e gente que sumiu. A diferença entre lucrar com isso ou deixar passar é ter alguém respondendo na hora certa, os 3 grupos.</p>
+    <div class="grid g3">
+      <div class="ativo"><span class="tag">Quem perguntou</span><h3>O lead que quase virou cliente</h3><p>Mandou mensagem, ficou esperando, e ou alguém responde rápido ou ele já está falando com o concorrente.</p></div>
+      <div class="ativo"><span class="tag">Quem já é cliente</span><h3>O cliente que podia comprar de novo</h3><p>Já confia em você. É o público mais fácil de vender mais uma vez, se alguém lembrar de perguntar.</p></div>
+      <div class="ativo"><span class="tag">Quem sumiu</span><h3>O cliente que parou de aparecer</h3><p>É mais barato trazer de volta quem já te conhecia do que conquistar um cliente novo do zero. E quase ninguém faz esse contato.</p></div>
+    </div>
+  </div></section>
+
+  <!-- ANTES x DEPOIS -->
+  <section><div class="wrap">
+    <div class="eyebrow">No dia a dia</div>
+    <h2 class="h2">Do jeito manual pro automático</h2>
+    <div class="compara">
+      <div class="col antes">
+        <h3>Sem o atendente</h3>
+        <ul>
+          <li>Cliente manda mensagem e espera</li>
+          <li>Você está ocupado, atendendo presencial ou fora do horário</li>
+          <li>A resposta sai horas depois, às vezes no outro dia</li>
+          <li>Nesse tempo, ele já falou com outro lugar</li>
+          <li>Ninguém volta a chamar quem não respondeu, a conversa morre</li>
+        </ul>
+      </div>
+      <div class="col depois">
+        <h3>Com o Atendente Zebubit</h3>
+        <ul>
+          <li>Cliente manda mensagem a qualquer hora</li>
+          <li>Resposta em segundos, 24 horas por dia</li>
+          <li>Já tira dúvida, passa preço e horário na hora</li>
+          <li>Ajuda a agendar ou encaminha pronto pra você fechar</li>
+          <li>Você recebe o contato já qualificado, sem perder tempo</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
   <!-- COMO FUNCIONA -->
   <section style="background:var(--bg2)"><div class="wrap">
     <div class="eyebrow">Simples de começar</div>
@@ -254,8 +332,37 @@
     <p style="text-align:center;color:var(--gold-soft);margin-top:24px;font-size:15px">💛 Já é cliente da Zebubit? Você ganha <b>R$ 300 de desconto</b> no setup.</p>
   </div></section>
 
-  <!-- FAQ -->
+  <!-- DIFERENCIAL -->
   <section style="background:var(--bg2)"><div class="wrap">
+    <div class="eyebrow">Por que a Zebubit</div>
+    <h2 class="h2">Não é só mais um chatbot, e não é curso te ensinando a se virar sozinho</h2>
+    <p class="lead">Tem gente vendendo caixinha pronta genérica, e tem gente vendendo curso pra você montar o seu. A Zebubit monta com você, com os dados reais do seu negócio, e continua ajustando depois.</p>
+    <div class="tabela-comp">
+      <table>
+        <thead><tr>
+          <th>O que você precisa</th>
+          <th>Atendimento manual</th>
+          <th>Chatbot de menu (opção 1, 2, 3)</th>
+          <th class="zeb">Atendente Zebubit</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Responde rápido, de dia e de madrugada</td><td class="nao">Depende de alguém livre</td><td class="sim">Sim</td><td class="zeb sim">Sim</td></tr>
+          <tr><td>Entende a pergunta, mesmo fora do roteiro</td><td class="sim">Sim</td><td class="nao">Não, só clica em opção</td><td class="zeb sim">Sim</td></tr>
+          <tr><td>Fala com os dados reais do seu negócio</td><td class="sim">Sim</td><td class="nao">Genérico</td><td class="zeb sim">Sim</td></tr>
+          <tr><td>Alguém acompanha e ajusta com o tempo</td><td class="nao">Sem processo</td><td class="nao">Não</td><td class="zeb sim">Sim</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="onb" style="margin-top:34px">
+      <div><b>Quem monta é gente de verdade</b><p>O Dione conversa com você e conhece o seu negócio antes de escrever a primeira linha. Não é formulário genérico preenchido sozinho.</p></div>
+      <div><b>Você testa antes de decidir</b><p>Monta uma demonstração com os dados reais do seu negócio pra você conversar com o atendente, sem compromisso.</p></div>
+      <div><b>O acompanhamento continua depois</b><p>Ajusta, corrige e evolui o atendente com o tempo. Não é comprar e ficar por sua conta.</p></div>
+      <div><b>Você fala com uma pessoa só</b><p>Sem central de suporte terceirizada. É direto com quem construiu o seu site e o seu atendente.</p></div>
+    </div>
+  </div></section>
+
+  <!-- FAQ -->
+  <section><div class="wrap">
     <div class="eyebrow">Ainda com dúvida?</div>
     <h2 class="h2">Perguntas frequentes</h2>
     <div class="faq" style="margin-top:32px">
