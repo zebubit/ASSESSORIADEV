@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Atendente de IA no WhatsApp · Zebubit</title>
-<meta name="description" content="Um atendente de inteligência artificial que responde seus clientes no WhatsApp na hora, 24 horas por dia. Passa preço, horário, tira dúvida e ajuda a agendar. Sem perder venda.">
+<title>Arkon, o Atendente de IA da Zebubit</title>
+<meta name="description" content="Arkon é o atendente de inteligência artificial da Zebubit, que responde seus clientes no WhatsApp na hora, 24 horas por dia. Passa preço, horário, tira dúvida e ajuda a agendar. Sem perder venda.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
@@ -92,6 +92,29 @@
   .step h3{font-size:18px;margin-bottom:6px}
   .step p{color:var(--muted);font-size:14.5px}
 
+  /* modalidades */
+  .modo{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;position:relative}
+  .modo.premium{border-color:var(--gold);background:linear-gradient(180deg,rgba(230,189,79,.09),var(--card) 45%)}
+  .modo .ic{width:46px;height:46px;border-radius:12px;background:rgba(230,189,79,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .modo .ic svg{width:22px;height:22px;color:var(--gold-soft)}
+  .modo .badge2{display:inline-block;font-family:'Sora',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.4px;
+    text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.05);padding:4px 10px;border-radius:50px;margin-bottom:12px}
+  .modo.premium .badge2{color:#0a0c10;background:linear-gradient(135deg,var(--gold),var(--gold-soft))}
+  .modo h3{font-size:18px;margin-bottom:8px}
+  .modo p{color:var(--muted);font-size:14.5px}
+  .modo-demo{margin-top:16px;background:#0b1014;border-radius:12px;padding:12px;min-height:100px;
+    display:flex;flex-direction:column;gap:8px;background-image:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);background-size:14px 14px}
+  .modo-demo .bub{max-width:85%;padding:8px 12px;border-radius:12px;font-size:13px;line-height:1.4;opacity:0;transform:translateY(6px);animation:pop .45s forwards}
+  .modo-demo .bub.in{background:#1f2c35;border-bottom-left-radius:4px;align-self:flex-start}
+  .modo-demo .bub.out{background:#0b3d2b;border:1px solid rgba(37,211,102,.25);border-bottom-right-radius:4px;align-self:flex-end;color:#dffbe9}
+  .modo-demo .audio-msg{display:flex;align-items:center;gap:7px}
+  .modo-demo .play{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.14);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  .modo-demo .play svg{width:9px;height:9px}
+  .modo-demo .out .play{background:rgba(255,255,255,.18)}
+  .modo-demo .wave{display:flex;align-items:center;gap:2px;height:16px}
+  .modo-demo .wave span{width:2px;background:currentColor;opacity:.55;border-radius:2px}
+  .modo-demo .dur{font-size:11px;opacity:.6;margin-left:2px}
+
   /* pricing */
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
   .plan{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;position:relative}
@@ -164,6 +187,44 @@
   footer{border-top:1px solid var(--line);padding:34px 22px;text-align:center;color:var(--muted);font-size:14px;margin-top:30px}
   footer a{color:var(--gold)}
 
+  /* modal do arkon */
+  .arkon-overlay{position:fixed;inset:0;background:rgba(5,6,9,.72);backdrop-filter:blur(4px);z-index:90;
+    display:none;align-items:center;justify-content:center;padding:16px}
+  .arkon-overlay.aberto{display:flex}
+  .arkon-janela{width:100%;max-width:400px;height:86vh;max-height:680px;background:var(--bg2);border:1px solid var(--line);
+    border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .arkon-topo{background:linear-gradient(135deg,#1b2130,var(--bg));padding:14px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+  .arkon-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+    display:flex;align-items:center;justify-content:center;color:#0a0c10;font-weight:800;font-family:'Sora',sans-serif;font-size:14px;flex-shrink:0}
+  .arkon-topo .info{flex:1}
+  .arkon-topo .nome{font-family:'Sora',sans-serif;font-weight:700;font-size:15px}
+  .arkon-topo .status{font-size:11.5px;color:var(--wa);display:flex;align-items:center;gap:5px}
+  .arkon-topo .status .dot{width:7px;height:7px;border-radius:50%;background:var(--wa)}
+  .arkon-fechar{background:transparent;border:none;color:var(--muted);cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .arkon-fechar:hover{background:rgba(255,255,255,.08);color:var(--text)}
+  .arkon-fechar svg{width:18px;height:18px}
+  .arkon-corpo{flex:1;overflow-y:auto;padding:16px 12px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+  .arkon-linha{display:flex;max-width:86%}
+  .arkon-linha.bot{align-self:flex-start}
+  .arkon-linha.user{align-self:flex-end}
+  .arkon-bolha{padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.45;white-space:pre-wrap}
+  .arkon-linha.bot .arkon-bolha{background:var(--card2);color:var(--text);border-bottom-left-radius:4px}
+  .arkon-linha.user .arkon-bolha{background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#0a0c10;border-bottom-right-radius:4px;font-weight:600}
+  .arkon-digitando .arkon-bolha{display:flex;gap:4px;padding:13px}
+  .arkon-digitando span{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:pisca 1.2s infinite}
+  .arkon-digitando span:nth-child(2){animation-delay:.2s}
+  .arkon-digitando span:nth-child(3){animation-delay:.4s}
+  .arkon-rodape{padding:12px;background:var(--bg2);border-top:1px solid var(--line);display:flex;gap:8px}
+  .arkon-rodape input{flex:1;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:22px;padding:11px 16px;font-size:14px;outline:none;font-family:'Manrope',sans-serif}
+  .arkon-rodape input:focus{border-color:var(--gold)}
+  .arkon-rodape button{border:none;border-radius:50%;width:42px;height:42px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+  .arkon-rodape button:active{transform:scale(.92)}
+  .arkon-enviar{background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#0a0c10}
+  .arkon-enviar svg{width:18px;height:18px}
+  .arkon-mic{background:transparent;border:1.5px solid var(--line) !important;color:var(--gold-soft)}
+  .arkon-mic svg{width:17px;height:17px}
+  .arkon-mic.gravando{background:#e11d48;border-color:#e11d48 !important;color:#fff;animation:pisca 1s infinite}
+
   /* float wa */
   .fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:60px;height:60px;border-radius:50%;
     background:linear-gradient(135deg,var(--wa),var(--wa-dark));display:flex;align-items:center;justify-content:center;
@@ -192,15 +253,16 @@
   <header class="hero"><div class="wrap">
     <div>
       <span class="badge"><span class="dot"></span> Responde na hora, 24 horas por dia</span>
-      <h1>Seu cliente manda mensagem e o <span class="g">atendente de IA responde na hora</span>, mesmo de madrugada.</h1>
-      <p class="sub">Um atendente inteligente no seu WhatsApp que passa preço, horário e localização, tira dúvidas e já ajuda a agendar. Sem perder venda, sem custo de funcionário, sem você parar o que está fazendo.</p>
+      <h1>Seu cliente manda mensagem e o <span class="g">Arkon responde na hora</span>, mesmo de madrugada.</h1>
+      <p class="sub"><b style="color:var(--gold-soft)">Arkon</b> é o atendente inteligente da Zebubit no seu WhatsApp. Passa preço, horário e localização, tira dúvidas e já ajuda a agendar. Sem perder venda, sem custo de funcionário, sem você parar o que está fazendo.</p>
       <div class="cta">
-        <a class="btn btn-wa" href="https://wa.me/5534993421500?text=Quero%20ver%20a%20demonstra%C3%A7%C3%A3o%20do%20Atendente%20de%20IA" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.26l-.999 3.648 3.97-1.027z"/></svg>
-          Falar no WhatsApp
-        </a>
-        <a class="btn btn-ghost" href="#planos">Ver planos e preços</a>
+        <button class="btn btn-wa" style="background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#0a0c10;box-shadow:0 12px 30px rgba(230,189,79,.28)" onclick="abrirArkon()">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/></svg>
+          Testar o Arkon agora
+        </button>
+        <a class="btn btn-ghost" href="https://wa.me/5534993421500?text=Quero%20saber%20do%20Atendente%20de%20IA" target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
+      <p style="margin-top:14px"><a href="#planos" style="color:var(--muted);font-size:14px;text-decoration:underline">Ver planos e preços</a></p>
       <div class="mini">
         <div><b>24/7</b> nunca dorme</div>
         <div><b>&lt;5s</b> pra responder</div>
@@ -212,7 +274,7 @@
     <div class="phone">
       <div class="ph-head">
         <div class="ph-av">IA</div>
-        <div class="ph-name">Atendente Zebubit <small>online agora</small></div>
+        <div class="ph-name">Arkon <small>online agora</small></div>
       </div>
       <div class="ph-body" id="chat"></div>
     </div>
@@ -259,7 +321,7 @@
         </ul>
       </div>
       <div class="col depois">
-        <h3>Com o Atendente Zebubit</h3>
+        <h3>Com o Arkon</h3>
         <ul>
           <li>Cliente manda mensagem a qualquer hora</li>
           <li>Resposta em segundos, 24 horas por dia</li>
@@ -280,6 +342,39 @@
       <div class="step"><div class="n">1</div><h3>A gente ensina ele</h3><p>Montamos o atendente com tudo do seu negócio: preços, horários, serviços e as dúvidas mais comuns.</p></div>
       <div class="step"><div class="n">2</div><h3>Conecta no seu WhatsApp</h3><p>Ele passa a responder seus clientes na hora, 24h, com a cara e o tom da sua empresa.</p></div>
       <div class="step"><div class="n">3</div><h3>Você recebe os leads prontos</h3><p>Ele qualifica, captura o contato e encaminha pro agendamento ou pra você fechar a venda.</p></div>
+    </div>
+  </div></section>
+
+  <!-- MODALIDADES -->
+  <section><div class="wrap">
+    <div class="eyebrow">Diferencial exclusivo</div>
+    <h2 class="h2">Seu atendente pode ouvir, e também pode falar</h2>
+    <p class="lead">A maioria dos chatbots só lê e escreve. O atendente Zebubit vai além: entende áudio, e pode até responder de volta com uma voz que soa de verdade humana.</p>
+    <div class="grid g3">
+      <div class="modo">
+        <span class="badge2">Incluso em todos os planos</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H8l-4 4V6a2 2 0 0 1 0-2Zm0 2v12.17L6.83 16H19V6H4Z"/></svg></div>
+        <h3>Texto com texto</h3>
+        <p>Cliente escreve, o atendente responde por escrito. Rápido, direto, e já resolve a maior parte do atendimento do dia a dia.</p>
+        <div class="modo-demo" id="demo-tt"></div>
+      </div>
+      <div class="modo">
+        <span class="badge2">Upgrade</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/></svg></div>
+        <h3>Áudio com texto</h3>
+        <p>Muita gente não digita, manda nota de voz direto. O atendente ouve, entende e responde por escrito, sem perder nenhuma mensagem.</p>
+        <div class="modo-demo" id="demo-at"></div>
+      </div>
+      <div class="modo premium">
+        <span class="badge2">Upgrade premium</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 5V5L7 10H3Zm13.5 2a4.5 4.5 0 0 0-2.5-4.03v8.06A4.5 4.5 0 0 0 16.5 12Zm-2.5-9v2.06c3.39.86 6 3.94 6 7.94s-2.61 7.08-6 7.94V21c4.5-.89 8-4.87 8-9.5S18.5 2.89 14 2Z"/></svg></div>
+        <h3>Áudio com áudio</h3>
+        <p>O maior diferencial: cliente manda áudio e recebe áudio de volta, com voz humanizada, nada de robô. Dá até para personalizar com a sua própria voz no atendimento.</p>
+        <div class="modo-demo" id="demo-aa"></div>
+      </div>
+    </div>
+    <div class="caixa" style="max-width:760px;margin:26px auto 0;text-align:center" contenteditable="false">
+      Você escolhe o nível de conversa que faz sentido pro seu negócio. <a href="https://wa.me/5534993421500?text=Quero%20saber%20sobre%20o%20atendente%20com%20audio" target="_blank" rel="noopener" style="color:var(--gold-soft);font-weight:700">Fala com a gente</a> pra saber qual encaixa melhor e o investimento de cada um.
     </div>
   </div></section>
 
@@ -343,7 +438,7 @@
           <th>O que você precisa</th>
           <th>Atendimento manual</th>
           <th>Chatbot de menu (opção 1, 2, 3)</th>
-          <th class="zeb">Atendente Zebubit</th>
+          <th class="zeb">Arkon (Zebubit)</th>
         </tr></thead>
         <tbody>
           <tr><td>Responde rápido, de dia e de madrugada</td><td class="nao">Depende de alguém livre</td><td class="sim">Sim</td><td class="zeb sim">Sim</td></tr>
@@ -394,6 +489,32 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.26l-.999 3.648 3.97-1.027z"/></svg>
   </a>
 
+  <!-- MODAL DO ARKON -->
+  <div class="arkon-overlay" id="arkonOverlay">
+    <div class="arkon-janela">
+      <div class="arkon-topo">
+        <div class="arkon-av">AR</div>
+        <div class="info">
+          <div class="nome">Arkon</div>
+          <div class="status"><span class="dot"></span> online agora</div>
+        </div>
+        <button class="arkon-fechar" onclick="fecharArkon()" aria-label="Fechar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="arkon-corpo" id="arkonCorpo"></div>
+      <div class="arkon-rodape">
+        <input id="arkonCampo" type="text" placeholder="Escreva sua mensagem..." autocomplete="off">
+        <button class="arkon-mic" id="arkonMic" type="button" title="Gravar audio">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/></svg>
+        </button>
+        <button class="arkon-enviar" id="arkonEnviar" title="Enviar">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
 <script>
   // chat animado do hero
   const chat=document.getElementById('chat');
@@ -416,6 +537,144 @@
     setTimeout(next, k==='in'?900:1500);
   }
   next();
+
+  // demos das 3 modalidades
+  function waveBars(seed){
+    const n=14, heights=[];
+    for(let j=0;j<n;j++) heights.push(4+Math.round(Math.abs(Math.sin(seed+j*1.7))*11));
+    return '<span class="wave">'+heights.map(h=>`<span style="height:${h}px"></span>`).join('')+'</span>';
+  }
+  function audioBubbleHtml(side,dur,seed){
+    return `<div class="audio-msg"><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>${waveBars(seed)}<span class="dur">${dur}</span></div>`;
+  }
+  function playSeq(id,seq){
+    const el=document.getElementById(id);
+    if(!el) return;
+    let i=0;
+    function step(){
+      if(i>=seq.length){ setTimeout(()=>{el.innerHTML='';i=0;step();},2600); return; }
+      const m=seq[i++];
+      const b=document.createElement('div'); b.className='bub '+m.side;
+      b.innerHTML = m.type==='audio' ? audioBubbleHtml(m.side,m.dur,i) : m.text;
+      el.appendChild(b); el.scrollTop=el.scrollHeight;
+      setTimeout(step, m.side==='in'?800:1300);
+    }
+    step();
+  }
+  playSeq('demo-tt',[
+    {type:'text',side:'in',text:'Vocês têm horário amanhã de manhã?'},
+    {type:'text',side:'out',text:'Temos sim! 9h ou 10h30, qual prefere?'}
+  ]);
+  setTimeout(()=>playSeq('demo-at',[
+    {type:'audio',side:'in',dur:'0:05'},
+    {type:'text',side:'out',text:'Recebi seu áudio! Amanhã tenho 9h ou 10h30, qual fica melhor pra você?'}
+  ]), 500);
+  setTimeout(()=>playSeq('demo-aa',[
+    {type:'audio',side:'in',dur:'0:04'},
+    {type:'audio',side:'out',dur:'0:08'}
+  ]), 1000);
+
+  // chat de verdade do Arkon
+  const ARKON_WEBHOOK="https://n8n.dionefolador.com/webhook/2eb0b17d-0002-4abc-9def-000000000002/chat";
+  const arkonSessionId="arkon-site-"+Math.random().toString(36).slice(2)+Date.now();
+  const arkonOverlay=document.getElementById('arkonOverlay');
+  const arkonCorpo=document.getElementById('arkonCorpo');
+  const arkonCampo=document.getElementById('arkonCampo');
+  const arkonBtnEnviar=document.getElementById('arkonEnviar');
+  const arkonBtnMic=document.getElementById('arkonMic');
+  let arkonAberto=false;
+
+  function arkonBolha(texto,quem){
+    const linha=document.createElement('div');
+    linha.className='arkon-linha '+quem;
+    const b=document.createElement('div'); b.className='arkon-bolha'; b.textContent=texto;
+    linha.appendChild(b);
+    arkonCorpo.appendChild(linha); arkonCorpo.scrollTop=arkonCorpo.scrollHeight;
+    return linha;
+  }
+  function arkonDigitando(){
+    const linha=document.createElement('div');
+    linha.className='arkon-linha bot arkon-digitando';
+    linha.innerHTML='<div class="arkon-bolha"><span></span><span></span><span></span></div>';
+    arkonCorpo.appendChild(linha); arkonCorpo.scrollTop=arkonCorpo.scrollHeight;
+    return linha;
+  }
+  function abrirArkon(){
+    arkonOverlay.classList.add('aberto');
+    if(!arkonAberto){
+      arkonAberto=true;
+      setTimeout(()=>arkonBolha('Oi! Eu sou o Arkon, o atendente de IA da Zebubit 👋 Faço sites, link de bio e atendentes de IA como eu mesmo, pro WhatsApp de outros negócios. Me conta o que você precisa?','bot'),300);
+    }
+    setTimeout(()=>arkonCampo.focus(),200);
+  }
+  function fecharArkon(){ arkonOverlay.classList.remove('aberto'); }
+  arkonOverlay.addEventListener('click',e=>{ if(e.target===arkonOverlay) fecharArkon(); });
+
+  async function arkonEnviarTexto(){
+    const txt=arkonCampo.value.trim();
+    if(!txt) return;
+    arkonBolha(txt,'user'); arkonCampo.value='';
+    const t=arkonDigitando();
+    try{
+      const r=await fetch(ARKON_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'sendMessage',sessionId:arkonSessionId,chatInput:txt})});
+      const d=await r.json();
+      t.remove();
+      arkonBolha(d.output||'Desculpe, não consegui responder agora. Tente de novo, por favor.','bot');
+    }catch(e){
+      t.remove();
+      arkonBolha('Estou com dificuldade de conexão no momento. Tente novamente em instantes.','bot');
+    }
+  }
+  arkonBtnEnviar.addEventListener('click',arkonEnviarTexto);
+  arkonCampo.addEventListener('keydown',e=>{ if(e.key==='Enter') arkonEnviarTexto(); });
+
+  let arkonRecorder=null, arkonChunks=[], arkonGravando=false;
+  function arkonBlobToB64(blob){
+    return new Promise((resolve,reject)=>{
+      const reader=new FileReader();
+      reader.onloadend=()=>resolve(reader.result.split(',')[1]);
+      reader.onerror=reject;
+      reader.readAsDataURL(blob);
+    });
+  }
+  async function arkonEnviarAudio(blob){
+    arkonBolha('Áudio enviado','user');
+    const t=arkonDigitando();
+    try{
+      const b64=await arkonBlobToB64(blob);
+      const r=await fetch(ARKON_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'sendMessage',sessionId:arkonSessionId,chatInput:'',audio:b64,mimeType:blob.type||'audio/webm'})});
+      const d=await r.json();
+      t.remove();
+      arkonBolha(d.output||'Desculpe, não consegui responder agora. Tente de novo, por favor.','bot');
+    }catch(e){
+      t.remove();
+      arkonBolha('Estou com dificuldade de conexão no momento. Tente novamente em instantes.','bot');
+    }
+  }
+  arkonBtnMic.addEventListener('click', async ()=>{
+    if(!arkonGravando){
+      try{
+        const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+        arkonRecorder=new MediaRecorder(stream);
+        arkonChunks=[];
+        arkonRecorder.ondataavailable=e=>arkonChunks.push(e.data);
+        arkonRecorder.onstop=()=>{
+          stream.getTracks().forEach(tr=>tr.stop());
+          const blob=new Blob(arkonChunks,{type:arkonRecorder.mimeType||'audio/webm'});
+          arkonEnviarAudio(blob);
+        };
+        arkonRecorder.start();
+        arkonGravando=true;
+        arkonBtnMic.classList.add('gravando');
+      }catch(e){
+        arkonBolha('Não consegui acessar o microfone. Verifique a permissão do navegador.','bot');
+      }
+    }else{
+      arkonRecorder.stop();
+      arkonGravando=false;
+      arkonBtnMic.classList.remove('gravando');
+    }
+  });
 </script>
 </body>
 </html>
