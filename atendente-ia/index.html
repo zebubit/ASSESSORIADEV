@@ -36,8 +36,15 @@
   /* topbar */
   .top{position:sticky;top:0;z-index:60;background:rgba(11,13,17,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .top .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand-wrap{display:flex;align-items:center;gap:10px}
   .brand{font-family:'Sora',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.03em}
   .brand b{color:var(--gold)}
+  .brand-sep{width:1px;height:20px;background:var(--line)}
+  .brand-sub{font-family:'Sora',sans-serif;font-weight:600;font-size:13px;color:var(--gold-soft);display:flex;align-items:center;gap:6px;white-space:nowrap}
+  .brand-sub svg{width:14px;height:14px;flex-shrink:0}
+  .brand-sub .full{display:inline}
+  .brand-sub .curto{display:none}
+  @media (max-width:560px){ .brand-sub .full{display:none} .brand-sub .curto{display:inline} }
   .top .btn{padding:10px 18px;font-size:14px}
 
   /* hero */
@@ -82,7 +89,8 @@
   .g4{grid-template-columns:repeat(4,1fr)}
 
   .pain{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-  .pain .ic{width:44px;height:44px;border-radius:12px;background:rgba(230,189,79,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px}
+  .pain .ic{width:44px;height:44px;border-radius:12px;background:rgba(230,189,79,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--gold-soft)}
+  .pain .ic svg{width:22px;height:22px}
   .pain h3{font-size:17px;margin-bottom:6px}
   .pain p{color:var(--muted);font-size:14.5px}
 
@@ -245,7 +253,15 @@
 
   <!-- TOPBAR -->
   <div class="top"><div class="wrap">
-    <div class="brand">Zebu<b>bit</b></div>
+    <div class="brand-wrap">
+      <div class="brand">Zebu<b>bit</b></div>
+      <div class="brand-sep"></div>
+      <div class="brand-sub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 13.5 9.5 21 11 13.5 12.5 12 20 10.5 12.5 3 11 10.5 9.5Z"/></svg>
+        <span class="full">Arkon, atendente de IA</span>
+        <span class="curto">Arkon</span>
+      </div>
+    </div>
     <a class="btn btn-wa" href="https://wa.me/5534993421500?text=Quero%20saber%20do%20Atendente%20de%20IA%20no%20WhatsApp" target="_blank" rel="noopener">Quero o atendente</a>
   </div></div>
 
@@ -286,10 +302,10 @@
     <h2 class="h2">Toda mensagem sem resposta é uma venda perdida</h2>
     <p class="lead">O atendente de IA acaba com os furos que fazem o cliente desistir e ir pro concorrente.</p>
     <div class="grid g4">
-      <div class="pain"><div class="ic">🌙</div><h3>Fora do horário</h3><p>Cliente manda mensagem de madrugada ou domingo e ninguém responde. Ele some.</p></div>
-      <div class="pain"><div class="ic">🔁</div><h3>Sempre as mesmas perguntas</h3><p>Preço, horário, onde fica, se faz tal coisa. O dia todo, tirando seu tempo.</p></div>
-      <div class="pain"><div class="ic">🧊</div><h3>Lead esfria</h3><p>A resposta demorou 3 horas e o cliente já comprou em outro lugar.</p></div>
-      <div class="pain"><div class="ic">💸</div><h3>Funcionário custa caro</h3><p>E ainda assim não atende de madrugada, no domingo nem no feriado.</p></div>
+      <div class="pain"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.7 15.3a8.9 8.9 0 0 1-4.2 1c-5 0-9-4-9-9 0-1.5.4-2.9 1-4.2A9 9 0 1 0 21.7 14.5c-.3.3-.6.5-1 .8Z"/></svg></div><h3>Fora do horário</h3><p>Cliente manda mensagem de madrugada ou domingo e ninguém responde. Ele some.</p></div>
+      <div class="pain"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 2 21 6 17 10V7h-6a5 5 0 0 0-4.9 6.1l-1.9-.5A7 7 0 0 1 11 5h6ZM7 22l-4-4 4-4v3h6a5 5 0 0 0 4.9-6.1l1.9.5A7 7 0 0 1 13 19H7Z"/></svg></div><h3>Sempre as mesmas perguntas</h3><p>Preço, horário, onde fica, se faz tal coisa. O dia todo, tirando seu tempo.</p></div>
+      <div class="pain"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a1 1 0 0 1 1 1v2.6l2.1-1.2a1 1 0 0 1 1 1.7L14 7.7v3l2.6-1.5 1-2.6a1 1 0 1 1 1.9.7l-.6 1.5 1.6.6a1 1 0 1 1-.7 1.9L17.2 10 14.6 11.5l2.6 1.5 1.6-.6a1 1 0 1 1 .7 1.9l-1.6.6.6 1.5a1 1 0 1 1-1.9.7l-1-2.6L14 13v3l2.1 1.9a1 1 0 0 1-1 1.7L13 18.4V21a1 1 0 0 1-2 0v-2.6l-2.1 1.2a1 1 0 1 1-1-1.7L10 16v-3l-2.6 1.5-1 2.6a1 1 0 1 1-1.9-.7l.6-1.5-1.6-.6a1 1 0 0 1 .7-1.9L6.8 14 9.4 12.5 6.8 11l-1.6.6a1 1 0 0 1-.7-1.9l1.6-.6-.6-1.5a1 1 0 1 1 1.9-.7l1 2.6L10 11V8L7.9 6.1a1 1 0 0 1 1-1.7L11 5.6V3a1 1 0 0 1 1-1Z"/></svg></div><h3>Lead esfria</h3><p>A resposta demorou 3 horas e o cliente já comprou em outro lugar.</p></div>
+      <div class="pain"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a1 1 0 0 1 1 1v1.06A5.5 5.5 0 0 1 17.5 8.5a1 1 0 1 1-2 0A3.5 3.5 0 0 0 12 5a3.5 3.5 0 0 0-.4 6.98l.9.1A5.5 5.5 0 0 1 17.5 17.5a5.5 5.5 0 0 1-4.5 5.41V24a1 1 0 1 1-2 0v-1.06A5.5 5.5 0 0 1 6.5 17.5a1 1 0 1 1 2 0A3.5 3.5 0 0 0 12 21a3.5 3.5 0 0 0 .4-6.98l-.9-.1A5.5 5.5 0 0 1 6.5 8.5 5.5 5.5 0 0 1 11 3.06V2a1 1 0 0 1 1-1Z"/></svg></div><h3>Funcionário custa caro</h3><p>E ainda assim não atende de madrugada, no domingo nem no feriado.</p></div>
     </div>
   </section>
 
