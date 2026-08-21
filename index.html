@@ -2285,35 +2285,6 @@ html{overflow-x:hidden;max-width:100%;}
   document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right, .stagger-child').forEach(el => obs.observe(el));
 })();
 
-// 5. COUNTER ANIMADO (números sobem ao entrar na tela)
-(function() {
-  const counters = document.querySelectorAll('.count-up');
-  if (!counters.length) return;
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el     = e.target;
-      const target = parseInt(el.dataset.target, 10);
-      const suffix = el.dataset.suffix || '';
-      if (target === 0) { el.textContent = '0' + suffix; obs.unobserve(el); return; }
-      let start = 0;
-      const duration = 1800;
-      const step = Math.ceil(target / (duration / 16));
-      const timer = setInterval(() => {
-        start += step;
-        if (start >= target) {
-          el.textContent = target + suffix;
-          clearInterval(timer);
-        } else {
-          el.textContent = start + suffix;
-        }
-      }, 16);
-      obs.unobserve(el);
-    });
-  }, { threshold: 0.3 });
-  counters.forEach(c => obs.observe(c));
-})();
-
 // 6. MAGNETIC BUTTONS
 (function() {
   if (!window.matchMedia('(min-width:768px) and (hover:hover)').matches) return;
