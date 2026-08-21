@@ -75,6 +75,15 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .showcase-onde{font-size:15px;color:var(--mut);line-height:1.7;max-width:680px;margin:16px 0 22px;}
 .showcase-onde strong{color:var(--ink);}
 
+.trust{padding:56px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.trust-h{text-align:center;font-size:22px;font-weight:800;margin-bottom:34px;}
+.trust-h .accent{color:var(--blue);}
+.trust-mask{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.trust-track{display:flex;gap:64px;width:max-content;align-items:center;animation:trust-scroll 32s linear infinite;}
+.trust-track:hover{animation-play-state:paused;}
+@keyframes trust-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.trust-item{white-space:nowrap;font-size:21px;font-weight:700;color:#8890a4;opacity:.85;}
+
 .reviews{background:var(--soft);padding:70px 0;overflow:hidden;}
 .reviews .in{max-width:1220px;margin:0 auto;padding:0 40px;}
 .reviews-track{display:flex;gap:22px;width:max-content;animation:reviews-scroll 38s linear infinite;}
@@ -266,6 +275,30 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
         <div class="nicho-name">Colégio São Mateus</div>
         <div class="nicho-text">Fica na recepção, pra família avaliar depois de uma visita guiada ou de resolver algo na secretaria.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="trust-h">Elas já se destacam no <span class="accent">Google</span>.</div>
+  <div class="trust-mask">
+    <div class="trust-track">
+      <div class="trust-item">Mangiare Ristorante</div>
+      <div class="trust-item">Vila Madalena Bar</div>
+      <div class="trust-item">Barbearia Savana</div>
+      <div class="trust-item">Colégio São Mateus</div>
+      <div class="trust-item">Evelyn Aguirre</div>
+      <div class="trust-item">Green Center Garden</div>
+      <div class="trust-item">Valhalla Barber Shop</div>
+      <div class="trust-item">Donna Unha Esmalteria</div>
+      <div class="trust-item" aria-hidden="true">Mangiare Ristorante</div>
+      <div class="trust-item" aria-hidden="true">Vila Madalena Bar</div>
+      <div class="trust-item" aria-hidden="true">Barbearia Savana</div>
+      <div class="trust-item" aria-hidden="true">Colégio São Mateus</div>
+      <div class="trust-item" aria-hidden="true">Evelyn Aguirre</div>
+      <div class="trust-item" aria-hidden="true">Green Center Garden</div>
+      <div class="trust-item" aria-hidden="true">Valhalla Barber Shop</div>
+      <div class="trust-item" aria-hidden="true">Donna Unha Esmalteria</div>
     </div>
   </div>
 </section>
