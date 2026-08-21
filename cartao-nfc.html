@@ -58,7 +58,7 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 
 .showcase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;}
 .showcase-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(20,23,31,.06);}
-.showcase-card img{width:100%;display:block;}
+.showcase-card img,.showcase-card video{width:100%;display:block;}
 .showcase-group{margin-bottom:56px;}
 .showcase-group:last-child{margin-bottom:0;}
 
@@ -200,10 +200,11 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
     <div class="showcase-group-h"><h3>Cartão PVC</h3><span>tamanho de cartão de crédito, formato de bolso</span></div>
     <p class="showcase-onde"><strong>Onde usar:</strong> pro que anda com o cliente, tipo vendedor, motoboy, garçom ou corretor. Cabe na carteira e vai até quem precisa avaliar ou pagar, em vez de esperar a pessoa vir até o balcão.</p>
     <div class="showcase-grid">
-      <!-- Quando tiver o vídeo do cartão: trocar essa <img> por
-        <video autoplay muted loop playsinline poster="cartao-nfc-img/cartao-aproxime-avalie.png">
-          <source src="cartao-nfc-img/video-cartao.mp4" type="video/mp4">
-        </video> -->
+      <div class="showcase-card">
+        <video autoplay muted loop playsinline preload="auto" aria-label="Cliente aproximando o cartão PVC Zebubit no celular">
+          <source src="cartao-nfc-img/cartaopvc-scan-nfc.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="showcase-card"><img src="cartao-nfc-img/cartao-aproxime-avalie.png" alt="Cartão NFC formato cartão de crédito, Aproxime e Avalie" loading="lazy"></div>
       <div class="showcase-card"><img src="cartao-nfc-img/cartao-frente-verso.png" alt="Cartão NFC frente e verso, explicação NFC e QR Code" loading="lazy"></div>
       <div class="showcase-card"><img src="cartao-nfc-img/cartao-instagram.png" alt="Cartão NFC Aproxime e Siga, versão Instagram" loading="lazy"></div>
