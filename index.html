@@ -179,7 +179,7 @@ h2 em{font-style:italic;color:var(--gold);}
 .portfolio-header{padding:0 60px;margin-bottom:56px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;}
 .portfolio-header p{font-size:.85rem;color:var(--muted);}
 .scroll-track{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;padding:0 60px 8px;}
-.pcard{background:var(--dark3);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;display:block;opacity:0;transform:scale(.93) translateY(56px);transition:opacity .7s var(--ease),transform .7s var(--ease),border-color .4s;}
+.pcard{background:var(--dark3);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;display:block;opacity:0;transform:scale(.93) translateY(56px);transition:opacity .7s var(--ease),transform .7s var(--ease),border-color .4s;will-change:opacity,transform;}
 .pcard.in-view{opacity:1;transform:scale(1) translateY(0);}
 .pcard.in-view:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(201,168,76,.4);}
 .pcard-img{height:300px;background:var(--dark4);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
@@ -2136,8 +2136,8 @@ html{overflow-x:hidden;max-width:100%;}
 
   <!-- ============ SEO • Nicho: Criação de Sites, IA & Automação ============ -->
   <section aria-label="Serviços e áreas de atuação" style="max-width:1100px;margin:56px auto 0;padding:0 24px;border-top:1px solid rgba(201,168,76,.12);">
-    <h2 style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.6;font-weight:600;text-align:center;margin:32px 0 16px;">Criação de Sites, Inteligência Artificial &amp; Automação para Negócios</h2>
-    <p style="font-size:11px;line-height:1.9;color:rgba(255,255,255,.32);text-align:center;">
+    <h2 style="font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.35;font-weight:600;text-align:center;margin:32px 0 16px;">Criação de Sites, Inteligência Artificial &amp; Automação para Negócios</h2>
+    <p style="font-size:9px;line-height:1.9;color:rgba(255,255,255,.15);text-align:center;">
       Criação de sites, desenvolvimento web, sites profissionais, site institucional, landing page, loja virtual, e-commerce, site responsivo, design de sites, web design, sites para pequenos negócios, agência de sites, Uberaba, sites em Uberaba, automação com inteligência artificial, chatbot com IA, atendente virtual, atendente IA no WhatsApp, automação de atendimento, marketing digital, SEO, otimização para o Google, aparecer no Google, tráfego orgânico, Google Meu Negócio, identidade visual, logotipo, link na bio, bio profissional, cartão de visita digital, sistema de fidelidade, programa de pontos, integração com WhatsApp, formulário no WhatsApp, hospedagem de sites, domínio próprio, manutenção de sites, site rápido, performance web, sites modernos, portfólio online, site para clínica, site para dentista, site para advogado, site para restaurante, site para barbearia, site para salão de beleza, site para academia, site para estética, site para médico, site para corretor de imóveis, site para loja, catálogo online, cardápio digital, agendamento online, presença digital, transformação digital, tecnologia para negócios, consultoria em tecnologia, Zebubit, assessoria de tecnologia, sites com IA, geração de leads, captação de clientes, conversão de vendas, página de vendas, funil de vendas, copywriting, conteúdo para redes sociais, gestão de redes sociais, Instagram para negócios, reels automáticos, vídeos para empresas, sites em WordPress, sites em HTML, sites estáticos, GitHub Pages, sites sob medida, sites personalizados, orçamento de site, quanto custa um site, criar site barato, preço de site profissional, pequeno empreendedor, MEI, microempresa, empreendedorismo, negócio local, comércio em Uberaba, Minas Gerais, Brasil, atendimento humanizado, suporte técnico, sites seguros, HTTPS, LGPD, acessibilidade web, mobile first.
     </p>
   </section>
@@ -2217,7 +2217,7 @@ html{overflow-x:hidden;max-width:100%;}
         v.pause();
       }
     });
-  }, { rootMargin: '300px 0px', threshold: 0.05 });
+  }, { rootMargin: '100px 0px', threshold: 0.05 });
   document.querySelectorAll('video').forEach(v => {
     if (v.querySelector('source[data-src]')) io.observe(v);
   });
@@ -2263,7 +2263,11 @@ html{overflow-x:hidden;max-width:100%;}
       if (e.isIntersecting) {
         const idx = Array.from(riseCards).indexOf(e.target);
         const delay = (idx % 2) * 120;
-        setTimeout(() => e.target.classList.add('in-view'), delay);
+        setTimeout(() => {
+          e.target.classList.add('in-view');
+          // garante visibilidade mesmo se a transicao travar por sobrecarga (muitos videos carregando)
+          setTimeout(() => { e.target.style.opacity = '1'; e.target.style.transform = 'none'; }, 900);
+        }, delay);
         riseObs.unobserve(e.target);
       }
     });
