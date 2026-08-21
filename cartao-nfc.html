@@ -49,7 +49,7 @@ h1 .accent{background:linear-gradient(90deg,var(--blue),var(--green));-webkit-ba
 .btn-secondary{border:1.5px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:14.5px;padding:15px 30px;border-radius:100px;transition:.2s;display:inline-block;}
 .btn-secondary:hover{border-color:var(--blue);color:var(--blue);}
 .hero-img{flex:1 1 380px;min-width:280px;}
-.hero-img img{width:100%;border-radius:20px;box-shadow:0 30px 70px rgba(20,23,31,.16);}
+.hero-img img,.hero-img video{width:100%;border-radius:20px;box-shadow:0 30px 70px rgba(20,23,31,.16);display:block;}
 
 section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;}
@@ -172,7 +172,9 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
     </div>
   </div>
   <div class="hero-img">
-    <img src="cartao-nfc-img/placa-ambiente.png" alt="Placa NFC de avaliação Google em uso" loading="lazy">
+    <video autoplay muted loop playsinline poster="cartao-nfc-img/hero-scan-review-poster.jpg" aria-label="Cliente aproximando o celular na placa NFC de avaliação Google da Zebubit">
+      <source src="cartao-nfc-img/hero-scan-review.mp4" type="video/mp4">
+    </video>
   </div>
 </header>
 
