@@ -61,6 +61,14 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .showcase-card img{width:100%;display:block;}
 .showcase-group{margin-bottom:56px;}
 .showcase-group:last-child{margin-bottom:0;}
+
+.nicho-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;}
+.nicho-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(20,23,31,.06);}
+.nicho-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--soft);}
+.nicho-card-body{padding:20px 22px 24px;}
+.nicho-tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
+.nicho-name{font-size:17px;font-weight:700;margin-bottom:8px;}
+.nicho-text{font-size:14px;color:var(--mut);line-height:1.6;}
 .showcase-group-h{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
 .showcase-group-h h3{font-size:20px;font-weight:700;}
 .showcase-group-h span{font-size:13.5px;color:var(--mut);}
@@ -211,6 +219,59 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
         </video> -->
       <div class="showcase-card"><img src="cartao-nfc-img/cards-especificacao.png" alt="Card adesivo quadrado 10 por 10 cm, azul ou preto" loading="lazy"></div>
       <div class="showcase-card"><img src="cartao-nfc-img/cards-duas-cores.png" alt="Cards de avaliação Google preto e azul" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="nicho">
+  <div class="eyebrow">Pra cada tipo de atendimento</div>
+  <h2 class="section-h">Funciona em qualquer negócio que atende gente todo dia.</h2>
+  <p class="section-desc">O momento certo de pedir a avaliação muda de negócio pra negócio. O cartão se adapta a cada um.</p>
+  <div class="nicho-grid">
+    <div class="nicho-card">
+      <!-- Substituir por foto real do cartão Zebubit no ambiente do Mangiare -->
+      <img src="cartao-nfc-img/nicho-mangiare.png" alt="Cartão de avaliação Zebubit na mesa do Mangiare Ristorante" loading="lazy">
+      <div class="nicho-card-body">
+        <div class="nicho-tag">Restaurante</div>
+        <div class="nicho-name">Mangiare Ristorante</div>
+        <div class="nicho-text">O garçom leva o cartão junto com a conta, no momento em que o cliente saiu satisfeito do jantar.</div>
+      </div>
+    </div>
+    <div class="nicho-card">
+      <!-- Substituir por foto real do cartão Zebubit no ambiente do Vila Madalena Bar -->
+      <img src="cartao-nfc-img/nicho-vilamadalena.png" alt="Cartão de avaliação Zebubit no balcão do Vila Madalena Bar" loading="lazy">
+      <div class="nicho-card-body">
+        <div class="nicho-tag">Bar</div>
+        <div class="nicho-name">Vila Madalena Bar</div>
+        <div class="nicho-text">Fica no balcão, à mão de quem fecha a conta depois de uma noite boa, sem interromper o clima da mesa.</div>
+      </div>
+    </div>
+    <div class="nicho-card">
+      <!-- Substituir por foto real do cartão Zebubit no ambiente da Barbearia Savana -->
+      <img src="cartao-nfc-img/nicho-savana.png" alt="Cartão de avaliação Zebubit na Barbearia Savana" loading="lazy">
+      <div class="nicho-card-body">
+        <div class="nicho-tag">Barbearia</div>
+        <div class="nicho-name">Barbearia Savana</div>
+        <div class="nicho-text">O barbeiro entrega junto com o espelho, no fim do corte, quando o cliente ainda está admirando o resultado.</div>
+      </div>
+    </div>
+    <div class="nicho-card">
+      <!-- Substituir por foto real do cartão Zebubit no ambiente do Colégio São Mateus -->
+      <img src="cartao-nfc-img/nicho-saomateus.png" alt="Cartão de avaliação Zebubit na recepção do Colégio São Mateus" loading="lazy">
+      <div class="nicho-card-body">
+        <div class="nicho-tag">Escola</div>
+        <div class="nicho-name">Colégio São Mateus</div>
+        <div class="nicho-text">Fica na recepção, pra família avaliar depois de uma visita guiada ou de resolver algo na secretaria.</div>
+      </div>
+    </div>
+    <div class="nicho-card">
+      <!-- Substituir por foto real do cartão Zebubit no ambiente da Evelyn Aguirre -->
+      <img src="cartao-nfc-img/nicho-evelyn.png" alt="Cartão de avaliação Zebubit no espaço da Evelyn Aguirre, massoterapeuta" loading="lazy">
+      <div class="nicho-card-body">
+        <div class="nicho-tag">Massoterapia</div>
+        <div class="nicho-name">Evelyn Aguirre</div>
+        <div class="nicho-text">Entrega ao final da sessão, quando a cliente ainda está relaxada e com a experiência fresca na memória.</div>
+      </div>
     </div>
   </div>
 </section>
