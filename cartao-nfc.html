@@ -81,6 +81,7 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .product-gallery{flex:1 1 380px;min-width:280px;}
 .product-main{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(20,23,31,.06);aspect-ratio:4/5;position:relative;background:var(--soft);}
 .product-main .pm-item{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;}
+.product-main .pm-item.fit-contain{object-fit:contain;}
 .product-main .pm-item.active{display:block;}
 .product-thumbs{display:flex;gap:10px;margin-top:12px;}
 .product-thumb{flex:1;aspect-ratio:1;border-radius:10px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;opacity:.5;transition:.2s;background:none;}
@@ -138,6 +139,13 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .step-num{font-size:30px;font-weight:700;color:var(--blue);opacity:.5;margin-bottom:10px;}
 .step-h{font-size:19px;font-weight:700;margin-bottom:8px;}
 .step-text{font-size:14px;color:var(--mut);line-height:1.65;}
+
+.reels-grid{display:grid;grid-template-columns:repeat(2,minmax(220px,320px));gap:26px;justify-content:center;}
+.reels-card{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(20,23,31,.08);background:#000;}
+.reels-card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000;}
+.reels-card-body{padding:14px 18px 18px;background:#fff;}
+.reels-name{font-size:14.5px;font-weight:700;margin-bottom:2px;}
+.reels-text{font-size:13px;color:var(--mut);}
 
 .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 .diff-card{padding:28px 26px;border-radius:16px;border:1px solid var(--line);display:flex;gap:18px;}
@@ -231,26 +239,32 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
         <img class="pm-item active" src="cartao-nfc-img/placa-display-a6.jpg" alt="Placa de avaliação Google A6, 15 por 10 cm">
         <img class="pm-item" src="cartao-nfc-img/placa-ambiente.jpg" alt="Placa de avaliação Google em uso no balcão">
         <img class="pm-item" src="cartao-nfc-img/placa-avaliacao-google.jpg" alt="Placa de avaliação Google, especificações">
+        <img class="pm-item fit-contain" src="cartao-nfc-img/placa-ambiente-loja.jpg" alt="Placa de avaliação Google no balcão, formato A6">
+        <img class="pm-item fit-contain" src="cartao-nfc-img/placa-ambiente-hotel.jpg" alt="Placa de avaliação Google, detalhe do NFC e QR Code">
+        <img class="pm-item fit-contain" src="cartao-nfc-img/placa-ambiente-boutique.jpg" alt="Placa de avaliação Google, funciona com um toque, sem app e sem bateria">
       </div>
       <div class="product-thumbs">
         <button class="product-thumb active" onclick="pmSwitch('gal-placa',0,this)"><img src="cartao-nfc-img/placa-display-a6.jpg" alt=""></button>
         <button class="product-thumb" onclick="pmSwitch('gal-placa',1,this)"><img src="cartao-nfc-img/placa-ambiente.jpg" alt=""></button>
         <button class="product-thumb" onclick="pmSwitch('gal-placa',2,this)"><img src="cartao-nfc-img/placa-avaliacao-google.jpg" alt=""></button>
+        <button class="product-thumb" onclick="pmSwitch('gal-placa',3,this)"><img src="cartao-nfc-img/placa-ambiente-loja.jpg" alt=""></button>
+        <button class="product-thumb" onclick="pmSwitch('gal-placa',4,this)"><img src="cartao-nfc-img/placa-ambiente-hotel.jpg" alt=""></button>
+        <button class="product-thumb" onclick="pmSwitch('gal-placa',5,this)"><img src="cartao-nfc-img/placa-ambiente-boutique.jpg" alt=""></button>
       </div>
     </div>
     <div class="product-info">
       <h3>Placa de Acrílico</h3>
       <div class="product-sub">Formato destaque · fica em pé no balcão</div>
       <p class="product-onde"><strong>Onde usar:</strong> em um ponto fixo de atendimento, tipo balcão da recepção, caixa ou mesa de entrada. Fica em pé e sempre visível pra quem senta ou passa por ali, sem precisar segurar nada.</p>
-      <div class="product-price-row"><span class="product-price">R$ 97</span><span class="product-price-unit">1 unidade</span></div>
-      <div class="product-combo">ou 2 unidades por R$170</div>
+      <div class="product-price-row"><span class="product-price">R$ 99</span><span class="product-price-unit">1 unidade</span></div>
+      <div class="product-combo">ou 2 unidades por R$180</div>
       <ul class="product-specs">
         <li><b>Material</b> Acrílico com arte em adesivo vinílico premium</li>
         <li><b>Dimensões</b> 15 x 10 cm (A6), base em L</li>
         <li><b>Tecnologia</b> NFC + QR Code já gravados com seu link</li>
         <li><b>Sem app</b> cliente só encosta o celular</li>
       </ul>
-      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20a%20placa%20Aproxime%20e%20Avalie%20em%20acr%C3%ADlico." target="_blank" class="btn-buy">Comprar · R$97</a>
+      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20a%20placa%20Aproxime%20e%20Avalie%20em%20acr%C3%ADlico." target="_blank" class="btn-buy">Comprar · R$99</a>
     </div>
   </div>
 
@@ -276,7 +290,7 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
       <div class="product-sub">Formato bolso · tamanho de cartão de crédito</div>
       <p class="product-onde"><strong>Onde usar:</strong> pro que anda com o cliente, tipo vendedor, motoboy, garçom ou corretor. Cabe na carteira e vai até quem precisa avaliar ou pagar, em vez de esperar a pessoa vir até o balcão. Também sai gravado pra <strong>seguir no Instagram</strong>, no lugar da avaliação no Google.</p>
       <div class="product-price-row"><span class="product-price">R$ 79</span><span class="product-price-unit">1 unidade</span></div>
-      <div class="product-combo">ou 2 unidades por R$120</div>
+      <div class="product-combo">ou 2 unidades por R$140</div>
       <ul class="product-specs">
         <li><b>Material</b> PVC premium à prova d'água</li>
         <li><b>Dimensões</b> tamanho de cartão de crédito</li>
@@ -293,26 +307,53 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
         <img class="pm-item active" src="cartao-nfc-img/cards-especificacao.jpg" alt="Card adesivo quadrado 10 por 10 cm, azul ou preto">
         <img class="pm-item" src="cartao-nfc-img/cards-duas-cores.jpg" alt="Cards de avaliação Google preto e azul">
         <img class="pm-item" src="cartao-nfc-img/cards-dimensoes.jpg" alt="Card adesivo, dimensões 10 por 10 cm">
+        <img class="pm-item fit-contain" src="cartao-nfc-img/card-frente-verso-medidas.jpg" alt="Card adesivo, frente e verso adesivado, 10 cm">
       </div>
       <div class="product-thumbs">
         <button class="product-thumb active" onclick="pmSwitch('gal-adesivo',0,this)"><img src="cartao-nfc-img/cards-especificacao.jpg" alt=""></button>
         <button class="product-thumb" onclick="pmSwitch('gal-adesivo',1,this)"><img src="cartao-nfc-img/cards-duas-cores.jpg" alt=""></button>
         <button class="product-thumb" onclick="pmSwitch('gal-adesivo',2,this)"><img src="cartao-nfc-img/cards-dimensoes.jpg" alt=""></button>
+        <button class="product-thumb" onclick="pmSwitch('gal-adesivo',3,this)"><img src="cartao-nfc-img/card-frente-verso-medidas.jpg" alt=""></button>
       </div>
     </div>
     <div class="product-info">
       <h3>Card Adesivo</h3>
       <div class="product-sub">Formato adesivo · cola em qualquer superfície</div>
       <p class="product-onde"><strong>Onde usar:</strong> em qualquer lugar sem espaço pra deixar algo em pé, tipo vidro da porta, mesa, vitrine, até no carro. Cola direto e dá pra colocar em mais de um ponto ao mesmo tempo, multiplicando o alcance.</p>
-      <div class="product-price-row"><span class="product-price">R$ 59</span><span class="product-price-unit">1 unidade</span></div>
-      <div class="product-combo">ou 2 unidades por R$99,90</div>
+      <div class="product-price-row"><span class="product-price">R$ 69</span><span class="product-price-unit">1 unidade</span></div>
+      <div class="product-combo">ou 2 unidades por R$120</div>
       <ul class="product-specs">
         <li><b>Material</b> Adesivo vinílico premium</li>
         <li><b>Dimensões</b> 10 x 10 cm quadrado</li>
         <li><b>Tecnologia</b> NFC + QR Code já gravados com seu link</li>
         <li><b>Sem app</b> cliente só encosta o celular</li>
       </ul>
-      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20o%20Card%20adesivo%20Aproxime%20e%20Avalie." target="_blank" class="btn-buy">Comprar · R$59</a>
+      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20o%20Card%20adesivo%20Aproxime%20e%20Avalie." target="_blank" class="btn-buy">Comprar · R$69</a>
+    </div>
+  </div>
+</section>
+
+<section id="reels">
+  <div class="eyebrow">Veja funcionando</div>
+  <h2 class="section-h">Do encosto do celular até a avaliação, em poucos segundos.</h2>
+  <div class="reels-grid">
+    <div class="reels-card">
+      <video controls playsinline preload="metadata" poster="cartao-nfc-img/reels-avaliacao-confianca-poster.jpg">
+        <source src="cartao-nfc-img/reels-avaliacao-confianca.mp4" type="video/mp4">
+      </video>
+      <div class="reels-card-body">
+        <div class="reels-name">Avaliação vira confiança</div>
+        <div class="reels-text">Por que pedir a avaliação certa, na hora certa, traz mais clientes.</div>
+      </div>
+    </div>
+    <div class="reels-card">
+      <video controls playsinline preload="metadata" poster="cartao-nfc-img/reels-demonstracao-nfc-poster.jpg">
+        <source src="cartao-nfc-img/reels-demonstracao-nfc.mp4" type="video/mp4">
+      </video>
+      <div class="reels-card-body">
+        <div class="reels-name">Aproximou, avaliou</div>
+        <div class="reels-text">O passo a passo real de como o cliente encosta o celular e avalia no Google.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -494,23 +535,23 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
     <div class="price-card">
       <div class="price-label">Formato adesivo</div>
       <div class="price-name">Card 10x10cm</div>
-      <div class="price-now">R$ 59</div>
+      <div class="price-now">R$ 69</div>
       <div class="price-unit">1 unidade</div>
-      <div class="price-combo">ou 2 unidades por R$99,90</div>
+      <div class="price-combo">ou 2 unidades por R$120</div>
       <ul class="price-features">
         <li>Quadrado 10 x 10 cm</li>
         <li>NFC + QR Code já gravados com seu link</li>
         <li>Verso adesivo, cola em qualquer superfície</li>
         <li>Azul ou preto</li>
       </ul>
-      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20o%20Card%20adesivo%20Aproxime%20e%20Avalie." target="_blank" class="btn-buy">Quero o card · R$59</a>
+      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20o%20Card%20adesivo%20Aproxime%20e%20Avalie." target="_blank" class="btn-buy">Quero o card · R$69</a>
     </div>
     <div class="price-card featured">
       <div class="price-label">Formato bolso</div>
       <div class="price-name">Cartão PVC</div>
       <div class="price-now">R$ 79</div>
       <div class="price-unit">1 unidade</div>
-      <div class="price-combo">ou 2 unidades por R$120</div>
+      <div class="price-combo">ou 2 unidades por R$140</div>
       <ul class="price-features">
         <li>Tamanho de cartão de crédito</li>
         <li>NFC + QR Code já gravados com seu link</li>
@@ -522,16 +563,16 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
     <div class="price-card">
       <div class="price-label">Formato destaque</div>
       <div class="price-name">Placa de Acrílico</div>
-      <div class="price-now">R$ 97</div>
+      <div class="price-now">R$ 99</div>
       <div class="price-unit">1 unidade</div>
-      <div class="price-combo">ou 2 unidades por R$170</div>
+      <div class="price-combo">ou 2 unidades por R$180</div>
       <ul class="price-features">
         <li>Placa em pé A6 (15x10cm), base em L</li>
         <li>NFC + QR Code já gravados com seu link</li>
         <li>Arte impressa em adesivo vinílico premium</li>
         <li>Fica em destaque no balcão</li>
       </ul>
-      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20a%20placa%20Aproxime%20e%20Avalie%20em%20acr%C3%ADlico." target="_blank" class="btn-buy">Quero a placa · R$97</a>
+      <a href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Quero%20a%20placa%20Aproxime%20e%20Avalie%20em%20acr%C3%ADlico." target="_blank" class="btn-buy">Quero a placa · R$99</a>
     </div>
   </div>
   <p class="price-note">Quer com sua cor, seu logo e sua mensagem? Personalização disponível à parte, fale com a gente pelo WhatsApp.</p>
