@@ -99,6 +99,24 @@
     color:#0a1610;font-size:.6875rem;font-weight:800;letter-spacing:.04em;padding:3px 10px;border-radius:999px;
     box-shadow:0 4px 10px rgba(0,0,0,.35)}
 
+  /* MOCKUP DO LOGIN — flutuando com leve inclinação 3D */
+  .mockup-local{position:relative;display:block;padding:26px 10px 20px;perspective:1100px;text-align:center}
+  .mockup-local__glow{position:absolute;inset:6px 30px 26px;border-radius:50%;z-index:0;
+    background:radial-gradient(60% 60% at 50% 45%,rgba(230,189,79,.28),transparent 72%);filter:blur(14px)}
+  .mockup-local__frame{position:relative;z-index:1;display:block;width:88%;max-width:300px;margin:0 auto;
+    border-radius:14px;overflow:hidden;transform-style:preserve-3d;
+    border:1px solid rgba(230,189,79,.35);box-shadow:0 26px 54px rgba(0,0,0,.55);
+    background:#0a0806;animation:flutuaLocal 6s ease-in-out infinite}
+  .mockup-local:hover .mockup-local__frame{animation-play-state:paused;transform:rotateX(0deg) rotateY(0deg) translateY(-4px) scale(1.02)}
+  .mockup-local__bar{display:flex;gap:6px;padding:9px 11px;background:#120d08}
+  .mockup-local__bar i{width:7px;height:7px;border-radius:50%;background:rgba(230,189,79,.35);display:block}
+  .mockup-local__frame img{display:block;width:100%;height:auto}
+  .mockup-local__legenda{display:block;margin-top:14px;font-size:.8125rem;color:var(--mut);font-style:italic}
+  @keyframes flutuaLocal{
+    0%,100%{transform:rotateX(5deg) rotateY(-5deg) translateY(0)}
+    50%{transform:rotateX(2deg) rotateY(3deg) translateY(-9px)}
+  }
+
   .card.google{
     background:linear-gradient(var(--card),var(--card)) padding-box,
                linear-gradient(90deg,#4285F4,#EA4335,#FBBC05,#34A853,#4285F4,#EA4335,#FBBC05,#34A853) border-box;
@@ -230,7 +248,16 @@
       <span class="arr">↗</span>
     </a>
 
-    <a class="card rv" style="animation-delay:.17s" href="https://zebubit.com.br" target="_blank" rel="noopener">
+    <a class="mockup-local rv" style="animation-delay:.17s" href="https://local.zebubit.com.br" target="_blank" rel="noopener" aria-label="Ver o painel do Zebubit Local">
+      <span class="mockup-local__glow" aria-hidden="true"></span>
+      <span class="mockup-local__frame">
+        <span class="mockup-local__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+        <img src="trabalhos/zebubit-local-login.webp" alt="Tela de acesso do painel Zebubit Local" width="1546" height="1513" loading="lazy">
+      </span>
+      <span class="mockup-local__legenda">É tecnologia de verdade. Entre e veja o painel ↗</span>
+    </a>
+
+    <a class="card rv" style="animation-delay:.18s" href="https://zebubit.com.br" target="_blank" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
       <span class="t"><span class="title">Site profissional</span><span class="sub">Rápido, no celular, e achável no Google</span></span>
       <span class="arr">↗</span>
