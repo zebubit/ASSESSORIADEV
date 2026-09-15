@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tai · Atendimento Água na Boca</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vinho:#8A5D6C; --vinho-esc:#6E4655; --rosa:#F2D9E2; --rosa-mid:#E6C9D4;
+  --creme:#FFF9FB; --branco:#fff; --tinta:#3B2A31; --mut:#8C7A81;
+  --linha:#EFDDE4; --verde:#0e7a3e;
+  --script:'Playball',Georgia,cursive; --sans:'Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--creme);color:var(--tinta);font:400 16px/1.65 var(--sans);
+  min-height:100dvh;display:flex;flex-direction:column;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(60vw 45vh at 50% -8%, rgba(242,217,226,.85), transparent 65%);
+}
+.wrap{position:relative;z-index:1;width:min(680px,calc(100% - 28px));margin-inline:auto;
+  flex:1;display:flex;flex-direction:column;padding:24px 0 30px}
+
+.topo{text-align:center;flex:none}
+.marca{font-family:var(--script);font-size:2.1rem;color:var(--vinho);line-height:1}
+.marca small{display:block;font-family:var(--sans);font-size:.64rem;font-weight:600;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin-top:7px}
+h1{font-family:var(--script);font-size:clamp(1.8rem,5.5vw,2.5rem);color:var(--vinho-esc);
+  margin:18px 0 6px;line-height:1.1;font-weight:400}
+.sub{color:var(--mut);font-size:.95rem;max-width:42ch;margin-inline:auto}
+
+.conversa{
+  flex:1;margin:20px 0 16px;padding:18px;border-radius:22px;background:var(--branco);
+  border:1px solid var(--linha);box-shadow:0 10px 30px rgba(138,93,108,.08);
+  display:flex;flex-direction:column;gap:12px;overflow-y:auto;min-height:200px;max-height:44vh;
+}
+.m{max-width:88%;padding:11px 15px;font-size:.97rem;line-height:1.55;
+  animation:sobe .28s ease both;white-space:pre-wrap}
+@keyframes sobe{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.m.ela{align-self:flex-start;background:var(--rosa);color:var(--vinho-esc);
+  border-radius:16px 16px 16px 5px}
+.m.eu{align-self:flex-end;background:var(--vinho);color:#fff;
+  border-radius:16px 16px 5px 16px;font-weight:500}
+.vazio{margin:auto;text-align:center;color:var(--mut);font-size:.94rem;max-width:28ch;line-height:1.75}
+.vazio b{display:block;font-family:var(--script);font-size:1.5rem;font-weight:400;
+  color:var(--vinho);margin-bottom:6px}
+.pensa{align-self:flex-start;display:flex;gap:4px;padding:14px 16px;background:var(--rosa);
+  border-radius:16px 16px 16px 5px}
+.pensa i{width:6px;height:6px;border-radius:50%;background:var(--vinho);animation:pisca 1.3s infinite}
+.pensa i:nth-child(2){animation-delay:.18s}.pensa i:nth-child(3){animation-delay:.36s}
+@keyframes pisca{0%,60%,100%{opacity:.3}30%{opacity:1}}
+
+/* sacola */
+.sacola{
+  flex:none;background:var(--branco);border:2px solid var(--vinho);border-radius:20px;
+  padding:18px 20px;margin-bottom:16px;display:none;
+  box-shadow:0 12px 32px rgba(138,93,108,.16);animation:surge .35s ease both;
+}
+.sacola.ver{display:block}
+@keyframes surge{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.sac-cab{display:flex;align-items:center;gap:9px;margin-bottom:13px}
+.sac-cab svg{width:20px;height:20px;color:var(--vinho);flex:none}
+.sac-cab b{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--vinho)}
+.sac-item{display:flex;justify-content:space-between;gap:14px;padding:8px 0;
+  border-bottom:1px dashed var(--linha);font-size:.95rem}
+.sac-item:last-of-type{border-bottom:none}
+.sac-item .q{font-weight:600;color:var(--vinho);flex:none;min-width:2.2em}
+.sac-item .n{flex:1;line-height:1.4}
+.sac-item .v{font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sac-total{display:flex;justify-content:space-between;align-items:baseline;
+  margin-top:12px;padding-top:12px;border-top:2px solid var(--vinho)}
+.sac-total span{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.sac-total b{font-size:1.7rem;font-weight:700;color:var(--vinho);font-variant-numeric:tabular-nums}
+.sac-zap{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:14px;
+  min-height:52px;border-radius:99px;background:var(--verde);color:#fff;text-decoration:none;
+  font-size:.85rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  box-shadow:0 8px 22px rgba(14,122,62,.3)}
+.sac-zap:hover{background:#0b6b35}
+.sac-zap svg{width:19px;height:19px;flex:none}
+.sac-nota{display:block;text-align:center;margin-top:9px;font-size:.78rem;color:var(--mut);line-height:1.5}
+.ouvir{display:inline-flex;align-items:center;gap:6px;margin-top:8px;min-height:34px;
+  padding:6px 13px;border-radius:99px;background:transparent;border:1.5px solid var(--rosa-mid);
+  color:var(--vinho);font:600 .72rem var(--sans);letter-spacing:.05em;text-transform:uppercase;
+  cursor:pointer;transition:background .18s ease}
+.ouvir:hover{background:var(--rosa)}
+.ouvir svg{width:15px;height:15px;flex:none}
+.ouvir.tocando{background:var(--vinho);border-color:var(--vinho);color:#fff}
+.ouvir:disabled{opacity:.5;cursor:default}
+.m-zap{display:inline-flex;align-items:center;gap:8px;margin-top:11px;min-height:46px;
+  padding:11px 20px;border-radius:99px;background:var(--verde);color:#fff;text-decoration:none;
+  font-size:.82rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  box-shadow:0 6px 18px rgba(14,122,62,.28)}
+.m-zap:hover{background:#0b6b35}
+.m-zap svg{width:17px;height:17px;flex:none}
+.sac-aviso{margin-top:11px;padding:10px 14px;border-radius:11px;background:#FFF4E5;
+  border:1px solid #F5D9A8;color:#8A5A14;font-size:.85rem;line-height:1.5}
+
+/* controles */
+.baixo{flex:none;display:flex;flex-direction:column;align-items:center;gap:11px}
+.linha-form{display:flex;gap:8px;width:100%;max-width:100%}
+.linha-form input{flex:1 1 0;min-width:0;min-height:52px;padding:13px 18px;border-radius:99px;
+  background:var(--branco);border:1.5px solid var(--linha);color:var(--tinta);
+  font:400 1rem var(--sans);outline:none}
+.linha-form input::placeholder{color:#BCA9B0}
+.linha-form input:focus{border-color:var(--vinho)}
+.bt{flex:none;width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;
+  display:grid;place-items:center;transition:transform .18s ease}
+.bt:active{transform:scale(.94)}
+.bt svg{width:21px;height:21px}
+.bt.env{background:var(--vinho);color:#fff}
+.bt.mic{background:var(--branco);border:1.5px solid var(--rosa-mid);color:var(--vinho)}
+.bt.mic.ouvindo{background:#C0392B;border-color:#C0392B;color:#fff;animation:pulsa 1.4s infinite}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(192,57,43,.45)}70%{box-shadow:0 0 0 11px rgba(192,57,43,0)}}
+.bt[hidden]{display:none}
+.bt:disabled{opacity:.45;cursor:default}
+.dica{font-size:.82rem;color:var(--mut);text-align:center;min-height:1.4em}
+.dica b{color:var(--vinho);font-weight:600}
+.rodape{flex:none;text-align:center;margin-top:18px;font-size:.68rem;color:#C3B2B8;
+  letter-spacing:.16em;text-transform:uppercase}
+@media (max-width:420px){
+  .wrap{width:calc(100% - 20px);padding:18px 0 24px}
+  .linha-form{gap:6px}
+  .linha-form input{padding:12px 15px;font-size:16px}
+  .bt{width:48px;height:48px}
+  .bt svg{width:19px;height:19px}
+  .conversa{padding:14px;max-height:42vh}
+  .sacola{padding:15px 16px}
+  .sac-total b{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topo">
+    <div class="marca">Água na Boca<small>Doceria · Cuiabá</small></div>
+    <h1>Faça seu pedido com a Tai</h1>
+    <p class="sub">Conte o que você quer, ou toque no microfone e fale. Ela monta o pedido e manda pra loja.</p>
+  </header>
+
+  <main class="conversa" id="conversa" aria-live="polite">
+    <div class="vazio" id="vazio">
+      <b>Oi, tudo bem?</b>
+      Me diz pra quem é, ou o que te deu vontade, que eu te ajudo a escolher.
+    </div>
+  </main>
+
+  <section class="sacola" id="sacola" aria-live="polite"></section>
+
+  <div class="baixo">
+    <form class="linha-form" id="form">
+      <input id="campo" type="text" placeholder="Escreva seu pedido aqui" autocomplete="off">
+      <button type="button" class="bt mic" id="mic" aria-label="Falar" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+          <rect x="9" y="2" width="6" height="11" rx="3" fill="currentColor" stroke="none"/>
+          <path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M8.5 21h7"/>
+        </svg>
+      </button>
+      <button type="submit" class="bt env" aria-label="Enviar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/>
+        </svg>
+      </button>
+    </form>
+    <p class="dica" id="dica">Pode escrever ou falar</p>
+  </div>
+
+  <p class="rodape">Demonstração · Zebubit Assessoria</p>
+</div>
+
+<script>
+const API    = 'https://n8n.dionefolador.com/webhook/aguanaboca-pedido';
+const SESSAO = 'doce-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+
+const elConv  = document.getElementById('conversa');
+const elVazio = document.getElementById('vazio');
+const elSac   = document.getElementById('sacola');
+const elForm  = document.getElementById('form');
+const elCampo = document.getElementById('campo');
+const elDica  = document.getElementById('dica');
+const elMic   = document.getElementById('mic');
+const elEnv   = elForm.querySelector('.env');
+
+let ocupado = false, tocando = null;
+
+const icoZap = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.9-2.9-1.6-4-3.6-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>';
+const icoSac = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>';
+
+const API_VOZ = 'https://n8n.dionefolador.com/webhook/falar';
+const icoAlto = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+
+function botaoOuvir(texto){
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'ouvir';
+  b.innerHTML = icoAlto + 'Ouvir';
+  b.addEventListener('click', async function(){
+    if(tocando){ tocando.pause(); tocando = null; }
+    if(b.dataset.audio){ b.classList.add('tocando'); tocar(b.dataset.audio);
+      setTimeout(function(){ b.classList.remove('tocando'); }, 900); return; }
+    b.disabled = true;
+    b.innerHTML = icoAlto + 'Gerando';
+    try{
+      const r = await fetch(API_VOZ, {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ texto: texto, voz: 'maria' })
+      });
+      const d = await r.json();
+      if(d.audio){ b.dataset.audio = d.audio; tocar(d.audio); }
+    }catch(e){}
+    b.disabled = false;
+    b.innerHTML = icoAlto + 'Ouvir';
+  });
+  return b;
+}
+
+function botaoZap(link){
+  const a = document.createElement('a');
+  a.className = 'm-zap';
+  a.href = link;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.innerHTML = icoZap + 'Falar no WhatsApp';
+  return a;
+}
+
+function reais(v){ return 'R$ ' + v.toFixed(2).replace('.', ','); }
+
+function msg(quem, texto){
+  if(elVazio && elVazio.parentNode) elVazio.remove();
+  const d = document.createElement('div');
+  d.className = 'm ' + quem;
+  d.textContent = texto;
+  elConv.appendChild(d);
+  elConv.scrollTop = elConv.scrollHeight;
+  return d;
+}
+
+function mostraSacola(p){
+  let html = '<div class="sac-cab">' + icoSac + '<b>Seu pedido</b></div>';
+  p.itens.forEach(function(i){
+    html += '<div class="sac-item"><span class="q">' + i.q + 'x</span>'
+          + '<span class="n">' + i.nome + '</span>'
+          + '<span class="v">' + reais(i.sub) + '</span></div>';
+  });
+  html += '<div class="sac-total"><span>Total</span><b>' + reais(p.total) + '</b></div>';
+  if(!p.minimoOk){
+    html += '<div class="sac-aviso">O pedido mínimo da doceria é de R$ 15,00. '
+          + 'Que tal completar com alguma coisinha?</div>';
+  }
+  html += '<a class="sac-zap" href="' + p.link + '" target="_blank" rel="noopener">'
+        + icoZap + 'Enviar pedido para a loja</a>'
+        + '<small class="sac-nota">Abre o WhatsApp da doceria com o seu pedido já escrito. '
+        + 'A loja confirma a disponibilidade e combina a retirada.</small>';
+  elSac.innerHTML = html;
+  elSac.classList.add('ver');
+  elSac.scrollIntoView({ block: 'nearest' });
+}
+
+function tocar(base64){
+  try{
+    if(tocando){ tocando.pause(); tocando = null; }
+    const a = new Audio('data:audio/mpeg;base64,' + base64);
+    tocando = a;
+    a.onended = function(){ tocando = null; elDica.textContent = 'Pode escrever ou falar'; };
+    elDica.innerHTML = '<b>A Tai está falando</b>';
+    a.play().catch(function(){ tocando = null; });
+  }catch(e){ tocando = null; }
+}
+
+async function perguntar(texto, modo){
+  if(!texto || ocupado) return;
+  modo = modo || 'texto';
+  ocupado = true;
+  elEnv.disabled = true;
+  msg('eu', texto);
+
+  const pensa = document.createElement('div');
+  pensa.className = 'pensa';
+  pensa.innerHTML = '<i></i><i></i><i></i>';
+  elConv.appendChild(pensa);
+  elConv.scrollTop = elConv.scrollHeight;
+
+  try{
+    const r = await fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ mensagem: texto, sessao: SESSAO, modo: modo })
+    });
+    const d = await r.json();
+    pensa.remove();
+    const txtResp = (d.resposta || '').trim() || 'Desculpa, não entendi. Pode repetir?';
+    const bloco = msg('ela', txtResp);
+    if(!d.audio){
+      bloco.appendChild(document.createElement('br'));
+      bloco.appendChild(botaoOuvir(txtResp));
+    }
+    if(d.whatsapp && d.whatsapp.link){
+      bloco.appendChild(document.createElement('br'));
+      bloco.appendChild(botaoZap(d.whatsapp.link));
+      elConv.scrollTop = elConv.scrollHeight;
+    }
+    if(d.pedido && d.pedido.itens && d.pedido.itens.length) mostraSacola(d.pedido);
+    if(d.audio) tocar(d.audio);
+  }catch(e){
+    pensa.remove();
+    msg('ela', 'Tive um probleminha de conexão agora. Pode tentar de novo?');
+  }
+  ocupado = false;
+  elEnv.disabled = false;
+  elConv.scrollTop = elConv.scrollHeight;
+}
+
+elForm.addEventListener('submit', function(ev){
+  ev.preventDefault();
+  const t = elCampo.value.trim();
+  if(!t) return;
+  elCampo.value = '';
+  perguntar(t, 'texto');
+});
+
+/* ---------- gravar áudio de verdade ---------- */
+let gravador = null, pedacos = [], gravando = false, faixa = null, inicio = 0;
+
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder){
+  elMic.hidden = false;
+}
+
+function tipoSuportado(){
+  const tipos = ['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg'];
+  for(const t of tipos){ if(MediaRecorder.isTypeSupported(t)) return t; }
+  return '';
+}
+
+function pararTudo(){
+  if(faixa){ faixa.getTracks().forEach(t => t.stop()); faixa = null; }
+  gravando = false;
+  elMic.classList.remove('ouvindo');
+  elDica.textContent = 'Pode escrever ou falar';
+}
+
+async function enviarAudio(base64, mimeType){
+  if(ocupado) return;
+  ocupado = true;
+  elEnv.disabled = true;
+  const minha = msg('eu', 'Áudio enviado');
+
+  const pensa = document.createElement('div');
+  pensa.className = 'pensa';
+  pensa.innerHTML = '<i></i><i></i><i></i>';
+  elConv.appendChild(pensa);
+  elConv.scrollTop = elConv.scrollHeight;
+
+  try{
+    const r = await fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ audio: base64, mimeType: mimeType, sessao: SESSAO })
+    });
+    const d = await r.json();
+    pensa.remove();
+    if(d.ouvido) minha.textContent = d.ouvido;
+    msg('ela', (d.resposta || '').trim() || 'Não consegui entender o áudio. Pode repetir?');
+    if(d.pedido && d.pedido.itens && d.pedido.itens.length) mostraSacola(d.pedido);
+    if(d.audio) tocar(d.audio);
+  }catch(e){
+    pensa.remove();
+    msg('ela', 'Tive um probleminha de conexão. Pode tentar de novo?');
+  }
+  ocupado = false;
+  elEnv.disabled = false;
+  elConv.scrollTop = elConv.scrollHeight;
+}
+
+async function comecarGravacao(){
+  try{
+    faixa = await navigator.mediaDevices.getUserMedia({ audio: true });
+  }catch(e){
+    msg('ela', 'Preciso da sua permissão para usar o microfone. Toque no cadeado ao lado do endereço e libere. Se preferir, é só escrever aqui embaixo.');
+    return;
+  }
+  const tipo = tipoSuportado();
+  try{
+    gravador = tipo ? new MediaRecorder(faixa, { mimeType: tipo }) : new MediaRecorder(faixa);
+  }catch(e){
+    pararTudo();
+    msg('ela', 'Este navegador não conseguiu gravar áudio. Pode escrever aqui embaixo?');
+    return;
+  }
+  pedacos = [];
+  inicio = Date.now();
+  gravador.ondataavailable = ev => { if(ev.data && ev.data.size) pedacos.push(ev.data); };
+  gravador.onstop = () => {
+    const dur = Date.now() - inicio;
+    const blob = new Blob(pedacos, { type: gravador.mimeType || 'audio/webm' });
+    pararTudo();
+    if(dur < 700 || blob.size < 1200){
+      elDica.textContent = 'Segure um instante a mais para gravar';
+      return;
+    }
+    const leitor = new FileReader();
+    leitor.onloadend = () => {
+      const base64 = String(leitor.result).split(',')[1];
+      enviarAudio(base64, (gravador.mimeType || 'audio/webm').split(';')[0]);
+    };
+    leitor.readAsDataURL(blob);
+  };
+  gravador.start();
+  gravando = true;
+  elMic.classList.add('ouvindo');
+  elDica.innerHTML = '<b>Gravando</b> · toque de novo para enviar';
+}
+
+elMic.addEventListener('click', () => {
+  if(tocando){ tocando.pause(); tocando = null; elDica.textContent = 'Pode escrever ou falar'; return; }
+  if(ocupado) return;
+  if(gravando){
+    if(gravador && gravador.state === 'recording') gravador.stop();
+    else pararTudo();
+    return;
+  }
+  comecarGravacao();
+});
+</script>
+</body>
+</html>
