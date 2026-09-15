@@ -327,7 +327,7 @@ elForm.addEventListener('submit', function(ev){
 });
 
 /* ---------- gravar áudio de verdade ---------- */
-let gravador = null, pedacos = [], gravando = false, faixa = null, inicio = 0;
+let gravador = null, pedacos = [], gravando = false, faixa = null, inicio = 0, relogio = null;
 
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder){
   elMic.hidden = false;
@@ -340,6 +340,7 @@ function tipoSuportado(){
 }
 
 function pararTudo(){
+  if(relogio){ clearInterval(relogio); relogio = null; }
   if(faixa){ faixa.getTracks().forEach(t => t.stop()); faixa = null; }
   gravando = false;
   elMic.classList.remove('ouvindo');
@@ -402,7 +403,7 @@ async function comecarGravacao(){
     const blob = new Blob(pedacos, { type: gravador.mimeType || 'audio/webm' });
     pararTudo();
     if(dur < 700 || blob.size < 1200){
-      elDica.textContent = 'Segure um instante a mais para gravar';
+      msg('ela', 'O áudio ficou muito curtinho e não deu pra ouvir. Toque no microfone, fale, e toque de novo pra enviar.');
       return;
     }
     const leitor = new FileReader();
@@ -415,7 +416,10 @@ async function comecarGravacao(){
   gravador.start();
   gravando = true;
   elMic.classList.add('ouvindo');
-  elDica.innerHTML = '<b>Gravando</b> · toque de novo para enviar';
+  relogio = setInterval(() => {
+    const seg = Math.floor((Date.now() - inicio) / 1000);
+    elDica.innerHTML = '<b>Gravando ' + seg + 's</b> · toque de novo para enviar';
+  }, 250);
 }
 
 elMic.addEventListener('click', () => {
