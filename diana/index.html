@@ -354,6 +354,15 @@ async function perguntar(texto, modo){
   estado('parado');
 }
 
+/* ---------- enviar o que foi escrito ---------- */
+document.getElementById('form').addEventListener('submit', (ev) => {
+  ev.preventDefault();                 // sem isto a pagina recarrega e a conversa some
+  const txt = elCampo.value.trim();
+  if(!txt) return;
+  elCampo.value = '';
+  perguntar(txt, 'texto');
+});
+
 /* ---------- gravar áudio de verdade ---------- */
 let gravador = null, pedacos = [], gravando = false, faixa = null, inicio = 0;
 
