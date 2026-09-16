@@ -204,7 +204,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 /* ===== PAGAR COM PIX ===== */
 .pay-or{display:flex;align-items:center;gap:14px;margin:16px auto 14px;max-width:380px;color:var(--text-muted);font-size:12px;letter-spacing:.15em;text-transform:uppercase;}
 .pay-or::before,.pay-or::after{content:'';flex:1;height:1px;background:var(--border);}
-.btn-pix{background:#0a0a0a;color:#32BCAD;border:1px solid #32BCAD;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:.05em;padding:16px 40px;display:block;width:100%;max-width:520px;margin:0 auto;border-radius:10px;cursor:pointer;transition:all .3s;text-transform:uppercase;}
+.btn-pix{background:#0a0a0a;color:#32BCAD;border:1px solid #32BCAD;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:.05em;padding:16px 40px;display:block;width:100%;max-width:520px;margin:0 auto;border-radius:10px;cursor:pointer;transition:all .3s;text-transform:uppercase;}
 .btn-pix:hover{background:#32BCAD;color:#062b27;transform:translateY(-2px);}
 .pix-overlay{position:fixed;inset:0;z-index:1000;background:rgba(4,4,4,.86);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px;}
 .pix-overlay.on{display:flex;}
@@ -293,7 +293,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
     <div><span class="hp-price"><small>R$</small>247</span></div>
     <span class="hp-sub">à vista no Pix · pagamento único, sem mensalidade</span>
     <button type="button" class="hp-pix" onclick="openPix()">⚡ Pagar com Pix agora</button>
-    <span class="hp-safe">🔒 Pagamento direto, confirmação manual</span>
+    <span class="hp-safe">🔒 Pix direto, confirmação em minutos</span>
   </aside>
 </header>
 
@@ -450,6 +450,15 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
       </div>
     </div>
     <div class="showcase-card">
+      <div class="showcase-img"><img src="bio-premium-img/spadiamond.png" alt="Bio Spa Diamond La Evidence" loading="lazy"></div>
+      <div class="showcase-body">
+        <span class="showcase-pill">Estética</span>
+        <div class="showcase-name">Spa Diamond La Evidence</div>
+        <div class="showcase-desc">Preto e dourado, em Cuiabá.</div>
+        <a href="https://biovenda.app.br/laevidence" target="_blank" class="showcase-link">Abrir bio →</a>
+      </div>
+    </div>
+    <div class="showcase-card">
       <div class="showcase-img"><img src="bio-premium-img/marcelahercos.png" alt="Bio Dra. Marcela Hercos" loading="lazy"></div>
       <div class="showcase-body">
         <span class="showcase-pill">Pediatria</span>
@@ -546,10 +555,10 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
       </div>
     </div>
 
-    <a href="#" class="btn-buy" data-buy>Quero a minha por R$247</a>
-    <div class="price-guarantee">Pagamento seguro via Mercado Pago · atendimento humano no WhatsApp</div>
+    <a href="#" class="btn-buy" data-buy>Pagar com Pix · R$247</a>
+    <div class="price-guarantee">Pix na hora, direto pro Dione · confirmação em poucos minutos</div>
     <div class="pay-or"><span>ou</span></div>
-    <button type="button" class="btn-pix" onclick="openPix()">⚡ Pagar com Pix agora · R$247</button>
+    <a class="btn-pix" href="https://wa.me/5534993421500?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20Bio%20Premium%20antes%20de%20fechar." target="_blank" rel="noopener">Falar no WhatsApp antes de fechar</a>
   </div>
 </section>
 
@@ -596,7 +605,8 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 </script>
 
 <script>
-/* ===== Botões de compra abrem o Pix (Mercado Pago temporariamente fora do ar) ===== */
+/* ===== Botões de compra abrem o Pix. Cartão via Mercado Pago pendente: o token
+   em BIOVENDA/server/.env voltou 401 em 16/09/2026, precisa gerar credencial nova. ===== */
 document.querySelectorAll('[data-buy]').forEach(a => { a.addEventListener('click', function(e){ e.preventDefault(); openPix(); }); });
 
 
