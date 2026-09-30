@@ -184,6 +184,7 @@ h2 em{font-style:italic;color:var(--gold);}
 .pcard.in-view:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(201,168,76,.4);}
 .pcard-img{height:300px;background:var(--dark4);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .pcard-img video{transition:transform 6s ease;}
+.pcard-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .pcard.in-view:hover .pcard-img video{transform:scale(1.04);}
 .pcard-img video,.pcard-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
 .pcard-img .mock-browser{width:88%;background:var(--dark2);border-radius:8px;border:1px solid rgba(255,255,255,.06);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative;z-index:1;}
@@ -1241,6 +1242,36 @@ html{overflow-x:hidden;max-width:100%;}
   </div>
 
   <div class="scroll-track" id="scrollTrack">
+
+    <!-- 00: Vicente Drums (site e link da bio) -->
+    <a class="pcard" href="https://vicentedrums.com.br/" target="_blank" rel="noopener">
+      <div class="pcard-img"><img src="assets/videos/posters/vicente-site.webp" alt="Vicente Drums" width="1200" height="682" loading="lazy" style="object-position:12% center"></div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Mini baterista · Site em 3 idiomas</div>
+        <div class="pcard-title">Vicente Drums</div>
+        <p class="pcard-desc">Site em português, inglês e espanhol para o Vicente, mini baterista de Rio Grande (RS), com áudio, convites para eventos e uma seção de parcerias para marcas.</p>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <span class="pcard-badge live">Ao vivo</span>
+          <span class="pcard-link">Ver ao vivo ↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="pcard" href="https://biovenda.app.br/vicentedrums" target="_blank" rel="noopener">
+      <div class="pcard-img"><img src="assets/videos/posters/vicente-bio.webp" alt="Vicente Drums · Link da bio" width="1200" height="682" loading="lazy"></div>
+      <div class="pcard-body">
+        <div class="pcard-seg">Mini baterista · Link da bio</div>
+        <div class="pcard-title">Vicente Drums · Link da bio</div>
+        <p class="pcard-desc">Link da bio do Instagram do Vicente, com player de áudio, botão de convite para eventos e de parceria com marcas, direto no WhatsApp da família.</p>
+        <div class="pcard-foot">
+          <div class="pcard-stack"><span>Link da bio</span></div>
+          <span class="pcard-badge live">Ao vivo</span>
+          <span class="pcard-link">Ver ao vivo ↗</span>
+        </div>
+      </div>
+    </a>
+
 
     <!-- 01: Follador Prosecco -->
     <a class="pcard" href="https://zebubit.github.io/follador-prosecco/" target="_blank" rel="noopener">
