@@ -117,6 +117,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:fl
 .nav-links{display:flex;gap:36px;list-style:none;}
 .nav-links a{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .3s;}
 .nav-links a:hover{color:var(--gold);}
+.nav-links a{white-space:nowrap;}
+@media(max-width:1500px){.nav-links{gap:20px;margin:0 16px;}.nav-links a{font-size:11.5px;letter-spacing:.06em;}}
 .nav-socials{display:flex;align-items:center;gap:14px;}
 .nav-social{color:var(--text-muted);display:flex;align-items:center;gap:5px;text-decoration:none;transition:color .2s;opacity:.7;}
 .nav-social:hover{color:var(--gold);opacity:1;}
@@ -446,6 +448,24 @@ footer{background:var(--dark2);padding:56px 60px 40px;border-top:1px solid rgba(
 .sp-cta-follow::before{content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,0) 30%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 70%,transparent 100%);transform:skewX(-20deg);z-index:1;animation:spCtaFlash 3.2s ease-in-out infinite;pointer-events:none;}
 @keyframes spCtaFlash{0%{left:-100%;} 50%{left:130%;} 100%{left:130%;}}
 @media(max-width:768px){.sp-strip{padding:40px 24px;gap:32px;}.sp-vline{display:none;}.sp-card{width:240px;}.sp-big-num{font-size:2.4rem;}}
+
+/* ══ PRODUTOS (bio e plaquinha NFC) ══ */
+.prod-section{background:var(--dark2);padding:100px 60px;border-top:1px solid rgba(201,168,76,.12);}
+.prod-head{max-width:1100px;margin:0 auto 48px;}
+.prod-head h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.1;margin-top:8px;color:var(--text);}
+.prod-head h2 em{color:var(--gold);font-style:italic;}
+.prod-head p{font-size:.95rem;color:var(--text-muted);margin-top:14px;max-width:560px;}
+.prod-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.prod-card{display:block;background:var(--dark3);border:1px solid rgba(201,168,76,.18);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--text);transition:transform .3s,border-color .3s;}
+.prod-card:hover{transform:translateY(-5px);border-color:rgba(201,168,76,.55);}
+.prod-img{height:300px;background:#0b0b0b;overflow:hidden;}
+.prod-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+.prod-body{padding:26px 28px 30px;}
+.prod-tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.prod-body h3{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;line-height:1.2;margin-bottom:10px;}
+.prod-body p{font-size:.92rem;line-height:1.7;color:var(--text-muted);margin-bottom:18px;}
+.prod-cta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+@media(max-width:900px){.prod-section{padding:70px 24px;}.prod-grid{grid-template-columns:1fr;}.prod-img{height:240px;}}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -1125,6 +1145,7 @@ html{overflow-x:hidden;max-width:100%;}
   </div>
   <ul class="nav-links">
     <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
+    <li><a href="#produtos" data-i18n="nav.products">Produtos</a></li>
     <li><a href="#landings-imoveis">Landings Imóveis</a></li>
     <li><a href="#equipe" data-i18n="nav.team">Equipe</a></li>
     <li><a href="#servicos" data-i18n="nav.services">Serviços</a></li>
@@ -1535,6 +1556,35 @@ html{overflow-x:hidden;max-width:100%;}
 </section>
 
 <!-- LANÇAMENTO: LANDINGS PRA IMÓVEIS -->
+<!-- PRODUTOS: link da bio e plaquinha NFC -->
+<section class="prod-section" id="produtos">
+  <div class="prod-head">
+    <span class="section-num" data-i18n="prod.num">Produtos prontos</span>
+    <h2 data-i18n="prod.h2">Além do <em>site</em></h2>
+    <p data-i18n="prod.sub">Duas soluções rápidas para o seu negócio aparecer e ser bem avaliado.</p>
+  </div>
+  <div class="prod-grid">
+    <a class="prod-card" href="/bio-premium">
+      <div class="prod-img"><img src="bio-premium-img/mangiare.png" alt="Link da bio premium da Zebubit" width="900" height="1600" loading="lazy"></div>
+      <div class="prod-body">
+        <div class="prod-tag" data-i18n="prod.bio.tag">Link da bio</div>
+        <h3 data-i18n="prod.bio.t">Link da Bio Premium</h3>
+        <p data-i18n="prod.bio.d">Design sob medida, suas cores, galeria, botões de WhatsApp e domínio próprio. Pronto em 48 horas.</p>
+        <span class="prod-cta" data-i18n="prod.bio.cta">Conhecer o link da bio →</span>
+      </div>
+    </a>
+    <a class="prod-card" href="/cartao-nfc">
+      <div class="prod-img"><img src="cartao-nfc-img/hero-avaliacao-nfc-poster.jpg" alt="Plaquinha NFC para avaliação no Google" width="1200" height="800" loading="lazy"></div>
+      <div class="prod-body">
+        <div class="prod-tag" data-i18n="prod.nfc.tag">Plaquinha NFC</div>
+        <h3 data-i18n="prod.nfc.t">Plaquinha e cartão NFC</h3>
+        <p data-i18n="prod.nfc.d">O cliente encosta o celular e cai direto na avaliação do Google. Plaquinha, placa de acrílico ou cartão, sem mensalidade.</p>
+        <span class="prod-cta" data-i18n="prod.nfc.cta">Conhecer a plaquinha NFC →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <section class="launch-section" id="landings-imoveis">
   <div class="launch-grid">
     <div class="launch-left">
@@ -2560,6 +2610,7 @@ const zbTranslations = {
   pt: {
     'nav.projects':'Projetos','nav.team':'Equipe','nav.services':'Serviços',
     'nav.automation':'Automação','nav.about':'Sobre','nav.refs':'Referências',
+    'nav.products':'Produtos','prod.num':'Produtos prontos','prod.h2':'Além do <em>site</em>','prod.sub':'Duas soluções rápidas para o seu negócio aparecer e ser bem avaliado.','prod.bio.tag':'Link da bio','prod.bio.t':'Link da Bio Premium','prod.bio.d':'Design sob medida, suas cores, galeria, botões de WhatsApp e domínio próprio. Pronto em 48 horas.','prod.bio.cta':'Conhecer o link da bio →','prod.nfc.tag':'Plaquinha NFC','prod.nfc.t':'Plaquinha e cartão NFC','prod.nfc.d':'O cliente encosta o celular e cai direto na avaliação do Google. Plaquinha, placa de acrílico ou cartão, sem mensalidade.','prod.nfc.cta':'Conhecer a plaquinha NFC →',
     'nav.cta':'<span class="cta-full">Solicitar orçamento</span><span class="cta-short">Orçamento</span>',
     'hero.tag':'Zebubit Assessoria e Tecnologia · Uberaba, MG',
     'hero.h1':'Sua empresa<br><em>presente</em><br>no digital',
@@ -2579,6 +2630,7 @@ const zbTranslations = {
   en: {
     'nav.projects':'Projects','nav.team':'Team','nav.services':'Services',
     'nav.automation':'Automation','nav.about':'About','nav.refs':'References',
+    'nav.products':'Products','prod.num':'Ready-made products','prod.h2':'Beyond the <em>website</em>','prod.sub':'Two quick solutions to help your business get noticed and well reviewed.','prod.bio.tag':'Link in bio','prod.bio.t':'Premium Link in Bio','prod.bio.d':'Custom design, your colors, gallery, WhatsApp buttons and your own domain. Ready in 48 hours.','prod.bio.cta':'Explore the link in bio →','prod.nfc.tag':'NFC plaque','prod.nfc.t':'NFC plaque and card','prod.nfc.d':'Customers tap their phone and land straight on your Google review. Plaque, acrylic sign or card, no monthly fee.','prod.nfc.cta':'Explore the NFC plaque →',
     'nav.cta':'<span class="cta-full">Request a quote</span><span class="cta-short">Quote</span>',
     'hero.tag':'Zebubit Technology & Advisory · Uberaba, Brazil',
     'hero.h1':'Your business<br><em>visible</em><br>online',
@@ -2590,7 +2642,7 @@ const zbTranslations = {
     'sec.services':'03 · What we deliver','sec.services.h2':'What <em>Zebubit</em> delivers',
     'sec.how':'04 · How it works','sec.how.h2':'From briefing to <em>live in 7 days</em>',
     'sec.ai':'04 · Artificial Intelligence','sec.ai.h2':'Your service on <em>autopilot</em>',
-    'cta.h2':'Let's transform your business <em>today</em>',
+    'cta.h2':'Let\'s transform your business <em>today</em>',
     'cta.sub':'Get in touch now and receive a free personalized quote with no commitment.',
     'footer.terms':'Terms of Use','footer.privacy':'Privacy Policy',
     'footer.rights':'© 2026 Zebubit Technology & Advisory · All rights reserved',
@@ -2598,6 +2650,7 @@ const zbTranslations = {
   es: {
     'nav.projects':'Proyectos','nav.team':'Equipo','nav.services':'Servicios',
     'nav.automation':'Automatización','nav.about':'Sobre','nav.refs':'Referencias',
+    'nav.products':'Productos','prod.num':'Productos listos','prod.h2':'Más allá del <em>sitio</em>','prod.sub':'Dos soluciones rápidas para que tu negocio sea visto y bien valorado.','prod.bio.tag':'Link en la bio','prod.bio.t':'Link en la Bio Premium','prod.bio.d':'Diseño a medida, tus colores, galería, botones de WhatsApp y dominio propio. Listo en 48 horas.','prod.bio.cta':'Conocer el link en la bio →','prod.nfc.tag':'Placa NFC','prod.nfc.t':'Placa y tarjeta NFC','prod.nfc.d':'El cliente acerca el celular y llega directo a tu reseña en Google. Placa, acrílico o tarjeta, sin mensualidad.','prod.nfc.cta':'Conocer la placa NFC →',
     'nav.cta':'<span class="cta-full">Solicitar presupuesto</span><span class="cta-short">Presupuesto</span>',
     'hero.tag':'Zebubit Tecnología y Asesoría · Uberaba, Brasil',
     'hero.h1':'Tu empresa<br><em>presente</em><br>en el digital',
