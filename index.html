@@ -465,6 +465,16 @@ footer{background:var(--dark2);padding:56px 60px 40px;border-top:1px solid rgba(
 .prod-body h3{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;line-height:1.2;margin-bottom:10px;}
 .prod-body p{font-size:.92rem;line-height:1.7;color:var(--text-muted);margin-bottom:18px;}
 .prod-cta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.prod-reel{position:relative;display:flex;align-items:center;background:radial-gradient(70% 90% at 50% 0%,rgba(201,168,76,.16),transparent 70%),#0b0b0b;}
+.prod-reel::before,.prod-reel::after{content:"";position:absolute;top:0;bottom:0;width:48px;z-index:2;pointer-events:none;}
+.prod-reel::before{left:0;background:linear-gradient(90deg,var(--dark3),transparent);}
+.prod-reel::after{right:0;background:linear-gradient(270deg,var(--dark3),transparent);}
+.reel-track{display:flex;width:max-content;padding-left:16px;animation:reelMove 44s linear infinite;will-change:transform;}
+.prod-card:hover .reel-track,.prod-card:focus-visible .reel-track{animation-play-state:paused;}
+.prod-reel img{width:auto;height:264px;aspect-ratio:9/16;flex:none;margin-right:16px;object-fit:cover;border-radius:16px;border:1.5px solid rgba(201,168,76,.55);box-shadow:0 14px 30px rgba(0,0,0,.55);}
+@keyframes reelMove{to{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.reel-track{animation:none;}.prod-reel{overflow-x:auto;}}
+@media(max-width:900px){.prod-reel img{height:204px;}}
 @media(max-width:900px){.prod-section{padding:70px 24px;}.prod-grid{grid-template-columns:1fr;}.prod-img{height:240px;}}
 
 /* RESPONSIVE */
@@ -1565,7 +1575,7 @@ html{overflow-x:hidden;max-width:100%;}
   </div>
   <div class="prod-grid">
     <a class="prod-card" href="/bio-premium">
-      <div class="prod-img"><img src="assets/bio-premium-varias.jpg" alt="Exemplos de links da bio premium feitos pela Zebubit, de natação, música, barbearia e estética" width="1200" height="675" loading="lazy"></div>
+      <div class="prod-img prod-reel" role="img" aria-label="Exemplos de links da bio premium feitos pela Zebubit"><div class="reel-track"><img src="assets/bios-carrossel/dionejr.webp" alt="Bio do Dione Folador Jr" width="360" height="640" decoding="async"><img src="assets/bios-carrossel/tati.webp" alt="Bio da Acqua Stilo, natação" width="360" height="640" decoding="async"><img src="assets/bios-carrossel/melyssa.webp" alt="Bio da cantora Melyssa Raphaela" width="360" height="640" decoding="async"><img src="assets/bios-carrossel/vicentedrums.webp" alt="Bio do Vicente Drums, mini baterista" width="360" height="640" decoding="async"><img src="assets/bios-carrossel/valhalla.webp" alt="Bio da barbearia Valhalla" width="360" height="640" decoding="async"><img src="assets/bios-carrossel/spadiamond.webp" alt="Bio do Spa Diamond, estética" width="360" height="640" decoding="async"><img src="assets/bios-carrossel/dionejr.webp" alt="" width="360" height="640" decoding="async" aria-hidden="true"><img src="assets/bios-carrossel/tati.webp" alt="" width="360" height="640" decoding="async" aria-hidden="true"><img src="assets/bios-carrossel/melyssa.webp" alt="" width="360" height="640" decoding="async" aria-hidden="true"><img src="assets/bios-carrossel/vicentedrums.webp" alt="" width="360" height="640" decoding="async" aria-hidden="true"><img src="assets/bios-carrossel/valhalla.webp" alt="" width="360" height="640" decoding="async" aria-hidden="true"><img src="assets/bios-carrossel/spadiamond.webp" alt="" width="360" height="640" decoding="async" aria-hidden="true"></div></div>
       <div class="prod-body">
         <div class="prod-tag" data-i18n="prod.bio.tag">Link da bio</div>
         <h3 data-i18n="prod.bio.t">Link da Bio Premium</h3>
