@@ -475,6 +475,8 @@ footer{background:var(--dark2);padding:56px 60px 40px;border-top:1px solid rgba(
 @keyframes reelMove{to{transform:translateX(-50%);}}
 @media(prefers-reduced-motion:reduce){.reel-track{animation:none;}.prod-reel{overflow-x:auto;}}
 @media(max-width:900px){.prod-reel img{height:204px;}}
+.prod-video video{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+@media(prefers-reduced-motion:reduce){.prod-video video{animation:none;}}
 @media(max-width:900px){.prod-section{padding:70px 24px;}.prod-grid{grid-template-columns:1fr;}.prod-img{height:240px;}}
 
 /* RESPONSIVE */
@@ -1584,7 +1586,7 @@ html{overflow-x:hidden;max-width:100%;}
       </div>
     </a>
     <a class="prod-card" href="/cartao-nfc">
-      <div class="prod-img"><img src="cartao-nfc-img/hero-avaliacao-nfc-poster.jpg" alt="Plaquinha NFC para avaliação no Google" width="1200" height="800" loading="lazy"></div>
+      <div class="prod-img prod-video"><video autoplay muted loop playsinline preload="none" width="1024" height="576" poster="cartao-nfc-img/hero-avaliacao-nfc-poster.jpg" aria-label="Cliente encosta o celular na plaquinha NFC e abre a avaliação do Google"><source data-src="assets/videos/nfc-home.mp4" type="video/mp4"></video></div>
       <div class="prod-body">
         <div class="prod-tag" data-i18n="prod.nfc.tag">Plaquinha NFC</div>
         <h3 data-i18n="prod.nfc.t">Plaquinha e cartão NFC</h3>
@@ -2612,6 +2614,7 @@ html{overflow-x:hidden;max-width:100%;}
 
   window.addEventListener('resize', resize);
   resize();
+  pts.forEach(p => p.reset()); // as particulas nascem antes de W e H existirem (NaN); reposiciona agora
   loop();
 })();
 
