@@ -296,10 +296,6 @@ h2 em{font-style:italic;color:var(--gold);}
 .company-box strong{color:var(--gold);font-weight:500;}
 
 /* CTA */
-  30% {transform:translate(var(--dx1),var(--dy1)) scale(1.12); opacity:calc(var(--op)*1.4);}
-  60% {transform:translate(var(--dx2),var(--dy2)) scale(.92); opacity:calc(var(--op)*.7);}
-  100%{transform:translate(0,0) scale(1);   opacity:var(--op);}
-}
 #particles-cta{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
 .cta > *:not(canvas){position:relative;z-index:1;}
 .cta{background:var(--dark);text-align:center;padding:160px 60px;position:relative;overflow:hidden;}
@@ -1272,7 +1268,9 @@ html{overflow-x:hidden;max-width:100%;}
 </div>
 
 <style>
-.rv-section{background:var(--dark);padding:96px 0;border-top:1px solid var(--border);overflow:hidden;}
+.rv-section{background:var(--dark);padding:96px 0;border-top:1px solid var(--border);overflow:hidden;position:relative;}
+#particles-rv{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.85;}
+.rv-section > *:not(canvas){position:relative;z-index:1;}
 .rv-head{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;margin:0 60px 48px;}
 .rv-score{display:flex;align-items:center;gap:22px;}
 .rv-big{font-family:'Playfair Display',serif;font-size:clamp(64px,9vw,104px);font-weight:900;line-height:1;color:var(--gold);}
@@ -1294,6 +1292,7 @@ html{overflow-x:hidden;max-width:100%;}
 @media(max-width:768px){.rv-section{padding:70px 0;}.rv-head{margin:0 24px 32px;}.rv-foot{margin:36px 24px 0;}.rv-card{flex-basis:290px;}}
 </style>
 <section class="rv-section" id="avaliacoes">
+  <canvas id="particles-rv" aria-hidden="true"></canvas>
   <div class="rv-head">
     <div>
       <span class="section-num">Avaliações no Google</span>
@@ -2655,18 +2654,21 @@ html{overflow-x:hidden;max-width:100%;}
 /* ── CTA PARTICLES 3D ─────────────────────────── */
 (function(){
   if (!window.matchMedia('(min-width:768px) and (hover:hover)').matches) return;
-  const canvas = document.getElementById('particles-cta');
+  ['particles-cta','particles-rv'].forEach(function(id){
+  const canvas = document.getElementById(id);
   if(!canvas) return;
   const ctx = canvas.getContext('2d');
   const GOLD = [201,168,76];
-  const N = 70;
-  const CONNECT_DIST = 140;
+  let N = 70;
+  const CONNECT_DIST = 190;
   const DEPTH = 600;
   let W, H, mouse = {x:0, y:0};
 
   function resize(){
     W = canvas.width  = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
+    N = Math.max(70, Math.min(160, Math.round(W*H/8000)));
+    pts = Array.from({length:N}, ()=>new Particle());
   }
 
   function Particle(){
@@ -2681,7 +2683,7 @@ html{overflow-x:hidden;max-width:100%;}
     this.reset();
   }
 
-  const pts = Array.from({length:N}, ()=>new Particle());
+  let pts = [];
 
   function project(p){
     const fov = DEPTH * 0.6;
@@ -2751,7 +2753,7 @@ html{overflow-x:hidden;max-width:100%;}
     });
   }
 
-  function loop(){ update(); draw(); requestAnimationFrame(loop); }
+  function loop(){ if(canvas.offsetWidth!==W || canvas.offsetHeight!==H) resize(); update(); draw(); requestAnimationFrame(loop); }
 
   // Mouse parallax only inside cta section
   const section = canvas.closest('section');
@@ -2763,8 +2765,8 @@ html{overflow-x:hidden;max-width:100%;}
 
   window.addEventListener('resize', resize);
   resize();
-  pts.forEach(p => p.reset()); // as particulas nascem antes de W e H existirem (NaN); reposiciona agora
   loop();
+  });
 })();
 
 // ── MULTILÍNGUE PT / EN / ES ──
