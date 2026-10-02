@@ -2502,6 +2502,7 @@ html{overflow-x:hidden;max-width:100%;}
 })();
 </script>
 
+<script src="assets/i18n-extra.js"></script>
 <script>
 /* ── CTA PARTICLES 3D ─────────────────────────── */
 (function(){
@@ -2682,6 +2683,37 @@ const zbTranslations = {
   }
 };
 
+// Traduz os textos que nao tem data-i18n, usando assets/i18n-extra.js.
+// Cada texto e achado pelo conteudo original em PT e restaurado ao voltar para PT.
+function zbExtras(lang) {
+  const T = window.ZB_EXTRA;
+  if (!T) return;
+  if (!window.__zbExtrasIniciado) {
+    window.__zbExtrasIniciado = true;
+    const SKIP = 'script,style,noscript,svg,video,canvas,#lang-bar,footer,.pcard,.scroll-track,.prod-card,[data-i18n]';
+    const OK = new Set(['EM','STRONG','B','I','BR','SMALL','MARK','SPAN','A','SVG','PATH']);
+    // fase 1: acha os candidatos SEM mexer na pagina (a chave e o HTML original)
+    const achados = [];
+    document.body.querySelectorAll('*').forEach(el => {
+      if (el.closest(SKIP)) return;
+      if ([...el.children].some(c => !OK.has(c.tagName.toUpperCase()))) return;
+      const k = el.innerHTML.replace(/\s+/g, ' ').trim();
+      if (T.en[k] !== undefined) achados.push([el, k, el.innerHTML]);
+    });
+    // fase 2: marca, ignorando quem esta dentro de outro achado (o pai ja traduz o filho)
+    const els = new Set(achados.map(x => x[0]));
+    achados.forEach(([el, k, html]) => {
+      for (let p = el.parentElement; p; p = p.parentElement) if (els.has(p)) return;
+      el.dataset.zbPt = html;
+      el.dataset.zbKey = k;
+    });
+  }
+  document.querySelectorAll('[data-zb-key]').forEach(el => {
+    const v = lang === 'pt' ? undefined : (T[lang] || {})[el.dataset.zbKey];
+    el.innerHTML = v !== undefined ? v : el.dataset.zbPt;
+  });
+}
+
 function zbSetLanguage(lang) {
   if (!zbTranslations[lang]) lang = 'pt';
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
@@ -2689,6 +2721,7 @@ function zbSetLanguage(lang) {
     const v = zbTranslations[lang][el.getAttribute('data-i18n')];
     if (v !== undefined) el.innerHTML = v;
   });
+  zbExtras(lang);
   document.querySelectorAll('#lang-bar button').forEach(b =>
     b.classList.toggle('active', b.dataset.lang === lang));
   try { localStorage.setItem('lang_zebubit', lang); } catch(e) {}
