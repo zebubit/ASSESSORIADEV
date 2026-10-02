@@ -1690,6 +1690,147 @@ html{overflow-x:hidden;max-width:100%;}
 </section>
 
 <!-- SERVIÇOS -->
+<style>
+.rv-section{background:var(--dark);padding:96px 0;border-top:1px solid var(--border);overflow:hidden;}
+.rv-head{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;margin:0 60px 48px;}
+.rv-score{display:flex;align-items:center;gap:22px;}
+.rv-big{font-family:'Playfair Display',serif;font-size:clamp(64px,9vw,104px);font-weight:900;line-height:1;color:var(--gold);}
+.rv-score-meta{display:flex;flex-direction:column;gap:8px;}
+.rv-stars{display:flex;gap:3px;color:#FBBC05;}
+.rv-stars svg{width:18px;height:18px;}
+.rv-score-meta span{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);}
+.rv-track{display:flex;gap:20px;width:max-content;padding:4px 0;animation:rv-scroll 90s linear infinite;}
+.rv-track:hover{animation-play-state:paused;}
+@keyframes rv-scroll{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 10px))}}
+.rv-card{flex:0 0 340px;background:var(--dark2);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 26px;display:flex;flex-direction:column;gap:20px;}
+.rv-text{font-size:15px;line-height:1.7;color:var(--text);flex:1;}
+.rv-who{display:flex;align-items:center;gap:12px;}
+.rv-av{width:40px;height:40px;border-radius:50%;background:var(--gold-dim);border:1px solid rgba(201,168,76,.35);color:var(--gold-light);display:grid;place-items:center;font-size:13px;font-weight:600;flex:none;}
+.rv-who strong{display:block;font-size:14px;font-weight:600;color:var(--white);}
+.rv-who small{font-size:12.5px;color:var(--text-muted);}
+.rv-foot{margin:44px 60px 0;display:flex;gap:24px;flex-wrap:wrap;align-items:center;}
+@media(prefers-reduced-motion:reduce){.rv-track{animation:none;}.rv-section{overflow-x:auto;}}
+@media(max-width:768px){.rv-section{padding:70px 0;}.rv-head{margin:0 24px 32px;}.rv-foot{margin:36px 24px 0;}.rv-card{flex-basis:290px;}}
+</style>
+<section class="rv-section" id="avaliacoes">
+  <div class="rv-head">
+    <div>
+      <span class="section-num">Avaliações no Google</span>
+      <h2>Quem contratou, <em>recomenda</em></h2>
+    </div>
+    <div class="rv-score">
+      <div class="rv-big">5,0</div>
+      <div class="rv-score-meta"><div class="rv-stars" aria-label="5 estrelas"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div><span>29 avaliações no Google</span></div>
+    </div>
+  </div>
+  <div class="rv-track">
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Depois das atualizações que fizeram no Google, senti uma mudança muito clara e direta, tanto no volume de ligações quanto nas pessoas chegando até o local através das buscas. A estratégia de vocês funciona muito bem e faz toda a diferença para o negócio. Recomendo muito!"</p>
+        <div class="rv-who"><span class="rv-av">BR</span><span><strong>Bruno</strong><small>Resultado nas buscas e ligações</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"O melhor trabalho que tem! O meu site e o link da bio ficou perfeito, sem defeitos. Só faço se for com eles."</p>
+        <div class="rv-who"><span class="rv-av">MC</span><span><strong>Melyssa Cantora</strong><small>Site e link da bio</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Excelente trabalho! Criaram o site e o link da bio do VicenteDrums, meu filho de apenas 2 anos, baterista mirim, com capricho e profissionalismo impecável."</p>
+        <div class="rv-who"><span class="rv-av">FS</span><span><strong>Francisco Simões de Oliveira</strong><small>Site e bio do VicenteDrums</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Excelente atendimento e trabalho impecável! Fizeram meu link da bio e fazem um excelente trabalho com Google. Super recomendo a Zebubit."</p>
+        <div class="rv-who"><span class="rv-av">TR</span><span><strong>Tatiane Regenold</strong><small>Link da bio e Google</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Excelente trabalho! Recomendo muito os serviços da Zebubit. Entrega no prazo, e tudo funcionando 100%."</p>
+        <div class="rv-who"><span class="rv-av">RP</span><span><strong>Rod P</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Fiquei realmente impressionada com o profissionalismo e a excelência em tudo o que ele faz. Cada criação é feita com muito cuidado, atenção aos detalhes e dedicação. Recomendo de olhos fechados!"</p>
+        <div class="rv-who"><span class="rv-av">JN</span><span><strong>Janaina Nascimento</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"O melhor na área, confiança extrema... Mentoria top!"</p>
+        <div class="rv-who"><span class="rv-av">NA</span><span><strong>Neto Alencar</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Excelente trabalho."</p>
+        <div class="rv-who"><span class="rv-av">WM</span><span><strong>William Marrion</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Melhor marketing."</p>
+        <div class="rv-who"><span class="rv-av">MB</span><span><strong>Monika Bernadelli</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Trabalho sério e muito bem feito. Super indico."</p>
+        <div class="rv-who"><span class="rv-av">GC</span><span><strong>Glauber Cápolis</strong><small>Green Center Garden</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Depois das atualizações que fizeram no Google, senti uma mudança muito clara e direta, tanto no volume de ligações quanto nas pessoas chegando até o local através das buscas. A estratégia de vocês funciona muito bem e faz toda a diferença para o negócio. Recomendo muito!"</p>
+        <div class="rv-who"><span class="rv-av">BR</span><span><strong>Bruno</strong><small>Resultado nas buscas e ligações</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"O melhor trabalho que tem! O meu site e o link da bio ficou perfeito, sem defeitos. Só faço se for com eles."</p>
+        <div class="rv-who"><span class="rv-av">MC</span><span><strong>Melyssa Cantora</strong><small>Site e link da bio</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Excelente trabalho! Criaram o site e o link da bio do VicenteDrums, meu filho de apenas 2 anos, baterista mirim, com capricho e profissionalismo impecável."</p>
+        <div class="rv-who"><span class="rv-av">FS</span><span><strong>Francisco Simões de Oliveira</strong><small>Site e bio do VicenteDrums</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Excelente atendimento e trabalho impecável! Fizeram meu link da bio e fazem um excelente trabalho com Google. Super recomendo a Zebubit."</p>
+        <div class="rv-who"><span class="rv-av">TR</span><span><strong>Tatiane Regenold</strong><small>Link da bio e Google</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Excelente trabalho! Recomendo muito os serviços da Zebubit. Entrega no prazo, e tudo funcionando 100%."</p>
+        <div class="rv-who"><span class="rv-av">RP</span><span><strong>Rod P</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Fiquei realmente impressionada com o profissionalismo e a excelência em tudo o que ele faz. Cada criação é feita com muito cuidado, atenção aos detalhes e dedicação. Recomendo de olhos fechados!"</p>
+        <div class="rv-who"><span class="rv-av">JN</span><span><strong>Janaina Nascimento</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"O melhor na área, confiança extrema... Mentoria top!"</p>
+        <div class="rv-who"><span class="rv-av">NA</span><span><strong>Neto Alencar</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Excelente trabalho."</p>
+        <div class="rv-who"><span class="rv-av">WM</span><span><strong>William Marrion</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Melhor marketing."</p>
+        <div class="rv-who"><span class="rv-av">MB</span><span><strong>Monika Bernadelli</strong><small>Avaliação no Google</small></span></div>
+      </article>
+      <article class="rv-card" aria-hidden="true">
+        <div class="rv-stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.7 6.6 7.1.6-5.4 4.6 1.7 6.9L12 17.3 5.9 21.2l1.7-6.9-5.4-4.6 7.1-.6z"/></svg></div>
+        <p class="rv-text">"Trabalho sério e muito bem feito. Super indico."</p>
+        <div class="rv-who"><span class="rv-av">GC</span><span><strong>Glauber Cápolis</strong><small>Green Center Garden</small></span></div>
+      </article>
+  </div>
+  <div class="rv-foot">
+    <a class="btn-gold" href="https://www.google.com/maps/search/?api=1&query=Zebubit+Assessoria" target="_blank" rel="noopener">Ver todas no Google</a>
+    <a class="btn-outline" href="https://g.page/r/CWD-ry-kPGYrEAI/review" target="_blank" rel="noopener">Deixar minha avaliação</a>
+  </div>
+</section>
+
 <section class="services" id="servicos">
   <div class="services-split">
 
