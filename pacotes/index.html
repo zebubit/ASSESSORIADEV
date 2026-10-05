@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pacotes Zebubit</title>
+<meta name="description" content="Pacotes mensais da Zebubit: presença no Google, site, criativos, atendente de IA e tráfego pago.">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#140f09;--bg2:#1b140c;--surface:#241b10;--gold:#f5c542;--gold-soft:#ffdd7a;--ink:#f7efe0;--muted:#c6b593;--faint:#8f7f65;--line:#3a2d1a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.45;overflow-x:hidden}
+  .pagina{max-width:72rem;margin:0 auto;padding:2.5rem 1rem 2rem;background:radial-gradient(120% 60% at 50% -10%,#2a1e0f 0%,transparent 60%)}
+  header{text-align:center;margin-bottom:2rem}
+  .marca{font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.1;margin:.6rem 0}
+  h1 em{font-style:normal;color:var(--gold)}
+  .sub{color:var(--muted);font-size:1rem;max-width:34rem;margin:0 auto}
+  .grade{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .card{background:linear-gradient(180deg,var(--surface) 0%,var(--bg2) 100%);border:1px solid var(--line);border-radius:1rem;padding:1.4rem 1.2rem;display:flex;flex-direction:column;position:relative}
+  .card.destaque{border:1.5px solid var(--gold);box-shadow:0 0 0 4px rgba(245,197,66,.08)}
+  .selo{position:absolute;top:-.75rem;left:50%;transform:translateX(-50%);background:var(--gold);color:#1b140c;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .8rem;border-radius:2rem;white-space:nowrap}
+  .nivel{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);font-weight:700}
+  .nome{font-family:"Fraunces",Georgia,serif;font-size:1.45rem;font-weight:600;margin:.2rem 0 .8rem}
+  .preco{display:flex;align-items:baseline;gap:.25rem;color:var(--gold);flex-wrap:wrap}
+  .preco .rs{font-size:.95rem;font-weight:700}
+  .preco .valor{font-family:"Fraunces",Georgia,serif;font-size:2.4rem;font-weight:900;line-height:1}
+  .preco .mes{font-size:.9rem;color:var(--muted)}
+  .impl{font-size:.85rem;color:var(--muted);margin:.4rem 0 1rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+  .impl b{color:var(--ink)}
+  .base{font-size:.8rem;color:var(--gold-soft);font-weight:700;margin-bottom:.6rem}
+  ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+  li{font-size:.95rem;line-height:1.35;padding-left:1.25rem;position:relative}
+  li::before{content:"";position:absolute;left:0;top:.38rem;width:.6rem;height:.6rem;border-radius:50%;background:var(--gold)}
+  li small{display:block;color:var(--faint);font-size:.78rem;margin-top:.1rem}
+  .escolher{margin-top:auto;padding-top:1.2rem}
+  .escolher a{display:block;text-align:center;text-decoration:none;font-weight:800;font-size:.95rem;padding:.85rem 1rem;border-radius:2rem;border:1.5px solid var(--gold);color:var(--gold)}
+  .destaque .escolher a{background:var(--gold);color:#1b140c}
+  .escolher a:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
+  @media (hover:hover){.escolher a:hover{background:var(--gold);color:#1b140c}}
+  .rodape{display:grid;grid-template-columns:1.25fr 1fr;gap:1rem;margin-top:1.4rem}
+  .caixa{border:1px solid var(--line);border-radius:.8rem;padding:1rem 1.2rem;background:rgba(36,27,16,.6)}
+  .caixa h2{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+  .caixa p{font-size:.88rem;color:var(--muted);line-height:1.55}
+  .caixa p b{color:var(--ink);font-weight:600}
+  .cta{text-align:center;margin-top:2rem}
+  .cta p{color:var(--muted);margin-bottom:1rem}
+  .botao{display:inline-block;background:var(--gold);color:#1b140c;font-weight:800;text-decoration:none;padding:1rem 1.6rem;border-radius:2rem;font-size:1rem;box-shadow:0 6px 24px rgba(245,197,66,.25)}
+  .botao:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
+  footer{text-align:center;margin-top:2rem;font-size:.8rem;color:var(--faint)}
+  footer a{color:var(--gold);text-decoration:none}
+  @media (max-width:1100px){.grade{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.grade{grid-template-columns:1fr;gap:1.4rem}.rodape{grid-template-columns:1fr}.pagina{padding-top:2rem}}
+</style>
+</head>
+<body>
+<main class="pagina">
+  <header>
+    <div class="marca">Zebubit Local</div>
+    <h1>Escolha o tamanho<br>do seu <em>crescimento</em></h1>
+    <p class="sub">Tudo entregue pronto: você não monta nada. Cada pacote inclui tudo o que vem no anterior.</p>
+  </header>
+
+  <section class="grade" aria-label="Pacotes">
+    <article class="card">
+      <div class="nivel">Pacote 1</div>
+      <h2 class="nome">Essencial</h2>
+      <div class="preco"><span class="rs">R$</span><span class="valor">199</span><span class="mes">/mês</span></div>
+      <div class="impl">Implantação <b>R$ 297</b></div>
+      <ul>
+        <li>Link da bio personalizado</li>
+        <li>Google Meu Negócio organizado<small>perfil completo e otimizado</small></li>
+        <li>Máquina de avaliações<small>link e QR Code direto para avaliar no Google</small></li>
+      </ul>
+      <div class="escolher"><a href="https://wa.me/5534993421500?text=Oi%21%20Quero%20o%20pacote%20Essencial%20%28R%24%20199/m%C3%AAs%29%20da%20Zebubit.%20Pode%20me%20explicar%20os%20pr%C3%B3ximos%20passos%3F" target="_blank" rel="noopener">Escolher o Essencial</a></div>
+    </article>
+
+    <article class="card">
+      <div class="nivel">Pacote 2</div>
+      <h2 class="nome">Crescimento</h2>
+      <div class="preco"><span class="rs">R$</span><span class="valor">449</span><span class="mes">/mês</span></div>
+      <div class="impl">Implantação <b>R$ 997</b></div>
+      <div class="base">Tudo do Essencial, mais:</div>
+      <ul>
+        <li>Site profissional<small>com as ferramentas de crescimento embutidas</small></li>
+        <li>4 criativos por mês<small>artes para redes sociais</small></li>
+      </ul>
+      <div class="escolher"><a href="https://wa.me/5534993421500?text=Oi%21%20Quero%20o%20pacote%20Crescimento%20%28R%24%20449/m%C3%AAs%29%20da%20Zebubit.%20Pode%20me%20explicar%20os%20pr%C3%B3ximos%20passos%3F" target="_blank" rel="noopener">Escolher o Crescimento</a></div>
+    </article>
+
+    <article class="card destaque">
+      <span class="selo">Recomendado</span>
+      <div class="nivel">Pacote 3</div>
+      <h2 class="nome">Completo</h2>
+      <div class="preco"><span class="rs">R$</span><span class="valor">997</span><span class="mes">/mês</span></div>
+      <div class="impl">Implantação <b>R$ 1.997</b></div>
+      <div class="base">Tudo do Crescimento, mais:</div>
+      <ul>
+        <li>Atendente de IA no WhatsApp<small>responde clientes a qualquer hora</small></li>
+        <li>Respostas automáticas no Instagram</li>
+        <li>8 criativos por mês</li>
+      </ul>
+      <div class="escolher"><a href="https://wa.me/5534993421500?text=Oi%21%20Quero%20o%20pacote%20Completo%20%28R%24%20997/m%C3%AAs%29%20da%20Zebubit.%20Pode%20me%20explicar%20os%20pr%C3%B3ximos%20passos%3F" target="_blank" rel="noopener">Escolher o Completo</a></div>
+    </article>
+
+    <article class="card">
+      <div class="nivel">Pacote 4</div>
+      <h2 class="nome">Premium</h2>
+      <div class="preco"><span class="rs">R$</span><span class="valor">1.999</span><span class="mes">/mês</span></div>
+      <div class="impl">Implantação <b>R$ 2.497</b></div>
+      <div class="base">Tudo do Completo, mais:</div>
+      <ul>
+        <li>Gestão de tráfego pago<small>1 plataforma, até 2 campanhas ativas</small></li>
+        <li>12 criativos por mês<small>pensados para anúncio</small></li>
+        <li>Relatório mensal de resultados</li>
+      </ul>
+      <div class="escolher"><a href="https://wa.me/5534993421500?text=Oi%21%20Quero%20o%20pacote%20Premium%20%28R%24%201.999/m%C3%AAs%29%20da%20Zebubit.%20Pode%20me%20explicar%20os%20pr%C3%B3ximos%20passos%3F" target="_blank" rel="noopener">Escolher o Premium</a></div>
+    </article>
+  </section>
+
+  <section class="rodape">
+    <div class="caixa">
+      <h2>Condições</h2>
+      <p><b>Fidelidade de 12 meses.</b> Domínio e verba dos anúncios ficam à parte, pagos direto pelo cliente. Criativos não acumulam de um mês para o outro, com até 2 ajustes cada. Mudanças grandes no site são orçadas à parte.</p>
+    </div>
+    <div class="caixa">
+      <h2>Serviços adicionais</h2>
+      <p>Sistema de pedidos e delivery, landing pages, cartão NFC de avaliação, edição de vídeo, lojas virtuais e convites digitais. Orçados separadamente.</p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <p>Não sabe qual escolher? Fazemos um raio-x grátis do seu negócio e indicamos o pacote certo.</p>
+    <a class="botao" href="https://wa.me/5534993421500?text=Oi!%20Vi%20os%20pacotes%20da%20Zebubit%20e%20quero%20o%20raio-x%20gr%C3%A1tis%20do%20meu%20neg%C3%B3cio." target="_blank" rel="noopener">Quero meu raio-x grátis</a>
+  </div>
+
+  <footer><a href="https://zebubit.com.br" target="_blank" rel="noopener">Desenvolvido por Zebubit Assessoria</a></footer>
+</main>
+</body>
+</html>
