@@ -290,6 +290,14 @@ h2 em{font-style:italic;color:var(--gold);}
 .about-logo img{width:100%;max-width:360px;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border-radius:6px;filter:drop-shadow(0 0 40px rgba(201,168,76,.25));}
 .about-content p{font-size:16px;line-height:1.85;color:var(--text-muted);margin-bottom:20px;}
 .about-content strong{color:var(--text);font-weight:500;}
+.tec-oficial{border:1px solid rgba(201,168,76,.25);border-radius:10px;padding:22px 24px;margin:8px 0 28px;background:linear-gradient(180deg,rgba(201,168,76,.07),transparent);}
+.tec-oficial h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--text);margin-bottom:8px;}
+.tec-oficial p{font-size:15px;margin-bottom:14px;}
+.tec-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;list-style:none;padding:0;}
+.tec-chips li{font-size:13px;color:var(--gold-light);border:1px solid rgba(201,168,76,.35);border-radius:999px;padding:5px 12px;}
+.tec-btn{display:inline-block;background:var(--gold);color:#111;font-weight:600;text-decoration:none;padding:12px 22px;border-radius:999px;font-size:15px;}
+.tec-btn:focus-visible{outline:3px solid var(--gold-light);outline-offset:3px;}
+@media (hover:hover){.tec-btn:hover{background:var(--gold-light);}}
 .about-quote{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:var(--gold);border-left:2px solid var(--gold);padding-left:28px;margin:36px 0;line-height:1.5;}
 .company-box{margin-top:36px;padding:28px 32px;background:var(--dark3);border-left:2px solid rgba(201,168,76,.3);}
 .company-box p{font-size:13px;color:var(--text-muted);margin-bottom:4px;line-height:1.7;}
@@ -2163,6 +2171,19 @@ html{overflow-x:hidden;max-width:100%;}
       <p>Fundador da <strong>Zebubit Assessoria e Desenvolvimento Tecnológico</strong>, empresa com mais de <strong>38 anos de história</strong> e sede em Uberaba, MG.</p>
       <p>Trabalho com <strong>soberania digital</strong>. Cada empresa merece ter sua própria presença online, independente das redes sociais e plataformas de terceiros.</p>
       <p>Além de sites, atuo com <strong>automações inteligentes e agentes de IA</strong>. Tecnologia que responde clientes, agenda, publica conteúdo e trabalha enquanto você cresce seu negócio.</p>
+      <div class="tec-oficial">
+        <h3>Tecnologia oficial por trás de cada entrega</h3>
+        <p>Estudamos direto na fonte para usar a IA com segurança e resultado: as automações e os atendentes que entregamos seguem os métodos oficiais da Anthropic, criadora da IA Claude.</p>
+        <ul class="tec-chips">
+          <li>Automações e agentes de IA</li>
+          <li>API do Claude</li>
+          <li>Agent Skills</li>
+          <li>Subagentes</li>
+          <li>MCP: tópicos avançados</li>
+          <li>Google Cloud Vertex AI</li>
+        </ul>
+        <a class="tec-btn" href="/certificados/">Ver certificados oficiais →</a>
+      </div>
       <div class="company-box" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px;">
         <div>
           <p><strong>Zebubit Assessoria e Desenvolvimento Tecnológico Ltda</strong></p>
