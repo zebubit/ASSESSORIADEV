@@ -64,4 +64,25 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://zebubit.com.br/placa-avaliacao-google</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://zebubit.com.br/aumentar-avaliacoes-google</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://zebubit.com.br/como-pedir-avaliacao-google</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
