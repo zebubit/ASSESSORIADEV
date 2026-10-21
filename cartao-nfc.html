@@ -142,12 +142,19 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .step-h{font-size:19px;font-weight:700;margin-bottom:8px;}
 .step-text{font-size:14px;color:var(--mut);line-height:1.65;}
 
-.reels-grid{display:grid;grid-template-columns:repeat(2,minmax(220px,320px));gap:26px;justify-content:center;}
+.reels-grid{display:grid;grid-template-columns:repeat(4,minmax(0,280px));gap:22px;justify-content:center;}
 .reels-card{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(20,23,31,.08);background:#000;}
 .reels-card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000;}
-.reels-card-body{padding:14px 18px 18px;background:#fff;}
+.reels-card-body{padding:14px 18px 18px;background:#fff;flex:1;}
+.reels-card{display:flex;flex-direction:column;}
 .reels-name{font-size:14.5px;font-weight:700;margin-bottom:2px;}
 .reels-text{font-size:13px;color:var(--mut);}
+.rep-wrap{display:grid;grid-template-columns:minmax(220px,320px) 1fr;gap:56px;align-items:center;}
+.rep-video{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(20,23,31,.08);background:#000;}
+.rep-video video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000;}
+.rep-list{list-style:none;margin:0 0 32px;padding:0;display:grid;gap:14px;}
+.rep-list li{display:flex;gap:12px;font-size:15.5px;line-height:1.6;}
+.rep-list li span{flex:none;width:26px;height:26px;border-radius:50%;background:#eef3ff;color:var(--blue);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
 
 .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 .diff-card{padding:28px 26px;border-radius:16px;border:1px solid var(--line);display:flex;gap:18px;}
@@ -201,6 +208,10 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
   section{padding:56px 20px;}
   .pricing{margin:0 20px;padding:50px 22px;border-radius:20px;}
   .steps,.diff-grid,.price-grid{grid-template-columns:1fr;}
+  .reels-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+  .reels-card-body{padding:12px 12px 14px;}
+  .rep-wrap{grid-template-columns:1fr;gap:32px;}
+  .rep-video{max-width:320px;margin:0 auto;width:100%;}
 }
 </style>
 </head>
@@ -408,6 +419,30 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
   </div>
 </section>
 
+<section id="reputacao">
+  <div class="rep-wrap">
+    <div class="rep-video">
+      <video controls playsinline preload="none" poster="cartao-nfc-img/reputacao-google-3-erros-poster.jpg" aria-label="Dione, da Zebubit, explica os 3 erros que fazem o negócio perder clientes no Google">
+        <source src="cartao-nfc-img/reputacao-google-3-erros.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div>
+      <div class="eyebrow">Vai além da plaquinha</div>
+      <h2 class="section-h">A plaquinha traz avaliação. A gente cuida do resto do seu Google.</h2>
+      <p class="section-desc" style="margin-bottom:28px;">Três erros fazem o seu negócio perder cliente pro concorrente todos os dias, e quase ninguém percebe. Dá o play que o Dione explica em um minuto e meio.</p>
+      <ul class="rep-list">
+        <li><span>1</span><div><strong>Avaliação sem resposta.</strong> Respondemos cada comentário, bom ou ruim, pra mostrar que o negócio está ativo.</div></li>
+        <li><span>2</span><div><strong>Só quem reclama avalia.</strong> A plaquinha NFC faz o cliente satisfeito avaliar na hora, sem procurar nada.</div></li>
+        <li><span>3</span><div><strong>Perfil parado.</strong> Mantemos fotos, posts e informações sempre em dia, dentro das regras do Google.</div></li>
+      </ul>
+      <div class="hero-cta">
+        <a href="https://wa.me/5565981376725?text=Ol%C3%A1!%20Vi%20o%20v%C3%ADdeo%20dos%203%20erros%20no%20Google%20e%20quero%20cuidar%20da%20reputa%C3%A7%C3%A3o%20do%20meu%20neg%C3%B3cio." target="_blank" class="btn-primary">Quero cuidar do meu Google</a>
+        <a href="https://local.zebubit.com.br/#raio-x" target="_blank" class="btn-secondary">Raio-x grátis do meu negócio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="reels">
   <div class="eyebrow">Veja funcionando</div>
   <h2 class="section-h">Do encosto do celular até a avaliação, em poucos segundos.</h2>
@@ -428,6 +463,24 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
       <div class="reels-card-body">
         <div class="reels-name">Aproximou, avaliou</div>
         <div class="reels-text">O passo a passo real de como o cliente encosta o celular e avalia no Google.</div>
+      </div>
+    </div>
+    <div class="reels-card">
+      <video controls playsinline preload="none" poster="cartao-nfc-img/anuncio-motion-geral-poster.jpg">
+        <source src="cartao-nfc-img/anuncio-motion-geral.mp4" type="video/mp4">
+      </video>
+      <div class="reels-card-body">
+        <div class="reels-name">300 avaliações ou 12?</div>
+        <div class="reels-text">Por que o cliente escolhe quem tem mais avaliação no Google.</div>
+      </div>
+    </div>
+    <div class="reels-card">
+      <video controls playsinline preload="none" poster="cartao-nfc-img/anuncio-plaquinhas-geral-poster.jpg">
+        <source src="cartao-nfc-img/anuncio-plaquinhas-geral.mp4" type="video/mp4">
+      </video>
+      <div class="reels-card-body">
+        <div class="reels-name">Encostou, avaliou</div>
+        <div class="reels-text">Placa, card ou cartão de bolso, já gravados com o link do seu negócio.</div>
       </div>
     </div>
   </div>
