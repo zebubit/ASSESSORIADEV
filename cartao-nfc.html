@@ -142,7 +142,7 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .step-h{font-size:19px;font-weight:700;margin-bottom:8px;}
 .step-text{font-size:14px;color:var(--mut);line-height:1.65;}
 
-.reels-grid{display:grid;grid-template-columns:repeat(4,minmax(0,280px));gap:22px;justify-content:center;}
+.reels-grid{display:grid;grid-template-columns:repeat(3,minmax(0,300px));gap:22px;justify-content:center;}
 .reels-card{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(20,23,31,.08);background:#000;}
 .reels-card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000;}
 .reels-card-body{padding:14px 18px 18px;background:#fff;flex:1;}
@@ -209,6 +209,7 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
   .pricing{margin:0 20px;padding:50px 22px;border-radius:20px;}
   .steps,.diff-grid,.price-grid{grid-template-columns:1fr;}
   .reels-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+  .reels-card:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 7px);}
   .reels-card-body{padding:12px 12px 14px;}
   .rep-wrap{grid-template-columns:1fr;gap:32px;}
   .rep-video{max-width:320px;margin:0 auto;width:100%;}
@@ -448,24 +449,6 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
   <h2 class="section-h">Do encosto do celular até a avaliação, em poucos segundos.</h2>
   <div class="reels-grid">
     <div class="reels-card">
-      <video controls playsinline preload="metadata" poster="cartao-nfc-img/reels-avaliacao-confianca-poster.jpg">
-        <source src="cartao-nfc-img/reels-avaliacao-confianca.mp4" type="video/mp4">
-      </video>
-      <div class="reels-card-body">
-        <div class="reels-name">Avaliação vira confiança</div>
-        <div class="reels-text">Por que pedir a avaliação certa, na hora certa, traz mais clientes.</div>
-      </div>
-    </div>
-    <div class="reels-card">
-      <video controls playsinline preload="metadata" poster="cartao-nfc-img/reels-demonstracao-nfc-poster.jpg">
-        <source src="cartao-nfc-img/reels-demonstracao-nfc.mp4" type="video/mp4">
-      </video>
-      <div class="reels-card-body">
-        <div class="reels-name">Aproximou, avaliou</div>
-        <div class="reels-text">O passo a passo real de como o cliente encosta o celular e avalia no Google.</div>
-      </div>
-    </div>
-    <div class="reels-card">
       <video controls playsinline preload="none" poster="cartao-nfc-img/anuncio-motion-geral-poster.jpg">
         <source src="cartao-nfc-img/anuncio-motion-geral.mp4" type="video/mp4">
       </video>
@@ -481,6 +464,15 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
       <div class="reels-card-body">
         <div class="reels-name">Encostou, avaliou</div>
         <div class="reels-text">Placa, card ou cartão de bolso, já gravados com o link do seu negócio.</div>
+      </div>
+    </div>
+    <div class="reels-card">
+      <video controls playsinline preload="metadata" poster="cartao-nfc-img/reels-demonstracao-nfc-poster.jpg">
+        <source src="cartao-nfc-img/reels-demonstracao-nfc.mp4" type="video/mp4">
+      </video>
+      <div class="reels-card-body">
+        <div class="reels-name">Aproximou, avaliou</div>
+        <div class="reels-text">O passo a passo real de como o cliente encosta o celular e avalia no Google.</div>
       </div>
     </div>
   </div>
