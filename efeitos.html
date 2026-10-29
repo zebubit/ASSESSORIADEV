@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<title>Efeitos que Encantam | Zebubit</title>
+<meta name="description" content="Veja ao vivo os efeitos que a Zebubit cria para sites: chuva e raios de verdade, partículas que reagem ao toque. Sites que fazem as pessoas pararem de rolar.">
+<meta name="theme-color" content="#080808">
+<link rel="canonical" href="https://zebubit.com.br/efeitos.html">
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Efeitos que Encantam | Zebubit">
+<meta property="og:description" content="Toque na tela e solte um raio. Veja ao vivo os efeitos que a Zebubit cria para sites.">
+<meta property="og:url" content="https://zebubit.com.br/efeitos.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-l:#E8C97A;--dark:#080808;--dark2:#101010;--dark3:#181818;--text:#EDE8DC;--mut:#A89880;--white:#FAF7F2;--line:rgba(201,168,76,.22);
+  --serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;max-width:100%;scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;max-width:100%;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--gold-l);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+svg.i{width:20px;height:20px;flex:none}
+
+/* topo */
+.top{position:fixed;inset:0 0 auto;z-index:40;transition:background .3s,box-shadow .3s}
+.top.solid{background:rgba(8,8,8,.85);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
+.top img{height:44px;width:auto}
+.top nav{display:flex;align-items:center;gap:18px;font-size:.92rem}
+.top nav a.back{color:var(--mut)}
+.top nav a.back:hover{color:var(--gold-l)}
+@media (max-width:520px){.top nav a.back{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:700 .95rem/1 var(--sans);cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s;touch-action:manipulation;border:0}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#140f02;box-shadow:0 10px 30px -10px rgba(201,168,76,.7)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(201,168,76,.9)}
+.btn-line{border:1.5px solid rgba(250,247,242,.35);color:var(--white);background:rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.btn-line:hover{border-color:var(--gold-l)}
+.top .btn{min-height:44px;padding:0 18px;font-size:.86rem}
+
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 .8rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:var(--gold)}
+h1,h2{font-family:var(--serif);font-weight:900;line-height:1.02;letter-spacing:-.01em}
+h1 em,h2 em{font-style:italic;color:var(--gold-l)}
+
+/* intro */
+.intro{min-height:100svh;display:flex;align-items:center;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+#dust{position:absolute;inset:0;z-index:-1;width:100%;height:100%}
+.intro::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 40%,rgba(201,168,76,.12),transparent 60%);pointer-events:none}
+.intro h1{font-size:clamp(2.8rem,8.5vw,6.4rem);margin:20px auto 22px;max-width:14ch}
+.intro p{color:#CFC6B4;font-size:clamp(1.05rem,1.8vw,1.25rem);max-width:600px;margin:0 auto 34px}
+.intro .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.down{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--mut);font-size:.78rem;letter-spacing:.24em;text-transform:uppercase}
+.down::after{content:"";width:1px;height:56px;background:linear-gradient(var(--gold),transparent);animation:drip 2.2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* cenas */
+.scene{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;cursor:crosshair;touch-action:pan-y}
+.scene canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.scene .wrap{position:relative;z-index:2;padding:120px 0 clamp(56px,9vh,96px);pointer-events:none}
+.scene .wrap a,.scene .wrap button{pointer-events:auto}
+.num{font:900 clamp(4rem,12vw,9rem)/.8 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(232,201,122,.45);display:block;margin-bottom:6px}
+.scene h2{font-size:clamp(2.4rem,6.5vw,5rem);max-width:13ch;margin:14px 0 16px}
+.scene p.d{color:#D8D0C0;max-width:520px;font-size:1.05rem;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;max-width:620px}
+.tags span{padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:rgba(8,8,8,.55);backdrop-filter:blur(6px);font-size:.86rem;color:#E5DCC8}
+.hint{position:absolute;z-index:3;top:96px;right:max(16px,calc((100vw - 1180px)/2));display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:rgba(8,8,8,.6);backdrop-filter:blur(8px);border:1px solid var(--line);font-size:.88rem;color:var(--white);pointer-events:none;animation:pulse 2.4s ease-in-out infinite}
+.hint svg{color:var(--gold-l)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.0)}50%{box-shadow:0 0 0 8px rgba(201,168,76,.12)}}
+@media (max-width:640px){.hint{left:16px;right:auto;top:84px}}
+
+/* cena 1: tempestade */
+.storm .bg{position:absolute;inset:0;z-index:-2}
+.storm .bg img{width:100%;height:100%;object-fit:cover;transition:filter .06s}
+.storm.strike .bg img{filter:brightness(2.1) contrast(1.15) saturate(1.2)}
+.storm::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(8,8,8,.96) 4%,rgba(8,8,8,.45) 50%,rgba(8,8,8,.55) 100%)}
+.flash{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;background:radial-gradient(ellipse at var(--fx,40%) 15%,rgba(210,228,255,.6),rgba(140,175,255,.18) 45%,transparent 75%)}
+
+/* cena 2: constelação */
+.stars{background:radial-gradient(ellipse at 70% 30%,#16120a 0%,var(--dark) 65%)}
+.stars::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,0) 45%)}
+
+/* índice */
+.indice{padding:clamp(70px,9vw,110px) 0;background:var(--dark2);border-block:1px solid var(--line)}
+.indice h2{font-size:clamp(2rem,5vw,3.4rem);margin:14px 0 30px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips a{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px 0 8px;border-radius:999px;border:1px solid var(--line);background:rgba(201,168,76,.05);font-weight:500;transition:background .25s,border-color .25s}
+.chips a:hover{background:rgba(201,168,76,.14);border-color:var(--gold)}
+.chips b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#140f02;font-size:.8rem}
+
+/* cenas novas */
+.fx::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(8,8,8,.9) 0%,rgba(8,8,8,.35) 38%,rgba(8,8,8,0) 60%)}
+.fx-fogo{background:radial-gradient(ellipse at 50% 110%,#3a1203 0%,#120603 55%,#080404 100%)}
+.fx-agua{background:#06304a}
+.fx-petalas{background:radial-gradient(ellipse at 50% 20%,#2e1019 0%,#12070b 70%)}
+.fx-fumaca{background:radial-gradient(ellipse at 50% 90%,#1b1712 0%,#0a0908 70%)}
+.fx-aurora{background:linear-gradient(180deg,#020611 0%,#061428 60%,#0a0f14 100%)}
+.fx-marca{background:radial-gradient(ellipse at 50% 30%,#17130a 0%,var(--dark) 70%)}
+.fx-holofote .bg{position:absolute;inset:0;z-index:-1}
+.fx-holofote .bg img{width:100%;height:100%;object-fit:cover}
+.fx-fogos{background:linear-gradient(180deg,#05060c 0%,#0b0a12 100%)}
+.fx-bolhas{background:linear-gradient(180deg,#041826 0%,#07324a 100%)}
+.fx-codigo{background:#070707}
+.fx-liquido{background:radial-gradient(ellipse at 50% 30%,#1a0b16 0%,#0b060a 75%)}
+.fx-warp{background:#05060c}
+.fx-vagalumes{background:radial-gradient(ellipse at 50% 80%,#0c1d10 0%,#040a06 75%)}
+
+/* benefícios */
+.why{padding:clamp(80px,11vw,140px) 0;background:var(--dark2);border-block:1px solid var(--line)}
+.why h2{font-size:clamp(2.2rem,5.5vw,3.8rem);margin:14px 0 40px;max-width:16ch}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{padding:26px 22px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(201,168,76,.07),transparent 60%)}
+.card .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(201,168,76,.12);color:var(--gold-l);margin-bottom:16px}
+.card h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:6px;color:var(--white)}
+.card p{color:var(--mut);font-size:.95rem}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+
+/* final */
+.final{padding:clamp(90px,13vw,160px) 0;text-align:center;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(201,168,76,.16),transparent 60%);pointer-events:none}
+.final h2{font-size:clamp(2.6rem,7vw,5.2rem);margin:16px auto 20px;max-width:14ch;position:relative}
+.final p{color:#CFC6B4;max-width:540px;margin:0 auto 32px;font-size:1.08rem;position:relative}
+footer{border-top:1px solid var(--line);padding:34px 0 40px;color:var(--mut);font-size:.88rem;text-align:center}
+footer a{color:var(--gold-l)}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3.2 29l6.9-1.8c1.9 1 4 1.6 6 1.6 7 0 12.7-5.6 12.7-12.6C28.8 8.6 23 3 16 3zm0 23.4c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a10.4 10.4 0 0 1-1.6-5.6C5.3 9.8 10.1 5.1 16 5.1s10.6 4.7 10.6 10.6S21.9 26.4 16 26.4zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4z"/></symbol>
+  <symbol id="tap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11"/><path d="M12 10.5V9a1.5 1.5 0 0 1 3 0v2"/><path d="M15 10.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-4.8-2.4l-2.4-3.2a1.5 1.5 0 0 1 2.4-1.8L9 15.5"/></g></symbol>
+  <symbol id="bolt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="./" aria-label="Zebubit, página inicial"><img src="assets/extracted/zebubit-logo.webp" alt="Zebubit Assessoria" width="600" height="400"></a>
+    <nav>
+      <a class="back" href="./">Voltar ao site</a>
+      <a class="btn btn-gold" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero um site assim." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero um site assim</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="intro">
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="eyebrow rv">Vitrine de efeitos Zebubit · 15 ao vivo</span>
+    <h1 class="rv d1">Sites que fazem as pessoas <em>pararem de rolar.</em></h1>
+    <p class="rv d2">Nada de site parado. Veja ao vivo efeitos que a Zebubit cria para marcas que querem ser lembradas. Toque, arraste e solte raios.</p>
+    <div class="cta rv d3">
+      <a class="btn btn-gold" href="#tempestade"><svg class="i"><use href="#bolt"/></svg>Ver os efeitos</a>
+      <a class="btn btn-line" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero um site com efeitos assim." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Falar com a Zebubit</a>
+    </div>
+  </div>
+  <div class="down" aria-hidden="true">Role</div>
+</section>
+
+<section class="indice">
+  <div class="wrap">
+    <span class="eyebrow rv">15 efeitos ao vivo</span>
+    <h2 class="rv d1">Escolha um e <em>experimente.</em></h2>
+    <nav class="chips rv d2" aria-label="Efeitos">
+      <a href="#tempestade"><b>01</b>Chuva e raios</a>
+      <a href="#constelacao"><b>02</b>Constelação</a>
+      <a href="#fogo"><b>03</b>Fogo e Brasas</a>
+      <a href="#agua"><b>04</b>Água Viva</a>
+      <a href="#petalas"><b>05</b>Pétalas</a>
+      <a href="#fumaca"><b>06</b>Fumaça</a>
+      <a href="#aurora"><b>07</b>Aurora</a>
+      <a href="#marca"><b>08</b>Marca em Partículas</a>
+      <a href="#holofote"><b>09</b>Holofote</a>
+      <a href="#fogos"><b>10</b>Fogos de Artifício</a>
+      <a href="#bolhas"><b>11</b>Bolhas</a>
+      <a href="#codigo"><b>12</b>Código</a>
+      <a href="#liquido"><b>13</b>Líquido</a>
+      <a href="#warp"><b>14</b>Hiperespaço</a>
+      <a href="#vagalumes"><b>15</b>Vaga-lumes</a>
+    </nav>
+  </div>
+</section>
+
+<!-- EFEITO 01 -->
+<section class="scene storm" id="tempestade" aria-label="Efeito chuva e raios">
+  <div class="bg"><img src="assets/efeitos/raio.webp" srcset="assets/efeitos/raio-m.webp 1100w, assets/efeitos/raio.webp 2000w" sizes="100vw" alt="" loading="lazy" width="2000" height="1333"></div>
+  <div class="flash" id="flash" aria-hidden="true"></div>
+  <canvas id="storm" aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Toque na tela e solte um raio</div>
+  <div class="wrap">
+    <span class="num rv">01</span>
+    <span class="eyebrow rv">Tempestade</span>
+    <h2 class="rv d1">Chuva e raios <em>de verdade.</em></h2>
+    <p class="d rv d2">Raios com galhos que caem cada vez num lugar, relâmpago que ilumina a cena e chuva sem parar. Leve, roda liso no celular e transforma a primeira impressão do seu site.</p>
+    <div class="tags rv d2"><span>Calhas e telhados</span><span>Construção</span><span>Energia solar</span><span>Seguros</span><span>Eventos</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Chuva e Raios no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 02 -->
+<section class="scene stars" id="constelacao" aria-label="Efeito partículas e constelação">
+  <canvas id="const" aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Passe o dedo ou o mouse</div>
+  <div class="wrap">
+    <span class="num rv">02</span>
+    <span class="eyebrow rv">Constelação</span>
+    <h2 class="rv d1">Tecnologia que <em>reage a você.</em></h2>
+    <p class="d rv d2">Pontos de luz que se conectam, seguem o seu movimento e explodem em brilho a cada toque. Passa a sensação de inovação desde o primeiro segundo.</p>
+    <div class="tags rv d2"><span>Tecnologia e IA</span><span>Contabilidade</span><span>Advocacia</span><span>Consultoria</span><span>Startups</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Constelação no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 03 -->
+<section class="scene fx fx-fogo" id="fogo" aria-label="Efeito Fogo e Brasas">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Passe o dedo e toque</div>
+  <div class="wrap">
+    <span class="num rv">03</span>
+    <span class="eyebrow rv">Fogo e brasas</span>
+    <h2 class="rv d1">Calor que <em>dá fome.</em></h2>
+    <p class="d rv d2">Brasas subindo, faíscas que seguem o seu dedo e explodem no toque. Perfeito para quem vende sabor e energia.</p>
+    <div class="tags rv d2"><span>Hamburgueria</span><span>Churrascaria</span><span>Pizzaria</span><span>Academia</span><span>Serralheria</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Fogo e Brasas no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 04 -->
+<section class="scene fx fx-agua" id="agua" aria-label="Efeito Água Viva">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Toque e mexa na água</div>
+  <div class="wrap">
+    <span class="num rv">04</span>
+    <span class="eyebrow rv">Água viva</span>
+    <h2 class="rv d1">Água que <em>responde ao toque.</em></h2>
+    <p class="d rv d2">Uma superfície de água que vira onda em cada toque e deixa rastro por onde o dedo passa. Calma e encantadora.</p>
+    <div class="tags rv d2"><span>Piscinas</span><span>Spa</span><span>Natação</span><span>Clínicas de estética</span><span>Turismo</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Água Viva no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 05 -->
+<section class="scene fx fx-petalas" id="petalas" aria-label="Efeito Pétalas">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Toque para soprar</div>
+  <div class="wrap">
+    <span class="num rv">05</span>
+    <span class="eyebrow rv">Pétalas</span>
+    <h2 class="rv d1">Delicadeza <em>que flutua.</em></h2>
+    <p class="d rv d2">Pétalas caindo devagar, girando no ar e desviando do seu dedo. Toque e solte uma brisa.</p>
+    <div class="tags rv d2"><span>Floricultura</span><span>Casamentos</span><span>Estética</span><span>Confeitaria</span><span>Moda feminina</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Pétalas no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 06 -->
+<section class="scene fx fx-fumaca" id="fumaca" aria-label="Efeito Fumaça">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Arraste para soprar fumaça</div>
+  <div class="wrap">
+    <span class="num rv">06</span>
+    <span class="eyebrow rv">Fumaça</span>
+    <h2 class="rv d1">Mistério <em>no ar.</em></h2>
+    <p class="d rv d2">Fumaça suave que sobe e acompanha o seu movimento. Dá clima e sofisticação na hora.</p>
+    <div class="tags rv d2"><span>Perfumaria</span><span>Cafeteria</span><span>Tabacaria</span><span>Barbearia</span><span>Bar e drinks</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Fumaça no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 07 -->
+<section class="scene fx fx-aurora" id="aurora" aria-label="Efeito Aurora">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Mexa para curvar a luz</div>
+  <div class="wrap">
+    <span class="num rv">07</span>
+    <span class="eyebrow rv">Aurora</span>
+    <h2 class="rv d1">O céu <em>dançando.</em></h2>
+    <p class="d rv d2">Faixas de luz que ondulam como uma aurora boreal e se curvam na direção do seu toque.</p>
+    <div class="tags rv d2"><span>Turismo</span><span>Pousadas</span><span>Spa</span><span>Música e eventos</span><span>Bem-estar</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Aurora no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 08 -->
+<section class="scene fx fx-marca" id="marca" aria-label="Efeito Marca em Partículas">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Toque para explodir</div>
+  <div class="wrap">
+    <span class="num rv">08</span>
+    <span class="eyebrow rv">Sua marca em partículas</span>
+    <h2 class="rv d1">Sua marca <em>feita de luz.</em></h2>
+    <p class="d rv d2">O nome da sua empresa formado por centenas de partículas. Elas fogem do dedo, explodem no toque e voltam ao lugar.</p>
+    <div class="tags rv d2"><span>Qualquer marca</span><span>Lançamentos</span><span>Imobiliárias</span><span>Franquias</span><span>Eventos</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Marca em Partículas no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 09 -->
+<section class="scene fx fx-holofote" id="holofote" aria-label="Efeito Holofote">
+  <div class="bg"><img src="assets/efeitos/holofote.webp" srcset="assets/efeitos/holofote-m.webp 1100w, assets/efeitos/holofote.webp 2000w" sizes="100vw" alt="" loading="lazy" width="2000" height="1333"></div>
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Mova a luz pela tela</div>
+  <div class="wrap">
+    <span class="num rv">09</span>
+    <span class="eyebrow rv">Holofote</span>
+    <h2 class="rv d1">O que importa, <em>em destaque.</em></h2>
+    <p class="d rv d2">A tela fica no escuro e o seu dedo vira um holofote que revela o produto. Curiosidade instantânea.</p>
+    <div class="tags rv d2"><span>Imobiliárias</span><span>Joalherias</span><span>Moda</span><span>Arquitetura</span><span>Concessionárias</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Holofote no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 10 -->
+<section class="scene fx fx-fogos" id="fogos" aria-label="Efeito Fogos de Artifício">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Toque e solte fogos</div>
+  <div class="wrap">
+    <span class="num rv">10</span>
+    <span class="eyebrow rv">Fogos de artifício</span>
+    <h2 class="rv d1">Toda visita <em>vira festa.</em></h2>
+    <p class="d rv d2">Fogos subindo e explodindo em dourado. Toque na tela e solte o seu.</p>
+    <div class="tags rv d2"><span>Eventos</span><span>Casamentos</span><span>Buffet</span><span>Formaturas</span><span>Promoções</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Fogos de Artifício no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 11 -->
+<section class="scene fx fx-bolhas" id="bolhas" aria-label="Efeito Bolhas">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Toque para estourar</div>
+  <div class="wrap">
+    <span class="num rv">11</span>
+    <span class="eyebrow rv">Bolhas</span>
+    <h2 class="rv d1">Limpeza que <em>dá vontade de tocar.</em></h2>
+    <p class="d rv d2">Bolhas de sabão subindo com reflexo de arco-íris. Toque e estoure.</p>
+    <div class="tags rv d2"><span>Lava-jato</span><span>Lavanderia</span><span>Pet shop</span><span>Limpeza</span><span>Produtos infantis</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Bolhas no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 12 -->
+<section class="scene fx fx-codigo" id="codigo" aria-label="Efeito Código">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Toque para abrir uma onda</div>
+  <div class="wrap">
+    <span class="num rv">12</span>
+    <span class="eyebrow rv">Código</span>
+    <h2 class="rv d1">Tecnologia <em>em movimento.</em></h2>
+    <p class="d rv d2">Uma chuva de código dourado que reage ao seu dedo. Passa inteligência e modernidade.</p>
+    <div class="tags rv d2"><span>Tecnologia e TI</span><span>Inteligência artificial</span><span>Segurança digital</span><span>Games</span><span>Cursos online</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Código no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 13 -->
+<section class="scene fx fx-liquido" id="liquido" aria-label="Efeito Líquido">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Arraste e toque</div>
+  <div class="wrap">
+    <span class="num rv">13</span>
+    <span class="eyebrow rv">Líquido</span>
+    <h2 class="rv d1">Formas que <em>se fundem.</em></h2>
+    <p class="d rv d2">Gotas de cor que se juntam e se separam como líquido, seguindo o seu movimento.</p>
+    <div class="tags rv d2"><span>Cosméticos</span><span>Estética</span><span>Bebidas</span><span>Design</span><span>Agências</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Líquido no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 14 -->
+<section class="scene fx fx-warp" id="warp" aria-label="Efeito Hiperespaço">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Toque para acelerar</div>
+  <div class="wrap">
+    <span class="num rv">14</span>
+    <span class="eyebrow rv">Hiperespaço</span>
+    <h2 class="rv d1">Na velocidade <em>da luz.</em></h2>
+    <p class="d rv d2">Estrelas passando como numa viagem espacial. Mova para dirigir e toque para acelerar.</p>
+    <div class="tags rv d2"><span>Startups</span><span>Lançamentos</span><span>Logística</span><span>Internet e telecom</span><span>Automotivo</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Hiperespaço no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<!-- EFEITO 15 -->
+<section class="scene fx fx-vagalumes" id="vagalumes" aria-label="Efeito Vaga-lumes">
+  <canvas aria-hidden="true"></canvas>
+  <div class="hint"><svg class="i"><use href="#tap"/></svg>Mova e eles seguem você</div>
+  <div class="wrap">
+    <span class="num rv">15</span>
+    <span class="eyebrow rv">Vaga-lumes</span>
+    <h2 class="rv d1">Uma noite <em>mágica.</em></h2>
+    <p class="d rv d2">Vaga-lumes piscando no escuro que vêm atrás do seu dedo. Aconchego e encanto.</p>
+    <div class="tags rv d2"><span>Restaurantes</span><span>Pousadas</span><span>Eventos ao ar livre</span><span>Decoração</span><span>Produtos naturais</span></div>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero o efeito Vaga-lumes no meu site." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero esse efeito no meu site</a>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <span class="eyebrow rv">Feito sob medida</span>
+    <h2 class="rv d1">Bonito, rápido e <em>pensado para vender.</em></h2>
+    <div class="grid">
+      <div class="card rv"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Leve de verdade</h3><p>Sem vídeo pesado. O efeito é desenhado ao vivo pelo navegador e não deixa o site lento.</p></div>
+      <div class="card rv d1"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div><h3>Perfeito no celular</h3><p>Ajustado para telas pequenas, onde está a maioria dos seus clientes.</p></div>
+      <div class="card rv d2"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/><circle cx="8.5" cy="9" r="1"/><circle cx="15.5" cy="9" r="1"/><circle cx="16" cy="14.5" r="1"/></svg></div><h3>Com a sua marca</h3><p>Cores, ritmo e intensidade criados para combinar com o seu negócio.</p></div>
+      <div class="card rv d3"><div class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/><path d="M12 7v5l3 2"/></svg></div><h3>Atenção que fica</h3><p>Quem para pra ver, lê. Quem lê, chama no WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow rv">Seu site pode ser o próximo</span>
+    <h2 class="rv d1">Um site que <em>ninguém esquece.</em></h2>
+    <p class="rv d2">Conte o seu ramo e a gente cria um efeito exclusivo para a sua marca.</p>
+    <a class="btn btn-gold rv d3" data-wa="Olá! Vim pela vitrine de efeitos da Zebubit e quero um site que ninguém esquece." href="https://wa.me/5534993421500" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Quero o meu agora</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Zebubit Assessoria · <a href="./">zebubit.com.br</a></div>
+</footer>
+
+<script>
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/5534993421500?text='+encodeURIComponent(a.dataset.wa)});
+const hdr=document.getElementById('top');const onS=()=>hdr.classList.toggle('solid',scrollY>30);onS();addEventListener('scroll',onS,{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const desk=matchMedia('(min-width:1024px) and (pointer:fine)').matches;
+
+// ajusta o canvas à tela
+function fit(c,x,dd){const d=dd||Math.min(devicePixelRatio,1.5);const w=c.clientWidth,h=c.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);return[w,h]}
+// roda o loop só quando a seção está visível
+function whenVisible(el,start,stop){new IntersectionObserver(e=>e[0].isIntersecting?start():stop()).observe(el)}
+
+// poeira dourada da abertura
+(()=>{if(reduce)return;const c=document.getElementById('dust'),x=c.getContext('2d');let w,h,run=false;const P=[];
+const rs=()=>{[w,h]=fit(c,x)};rs();addEventListener('resize',rs);
+for(let i=0;i<(desk?90:40);i++)P.push({x:Math.random()*w,y:Math.random()*h,r:.5+Math.random()*1.8,v:.15+Math.random()*.45,a:Math.random()*Math.PI*2});
+function lp(){if(!run)return;x.clearRect(0,0,w,h);for(const p of P){p.y-=p.v;p.a+=.02;p.x+=Math.sin(p.a)*.3;if(p.y<-5){p.y=h+5;p.x=Math.random()*w}
+  const g=.35+Math.sin(p.a*2)*.25;x.fillStyle='rgba(232,201,122,'+g+')';x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()}requestAnimationFrame(lp)}
+whenVisible(c,()=>{if(!run){run=true;lp()}},()=>run=false)})();
+
+// EFEITO 01: chuva e raios (toque solta um raio)
+(()=>{const sec=document.getElementById('tempestade'),c=document.getElementById('storm'),fl=document.getElementById('flash'),x=c.getContext('2d');
+let w,h,run=false,bolts=[],next=0;const drops=[];
+const rs=()=>{[w,h]=fit(c,x)};rs();addEventListener('resize',rs);
+for(let i=0;i<(desk?150:60);i++)drops.push({x:Math.random()*w,y:Math.random()*h,l:12+Math.random()*24,v:11+Math.random()*10,a:.08+Math.random()*.22});
+const make=(x0,y0,len,ang,depth)=>{const pts=[[x0,y0]];let px=x0,py=y0;const st=depth?8:16;
+  for(let i=0;i<st;i++){ang+=(Math.random()-.5)*.9;px+=Math.sin(ang)*len/st*(.6+Math.random()*.8);py+=Math.cos(ang)*len/st;pts.push([px,py])}
+  const br=[];if(depth<2)pts.forEach((p,i)=>{if(i>2&&Math.random()<.18)br.push(make(p[0],p[1],len*(.25+Math.random()*.3),ang+(Math.random()<.5?-1:1)*(.5+Math.random()*.6),depth+1))});
+  return{pts,br,depth}};
+// raio que mira um ponto: calcula o ângulo até o alvo
+const toward=(tx,ty)=>{const sx=tx+(Math.random()-.5)*w*.25;return make(sx,-10,Math.max(ty,h*.3)+20,Math.atan2(tx-sx,ty+10)*.9,0)};
+const draw=(b,a)=>{x.globalAlpha=a*(b.depth?.55:1);x.lineWidth=b.depth?1.2:2.8;x.beginPath();b.pts.forEach((p,i)=>i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]));x.stroke();b.br.forEach(s=>draw(s,a))};
+const strike=(t,tx,ty)=>{const b=tx==null?make(w*(.15+Math.random()*.7),-10,h*(.55+Math.random()*.3),(Math.random()-.5)*.4,0):toward(tx,ty);
+  bolts.push({b,t0:t});fl.style.setProperty('--fx',((tx??b.pts[0][0])/w*100)+'%');
+  if(!reduce)fl.animate([{opacity:0},{opacity:.95,offset:.08},{opacity:.15,offset:.22},{opacity:.8,offset:.34},{opacity:0}],{duration:700,easing:'ease-out'});
+  sec.classList.add('strike');setTimeout(()=>sec.classList.remove('strike'),90);setTimeout(()=>{sec.classList.add('strike');setTimeout(()=>sec.classList.remove('strike'),110)},230)};
+function lp(t){if(!run)return;x.clearRect(0,0,w,h);x.globalAlpha=1;x.lineWidth=1;x.shadowBlur=0;
+  if(!reduce)for(const d of drops){x.strokeStyle='rgba(185,210,245,'+d.a+')';x.beginPath();x.moveTo(d.x,d.y);x.lineTo(d.x-d.l*.2,d.y+d.l);x.stroke();d.y+=d.v;d.x-=d.v*.2;if(d.y>h){d.y=-d.l;d.x=Math.random()*(w+100)}}
+  if(!reduce){if(!next)next=t+700;if(t>next){strike(t);next=t+2200+Math.random()*3800}}
+  x.strokeStyle='#F4F8FF';x.shadowColor='rgba(150,190,255,.95)';x.shadowBlur=22;
+  bolts=bolts.filter(o=>{const e=t-o.t0;const a=e<60?1:e<130?.25:e<240?.9:1-(e-240)/420;if(a<=0)return false;draw(o.b,a);return true});
+  x.shadowBlur=0;x.globalAlpha=1;requestAnimationFrame(lp)}
+sec.addEventListener('pointerdown',e=>{if(e.target.closest('a,button'))return;const r=c.getBoundingClientRect();strike(performance.now(),e.clientX-r.left,e.clientY-r.top);next=performance.now()+3000});
+whenVisible(sec,()=>{if(!run){run=true;next=0;requestAnimationFrame(lp)}},()=>run=false)})();
+
+// EFEITO 02: constelação que reage ao toque
+(()=>{const sec=document.getElementById('constelacao'),c=document.getElementById('const'),x=c.getContext('2d');
+let w,h,run=false;let P=[];const m={x:-999,y:-999,on:false};const bursts=[];
+const seed=()=>{P=[];const n=Math.round(Math.min(desk?130:60,w*h/9000));for(let i=0;i<n;i++)P.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:1+Math.random()*1.6})};
+const rs=()=>{[w,h]=fit(c,x);seed()};rs();addEventListener('resize',rs);
+const link=desk?130:95;
+const pos=e=>{const r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top;m.on=true};
+sec.addEventListener('pointermove',pos);sec.addEventListener('pointerleave',()=>m.on=false);
+sec.addEventListener('pointerdown',e=>{if(e.target.closest('a,button'))return;pos(e);
+  for(const p of P){const dx=p.x-m.x,dy=p.y-m.y,d=Math.hypot(dx,dy)||1;if(d<220){const f=(220-d)/220*6;p.vx+=dx/d*f;p.vy+=dy/d*f}}
+  bursts.push({x:m.x,y:m.y,t:0})});
+function lp(){if(!run)return;x.clearRect(0,0,w,h);
+  for(const p of P){
+    if(m.on){const dx=m.x-p.x,dy=m.y-p.y,d=Math.hypot(dx,dy);if(d<170&&d>1){p.vx+=dx/d*.05;p.vy+=dy/d*.05}}
+    p.vx*=.97;p.vy*=.97;const sp=Math.hypot(p.vx,p.vy);if(sp<.18){p.vx+=(Math.random()-.5)*.06;p.vy+=(Math.random()-.5)*.06}
+    if(!reduce){p.x+=p.vx;p.y+=p.vy}
+    if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;p.x=Math.max(0,Math.min(w,p.x));p.y=Math.max(0,Math.min(h,p.y))}
+  x.lineWidth=1;
+  for(let i=0;i<P.length;i++){const a=P[i];for(let j=i+1;j<P.length;j++){const b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<link){x.strokeStyle='rgba(201,168,76,'+(1-d/link)*.45+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+    if(m.on){const d=Math.hypot(a.x-m.x,a.y-m.y);if(d<170){x.strokeStyle='rgba(250,240,210,'+(1-d/170)*.7+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(m.x,m.y);x.stroke()}}}
+  for(const p of P){x.fillStyle='rgba(240,222,170,.9)';x.shadowColor='rgba(232,201,122,.9)';x.shadowBlur=8;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()}
+  x.shadowBlur=0;
+  for(let k=bursts.length-1;k>=0;k--){const b=bursts[k];b.t+=1;const r=b.t*6,a=1-b.t/40;if(a<=0){bursts.splice(k,1);continue}
+    x.strokeStyle='rgba(232,201,122,'+a+')';x.lineWidth=2;x.beginPath();x.arc(b.x,b.y,r,0,7);x.stroke()}
+  if(m.on){x.fillStyle='rgba(250,240,210,.95)';x.shadowColor='rgba(232,201,122,1)';x.shadowBlur=18;x.beginPath();x.arc(m.x,m.y,3,0,7);x.fill();x.shadowBlur=0}
+  requestAnimationFrame(lp)}
+whenVisible(sec,()=>{if(!run){run=true;lp()}},()=>run=false)})();
+
+// ===== EFEITOS 03 a 15 =====
+const rnd=(a,b)=>a+Math.random()*(b-a);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+// desenho de brilho redondo reaproveitável
+const glow=(r,stops)=>{const s=document.createElement('canvas');s.width=s.height=r*2;const g=s.getContext('2d');const gr=g.createRadialGradient(r,r,0,r,r,r);stops.forEach(([o,c])=>gr.addColorStop(o,c));g.fillStyle=gr;g.fillRect(0,0,r*2,r*2);return s};
+// estrutura comum: canvas do tamanho da seção, ponteiro, loop só quando visível
+function fx(id,o){const sec=document.getElementById(id),c=sec.querySelector('canvas'),x=c.getContext('2d');
+  const S={m:{x:-999,y:-999,on:false},w:0,h:0,mob:!desk};let run=false,last=0;
+  const rs=()=>{const pw=S.w,ph=S.h;[S.w,S.h]=fit(c,x,o.dpr);if(S.w!==pw||Math.abs(S.h-ph)>120||!S.ok){S.ok=1;o.init&&o.init(S,x)}};
+  rs();addEventListener('resize',rs);
+  if(document.fonts)document.fonts.ready.then(()=>{o.init&&o.init(S,x)});
+  const at=e=>{const r=c.getBoundingClientRect();S.m.x=e.clientX-r.left;S.m.y=e.clientY-r.top};
+  sec.addEventListener('pointermove',e=>{at(e);S.m.on=true});
+  sec.addEventListener('pointerleave',()=>{S.m.on=false});
+  sec.addEventListener('pointerdown',e=>{if(e.target.closest('a,button'))return;at(e);S.m.on=true;o.down&&o.down(S,x)});
+  const lp=t=>{if(!run)return;const dt=last?Math.min(3,(t-last)/16.67):1;last=t;o.frame(S,x,t/1000,dt);requestAnimationFrame(lp)};
+  whenVisible(sec,()=>{if(reduce){o.frame(S,x,0,0);return}if(!run){run=true;last=0;requestAnimationFrame(lp)}},()=>{run=false})}
+
+// 03 fogo e brasas
+(()=>{const em=glow(16,[[0,'rgba(255,244,210,1)'],[.25,'rgba(255,175,60,.9)'],[.6,'rgba(235,85,20,.35)'],[1,'rgba(200,40,0,0)']]);
+const ember=(S,x0,y0,vx,vy,d,s)=>S.p.push({x:x0,y:y0,vx,vy,l:1,d,s});
+fx('fogo',{init(S){S.p=[];for(let i=0;i<140;i++)ember(S,rnd(0,S.w),rnd(0,S.h),rnd(-.4,.4),rnd(-1,-3),rnd(.003,.008),rnd(.2,.8))},
+ down(S){for(let i=0;i<80;i++){const a=rnd(0,6.28),v=rnd(2,10);ember(S,S.m.x,S.m.y,Math.cos(a)*v,Math.sin(a)*v-2,rnd(.012,.025),rnd(.3,.9))}},
+ frame(S,x,t,dt){const{w,h}=S;x.globalCompositeOperation='source-over';x.clearRect(0,0,w,h);
+  const g=x.createLinearGradient(0,h,0,h*.4);g.addColorStop(0,'rgba(255,90,10,.4)');g.addColorStop(1,'rgba(255,90,10,0)');x.fillStyle=g;x.fillRect(0,h*.4,w,h*.6);
+  if(dt){for(let i=0;i<(S.mob?2:4);i++)ember(S,rnd(0,w),h+10,rnd(-.4,.4),rnd(-1.2,-3.4),rnd(.004,.009),rnd(.2,.8));
+   if(S.m.on)for(let i=0;i<2;i++)ember(S,S.m.x+rnd(-6,6),S.m.y+rnd(-6,6),rnd(-1,1),rnd(-1,-3),rnd(.015,.03),rnd(.3,.7))}
+  x.globalCompositeOperation='lighter';
+  S.p=S.p.filter(p=>{p.vx+=Math.sin(t*2+p.y*.02)*.03*dt;p.vy-=.01*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=.99;p.l-=p.d*dt;
+   if(p.l<=0||p.y<-30)return false;const r=34*p.s*(.4+p.l*.6);x.globalAlpha=Math.min(1,p.l*1.3);x.drawImage(em,p.x-r/2,p.y-r/2,r,r);return true});
+  if(S.p.length>900)S.p.splice(0,S.p.length-900);x.globalAlpha=1;x.globalCompositeOperation='source-over'}})})();
+
+// 04 água viva (ondas de verdade)
+(()=>{const drop=(S,px,py,str,rad)=>{const cx=Math.round(px/S.r),cy=Math.round(py/S.r);
+  for(let j=-rad;j<=rad;j++)for(let i=-rad;i<=rad;i++){const q=i*i+j*j;if(q>rad*rad)continue;const X=cx+i,Y=cy+j;if(X>0&&Y>0&&X<S.cw-1&&Y<S.ch-1)S.a[Y*S.cw+X]+=str*(1-q/(rad*rad+1))}};
+fx('agua',{init(S){S.r=S.mob?7:5;S.cw=Math.ceil(S.w/S.r)+2;S.ch=Math.ceil(S.h/S.r)+2;S.a=new Float32Array(S.cw*S.ch);S.b=new Float32Array(S.cw*S.ch);
+  S.off=document.createElement('canvas');S.off.width=S.cw;S.off.height=S.ch;S.ox=S.off.getContext('2d');S.img=S.ox.createImageData(S.cw,S.ch);S.next=0;
+  for(let i=0;i<6;i++)drop(S,rnd(0,S.w),rnd(0,S.h),400,3)},
+ down(S){drop(S,S.m.x,S.m.y,1400,5)},
+ frame(S,x,t,dt){const cw=S.cw,ch=S.ch;
+  if(dt){if(t>S.next){drop(S,rnd(0,S.w),rnd(0,S.h),rnd(250,600),2);S.next=t+rnd(.3,.9)}
+   if(S.m.on)drop(S,S.m.x,S.m.y,160,2);
+   const a=S.a,b=S.b;for(let y=1;y<ch-1;y++){const e=y*cw+cw-1;for(let i=y*cw+1;i<e;i++)b[i]=((a[i-1]+a[i+1]+a[i-cw]+a[i+cw])*.5-b[i])*.975}
+   S.a=b;S.b=a}
+  const a=S.a,d=S.img.data;
+  for(let y=0;y<ch;y++){const dep=y/ch;for(let X=0;X<cw;X++){const i=y*cw+X,k=i*4;const sh=(X<cw-1&&y<ch-1)?a[i]-a[i+cw+1]:0;
+    let l=sh*.5;if(l>0)l*=1.6;d[k]=8+dep*6+l;d[k+1]=70+dep*40+l;d[k+2]=105+dep*45+l*.9;d[k+3]=255}}
+  S.ox.putImageData(S.img,0,0);x.imageSmoothingEnabled=true;x.drawImage(S.off,0,0,cw*S.r,ch*S.r)}})})();
+
+// 05 pétalas
+(()=>{const cores=['#f7c6d0','#f2a7b8','#fde4ea','#e88aa0','#fff3f5','#E8C97A'];
+const nova=(S,y)=>({x:rnd(0,S.w),y:y??rnd(-S.h,S.h),s:rnd(6,14),r:rnd(0,6.28),vr:rnd(-.03,.03),vy:rnd(.5,1.3),vx:0,sw:rnd(0,6.28),c:pick(cores)});
+fx('petalas',{init(S){S.p=[];for(let i=0;i<(S.mob?45:90);i++)S.p.push(nova(S,rnd(0,S.h)))},
+ down(S){for(const p of S.p){const dx=p.x-S.m.x,dy=p.y-S.m.y,d=Math.hypot(dx,dy)||1;if(d<300){const f=(300-d)/300*9;p.vx+=dx/d*f;p.vy+=dy/d*f*.5-2;p.vr+=rnd(-.1,.1)}}},
+ frame(S,x,t,dt){x.clearRect(0,0,S.w,S.h);
+  for(const p of S.p){p.sw+=.02*dt;
+   if(S.m.on){const dx=p.x-S.m.x,dy=p.y-S.m.y,d=Math.hypot(dx,dy)||1;if(d<110){p.vx+=dx/d*.35;p.vy+=dy/d*.2}}
+   p.x+=(Math.sin(p.sw)*.8+p.vx)*dt;p.y+=(p.vy+(p.vy<.5?0:0))*dt;p.vx*=.96;if(p.vy>1.4||p.vy<.4)p.vy+=(.9-p.vy)*.03;p.r+=p.vr*dt;p.vr*=.995;
+   if(p.y>S.h+20||p.x<-40||p.x>S.w+40)Object.assign(p,nova(S,-20));
+   x.save();x.translate(p.x,p.y);x.rotate(p.r);x.scale(1,.55+.45*Math.sin(p.sw*1.3));x.globalAlpha=.9;x.fillStyle=p.c;
+   x.beginPath();x.moveTo(0,-p.s);x.quadraticCurveTo(p.s,-p.s*.2,0,p.s);x.quadraticCurveTo(-p.s,-p.s*.2,0,-p.s);x.fill();x.restore()}
+  x.globalAlpha=1}})})();
+
+// 06 fumaça
+(()=>{const sm=glow(64,[[0,'rgba(236,226,206,.32)'],[.45,'rgba(222,212,192,.16)'],[1,'rgba(200,190,170,0)']]);
+const puff=(S,px,py,vx,vy)=>S.p.push({x:px,y:py,vx,vy,s:rnd(30,60),g:rnd(.35,.8),l:1,d:rnd(.0018,.0032)});
+fx('fumaca',{dpr:.5,init(S){S.p=[];for(let i=0;i<(S.mob?120:220);i++){puff(S,S.w*pick([.15,.38,.62,.85])+rnd(-80,80),rnd(0,S.h),rnd(-.3,.3),rnd(-.6,-1.4));const p=S.p[S.p.length-1];p.l=rnd(.2,1);p.s=rnd(40,160)}},
+ down(S){for(let i=0;i<14;i++){const a=rnd(0,6.28),v=rnd(1,3.5);puff(S,S.m.x,S.m.y,Math.cos(a)*v,Math.sin(a)*v-1)}},
+ frame(S,x,t,dt){x.clearRect(0,0,S.w,S.h);
+  if(dt){for(const e of [.15,.38,.62,.85])if(Math.random()<.3*dt)puff(S,S.w*e+rnd(-30,30),S.h+30,rnd(-.3,.3),rnd(-.9,-1.7));
+   const mv=Math.hypot(S.m.x-(S.lx??S.m.x),S.m.y-(S.ly??S.m.y));S.lx=S.m.x;S.ly=S.m.y;
+   if(S.m.on&&mv>2)for(let i=0;i<Math.min(3,mv/8);i++){puff(S,S.m.x+rnd(-8,8),S.m.y+rnd(-8,8),rnd(-.6,.6),rnd(-.4,-1.2));S.p[S.p.length-1].l=.6}}
+  S.p=S.p.filter(p=>{p.x+=(p.vx+Math.sin(t*.8+p.y*.01)*.35)*dt;p.y+=p.vy*dt;p.vx*=.995;p.s+=p.g*dt;p.l-=p.d*dt;if(p.l<=0)return false;
+   x.globalAlpha=Math.min(1,p.l);x.drawImage(sm,p.x-p.s,p.y-p.s,p.s*2,p.s*2);return true});
+  if(S.p.length>(S.mob?240:420))S.p.splice(0,S.p.length-(S.mob?240:420));x.globalAlpha=1}})})();
+
+// 07 aurora
+(()=>{const fita=c=>{const s=document.createElement('canvas');s.width=2;s.height=220;const g=s.getContext('2d');const gr=g.createLinearGradient(0,0,0,220);
+  gr.addColorStop(0,'rgba('+c+',0)');gr.addColorStop(.55,'rgba('+c+',.55)');gr.addColorStop(.8,'rgba('+c+',.9)');gr.addColorStop(1,'rgba('+c+',0)');g.fillStyle=gr;g.fillRect(0,0,2,220);return s};
+const F=[fita('80,255,170'),fita('70,200,255'),fita('170,110,255')];
+fx('aurora',{dpr:.5,init(S){S.bg=document.createElement('canvas');S.bg.width=S.w;S.bg.height=S.h;const g=S.bg.getContext('2d');
+  for(let i=0;i<(S.mob?120:260);i++){g.fillStyle='rgba(255,255,255,'+rnd(.2,.8)+')';g.beginPath();g.arc(rnd(0,S.w),rnd(0,S.h*.8),rnd(.3,1.2),0,7);g.fill()}S.px=S.w/2},
+ down(S){S.kick=1},
+ frame(S,x,t,dt){const{w,h}=S;x.clearRect(0,0,w,h);x.drawImage(S.bg,0,0);x.globalCompositeOperation='lighter';
+  S.kick=(S.kick||0)*.97;const st=S.mob?7:8;
+  for(let k=0;k<3;k++){const base=h*(.18+k*.09);
+   for(let X=0;X<w;X+=st){let y=base+Math.sin(X*.004+t*.5+k)*h*.08+Math.sin(X*.011-t*.8+k*2)*h*.04;
+    if(S.m.on)y+=Math.exp(-(((X-S.m.x)/170)**2))*(S.m.y-base)*.45;
+    y+=Math.sin(X*.03-t*6)*S.kick*30;
+    const a=.3+.35*Math.sin(X*.02+t*1.3+k*1.7)+S.kick*.3;if(a<=0)continue;x.globalAlpha=Math.min(1,a)*.6;
+    x.drawImage(F[k],X,y-110,st,220+Math.sin(X*.01+t)*70)}}
+  x.globalAlpha=1;x.globalCompositeOperation='source-over'}})})();
+
+// 08 sua marca em partículas
+(()=>{fx('marca',{init(S){const{w,h}=S;const o=document.createElement('canvas');o.width=w;o.height=h;const g=o.getContext('2d');
+  const duas=w<700;const fs=duas?Math.min(w*.27,140):Math.min(w*.15,200);g.font='900 '+fs+'px "Playfair Display",Georgia,serif';g.textAlign='center';g.textBaseline='middle';g.fillStyle='#fff';
+  if(duas){g.fillText('SUA',w/2,h*.17);g.fillText('MARCA',w/2,h*.17+fs*.95)}else g.fillText('SUA MARCA',w/2,h*.22);
+  const step=duas?5:6,dd=g.getImageData(0,0,w,h).data,T=[];
+  for(let y=0;y<h;y+=step)for(let X=0;X<w;X+=step)if(dd[(y*w+X)*4+3]>128)T.push([X,y]);
+  T.sort(()=>Math.random()-.5);const old=S.p||[];S.p=T.slice(0,2400).map((q,i)=>{const p=old[i]||{x:rnd(0,w),y:rnd(0,h),vx:0,vy:0};p.tx=q[0];p.ty=q[1];if(reduce){p.x=q[0];p.y=q[1]}return p})},
+ down(S){for(const p of S.p){const dx=p.x-S.m.x,dy=p.y-S.m.y,d=Math.hypot(dx,dy)||1;if(d<280){const f=(280-d)/280*22;p.vx+=dx/d*f+rnd(-3,3);p.vy+=dy/d*f+rnd(-3,3)}}},
+ frame(S,x,t,dt){x.clearRect(0,0,S.w,S.h);const P0=new Path2D(),P1=new Path2D(),P2=new Path2D();
+  for(const p of S.p){if(dt){p.vx+=(p.tx-p.x)*.012*dt;p.vy+=(p.ty-p.y)*.012*dt;
+    if(S.m.on){const dx=p.x-S.m.x,dy=p.y-S.m.y,d=Math.hypot(dx,dy);if(d<90&&d>0){p.vx+=dx/d*(90-d)/90*3;p.vy+=dy/d*(90-d)/90*3}}
+    p.vx*=.86;p.vy*=.86;p.x+=p.vx*dt;p.y+=p.vy*dt}
+   const sp=Math.abs(p.vx)+Math.abs(p.vy);(sp>3?P0:sp>.6?P1:P2).rect(p.x,p.y,2.2,2.2)}
+  x.fillStyle='#FFF4D6';x.fill(P0);x.fillStyle='#E8C97A';x.fill(P1);x.fillStyle='#C9A84C';x.fill(P2)}})})();
+
+// 09 holofote
+fx('holofote',{dpr:.75,init(S){S.px=S.w/2;S.py=S.h*.35;S.boost=0},
+ down(S){S.boost=1.2},
+ frame(S,x,t,dt){const{w,h}=S;const tx=S.m.on?S.m.x:w*(.5+.32*Math.sin(t*.45)),ty=S.m.on?S.m.y:h*(.38+.18*Math.sin(t*.7));
+  S.px+=(tx-S.px)*.12*(dt||1);S.py+=(ty-S.py)*.12*(dt||1);S.boost*=.96;const R=(S.mob?130:200)*(1+S.boost);
+  x.clearRect(0,0,w,h);x.globalCompositeOperation='source-over';x.fillStyle='rgba(5,5,5,.95)';x.fillRect(0,0,w,h);
+  x.globalCompositeOperation='destination-out';const g=x.createRadialGradient(S.px,S.py,0,S.px,S.py,R);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.55,'rgba(0,0,0,.9)');g.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=g;x.beginPath();x.arc(S.px,S.py,R,0,7);x.fill();x.globalCompositeOperation='source-over';
+  x.strokeStyle='rgba(232,201,122,.25)';x.lineWidth=1;x.beginPath();x.arc(S.px,S.py,R*.82,0,7);x.stroke()}});
+
+// 10 fogos de artifício
+(()=>{const cores=['#E8C97A','#FFF4D6','#C9A84C','#ffb347','#ffffff'];
+const boom=(S,px,py)=>{const n=S.mob?80:130,c1=pick(cores),c2=Math.random()<.4?'hsl('+rnd(0,360)+',90%,70%)':pick(cores);
+  for(let i=0;i<n;i++){const a=rnd(0,6.28),v=rnd(1,6.5)*(S.h/800+.4);S.p.push({x:px,y:py,vx:Math.cos(a)*v,vy:Math.sin(a)*v,l:1,d:rnd(.008,.016),c:i%2?c1:c2})}};
+fx('fogos',{init(S){S.p=[];S.r=[];S.next=0;if(reduce){boom(S,S.w*.5,S.h*.3);S.p.forEach(p=>{p.x+=p.vx*25;p.y+=p.vy*25})}},
+ down(S){boom(S,S.m.x,S.m.y)},
+ frame(S,x,t,dt){const{w,h}=S;
+  if(dt){x.globalCompositeOperation='destination-out';x.fillStyle='rgba(0,0,0,'+Math.min(.5,.18*dt)+')';x.fillRect(0,0,w,h);
+   if(t>S.next){S.r.push({x:rnd(w*.15,w*.85),y:h+5,vx:rnd(-1,1),vy:-rnd(9,13)*(h/800+.25)});S.next=t+rnd(.6,1.3)}}
+  else x.clearRect(0,0,w,h);
+  x.globalCompositeOperation='lighter';
+  S.r=S.r.filter(r=>{r.x+=r.vx*dt;r.y+=r.vy*dt;r.vy+=.13*dt;x.fillStyle='#FFF4D6';x.fillRect(r.x,r.y,2,4);if(r.vy>=-1.2){boom(S,r.x,r.y);return false}return true});
+  S.p=S.p.filter(p=>{p.vx*=.985;p.vy=p.vy*.985+.06*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.l-=p.d*dt;if(p.l<=0)return false;
+   x.globalAlpha=p.l;x.fillStyle=p.c;x.fillRect(p.x-1.5,p.y-1.5,3,3);x.globalAlpha=p.l*.25;x.fillRect(p.x-4,p.y-4,8,8);return true});
+  x.globalAlpha=1;x.globalCompositeOperation='source-over'}})})();
+
+// 11 bolhas de sabão
+(()=>{const B=(()=>{const s=document.createElement('canvas');s.width=s.height=128;const g=s.getContext('2d');
+  let gr=g.createRadialGradient(64,64,40,64,64,63);gr.addColorStop(0,'rgba(255,255,255,0)');gr.addColorStop(.75,'rgba(170,230,255,.12)');gr.addColorStop(.92,'rgba(255,180,240,.35)');gr.addColorStop(1,'rgba(200,255,240,.6)');
+  g.fillStyle=gr;g.beginPath();g.arc(64,64,63,0,7);g.fill();
+  gr=g.createRadialGradient(44,40,0,44,40,22);gr.addColorStop(0,'rgba(255,255,255,.85)');gr.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=gr;g.beginPath();g.ellipse(44,40,20,13,-.6,0,7);g.fill();return s})();
+const nova=(S,y)=>({x:rnd(0,S.w),y:y??S.h+rnd(20,200),r:rnd(14,46)*(S.mob?.8:1),vy:rnd(.5,1.4),ph:rnd(0,6.28),vx:0});
+const pop=(S,b)=>{S.f.push({x:b.x,y:b.y,r:b.r,t:0});for(let i=0;i<10;i++){const a=rnd(0,6.28);S.g.push({x:b.x,y:b.y,vx:Math.cos(a)*rnd(1,4),vy:Math.sin(a)*rnd(1,4),l:1})}Object.assign(b,nova(S))};
+fx('bolhas',{init(S){S.b=[];S.f=[];S.g=[];for(let i=0;i<(S.mob?22:40);i++)S.b.push(nova(S,rnd(0,S.h)))},
+ down(S){let hit=false;for(const b of S.b)if(Math.hypot(b.x-S.m.x,b.y-S.m.y)<b.r+40){pop(S,b);hit=true}
+  if(!hit)for(let i=0;i<6;i++){const b=nova(S);b.x=S.m.x+rnd(-30,30);b.y=S.m.y+rnd(-30,30);b.r=rnd(10,30);S.b.push(b)}if(S.b.length>70)S.b.splice(0,S.b.length-70)},
+ frame(S,x,t,dt){x.clearRect(0,0,S.w,S.h);
+  for(const b of S.b){b.y-=b.vy*dt;b.x+=(Math.sin(t*1.5+b.ph)*.5+b.vx)*dt;b.vx*=.97;
+   if(S.m.on&&desk&&Math.hypot(b.x-S.m.x,b.y-S.m.y)<b.r){pop(S,b);continue}
+   if(b.y<-b.r-10)Object.assign(b,nova(S));x.drawImage(B,b.x-b.r,b.y-b.r,b.r*2,b.r*2)}
+  x.strokeStyle='rgba(220,245,255,.8)';
+  S.f=S.f.filter(f=>{f.t+=dt;const a=1-f.t/14;if(a<=0)return false;x.globalAlpha=a;x.lineWidth=1.5;x.beginPath();x.arc(f.x,f.y,f.r+f.t*2.2,0,7);x.stroke();return true});
+  x.fillStyle='rgba(220,245,255,.9)';
+  S.g=S.g.filter(g=>{g.x+=g.vx*dt;g.y+=g.vy*dt;g.vy+=.12*dt;g.l-=.04*dt;if(g.l<=0)return false;x.globalAlpha=g.l;x.fillRect(g.x,g.y,2,2);return true});
+  x.globalAlpha=1}})})();
+
+// 12 chuva de código
+(()=>{const CH='01ZEBUBIT{}<>/$#*+=ABCDEF'.split('');
+fx('codigo',{init(S){S.fs=S.mob?14:16;S.n=Math.ceil(S.w/S.fs);S.y=[];S.v=[];for(let i=0;i<S.n;i++){S.y.push(rnd(-40,S.h/S.fs));S.v.push(rnd(.25,.7))}},
+ down(S){const c=Math.floor(S.m.x/S.fs),r=S.m.y/S.fs;for(let i=-10;i<=10;i++){const k=c+i;if(k>=0&&k<S.n){S.y[k]=r-Math.abs(i)*.6;S.v[k]=rnd(.6,1.1)}}},
+ frame(S,x,t,dt){const{w,h,fs}=S;if(dt){x.fillStyle='rgba(7,7,7,'+Math.min(.5,.1*dt)+')';x.fillRect(0,0,w,h)}else{x.fillStyle='#070707';x.fillRect(0,0,w,h)}
+  x.font='600 '+fs+'px monospace';x.textAlign='center';
+  for(let i=0;i<S.n;i++){const px=i*fs+fs/2,py=Math.floor(S.y[i])*fs;const near=S.m.on&&Math.hypot(px-S.m.x,py-S.m.y)<110;
+   x.fillStyle=near?'#FFF8E6':(Math.random()<.08?'#FFF4D6':'#C9A84C');x.fillText(pick(CH),px,py);
+   S.y[i]+=S.v[i]*(dt||0)*(near?.4:1);if(py>h&&Math.random()>.97){S.y[i]=rnd(-20,0);S.v[i]=rnd(.25,.7)}}}})})();
+
+// 13 líquido (metaballs)
+fx('liquido',{dpr:.75,init(S){S.r=S.mob?7:6;S.cw=Math.ceil(S.w/S.r);S.ch=Math.ceil(S.h/S.r);S.off=document.createElement('canvas');S.off.width=S.cw;S.off.height=S.ch;S.ox=S.off.getContext('2d');S.img=S.ox.createImageData(S.cw,S.ch);
+  const k=S.mob?.75:1;S.b=[];for(let i=0;i<7;i++)S.b.push({x:rnd(0,S.w),y:rnd(0,S.h*.7),vx:rnd(-1,1),vy:rnd(-1,1),r:rnd(60,115)*k});S.cur={x:S.w/2,y:S.h/3,r:90*k}},
+ down(S){const k=S.mob?.75:1;S.b.push({x:S.m.x,y:S.m.y,vx:rnd(-3,3),vy:rnd(-3,3),r:rnd(50,90)*k});if(S.b.length>12)S.b.shift()},
+ frame(S,x,t,dt){const{w,h,cw,ch,r}=S;
+  for(const b of S.b){b.x+=b.vx*dt;b.y+=b.vy*dt;if(b.x<0||b.x>w)b.vx*=-1;if(b.y<0||b.y>h*.85)b.vy*=-1}
+  if(S.m.on){S.cur.x+=(S.m.x-S.cur.x)*.15*(dt||1);S.cur.y+=(S.m.y-S.cur.y)*.15*(dt||1)}
+  const L=S.m.on?S.b.concat([S.cur]):S.b,n=L.length,bx=new Float32Array(n),by=new Float32Array(n),br=new Float32Array(n);
+  for(let i=0;i<n;i++){bx[i]=L[i].x/r;by[i]=L[i].y/r;br[i]=(L[i].r/r)**2}
+  const d=S.img.data;
+  for(let y=0;y<ch;y++)for(let X=0;X<cw;X++){let v=0;for(let i=0;i<n;i++){const dx=X-bx[i],dy=y-by[i];v+=br[i]/(dx*dx+dy*dy+1)}
+   const k=(y*cw+X)*4,m=X/cw;
+   const sh=Math.min(1,Math.max(0,(v-1)*.9));d[k]=228+4*m+sh*20;d[k+1]=90+111*m+sh*40;d[k+2]=140-18*m+sh*40;
+   d[k+3]=v<.6?0:v<.82?(v-.6)/.22*60:v<1.08?60+(v-.82)/.26*195:255}
+  S.ox.putImageData(S.img,0,0);x.clearRect(0,0,w,h);x.imageSmoothingEnabled=true;x.drawImage(S.off,0,0,cw*r,ch*r)}});
+
+// 14 hiperespaço
+fx('warp',{init(S){S.s=[];for(let i=0;i<(S.mob?300:650);i++)S.s.push({x:rnd(-1,1)*S.w,y:rnd(-1,1)*S.h,z:rnd(1,S.w)});S.cx=S.w/2;S.cy=S.h*.4;S.boost=0},
+ down(S){S.boost=45},
+ frame(S,x,t,dt){const{w,h}=S;if(dt){x.fillStyle='rgba(5,6,12,'+Math.min(.6,.35*dt)+')';x.fillRect(0,0,w,h)}else{x.fillStyle='#05060c';x.fillRect(0,0,w,h)}
+  const tx=S.m.on?S.m.x:w/2,ty=S.m.on?S.m.y:h*.4;S.cx+=(tx-S.cx)*.05*(dt||1);S.cy+=(ty-S.cy)*.05*(dt||1);
+  S.boost*=Math.pow(.965,dt||1);const v=(4+S.boost)*(dt||0),fov=w*.5;
+  for(const s of S.s){const pz=s.z;s.z-=v;if(s.z<1){s.z=w;s.x=rnd(-1,1)*w;s.y=rnd(-1,1)*h;continue}
+   const sx=S.cx+s.x/s.z*fov,sy=S.cy+s.y/s.z*fov,px=S.cx+s.x/pz*fov,py=S.cy+s.y/pz*fov;if(sx<-20||sx>w+20||sy<-20||sy>h+20)continue;
+   const k=1-s.z/w;x.strokeStyle=s.z%3<1?'rgba(232,201,122,'+k+')':'rgba(220,232,255,'+k+')';x.lineWidth=k*2.6+.3;x.beginPath();x.moveTo(px,py);x.lineTo(sx+.1,sy+.1);x.stroke()}}});
+
+// 15 vaga-lumes
+(()=>{const G=glow(24,[[0,'rgba(252,255,210,1)'],[.18,'rgba(225,255,120,.85)'],[.5,'rgba(165,230,60,.25)'],[1,'rgba(120,200,40,0)']]);
+fx('vagalumes',{init(S){S.f=[];for(let i=0;i<(S.mob?35:75);i++){const b=rnd(.3,.9);S.f.push({x:rnd(0,S.w),y:rnd(S.h*.1,S.h),a:rnd(0,6.28),base:b,sp:b,ph:rnd(0,6.28),fr:rnd(1,2.6)})}},
+ down(S){for(const f of S.f){const dx=f.x-S.m.x,dy=f.y-S.m.y;if(Math.hypot(dx,dy)<260){f.a=Math.atan2(dy,dx);f.sp=rnd(3,5)}}},
+ frame(S,x,t,dt){const{w,h}=S;x.clearRect(0,0,w,h);x.globalCompositeOperation='lighter';
+  for(const f of S.f){f.a+=rnd(-.15,.15)*(dt||0);
+   if(S.m.on){const dx=S.m.x-f.x,dy=S.m.y-f.y,d=Math.hypot(dx,dy);if(d<380&&d>30){let df=Math.atan2(dy,dx)-f.a;df=Math.atan2(Math.sin(df),Math.cos(df));f.a+=df*.06*(dt||0)}}
+   f.sp+=(f.base-f.sp)*.03*(dt||0);f.x+=Math.cos(f.a)*f.sp*(dt||0);f.y+=Math.sin(f.a)*f.sp*(dt||0);
+   if(f.x<-20)f.x=w+20;if(f.x>w+20)f.x=-20;if(f.y<-20)f.y=h+20;if(f.y>h+20)f.y=-20;
+   const b=Math.max(0,Math.sin(t*f.fr+f.ph));const s=22*(.5+b*.7);x.globalAlpha=reduce?.8:.15+b*b*.85;x.drawImage(G,f.x-s/2,f.y-s/2,s,s)}
+  x.globalAlpha=1;x.globalCompositeOperation='source-over'}})})();
+</script>
+</body>
+</html>
