@@ -295,6 +295,9 @@ h2 em{font-style:italic;color:var(--gold);}
 .tec-oficial p{font-size:15px;margin-bottom:14px;}
 .tec-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;list-style:none;padding:0;}
 .tec-chips li{font-size:13px;color:var(--gold-light);border:1px solid rgba(201,168,76,.35);border-radius:999px;padding:5px 12px;}
+.tec-chips li.chip-google{padding:0;border:0;background:linear-gradient(90deg,#4285F4,#EA4335,#FBBC05,#34A853);padding:1px;}
+.tec-chips li.chip-google a{display:block;background:#0d0d0d;color:var(--text);text-decoration:none;border-radius:999px;padding:4px 12px;}
+.tec-chips li.chip-google a:focus-visible{outline:3px solid var(--gold-light);outline-offset:2px;}
 .tec-btn{display:inline-block;background:var(--gold);color:#111;font-weight:600;text-decoration:none;padding:12px 22px;border-radius:999px;font-size:15px;}
 .tec-btn:focus-visible{outline:3px solid var(--gold-light);outline-offset:3px;}
 @media (hover:hover){.tec-btn:hover{background:var(--gold-light);}}
@@ -2182,6 +2185,7 @@ html{overflow-x:hidden;max-width:100%;}
           <li>MCP: tópicos avançados</li>
           <li>Google Cloud Vertex AI</li>
           <li>Cibersegurança e OSINT</li>
+          <li class="chip-google"><a href="/certificados/#google">API oficial do Google</a></li>
         </ul>
         <a class="tec-btn" href="/certificados/">Ver certificados oficiais →</a>
       </div>
