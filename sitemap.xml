@@ -85,4 +85,22 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://zebubit.com.br/criacao-de-sites</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zebubit.com.br/cardapio-digital</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zebubit.com.br/google-meu-negocio</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
