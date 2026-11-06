@@ -171,6 +171,8 @@ section{padding:80px 40px;max-width:1220px;margin:0 auto;}
 .price-card.featured{border-color:var(--blue);box-shadow:0 20px 50px rgba(66,133,244,.14);}
 .price-card.featured::before{content:"MAIS PEDIDO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
   background:var(--blue);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.1em;padding:5px 14px;border-radius:6px;white-space:nowrap;}
+html[lang=en] .price-card.featured::before{content:"MOST POPULAR";}
+html[lang=es] .price-card.featured::before{content:"MÁS PEDIDO";}
 .price-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:10px;}
 .price-name{font-size:23px;font-weight:700;margin-bottom:14px;}
 .price-now{font-size:44px;font-weight:700;color:var(--blue);line-height:1;}
@@ -217,6 +219,7 @@ footer{background:var(--ink);color:#c9cdd8;padding:50px 40px;text-align:center;}
 </style>
 </head>
 <body>
+<div data-zb-langbar style="display:flex;justify-content:flex-end;padding:10px 12px 0"></div>
 
 <nav>
   <a href="#" class="nav-logo"><span class="dot"></span>Aproxime e Avalie</a>
@@ -855,18 +858,25 @@ document.querySelectorAll('video[autoplay]').forEach(v=>{
 </script>
 <script type="module">
   import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  const iniciarChat = () => {
+  const L = window.zbLang ? window.zbLang() : 'pt';
+  const t = s => (L !== 'pt' && window.ZB_PAGE && window.ZB_PAGE[L] && window.ZB_PAGE[L][s]) || s;
   createChat({
     webhookUrl: 'https://n8n.dionefolador.com/webhook/aproxime-avalie-chat-2026-001/chat',
     mode: 'window',
     showWelcomeScreen: false,
-    initialMessages: ['Oi! Posso te ajudar com dúvidas sobre o cartão ou placa NFC de avaliação. Qual sua dúvida?'],
+    initialMessages: [t('Oi! Posso te ajudar com dúvidas sobre o cartão ou placa NFC de avaliação. Qual sua dúvida?')],
     i18n: { en: {
-      title: 'Aproxime e Avalie', subtitle: 'Tire suas dúvidas',
-      inputPlaceholder: 'Escreva sua pergunta...', getStarted: 'Nova conversa',
+      title: 'Aproxime e Avalie', subtitle: t('Tire suas dúvidas'),
+      inputPlaceholder: t('Escreva sua pergunta...'), getStarted: t('Nova conversa'),
       footer: '', closeButtonTooltip: ''
     } }
   });
+  };
+  document.addEventListener('zb:lang', iniciarChat, { once: true });
 </script>
 
+<script src="/assets/i18n/cartao-nfc.js"></script>
+<script src="/assets/zb-lang.js"></script>
 </body>
 </html>

@@ -176,6 +176,7 @@
 
 <canvas id="orbCanvas" aria-hidden="true"></canvas>
 
+<div data-zb-langbar style="position:absolute;top:calc(10px + env(safe-area-inset-top));right:10px;z-index:5"></div>
 <header class="profile wrap">
   <img class="avatar" src="../cripto/img/logo.jpg" alt="Zebubit Assessoria Digital" width="1024" height="682">
   <h1>Zebubit<span class="l">.</span></h1>
@@ -344,6 +345,7 @@
 
 <script>
 document.getElementById('ano').textContent = new Date().getFullYear();
+document.addEventListener('zb:lang', function(){ var e = document.getElementById('ano'); if (e) e.textContent = new Date().getFullYear(); });
 
 // órbitas tracejadas douradas girando devagar — usada no fundo da página E na telinha do mockup do login
 function orbitaAnimada(canvas, opts){
@@ -451,5 +453,7 @@ orbitaAnimada(document.getElementById('mockupOrb'), {
 
 <!-- Zebu, atendente de IA da Zebubit -->
 <script src="https://biovenda.app.br/atendente/zebu.js" data-trilha="digital" defer></script>
+<script src="/assets/i18n/bio.js"></script>
+<script src="/assets/zb-lang.js"></script>
 </body>
 </html>

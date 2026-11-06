@@ -2874,7 +2874,7 @@ function zbExtras(lang) {
   if (!T) return;
   if (!window.__zbExtrasIniciado) {
     window.__zbExtrasIniciado = true;
-    const SKIP = 'script,style,noscript,svg,video,canvas,#lang-bar,footer,.pcard,.scroll-track,.prod-card,[data-i18n]';
+    const SKIP = 'script,style,noscript,svg,video,canvas,#lang-bar,[data-i18n]';
     const OK = new Set(['EM','STRONG','B','I','BR','SMALL','MARK','SPAN','A','SVG','PATH']);
     // fase 1: acha os candidatos SEM mexer na pagina (a chave e o HTML original)
     const achados = [];
@@ -2906,6 +2906,14 @@ function zbSetLanguage(lang) {
     if (v !== undefined) el.innerHTML = v;
   });
   zbExtras(lang);
+  // mensagens de WhatsApp no idioma escolhido (mesmo número)
+  const H = (window.ZB_EXTRA || {}).href || {};
+  document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+    const o = a.dataset.zbHref || a.getAttribute('href');
+    if (!H[o]) return;
+    a.dataset.zbHref = o;
+    a.setAttribute('href', lang === 'pt' ? o : (H[o][lang] || o));
+  });
   document.querySelectorAll('#lang-bar button').forEach(b =>
     b.classList.toggle('active', b.dataset.lang === lang));
   try { localStorage.setItem('lang_zebubit', lang); } catch(e) {}
@@ -2916,7 +2924,13 @@ document.querySelectorAll('#lang-bar button').forEach(b =>
 
 (function(){
   let initLang = 'pt';
-  try { const s = localStorage.getItem('lang_zebubit'); if (s && zbTranslations[s]) initLang = s; } catch(e) {}
+  const q = (new URLSearchParams(location.search).get('lang') || '').slice(0, 2).toLowerCase();
+  const n = (navigator.language || 'pt').slice(0, 2).toLowerCase();
+  let s = null;
+  try { s = localStorage.getItem('lang_zebubit'); } catch(e) {}
+  if (zbTranslations[q]) initLang = q;
+  else if (s && zbTranslations[s]) initLang = s;
+  else if (n === 'en' || n === 'es') initLang = n;
   zbSetLanguage(initLang);
 })();
 // ── FIM MULTILÍNGUE ──

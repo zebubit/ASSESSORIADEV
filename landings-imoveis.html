@@ -97,6 +97,8 @@ section{padding:100px 60px;position:relative;}
 .pricing-card:hover{border-color:var(--gold);}
 .pricing-card.featured{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,168,76,.08),transparent);}
 .pricing-card.featured::before{content:"MAIS ESCOLHIDO";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:10px;font-weight:700;letter-spacing:.15em;padding:5px 14px;border-radius:4px;}
+html[lang=en] .pricing-card.featured::before{content:"MOST CHOSEN";}
+html[lang=es] .pricing-card.featured::before{content:"EL MÁS ELEGIDO";}
 .price-old{font-family:'DM Sans',sans-serif;font-size:18px;color:var(--text-muted);text-decoration:line-through;display:block;font-weight:400;margin-bottom:4px;line-height:1;}
 .pricing-icon{width:56px;height:56px;background:rgba(201,168,76,.08);border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:20px;}
 .pricing-card.featured .pricing-icon{background:rgba(201,168,76,.15);}
@@ -248,6 +250,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 
 <!-- HERO -->
 <header>
+  <div data-zb-langbar style="display:flex;justify-content:flex-end;margin:-50px 0 12px"></div>
   <div class="tag">Novo no estúdio Zebubit</div>
   <h1>Sua landing de imóvel <em>pronta em dois dias</em>.</h1>
   <p class="hero-sub">Um site bonito de verdade, que carrega rápido no celular, mostra suas fotos com elegância, calcula financiamento, abre o mapa, atende pelo WhatsApp e ainda usa inteligência artificial pra responder no Instagram enquanto você dorme. Feito sob medida pra corretores e proprietários que cansaram de mensalidade cara e plataforma engessada.</p>
@@ -917,6 +920,12 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 <script>
 let currentStep = 1;
 const answers = {};
+// tradução EN/ES de textos montados aqui (dicionário em /assets/i18n/landings-imoveis.js)
+const zbT = t => { const l = window.zbLang ? window.zbLang() : 'pt'; return (l !== 'pt' && window.ZB_PAGE && ZB_PAGE[l] && ZB_PAGE[l][t]) || t; };
+document.addEventListener('zb:lang', () => {
+  document.getElementById('stepNum').textContent = currentStep;
+  if (currentStep === 5) document.getElementById('btnNext').textContent = zbT('Enviar para Zebubit');
+});
 
 function iniciarBriefing(pacote) {
   document.getElementById('briefing').scrollIntoView({ behavior: 'smooth' });
@@ -940,7 +949,7 @@ function checkStep5() {
   const email = document.getElementById('emailInput').value.trim();
   document.getElementById('btnNext').disabled = !(nome.length >= 3 && tel.length >= 10 && email.includes('@'));
   if (nome.length >= 3 && tel.length >= 10 && email.includes('@')) {
-    document.getElementById('btnNext').textContent = 'Enviar para Zebubit';
+    document.getElementById('btnNext').textContent = zbT('Enviar para Zebubit');
   }
 }
 
@@ -961,15 +970,15 @@ function nextStep() {
     fd.append('paleta', answers.step4 || '');
     fetch('/', { method: 'POST', body: new URLSearchParams(fd).toString(), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).catch(() => {});
 
-    const msg = `Olá Zebubit! Quero uma landing pra meu imóvel.\n\n` +
-                `👤 *Nome:* ${nome}\n` +
+    const msg = `${zbT('Olá Zebubit! Quero uma landing pra meu imóvel.')}\n\n` +
+                `👤 *${zbT('Nome')}:* ${nome}\n` +
                 `📞 *WhatsApp:* ${tel}\n` +
-                `✉️ *E-mail:* ${email}\n` +
-                `\n📦 *Pacote:* ${answers.step1}\n` +
-                `🏠 *Tipo de imóvel:* ${answers.step2}\n` +
-                `👔 *Perfil:* ${answers.step3}\n` +
-                `🎨 *Paleta:* ${answers.step4}\n\n` +
-                `Vim pelo site zebubit.com.br/landings-imoveis`;
+                `✉️ *${zbT('E-mail')}:* ${email}\n` +
+                `\n📦 *${zbT('Pacote')}:* ${zbT(answers.step1)}\n` +
+                `🏠 *${zbT('Tipo de imóvel')}:* ${zbT(answers.step2)}\n` +
+                `👔 *${zbT('Perfil')}:* ${zbT(answers.step3)}\n` +
+                `🎨 *${zbT('Paleta')}:* ${zbT(answers.step4)}\n\n` +
+                `${zbT('Vim pelo site zebubit.com.br/landings-imoveis')}`;
     const waUrl = `https://wa.me/5534993421500?text=${encodeURIComponent(msg)}`;
 
     document.getElementById('step5').style.display = 'none';
@@ -988,7 +997,7 @@ function nextStep() {
   document.getElementById('progressFill').style.width = (currentStep * 20) + '%';
   document.getElementById('btnBack').style.visibility = 'visible';
   document.getElementById('btnNext').disabled = currentStep === 5 ? true : !answers['step' + currentStep];
-  document.getElementById('btnNext').textContent = currentStep === 5 ? 'Enviar para Zebubit' : 'Próximo';
+  document.getElementById('btnNext').textContent = zbT(currentStep === 5 ? 'Enviar para Zebubit' : 'Próximo');
 }
 
 function prevStep() {
@@ -1000,8 +1009,10 @@ function prevStep() {
   document.getElementById('progressFill').style.width = (currentStep * 20) + '%';
   if (currentStep === 1) document.getElementById('btnBack').style.visibility = 'hidden';
   document.getElementById('btnNext').disabled = false;
-  document.getElementById('btnNext').textContent = 'Próximo';
+  document.getElementById('btnNext').textContent = zbT('Próximo');
 }
 </script>
+<script src="/assets/i18n/landings-imoveis.js"></script>
+<script src="/assets/zb-lang.js"></script>
 </body>
 </html>

@@ -251,6 +251,7 @@
 </style>
 </head>
 <body>
+<div data-zb-langbar style="display:flex;justify-content:flex-end;padding:10px 12px 0"></div>
 
   <!-- TOPBAR -->
   <div class="top"><div class="wrap">
@@ -533,6 +534,8 @@
   </div>
 
 <script>
+  // tradução dos textos montados aqui (dicionário em /assets/i18n/atendente-ia.js)
+  const zbT=t=>{const l=window.zbLang&&window.zbLang(),d=window.ZB_PAGE&&window.ZB_PAGE[l];return (d&&d[t])||t;};
   // chat animado do hero
   const chat=document.getElementById('chat');
   const msgs=[
@@ -549,7 +552,7 @@
   function next(){
     if(i>=msgs.length){ setTimeout(()=>{chat.innerHTML='';i=0;next();},3200); return; }
     const [k,t]=msgs[i++];
-    const b=document.createElement('div'); b.className='bub '+k; b.textContent=t;
+    const b=document.createElement('div'); b.className='bub '+k; b.textContent=zbT(t);
     chat.appendChild(b); chat.scrollTop=chat.scrollHeight;
     setTimeout(next, k==='in'?900:1500);
   }
@@ -572,7 +575,7 @@
       if(i>=seq.length){ setTimeout(()=>{el.innerHTML='';i=0;step();},2600); return; }
       const m=seq[i++];
       const b=document.createElement('div'); b.className='bub '+m.side;
-      b.innerHTML = m.type==='audio' ? audioBubbleHtml(m.side,m.dur,i) : m.text;
+      b.innerHTML = m.type==='audio' ? audioBubbleHtml(m.side,m.dur,i) : zbT(m.text);
       el.appendChild(b); el.scrollTop=el.scrollHeight;
       setTimeout(step, m.side==='in'?800:1300);
     }
@@ -620,7 +623,7 @@
     arkonOverlay.classList.add('aberto');
     if(!arkonAberto){
       arkonAberto=true;
-      setTimeout(()=>arkonBolha('Oi! Eu sou o Arkon, o atendente de IA da Zebubit 👋 Faço sites, link de bio e atendentes de IA como eu mesmo, pro WhatsApp de outros negócios. Me conta o que você precisa?','bot'),300);
+      setTimeout(()=>arkonBolha(zbT('Oi! Eu sou o Arkon, o atendente de IA da Zebubit 👋 Faço sites, link de bio e atendentes de IA como eu mesmo, pro WhatsApp de outros negócios. Me conta o que você precisa?'),'bot'),300);
     }
     setTimeout(()=>arkonCampo.focus(),200);
   }
@@ -636,10 +639,10 @@
       const r=await fetch(ARKON_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'sendMessage',sessionId:arkonSessionId,chatInput:txt})});
       const d=await r.json();
       t.remove();
-      arkonBolha(d.output||'Desculpe, não consegui responder agora. Tente de novo, por favor.','bot');
+      arkonBolha(d.output||zbT('Desculpe, não consegui responder agora. Tente de novo, por favor.'),'bot');
     }catch(e){
       t.remove();
-      arkonBolha('Estou com dificuldade de conexão no momento. Tente novamente em instantes.','bot');
+      arkonBolha(zbT('Estou com dificuldade de conexão no momento. Tente novamente em instantes.'),'bot');
     }
   }
   arkonBtnEnviar.addEventListener('click',arkonEnviarTexto);
@@ -655,17 +658,17 @@
     });
   }
   async function arkonEnviarAudio(blob){
-    arkonBolha('Áudio enviado','user');
+    arkonBolha(zbT('Áudio enviado'),'user');
     const t=arkonDigitando();
     try{
       const b64=await arkonBlobToB64(blob);
       const r=await fetch(ARKON_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'sendMessage',sessionId:arkonSessionId,chatInput:'',audio:b64,mimeType:blob.type||'audio/webm'})});
       const d=await r.json();
       t.remove();
-      arkonBolha(d.output||'Desculpe, não consegui responder agora. Tente de novo, por favor.','bot');
+      arkonBolha(d.output||zbT('Desculpe, não consegui responder agora. Tente de novo, por favor.'),'bot');
     }catch(e){
       t.remove();
-      arkonBolha('Estou com dificuldade de conexão no momento. Tente novamente em instantes.','bot');
+      arkonBolha(zbT('Estou com dificuldade de conexão no momento. Tente novamente em instantes.'),'bot');
     }
   }
   arkonBtnMic.addEventListener('click', async ()=>{
@@ -684,7 +687,7 @@
         arkonGravando=true;
         arkonBtnMic.classList.add('gravando');
       }catch(e){
-        arkonBolha('Não consegui acessar o microfone. Verifique a permissão do navegador.','bot');
+        arkonBolha(zbT('Não consegui acessar o microfone. Verifique a permissão do navegador.'),'bot');
       }
     }else{
       arkonRecorder.stop();
@@ -693,5 +696,7 @@
     }
   });
 </script>
+<script src="/assets/i18n/atendente-ia.js"></script>
+<script src="/assets/zb-lang.js"></script>
 </body>
 </html>

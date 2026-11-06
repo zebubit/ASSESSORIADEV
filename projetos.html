@@ -113,12 +113,13 @@ footer p{font-size:.82rem;color:var(--muted);}
 </nav>
 
 <div class="proj-hero">
+  <div data-zb-langbar style="display:flex;justify-content:flex-end;margin:-56px 0 18px"></div>
   <div class="proj-eyebrow">Portfólio</div>
   <h1>Todos os <em>projetos</em></h1>
   <p>Sites, sistemas e automações desenvolvidos pela Zebubit para negócios de todo o Brasil e exterior. Clique em qualquer projeto para conversar sobre o seu.</p>
   <div class="proj-legend">
-    <div class="legend-item"><div class="legend-dot live"></div> Projeto ao vivo</div>
-    <div class="legend-item"><div class="legend-dot demo"></div> Demo / Em desenvolvimento</div>
+    <div class="legend-item"><div class="legend-dot live"></div> <span>Projeto ao vivo</span></div>
+    <div class="legend-item"><div class="legend-dot demo"></div> <span>Demo / Em desenvolvimento</span></div>
   </div>
 </div>
 
@@ -834,7 +835,6 @@ footer p{font-size:.82rem;color:var(--muted);}
   // Filtro
   const btns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.pcard');
-  const countEl = document.getElementById('count-num');
   const emptyEl = document.getElementById('projEmpty');
 
   function filter(cat) {
@@ -844,11 +844,13 @@ footer p{font-size:.82rem;color:var(--muted);}
       c.classList.toggle('hidden', !match);
       if (match) visible++;
     });
-    countEl.textContent = visible;
+    document.getElementById('count-num').textContent = visible;
     emptyEl.classList.toggle('show', visible === 0);
   }
 
   filter('all');
+
+  document.addEventListener('zb:lang', () => filter((document.querySelector('.filter-btn.active') || {dataset: {filter: 'all'}}).dataset.filter));
 
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -873,5 +875,7 @@ footer p{font-size:.82rem;color:var(--muted);}
   document.getElementById('total-count').textContent = cards.length;
 })();
 </script>
+<script src="/assets/i18n/projetos.js"></script>
+<script src="/assets/zb-lang.js"></script>
 </body>
 </html>

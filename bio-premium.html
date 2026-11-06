@@ -279,6 +279,7 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 
 <!-- HERO -->
 <header>
+  <div data-zb-langbar style="position:absolute;top:76px;right:20px;z-index:5"></div>
   <div class="hero-text">
     <div class="cobrand"><img src="https://biovenda.app.br/bio-chat-avatar.png?v=3" alt="Bio"><span class="cb-pre">Parceria</span><strong>Zebubit</strong><span class="x">×</span><strong class="bv">BioVenda</strong></div>
     <h1>Um link da bio que <em>vende por você</em>.</h1>
@@ -600,17 +601,22 @@ footer{background:var(--dark2);padding:60px;text-align:center;border-top:1px sol
 <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
 <script type="module">
   import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  const iniciarChat = () => {
+  const L = window.zbLang ? window.zbLang() : 'pt';
+  const t = s => (L !== 'pt' && window.ZB_PAGE && window.ZB_PAGE[L] && window.ZB_PAGE[L][s]) || s;
   createChat({
     webhookUrl: 'https://n8n.dionefolador.com/webhook/b10ce0da-0001-4abc-9def-000000000001/chat',
     mode: 'window',
     showWelcomeScreen: false,
-    initialMessages: ['Oi! Eu sou o Bio 💚 Quer um link da bio premium? Me pergunta o que quiser sobre como funciona, preço e prazo.'],
+    initialMessages: [t('Oi! Eu sou o Bio 💚 Quer um link da bio premium? Me pergunta o que quiser sobre como funciona, preço e prazo.')],
     i18n: { en: {
-      title: 'Bio Premium', subtitle: 'Fale com o Bio',
-      inputPlaceholder: 'Escreva sua mensagem...', getStarted: 'Nova conversa',
+      title: 'Bio Premium', subtitle: t('Fale com o Bio'),
+      inputPlaceholder: t('Escreva sua mensagem...'), getStarted: t('Nova conversa'),
       footer: '', closeButtonTooltip: ''
     } }
   });
+  };
+  document.addEventListener('zb:lang', iniciarChat, { once: true });
 </script>
 
 <script>
@@ -623,19 +629,20 @@ document.querySelectorAll('[data-buy]').forEach(a => { a.addEventListener('click
 /* ===== PIX MODAL ===== */
 (function(){
   let pixInt=null;
+  const T=s=>{const l=window.zbLang&&window.zbLang();return (l&&l!=='pt'&&window.ZB_PAGE&&window.ZB_PAGE[l]&&window.ZB_PAGE[l][s])||s;};
   function fmt(s){ const m=Math.floor(s/60), x=s%60; return m+':'+String(x).padStart(2,'0'); }
   window.openPix=function(){
     const ov=document.getElementById('pixOverlay'), card=document.getElementById('pixCard');
     card.classList.remove('expired');
     document.getElementById('pixCopy').classList.remove('done');
-    document.getElementById('pixCopy').textContent='Copiar código Pix';
+    document.getElementById('pixCopy').textContent=T('Copiar código Pix');
     ov.classList.add('on'); document.body.style.overflow='hidden';
     let left=15*60; const t=document.getElementById('pixTimer'); t.textContent=fmt(left);
     clearInterval(pixInt);
     pixInt=setInterval(function(){
       left--; if(left<=0){ left=0; clearInterval(pixInt); card.classList.add('expired');
         t.textContent='00:00';
-        document.getElementById('pixExpired').innerHTML='⚠️ Tempo esgotado. <a href="#" style="color:var(--gold)" onclick="openPix();return false;">Gerar novo Pix</a>.';
+        document.getElementById('pixExpired').innerHTML=T('⚠️ Tempo esgotado. <a href="#" style="color:var(--gold)" onclick="openPix();return false;">Gerar novo Pix</a>.');
         return; }
       t.textContent=fmt(left);
     },1000);
@@ -647,11 +654,11 @@ document.querySelectorAll('[data-buy]').forEach(a => { a.addEventListener('click
   window.copyPix=function(){
     const code=document.getElementById('pixCode').value, btn=document.getElementById('pixCopy');
     navigator.clipboard.writeText(code).then(function(){
-      btn.classList.add('done'); btn.textContent='✓ Código copiado!';
-      setTimeout(function(){ btn.classList.remove('done'); btn.textContent='Copiar código Pix'; },2200);
+      btn.classList.add('done'); btn.textContent=T('✓ Código copiado!');
+      setTimeout(function(){ btn.classList.remove('done'); btn.textContent=T('Copiar código Pix'); },2200);
     }).catch(function(){
       const ta=document.getElementById('pixCode'); ta.select(); document.execCommand('copy');
-      btn.classList.add('done'); btn.textContent='✓ Copiado!';
+      btn.classList.add('done'); btn.textContent=T('✓ Copiado!');
     });
   };
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') window.closePix(); });
@@ -671,7 +678,7 @@ document.querySelectorAll('[data-buy]').forEach(a => { a.addEventListener('click
     <img class="pix-qr" id="pixQr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcgAAAHIAQAAAADi2kdHAAAD3klEQVR42u1cy2rEQAyTSv//l9WDn9lTKRQcUJcuSTZzsdHYluWh8Me/L3ilV3rl/678BhhXAgAqbxXXIgSAIiBQ623b9qg/05PlTVGMBwwPxm/KF/pt2/aqP8HB4zhPFNK/QsKT87Zte34lJaAcGQilEpkCWMi1bd+ysjZakIzbCqisGGrb3t9vNRlR5D8RRJUBk7n7YiVOtu3NlZDaTb/71DLb9ig+tSNo7qmaq8lsieVQ2/bkSnbaGrksIpddleaUo5Hk1pZr215dSS0UksoiUxIkCVB5vH91/Xl7v2VWm1VgctMMdUEVw0DZtofxCWkTfQHJxiTYdILYGbBte5sfYvAIzLokys/giQAxcYmmA23bs/lQUu2TBwUjxHJyI7fIedv28kopttQsL4tzJxSJUJB+qoQIiG/b9i4+k/5JhBYqq1OWMGX5OQKobXu5X5akO5tyD7+ieyyZDoVjnd9e5xNUFJCqLAn+FotD6B9t2xfwQ60/UG3AFGvj7cKzpQu27VV/IkUJE0mH6VPzCePVjLK27Vn9kMqh6z+wukCppI1q/7VtL+dD7GYY4xPxszHLB0y9356On9k8yQQomiyZ/nRSRPW94+dxPn6y2PIr05ujGpqSFOb7zvN9/BSZDD/PEeByOHrb9jAfX9tqckFiB8ym5TlMYPZYbNvL/c8MpMkWJBDrAaPv0sIT6xNwu/8ZYEzej1vwF0ANWh7lSvPxOK3v07qpRsrjWdQy2g+t7zscP9V1iDqM7hmIlsyr6xvb9iw+axtVYjN0YC0+UT4fjMr4PLyyutjNJoCR0C4it2k/qhTYtu1ZPn5Gy7YUd0oWbZluzYTatodXlidDXlu8UAg4laq+pHgr1tq2V/HJlf3UzehuJwXajJ/zocvzSJJWMYLRf1VaVC9U8eJ86HI+BJBMOi99yOH7lL3PkPsV4Wfb3q5XVHCUyq+N1C5YikvwvOBxPqErE81XsrbV9iyNdcr+bNvD89nhpmqrsGkgfTa9sydq257uf5bAb6kRHgLOkS6gJJ227WH9EGecd3mzW9l7Eildb/72PD6FdfhXFZstt+6y1PP29/mEiZNLn8k1y8Kexmdvv7btC/jbaYhBk/LOqQqcB7btXX/uCSSuwy/2yMNKcx0/33C+puaUsFKepKZoYRQ+P+Et52sS6tnPLcwc8S07HzI+75+vmahMIpd9mh8apXOugm37gpVxCGPsqwHF1IdRTc+rh39t27v8LVajLE80KVUYh+frWoXG5/F5JMxRxjPquXrcqyr1PC/ecr6mRlbdrWtMuyybaSn6s22P15+2kFd65bGVP8zc7PIUFmoVAAAAAElFTkSuQmCC" alt="QR Code Pix R$247">
     <div class="pix-codewrap">
       <span class="pix-codelbl">Pix Copia e Cola</span>
-      <textarea class="pix-code" id="pixCode" readonly>00020126580014br.gov.bcb.pix0136eb62e168-f620-4c0d-8f14-7e30f9eed4fd5204000053039865406247.005802BR5913DIONE FOLADOR6007UBERABA62460508Mentotia50300017br.gov.bcb.brcode01051.0.06304977E</textarea>
+      <textarea class="pix-code" id="pixCode" readonly data-zb-skip>00020126580014br.gov.bcb.pix0136eb62e168-f620-4c0d-8f14-7e30f9eed4fd5204000053039865406247.005802BR5913DIONE FOLADOR6007UBERABA62460508Mentotia50300017br.gov.bcb.brcode01051.0.06304977E</textarea>
     </div>
     <button class="pix-copy" id="pixCopy" onclick="copyPix()">Copiar código Pix</button>
     <div class="pix-recv">Recebedor: <b>Dione Folador</b> · Uberaba/MG<br>Confirmação manual em poucos minutos.</div>
@@ -679,5 +686,7 @@ document.querySelectorAll('[data-buy]').forEach(a => { a.addEventListener('click
     <div class="pix-note">Depois de pagar, envie o comprovante no WhatsApp pra entrar na fila de produção (pronta em até 48h).</div>
   </div>
 </div>
+<script src="/assets/i18n/bio-premium.js"></script>
+<script src="/assets/zb-lang.js"></script>
 </body>
 </html>
