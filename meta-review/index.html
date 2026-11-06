@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Zebubit Inbox</title>
+<style>
+:root{--bg:#0b0f17;--card:#141a26;--line:#253047;--text:#e8edf6;--mute:#93a0b8;--blue:#3b82f6;--green:#22c55e;--warn:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--line)}
+header b{font-size:18px}
+#who{color:var(--mute);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px}
+.step h2{margin:0 0 4px;font-size:17px}
+.num{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--blue);align-items:center;justify-content:center;font-size:13px;margin-right:8px}
+.hint{color:var(--mute);font-size:13px;margin:4px 0 14px;border-left:3px solid var(--blue);padding-left:10px}
+button{background:var(--blue);color:#fff;border:0;border-radius:9px;padding:10px 16px;font:600 14px inherit;cursor:pointer}
+button.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+button:disabled{opacity:.45;cursor:default}
+.fb{background:#1877f2}
+.list{display:grid;gap:8px}
+.item{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.item.sel{border-color:var(--blue);background:#17223a}
+.item small{color:var(--mute)}
+.cols{display:grid;grid-template-columns:320px 1fr;gap:16px}
+@media(max-width:760px){.cols{grid-template-columns:1fr}}
+.thread{border:1px solid var(--line);border-radius:10px;padding:12px;height:340px;overflow:auto;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:75%;padding:8px 12px;border-radius:12px;background:#1f2a40;font-size:14px}
+.msg.me{align-self:flex-end;background:var(--blue)}
+.msg small{display:block;opacity:.7;font-size:11px}
+.send{display:flex;gap:8px;margin-top:10px}
+input,textarea{flex:1;background:#0f1521;border:1px solid var(--line);color:var(--text);border-radius:9px;padding:10px;font:inherit}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tabs button{background:transparent;border:1px solid var(--line)}
+.tabs button.on{background:var(--blue);border-color:var(--blue)}
+.ok{color:var(--green)} .err{color:#f87171}
+#log{font:12px/1.4 ui-monospace,Menlo,monospace;color:var(--mute);white-space:pre-wrap;max-height:160px;overflow:auto;margin-top:10px}
+.post{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px}
+.cm{padding:8px 0;border-top:1px dashed var(--line)}
+.cm .send{margin-top:6px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+  <b>Zebubit Inbox</b>
+  <span id="who">Not connected</span>
+</header>
+<main>
+  <section class="step">
+    <h2><span class="num">1</span>Connect your account with Facebook Login</h2>
+    <p class="hint">The business owner signs in with Facebook and grants this app access to the Facebook Page and the Instagram professional account linked to it. Requested permissions: pages_show_list, pages_manage_metadata, pages_read_engagement, instagram_basic, instagram_manage_messages, instagram_manage_comments.</p>
+    <button class="fb" id="btnLogin">Continue with Facebook</button>
+    <button class="ghost hidden" id="btnLogout">Log out</button>
+  </section>
+
+  <section class="step hidden" id="s2">
+    <h2><span class="num">2</span>Select the Instagram account to manage</h2>
+    <p class="hint">These are the Pages you granted access to, with the Instagram professional account connected to each one. Choose the account whose messages and comments you want to answer.</p>
+    <div class="list" id="accounts"></div>
+  </section>
+
+  <section class="step hidden" id="s3">
+    <h2><span class="num">3</span>Answer your customers</h2>
+    <p class="hint">"Direct messages" lists the Instagram Direct conversations of the selected account (instagram_manage_messages). Pick a conversation, type a reply and press Send: the message is delivered in the customer's Instagram app. "Comments" lists recent posts and lets you reply to each comment publicly (instagram_manage_comments).</p>
+    <div class="tabs">
+      <button class="on" data-tab="dm">Direct messages</button>
+      <button data-tab="cm">Comments</button>
+    </div>
+    <div id="tab-dm" class="cols">
+      <div class="list" id="convs"></div>
+      <div>
+        <div class="thread" id="thread"><small style="color:var(--mute)">Select a conversation on the left.</small></div>
+        <div class="send">
+          <input id="txt" placeholder="Type your reply to the customer" disabled>
+          <button id="btnSend" disabled>Send</button>
+        </div>
+      </div>
+    </div>
+    <div id="tab-cm" class="hidden"></div>
+    <div id="log"></div>
+  </section>
+</main>
+
+<script>
+// Facebook Login. If the app uses "Facebook Login for Business", put the configuration id in CONFIG_ID.
+const APP_ID = '1986575798666134';
+const CONFIG_ID = '';
+const V = 'v21.0';
+const SCOPE = 'pages_show_list,pages_manage_metadata,pages_read_engagement,instagram_basic,instagram_manage_messages,instagram_manage_comments';
+let page = null, conv = null;
+const $ = id => document.getElementById(id);
+const log = (t, cls) => { const d = document.createElement('div'); if (cls) d.className = cls; d.textContent = new Date().toLocaleTimeString() + '  ' + t; $('log').prepend(d); };
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+async function g(path, token, method = 'GET', body) {
+  const url = `https://graph.facebook.com/${V}/${path}${path.includes('?') ? '&' : '?'}access_token=${encodeURIComponent(token)}`;
+  const r = await fetch(url, method === 'GET' ? {} : { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  const j = await r.json();
+  if (j.error) throw new Error(j.error.message);
+  return j;
+}
+
+window.fbAsyncInit = () => {
+  FB.init({ appId: APP_ID, cookie: true, xfbml: false, version: V });
+  FB.getLoginStatus(r => { if (r.status === 'connected') onLogin(r.authResponse.accessToken); });
+};
+
+$('btnLogin').onclick = () => {
+  const opts = CONFIG_ID ? { config_id: CONFIG_ID } : { scope: SCOPE, return_scopes: true };
+  FB.login(r => { if (r.authResponse) onLogin(r.authResponse.accessToken); else log('Login cancelled', 'err'); }, opts);
+};
+$('btnLogout').onclick = () => FB.logout(() => location.reload());
+
+async function onLogin(userToken) {
+  try {
+    const me = await g('me?fields=name', userToken);
+    $('who').textContent = 'Connected as ' + me.name;
+    $('btnLogin').classList.add('hidden'); $('btnLogout').classList.remove('hidden');
+    const res = await g('me/accounts?fields=name,access_token,instagram_business_account{id,username,profile_picture_url}', userToken);
+    const box = $('accounts'); box.innerHTML = '';
+    res.data.filter(p => p.instagram_business_account).forEach(p => {
+      const ig = p.instagram_business_account;
+      const el = document.createElement('div'); el.className = 'item';
+      el.innerHTML = `<div><b>@${esc(ig.username)}</b><br><small>Facebook Page: ${esc(p.name)}</small></div>`;
+      el.onclick = () => { [...box.children].forEach(c => c.classList.remove('sel')); el.classList.add('sel'); selectAccount(p); };
+      box.appendChild(el);
+    });
+    if (!box.children.length) box.innerHTML = '<small>No Instagram professional account found on the Pages you granted.</small>';
+    $('s2').classList.remove('hidden');
+    log('Logged in. Pages loaded: ' + res.data.length, 'ok');
+  } catch (e) { log(e.message, 'err'); }
+}
+
+function selectAccount(p) {
+  page = p; $('s3').classList.remove('hidden');
+  log('Selected @' + p.instagram_business_account.username);
+  loadConvs(); loadComments();
+}
+
+async function loadConvs() {
+  const box = $('convs'); box.innerHTML = '<small>Loading conversations...</small>';
+  try {
+    const r = await g(`${page.id}/conversations?platform=instagram&fields=updated_time,participants,messages.limit(1){message}`, page.access_token);
+    box.innerHTML = '';
+    const myIg = page.instagram_business_account.id;
+    r.data.forEach(c => {
+      const other = (c.participants?.data || []).find(x => x.id !== myIg) || {};
+      const last = c.messages?.data?.[0]?.message || '';
+      const el = document.createElement('div'); el.className = 'item';
+      el.innerHTML = `<div><b>@${esc(other.username || other.id)}</b><br><small>${esc(last).slice(0, 60)}</small></div>`;
+      el.onclick = () => { [...box.children].forEach(x => x.classList.remove('sel')); el.classList.add('sel'); openConv(c.id, other); };
+      box.appendChild(el);
+    });
+    if (!r.data.length) box.innerHTML = '<small>No conversations yet.</small>';
+  } catch (e) { box.innerHTML = ''; log(e.message, 'err'); }
+}
+
+async function openConv(id, other) {
+  conv = { id, other };
+  $('txt').disabled = $('btnSend').disabled = false;
+  const r = await g(`${id}?fields=messages.limit(20){message,from,created_time}`, page.access_token);
+  const t = $('thread'); t.innerHTML = '';
+  (r.messages?.data || []).reverse().forEach(m => {
+    const d = document.createElement('div');
+    d.className = 'msg' + (m.from?.id === page.instagram_business_account.id ? ' me' : '');
+    d.innerHTML = `${esc(m.message)}<small>${esc(m.from?.username || '')} · ${new Date(m.created_time).toLocaleString()}</small>`;
+    t.appendChild(d);
+  });
+  t.scrollTop = t.scrollHeight;
+}
+
+$('btnSend').onclick = async () => {
+  const text = $('txt').value.trim(); if (!text || !conv) return;
+  $('btnSend').disabled = true;
+  try {
+    await g(`${page.id}/messages`, page.access_token, 'POST', { recipient: { id: conv.other.id }, message: { text } });
+    log('Message sent to @' + (conv.other.username || conv.other.id), 'ok');
+    $('txt').value = ''; await openConv(conv.id, conv.other);
+  } catch (e) { log(e.message, 'err'); }
+  $('btnSend').disabled = false;
+};
+$('txt').addEventListener('keydown', e => { if (e.key === 'Enter') $('btnSend').click(); });
+
+async function loadComments() {
+  const box = $('tab-cm'); box.innerHTML = '<small>Loading posts...</small>';
+  try {
+    const ig = page.instagram_business_account.id;
+    const r = await g(`${ig}/media?limit=5&fields=caption,timestamp,comments.limit(10){id,text,username}`, page.access_token);
+    box.innerHTML = '';
+    r.data.forEach(m => {
+      const p = document.createElement('div'); p.className = 'post';
+      p.innerHTML = `<b>${esc((m.caption || 'Post').slice(0, 70))}</b><br><small>${new Date(m.timestamp).toLocaleDateString()}</small>`;
+      (m.comments?.data || []).forEach(c => {
+        const d = document.createElement('div'); d.className = 'cm';
+        d.innerHTML = `<b>@${esc(c.username)}</b> ${esc(c.text)}<div class="send"><input placeholder="Reply publicly to this comment"><button>Reply</button></div>`;
+        const inp = d.querySelector('input'), btn = d.querySelector('button');
+        btn.onclick = async () => {
+          if (!inp.value.trim()) return; btn.disabled = true;
+          try { await g(`${c.id}/replies`, page.access_token, 'POST', { message: inp.value.trim() }); log('Reply posted on comment by @' + c.username, 'ok'); inp.value = ''; }
+          catch (e) { log(e.message, 'err'); }
+          btn.disabled = false;
+        };
+        p.appendChild(d);
+      });
+      box.appendChild(p);
+    });
+  } catch (e) { box.innerHTML = ''; log(e.message, 'err'); }
+}
+
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.classList.remove('on')); b.classList.add('on');
+  $('tab-dm').classList.toggle('hidden', b.dataset.tab !== 'dm');
+  $('tab-cm').classList.toggle('hidden', b.dataset.tab !== 'cm');
+});
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+</body>
+</html>
