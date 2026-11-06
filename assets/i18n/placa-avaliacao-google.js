@@ -61,7 +61,7 @@ window.ZB_PAGE = {
   "Site Zebubit": "Zebubit website",
   "Uberaba, MG · <a href=\"https://zebubit.com.br\">zebubit.com.br</a>": "Uberaba, MG · <a href=\"https://zebubit.com.br\">zebubit.com.br</a>",
   "Placa de Avaliação do Google com NFC e QR Code | Zebubit": "Google Review Plate with NFC and QR Code | Zebubit",
-  "Placa de avaliação do Google com NFC e QR Code: o cliente encosta o celular e abre sua página de avaliação. Placa de acrílico a partir de R$ 79, sem mensalidade.": "Google review plate with NFC and QR code: customers tap their phone and your review page opens. Acrylic plate from R$ 79, no monthly fee."
+  "Placa de avaliação do Google com NFC e QR Code: o cliente encosta o celular e abre sua página de avaliação. Modelos a partir de R$ 29, sem mensalidade.": "Google review plate with NFC and QR code: customers tap their phone and your review page opens. Models from R$ 29, no monthly fee."
  },
  "es": {
   "<span class=\"dot\"></span>Zebubit": "<span class=\"dot\"></span>Zebubit",
@@ -124,7 +124,7 @@ window.ZB_PAGE = {
   "Site Zebubit": "Sitio web de Zebubit",
   "Uberaba, MG · <a href=\"https://zebubit.com.br\">zebubit.com.br</a>": "Uberaba, MG · <a href=\"https://zebubit.com.br\">zebubit.com.br</a>",
   "Placa de Avaliação do Google com NFC e QR Code | Zebubit": "Placa de Reseñas de Google con NFC y Código QR | Zebubit",
-  "Placa de avaliação do Google com NFC e QR Code: o cliente encosta o celular e abre sua página de avaliação. Placa de acrílico a partir de R$ 79, sem mensalidade.": "Placa de reseñas de Google con NFC y código QR: el cliente acerca el celular y se abre tu página de reseñas. Placa de acrílico desde R$ 79, sin mensualidad."
+  "Placa de avaliação do Google com NFC e QR Code: o cliente encosta o celular e abre sua página de avaliação. Modelos a partir de R$ 29, sem mensalidade.": "Placa de reseñas de Google con NFC y código QR: el cliente acerca el celular y se abre tu página de reseñas. Modelos desde R$ 29, sin mensualidad."
  },
  "href": {
   "https://wa.me/5565981376725?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20placa%20NFC%20de%20avalia%C3%A7%C3%A3o%20do%20Google.": {
