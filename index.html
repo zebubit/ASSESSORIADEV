@@ -1118,12 +1118,15 @@ header::after {
 
 
 /* LANG BAR */
-#lang-bar{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:flex-end;align-items:center;gap:0;height:28px;background:rgba(8,8,8,.97);border-bottom:1px solid rgba(201,168,76,.12);padding:0 24px;transition:transform .3s;}
-#lang-bar button{font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.4;background:none;border:none;color:var(--text);cursor:pointer;padding:0 10px;height:100%;font-family:'DM Sans',sans-serif;font-weight:500;transition:opacity .2s,color .2s;}
-#lang-bar button:not(:last-child){border-right:1px solid rgba(255,255,255,.07);}
-#lang-bar button.active{opacity:1;color:var(--gold);}
-#lang-bar button:hover{opacity:.8;}
-nav{top:28px;}
+#lang-bar{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:flex-end;align-items:center;height:44px;background:rgba(8,8,8,.97);border-bottom:1px solid rgba(201,168,76,.18);padding:0 24px;transition:transform .3s;}
+#lang-bar .lang-pill{display:flex;border:1px solid rgba(201,168,76,.55);border-radius:999px;overflow:hidden;}
+#lang-bar button{font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:none;border:none;color:var(--text);opacity:.8;cursor:pointer;padding:0 16px;height:32px;min-width:48px;font-family:'DM Sans',sans-serif;font-weight:700;transition:background .2s,color .2s,opacity .2s;}
+#lang-bar button:not(:last-child){border-right:1px solid rgba(201,168,76,.3);}
+#lang-bar button.active{opacity:1;background:var(--gold);color:#0b0b0b;}
+#lang-bar button:not(.active):hover{opacity:1;color:var(--gold);}
+#lang-bar button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;}
+@media(max-width:600px){#lang-bar{padding:0 14px;}}
+nav{top:44px;}
 
 /* ===== LAUNCH SECTION (Landings pra Imóveis) ===== */
 .launch-section{padding:100px 60px;background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,255,0,.07), transparent 60%), linear-gradient(180deg,#0c0e07 0%,var(--dark2) 100%);position:relative;overflow:hidden;border-top:1px solid rgba(200,255,0,.20);border-bottom:1px solid rgba(201,168,76,.16);}
@@ -1178,10 +1181,10 @@ html{overflow-x:hidden;max-width:100%;}
 <div id="scroll-progress"></div>
 
 <!-- NAV -->
-<div id="lang-bar" role="navigation" aria-label="Seletor de idioma">
+<div id="lang-bar" role="navigation" aria-label="Seletor de idioma"><div class="lang-pill">
   <button data-lang="pt" class="active">PT</button>
   <button data-lang="en">EN</button>
-  <button data-lang="es">ES</button>
+  <button data-lang="es">ES</button></div>
 </div>
 <nav>
   <div class="nav-logo" style="display:flex;align-items:center;gap:12px;">
