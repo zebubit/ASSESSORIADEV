@@ -2629,9 +2629,12 @@ html{overflow-x:hidden;max-width:100%;}
           ctx.lineWidth=.6; ctx.stroke(); }
       }
     }
-    requestAnimationFrame(draw);
+    if(vis) requestAnimationFrame(draw); else running=false;
   }
-  draw();
+  let vis=true, running=false;
+  function start(){ if(vis && !running && !document.hidden){ running=true; requestAnimationFrame(draw); } }
+  new IntersectionObserver(e=>{ vis=e[0].isIntersecting && !document.hidden; start(); }).observe(c);
+  document.addEventListener('visibilitychange',()=>{ vis=!document.hidden; start(); });
 })();
 
 /* ─── COUNT-UP NOS STATS ─── */
@@ -2804,7 +2807,11 @@ html{overflow-x:hidden;max-width:100%;}
     });
   }
 
-  function loop(){ if(canvas.offsetWidth!==W || canvas.offsetHeight!==H) resize(); update(); draw(); requestAnimationFrame(loop); }
+  let vis=false, running=false;
+  function loop(){ if(!vis){ running=false; return; } if(canvas.offsetWidth!==W || canvas.offsetHeight!==H) resize(); update(); draw(); requestAnimationFrame(loop); }
+  function start(){ if(vis && !running){ running=true; requestAnimationFrame(loop); } }
+  new IntersectionObserver(e=>{ vis=e[0].isIntersecting && !document.hidden; start(); }).observe(canvas);
+  document.addEventListener('visibilitychange',()=>{ vis=!document.hidden && canvas.getBoundingClientRect().bottom>0 && canvas.getBoundingClientRect().top<innerHeight; start(); });
 
   // Mouse parallax only inside cta section
   const section = canvas.closest('section');
@@ -2816,7 +2823,6 @@ html{overflow-x:hidden;max-width:100%;}
 
   window.addEventListener('resize', resize);
   resize();
-  loop();
   });
 })();
 
@@ -2988,7 +2994,8 @@ document.querySelectorAll('#lang-bar button').forEach(b =>
   @media (max-width: 640px){ .chat-window-toggle::after{ display:none; } }
 </style>
 <script type="module">
-  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  const zbChat = async () => {
+  const { createChat } = await import('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js');
   createChat({
     webhookUrl: 'https://n8n.dionefolador.com/webhook/2eb0b17d-0002-4abc-9def-000000000002/chat',
     mode: 'window',
@@ -3000,6 +3007,9 @@ document.querySelectorAll('#lang-bar button').forEach(b =>
       footer: '', closeButtonTooltip: ''
     } }
   });
+  };
+  const zbIdle = () => ('requestIdleCallback' in window) ? requestIdleCallback(zbChat, { timeout: 4000 }) : setTimeout(zbChat, 2500);
+  if (document.readyState === 'complete') zbIdle(); else addEventListener('load', zbIdle, { once: true });
 </script>
 </body>
 </html>
