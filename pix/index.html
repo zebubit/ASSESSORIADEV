@@ -21,19 +21,19 @@ button.s{background:transparent;color:var(--g);border:1.5px solid var(--g)}
 <div class="qr" id="qr"><img src="qr-pix-zebubit.png" alt="QR code Pix Zebubit"></div>
 <div class="val" id="val" hidden></div><div class="desc" id="desc"></div>
 <button id="cp">Copiar Pix copia e cola</button>
-<button class="s" id="ck">Copiar chave Pix (e-mail)</button>
-<div class="k">Chave Pix · e-mail<b>zebubit@gmail.com</b></div>
+<button class="s" id="ck">Copiar chave Pix (aleatória)</button>
+<div class="k">Chave Pix · aleatória<b style="font-size:14px">84b00f97-c5e7-4c8c-8c06-c1cd2ff19f0f</b></div>
 </div>
-<div class="ft">Recebedor: <b>Dione Folador</b> (Zebubit) · Uberaba - MG<br>O banco mostra o nome Dione Folador antes de você confirmar.</div>
+<div class="ft">Recebedor: <b>Zebubit Assessoria e Desenvolvimento Tecnológico Ltda</b><br>CNPJ 23.830.748/0001-17 · Mercado Pago. O banco mostra esses dados antes de você confirmar.</div>
 </div><div class="ok" id="ok">Copiado!</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-var CHAVE="zebubit@gmail.com",NOME="DIONE FOLADOR",CIDADE="UBERABA";
+var CHAVE="84b00f97-c5e7-4c8c-8c06-c1cd2ff19f0f",NOME="ZEBUBIT ASSESSORIA",CIDADE="UBERABA";
 function tlv(i,v){return i+("0"+v.length).slice(-2)+v}
 function crc(s){var c=0xFFFF;for(var i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(var j=0;j<8;j++)c=(c&0x8000)?((c<<1)^0x1021)&0xFFFF:(c<<1)&0xFFFF}return("000"+c.toString(16).toUpperCase()).slice(-4)}
 function br(v,d){var m=tlv("00","br.gov.bcb.pix")+tlv("01",CHAVE)+(d?tlv("02",d.slice(0,40)):"");var p=tlv("00","01")+tlv("26",m)+tlv("52","0000")+tlv("53","986")+(v?tlv("54",v.toFixed(2)):"")+tlv("58","BR")+tlv("59",NOME)+tlv("60",CIDADE)+tlv("62",tlv("05","***"))+"6304";return p+crc(p)}
 var q=new URLSearchParams(location.search),v=parseFloat((q.get("valor")||"").replace(",",".")),d=(q.get("desc")||"").replace(/[^\w \-.,áàâãéêíóôõúçÁÉÍÓÚÇ]/g,"");
-var code=(v>0)?br(v,d):"00020126390014br.gov.bcb.pix0117zebubit@gmail.com5204000053039865802BR5913DIONE FOLADOR6007UBERABA62070503***6304A2DF";
+var code=(v>0)?br(v,d):"00020126580014br.gov.bcb.pix013684b00f97-c5e7-4c8c-8c06-c1cd2ff19f0f5204000053039865802BR5918ZEBUBIT ASSESSORIA6007UBERABA62070503***6304A6B4";
 if(v>0&&window.QRCode){var el=document.getElementById("qr");el.innerHTML="";new QRCode(el,{text:code,width:240,height:240,correctLevel:QRCode.CorrectLevel.M});
  var e=document.getElementById("val");e.hidden=false;e.textContent="R$ "+v.toFixed(2).replace(".",",")}
 if(d)document.getElementById("desc").textContent=d;
