@@ -1,0 +1,42 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Pague com Pix | Zebubit</title>
+<style>
+:root{--g:#e6bd4f;--bg:#0b0b0d;--c:#16161a;--t:#f4efe4;--m:#a8a294}
+*{box-sizing:border-box;margin:0}body{background:radial-gradient(700px 500px at 50% -10%,rgba(230,189,79,.14),transparent),var(--bg);color:var(--t);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh;display:flex;justify-content:center;padding:28px 16px}
+.w{width:100%;max-width:420px;text-align:center}
+.lg{font-weight:800;letter-spacing:6px;color:var(--g);font-size:22px}.sub{color:var(--m);font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-top:4px}
+h1{font-size:30px;margin:26px 0 6px}h1 em{color:var(--g);font-style:normal}p.i{color:var(--m);font-size:15px;line-height:1.4}
+.card{background:var(--c);border:1px solid rgba(230,189,79,.35);border-radius:20px;padding:20px;margin-top:22px}
+.qr{background:#fff;border-radius:14px;padding:12px;display:inline-block}.qr img,.qr canvas{display:block;width:240px;height:240px}
+.val{font-size:34px;font-weight:800;color:var(--g);margin-top:14px}.desc{color:var(--m);font-size:14px;margin-top:2px}
+button{width:100%;margin-top:14px;padding:16px;border:0;border-radius:14px;background:var(--g);color:#1a1300;font-size:17px;font-weight:800;cursor:pointer}
+button.s{background:transparent;color:var(--g);border:1.5px solid var(--g)}
+.k{margin-top:16px;font-size:13px;color:var(--m)}.k b{display:block;color:var(--t);font-size:16px;margin-top:3px;word-break:break-all}
+.ft{margin-top:26px;font-size:12px;color:var(--m)}.ft b{color:var(--g)}
+.ok{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#1d7a3c;color:#fff;padding:12px 22px;border-radius:30px;font-weight:700;opacity:0;transition:.25s;pointer-events:none}.ok.on{opacity:1}
+</style></head><body><div class="w">
+<div class="lg">ZEBUBIT</div><div class="sub">Pagamento</div>
+<h1>Pague com <em>Pix</em></h1><p class="i">Abra o app do seu banco, escolha Pix e escaneie o QR code. Ou toque em copiar e cole no banco.</p>
+<div class="card">
+<div class="qr" id="qr"><img src="qr-pix-zebubit.png" alt="QR code Pix Zebubit"></div>
+<div class="val" id="val" hidden></div><div class="desc" id="desc"></div>
+<button id="cp">Copiar Pix copia e cola</button>
+<button class="s" id="ck">Copiar chave Pix (e-mail)</button>
+<div class="k">Chave Pix · e-mail<b>zebubit@gmail.com</b></div>
+</div>
+<div class="ft">Recebedor: <b>Dione Folador</b> (Zebubit) · Uberaba - MG<br>O banco mostra o nome Dione Folador antes de você confirmar.</div>
+</div><div class="ok" id="ok">Copiado!</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+var CHAVE="zebubit@gmail.com",NOME="DIONE FOLADOR",CIDADE="UBERABA";
+function tlv(i,v){return i+("0"+v.length).slice(-2)+v}
+function crc(s){var c=0xFFFF;for(var i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(var j=0;j<8;j++)c=(c&0x8000)?((c<<1)^0x1021)&0xFFFF:(c<<1)&0xFFFF}return("000"+c.toString(16).toUpperCase()).slice(-4)}
+function br(v,d){var m=tlv("00","br.gov.bcb.pix")+tlv("01",CHAVE)+(d?tlv("02",d.slice(0,40)):"");var p=tlv("00","01")+tlv("26",m)+tlv("52","0000")+tlv("53","986")+(v?tlv("54",v.toFixed(2)):"")+tlv("58","BR")+tlv("59",NOME)+tlv("60",CIDADE)+tlv("62",tlv("05","***"))+"6304";return p+crc(p)}
+var q=new URLSearchParams(location.search),v=parseFloat((q.get("valor")||"").replace(",",".")),d=(q.get("desc")||"").replace(/[^\w \-.,áàâãéêíóôõúçÁÉÍÓÚÇ]/g,"");
+var code=(v>0)?br(v,d):"00020126390014br.gov.bcb.pix0117zebubit@gmail.com5204000053039865802BR5913DIONE FOLADOR6007UBERABA62070503***6304A2DF";
+if(v>0&&window.QRCode){var el=document.getElementById("qr");el.innerHTML="";new QRCode(el,{text:code,width:240,height:240,correctLevel:QRCode.CorrectLevel.M});
+ var e=document.getElementById("val");e.hidden=false;e.textContent="R$ "+v.toFixed(2).replace(".",",")}
+if(d)document.getElementById("desc").textContent=d;
+function cop(t){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(function(){var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove()});var o=document.getElementById("ok");o.classList.add("on");setTimeout(function(){o.classList.remove("on")},1400)}
+document.getElementById("cp").onclick=function(){cop(code)};document.getElementById("ck").onclick=function(){cop(CHAVE)};
+</script></body></html>
