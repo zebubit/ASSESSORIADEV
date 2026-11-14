@@ -138,4 +138,8 @@
     <priority>0.5</priority>
   </url>
 
+  <url>
+    <loc>https://zebubit.com.br/apps/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>

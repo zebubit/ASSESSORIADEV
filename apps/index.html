@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://zebubit.com.br/apps/">
+<meta property="og:url" content="https://zebubit.com.br/apps/">
+<meta name="format-detection" content="telephone=no">
+<title>Pare de pagar mensalidade: 16 apps com versão grátis | Zebubit</title>
+<meta name="description" content="16 apps pagos por mensalidade e o substituto gratuito de cada um, com preço conferido no site oficial, o que o grátis não faz e um comando pronto pra pedir ajuda à IA na instalação.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Zebubit Assessoria">
+<meta property="og:title" content="Pare de pagar mensalidade: existe versão grátis">
+<meta property="og:description" content="16 trocas de apps pagos por versões gratuitas, com o porém honesto de cada uma e um passo a passo pra instalar com segurança.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#e6bd4f;--gold-2:#C9A84C;--gold-soft:rgba(230,189,79,.12);
+  --bg:#0a0a0a;--bg2:#111111;--bg3:#181818;--line:#2a2722;
+  --text:#EDE8DC;--muted:#B3A68F;--white:#FAF7F2;
+  --green:#7fd49b;--red:#e98a7a;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;max-width:100%;scroll-behavior:smooth}
+body{overflow-x:hidden;max-width:100%;background:var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+a{color:inherit}
+a[href^="tel:"]{color:var(--gold)!important}
+img,svg{display:block;max-width:100%}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+.serif{font-family:"Playfair Display",Georgia,serif}
+.ico{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(10,10,10,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.nav.scrolled{background:rgba(10,10,10,.94);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{font-family:"Playfair Display",serif;font-weight:900;font-size:22px;text-decoration:none;color:var(--white);letter-spacing:.3px}
+.brand span{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border-radius:999px;font:700 15px/1 "DM Sans",sans-serif;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .15s,background .2s,border-color .2s,color .2s}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:#16130a}
+.btn-gold:hover{background:#f1cb62}
+.btn-ghost{background:transparent;color:var(--text);border-color:#3a362e}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-wa{background:#1f8f4e;color:#fff}
+.btn-wa:hover{background:#25a35a}
+.nav .btn{min-height:40px;font-size:14px;padding:0 14px}
+
+/* hero */
+.hero{position:relative;padding:56px 0 40px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-20% -10% auto auto;width:520px;height:520px;max-width:100vw;background:radial-gradient(circle,rgba(230,189,79,.18),transparent 65%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(230,189,79,.3);padding:6px 12px;border-radius:999px;letter-spacing:.3px}
+.hero h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(36px,9vw,72px);line-height:1.05;color:var(--white);margin:18px 0 16px;max-width:15ch}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p.lead{font-size:clamp(17px,2.4vw,20px);color:var(--muted);max-width:60ch}
+.saving{margin-top:28px;display:grid;gap:12px;grid-template-columns:1fr 1fr;max-width:620px}
+.saving .box{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.saving .lbl{font-size:13px;color:var(--muted);font-weight:500}
+.saving .val{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(28px,7vw,44px);color:var(--gold);line-height:1.1;margin-top:4px;white-space:nowrap}
+.saving .note{grid-column:1/-1;font-size:14px;color:var(--muted)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+/* chips */
+.filters{position:sticky;top:64px;z-index:30;background:rgba(10,10,10,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:40px;padding:0 14px;border-radius:999px;background:var(--bg3);color:var(--text);border:1px solid var(--line);font:500 14px "DM Sans",sans-serif;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--gold);color:#16130a;border-color:var(--gold);font-weight:700}
+
+/* sections */
+section{padding:48px 0}
+.sec-head{margin-bottom:22px}
+.sec-head h2{font-family:"Playfair Display",serif;font-size:clamp(28px,5vw,40px);color:var(--white);line-height:1.15}
+.sec-head p{color:var(--muted);margin-top:6px;max-width:62ch}
+.cat{margin-top:36px}
+.cat h3{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.cat h3:after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
+
+/* card */
+.card{background:linear-gradient(180deg,var(--bg2),#0d0d0d);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0;transition:border-color .25s}
+.card.on{border-color:rgba(230,189,79,.55)}
+.swap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
+.swap .side{min-width:0}
+.swap .tag{font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.swap .paid .tag{color:var(--red)}
+.swap .free .tag{color:var(--green)}
+.swap .name{font-family:"Playfair Display",serif;font-weight:700;font-size:22px;color:var(--white);line-height:1.15;overflow-wrap:anywhere}
+.swap .sub{font-size:14px;color:var(--muted);overflow-wrap:anywhere}
+.swap .arrow{color:var(--gold)}
+@media(max-width:479px){.swap{grid-template-columns:1fr;gap:6px}.swap .arrow{transform:rotate(90deg)}}
+.price{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;background:var(--bg3);border-radius:12px;padding:10px 12px;font-size:14px;color:var(--muted)}
+.price b{font-size:18px;color:var(--white)}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:13px;padding:5px 10px;border-radius:999px;background:var(--bg3);border:1px solid var(--line);color:var(--text)}
+.pill.d-facil{border-color:rgba(127,212,155,.4);color:var(--green)}
+.pill.d-media{border-color:rgba(230,189,79,.45);color:var(--gold)}
+.pill.d-alta{border-color:rgba(233,138,122,.45);color:var(--red)}
+.limits{font-size:15px}
+.limits strong{display:block;color:var(--white);font-size:14px;margin-bottom:4px}
+.limits ul{list-style:none;display:grid;gap:4px}
+.limits li{position:relative;padding-left:18px;color:var(--muted)}
+.limits li:before{content:"";position:absolute;left:2px;top:.7em;width:7px;height:7px;border-radius:50%;background:var(--red)}
+.alt{font-size:14px;color:var(--muted);border-left:2px solid var(--gold);padding-left:10px}
+.alt a{color:var(--gold)}
+.own{font-size:14px;color:#16130a;background:var(--gold);border-radius:10px;padding:8px 12px;font-weight:500}
+.pay{display:flex;align-items:center;gap:10px;font-size:15px;cursor:pointer;user-select:none;min-height:44px}
+.pay input{width:22px;height:22px;accent-color:var(--gold);flex:none}
+.actions{display:grid;grid-template-columns:1fr;gap:8px;margin-top:auto}
+@media(min-width:480px){.actions{grid-template-columns:1fr 1fr}}
+.actions .btn{width:100%;padding:0 12px;font-size:14px}
+.official{font-size:13px;color:var(--muted)}
+.official a{color:var(--gold);overflow-wrap:anywhere;word-break:break-word}
+
+/* steps / cuidados */
+.steps{display:grid;gap:14px;grid-template-columns:1fr;counter-reset:s}
+@media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:20px;counter-increment:s}
+.step:before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#16130a;font-weight:700;margin-bottom:10px}
+.step h4{color:var(--white);font-size:18px;margin-bottom:4px}
+.step p{color:var(--muted);font-size:15px}
+.care{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:820px){.care{grid-template-columns:1fr 1fr}}
+.care li{list-style:none;display:flex;gap:12px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px}
+.care li .ico{color:var(--gold);margin-top:3px}
+.care b{color:var(--white)}
+.care p{color:var(--muted);font-size:15px}
+.fine{font-size:14px;color:var(--muted);background:var(--bg2);border:1px dashed var(--line);border-radius:14px;padding:16px;margin-top:20px}
+.fine p+p{margin-top:8px}
+
+/* final cta */
+.final{text-align:center;background:radial-gradient(ellipse at top,rgba(230,189,79,.16),transparent 70%);border-top:1px solid var(--line)}
+.final h2{font-family:"Playfair Display",serif;font-size:clamp(28px,6vw,44px);color:var(--white);line-height:1.15;max-width:20ch;margin:0 auto 12px}
+.final p{color:var(--muted);max-width:56ch;margin:0 auto 22px}
+
+footer{border-top:1px solid var(--line);padding:28px 0 36px;font-size:14px;color:var(--muted);text-align:center}
+footer p+p{margin-top:6px}
+footer .credit a{color:#e6bd4f;font-weight:700;text-decoration:none}
+footer .credit a:hover{text-decoration:underline}
+
+/* sticky savings bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(14,14,14,.97);border-top:1px solid rgba(230,189,79,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px}
+.bar .t{font-size:13px;color:var(--muted);line-height:1.3}
+.bar .t b{display:block;font-size:18px;color:var(--gold)}
+.bar .btn{min-height:44px;font-size:14px;padding:0 14px;flex:none}
+
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo">Zebu<span>bit</span></a>
+    <a class="btn btn-gold" href="https://t.me/ZebubitVipBot" target="_blank" rel="noopener">
+      <svg class="ico"><use href="#i-chat"/></svg> Entrar no VIP
+    </a>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow"><svg class="ico" style="width:16px;height:16px"><use href="#i-tag"/></svg> Guia grátis da Zebubit · preços conferidos em 14/11/2026</span>
+      <h1>Pare de pagar mensalidade. <em>Existe versão grátis.</em></h1>
+      <p class="lead">Separamos 16 aplicativos que muita gente paga todo mês e, pra cada um, um substituto gratuito. Com o preço tirado do site oficial, o que o grátis não faz e um comando pronto pra você pedir ajuda à IA na hora de instalar.</p>
+      <div class="saving" aria-live="polite">
+        <div class="box"><div class="lbl">Economia por mês</div><div class="val" id="sumMonth">R$ 0</div></div>
+        <div class="box"><div class="lbl">Economia por ano</div><div class="val" id="sumYear">R$ 0</div></div>
+        <p class="note" id="sumNote">Somando os itens marcados abaixo. Desmarque o que você não usa e a conta se ajusta.</p>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#lista">Ver as 16 trocas <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#cuidados">Antes de cancelar, leia isto</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="filters" aria-label="Filtrar por categoria">
+    <div class="wrap"><div class="chips" id="chips"></div></div>
+  </nav>
+
+  <section id="lista">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>As trocas, uma por uma</h2>
+        <p>Marque <b>"Eu pago esse"</b> nos apps que você assina hoje. Em cada card tem o comando pra colar no Claude ou no ChatGPT e o botão pra chamar a gente se preferir ajuda de gente.</p>
+      </div>
+      <div id="cats"></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Como funciona o Zebubit VIP</h2>
+        <p>Pra cada troca existe um comando pronto: você cola na IA e ela instala com você, devagar e perguntando antes de mexer em qualquer coisa. Os comandos ficam no grupo VIP do Telegram.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h4>Entre no VIP</h4><p>Toque em "Comando pronto no VIP", abra o robô no Telegram e assine com Pix: R$ 29,90 por mês ou R$ 299 por ano.</p></div>
+        <div class="step reveal"><h4>Copie e cole na IA</h4><p>No grupo, pegue o comando do app que você quer trocar e cole no Claude ou no ChatGPT.</p></div>
+        <div class="step reveal"><h4>Vá respondendo</h4><p>A IA mostra o plano, você aprova cada passo. Travou em alguma parte? Chama a Zebubit no WhatsApp.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cuidados">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Cuidados antes de cancelar</h2>
+        <p>Grátis é ótimo, mas trocar de ferramenta no meio do trabalho pode dar dor de cabeça. Siga estas regras e você não perde nada.</p>
+      </div>
+      <ul class="care">
+        <li class="reveal"><svg class="ico"><use href="#i-clock"/></svg><div><b>Use os dois juntos por uma semana</b><p>Só cancele a assinatura depois de fazer o seu trabalho de verdade com o substituto. Se não servir, você não perdeu nada.</p></div></li>
+        <li class="reveal"><svg class="ico"><use href="#i-down"/></svg><div><b>Baixe seus dados antes</b><p>Exporte arquivos, projetos, contatos e links do app antigo enquanto a assinatura ainda está ativa. Depois de cancelar, alguns apps apagam ou travam o acesso.</p></div></li>
+        <li class="reveal"><svg class="ico"><use href="#i-globe"/></svg><div><b>Baixe só do site oficial</b><p>Programa grátis é alvo de site falso com vírus. Use o link oficial que está em cada card e desconfie de anúncio patrocinado no Google.</p></div></li>
+        <li class="reveal"><svg class="ico"><use href="#i-mic"/></svg><div><b>Não clone voz de ninguém sem autorização</b><p>Clonar a voz de outra pessoa sem permissão por escrito pode virar problema na Justiça. Use a sua própria voz ou uma voz pronta do programa.</p></div></li>
+        <li class="reveal"><svg class="ico"><use href="#i-shield"/></svg><div><b>Leia a licença se for usar na empresa</b><p>Alguns programas são grátis só pra uso pessoal. Quando for o caso, a gente avisa no card.</p></div></li>
+        <li class="reveal"><svg class="ico"><use href="#i-tag"/></svg><div><b>Preço muda</b><p>Os valores foram vistos nos sites oficiais em 14/11/2026. Promoção, imposto e câmbio mudam o valor final. Confira antes de decidir.</p></div></li>
+      </ul>
+      <div class="fine reveal">
+        <p><b>De onde vêm os números.</b> Preços em reais foram lidos direto no site oficial em reais. Preços em dólar foram convertidos a R$ 5,56, cotação de venda do Banco Central em 11/11/2026, sem IOF nem impostos do cartão, então na sua fatura costuma sair um pouco mais caro.</p>
+        <p><b>Open source</b> quer dizer que o código do programa é aberto e qualquer pessoa pode conferir. A licença (MIT, GPL e outras) diz o que você pode fazer com ele. Pra quem só vai usar, todas as listadas aqui permitem uso grátis, salvo onde avisamos.</p>
+        <p>Nenhuma das marcas citadas patrocina esta página. A BioVenda é produto da própria Zebubit e está identificada no card dela.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap reveal">
+      <h2>Quer trocar sem quebrar a cabeça?</h2>
+      <p>No <b>Zebubit VIP</b> você recebe o comando pronto de cada troca, trocas novas toda semana e vídeos mostrando a instalação. R$ 29,90 por mês ou R$ 299 por ano, no Pix.</p>
+      <a class="btn btn-gold" href="https://t.me/ZebubitVipBot" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg> Entrar no Zebubit VIP</a>
+      <p style="margin-top:16px">Prefere que a gente instale pra você? <a id="finalWa" href="#" target="_blank" rel="noopener" style="color:#e6bd4f;font-weight:700">Chame a Zebubit no WhatsApp</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="credit">© 2026 · Desenvolvido por <a href="https://zebubit.com.br" target="_blank" rel="noopener">Zebubit Assessoria</a></p>
+    <p>WhatsApp: <a href="https://wa.me/5534993421500" target="_blank" rel="noopener" style="color:inherit">(34) 99342-1500</a></p>
+    <p>ZEBUBIT ASSESSORIA E DESENVOLVIMENTO TECNOLOGICO LTDA · CNPJ 23.830.748/0001-17</p>
+  </div>
+</footer>
+
+<div class="bar" role="region" aria-label="Resumo da economia">
+  <div class="wrap">
+    <div class="t">Você deixaria de pagar<b id="barSum">R$ 0/mês</b></div>
+    <a class="btn btn-gold" href="https://t.me/ZebubitVipBot" target="_blank" rel="noopener"><svg class="ico"><use href="#i-chat"/></svg> Entrar no VIP</a>
+  </div>
+</div>
+
+<script>
+const WA = "5534993421500";
+const USD = 5.56;
+const CATS = [
+  {id:"voz", nome:"Voz e áudio"},
+  {id:"video", nome:"Vídeo, tela e IA"},
+  {id:"design", nome:"Design e foto"},
+  {id:"escrita", nome:"Escrita e organização"},
+  {id:"negocio", nome:"Gestão do negócio"}
+];
+/* brl: valor mensal usado na soma; precoTxt: o que estava no site oficial */
+const APPS = [
+  {cat:"voz", pago:"ElevenLabs", plano:"Starter", brl:6*USD, precoTxt:"US$ 6/mês no plano mensal (US$ 5 no anual)",
+   sub:"VoiceStudio", subDesc:"voz por IA, clonagem e dublagem, tudo no seu computador", url:"https://github.com/debpalash/voicestudio",
+   lic:"AGPL-3.0 (open source)", roda:"Mac (Apple Silicon), Windows e Linux", dif:"media",
+   nao:["Os modelos de voz são baixados à parte e cada um tem a sua licença: alguns, como o OmniVoice, não podem ser usados pra fins comerciais","Sem placa de vídeo boa, gerar áudio fica mais lento","No Mac pode aparecer o aviso de app danificado na primeira vez (é bloqueio do sistema, o projeto ensina a liberar)"],
+   alts:[{txt:"Prefere um motor só, instalado por comando?", nome:"Chatterbox", url:"https://github.com/resemble-ai/chatterbox", extra:"MIT. Funciona, mas o projeto parou de receber atualizações em agosto de 2026."},
+         {txt:"Quer algo leve, sem clonagem?", nome:"Piper", url:"https://github.com/OHF-Voice/piper1-gpl", extra:"GPL-3.0, roda até em computador simples."}],
+   exportar:"meus áudios e textos já gerados no ElevenLabs", teste:"gerar um áudio de 30 segundos em português do Brasil com a minha própria voz, usando um modelo que permita uso comercial"},
+  {cat:"voz", pago:"Wispr Flow", plano:"Pro", brl:15*USD, precoTxt:"US$ 15/mês no plano mensal (US$ 12 no anual)",
+   sub:"Handy", subDesc:"ditado por voz que digita em qualquer programa", url:"https://handy.computer",
+   lic:"MIT (open source)", roda:"Mac, Windows e Linux", dif:"facil",
+   nao:["Não reescreve nem ajeita o texto com IA, só transcreve o que você falou","Não tem aplicativo de celular","A qualidade em português depende do modelo de voz que você baixar (os maiores acertam mais, mas pesam mais)"],
+   alts:[{txt:"Quer também anotações de reunião?", nome:"OpenWhispr", url:"https://github.com/OpenWhispr/openwhispr", extra:"MIT, roda local ou com IA na nuvem usando a sua própria chave."}],
+   exportar:"meu dicionário de palavras e atalhos de texto do Wispr Flow", teste:"ditar um parágrafo em português dentro do WhatsApp Web e de um documento"},
+  {cat:"voz", pago:"Otter.ai", plano:"Pro", brl:16.99*USD, precoTxt:"US$ 16,99/mês no plano mensal (US$ 8,33 no anual)",
+   sub:"Buzz", subDesc:"transcreve áudio e vídeo no seu computador, sem internet", url:"https://chidiwilliams.github.io/buzz",
+   lic:"MIT (open source)", roda:"Mac (Apple Silicon), Windows e Linux", dif:"facil",
+   nao:["Não entra sozinho na reunião do Zoom ou Meet: você grava e depois transcreve","Não faz resumo da reunião (dá pra colar o texto no ChatGPT ou Claude e pedir)","No Windows aparece um aviso de segurança na instalação porque o programa não é assinado"],
+   exportar:"minhas transcrições salvas no Otter", teste:"transcrever um áudio de 5 minutos de uma reunião em português"},
+
+  {cat:"video", pago:"Loom", plano:"Business", brl:18*USD, precoTxt:"US$ 18 por usuário/mês",
+   sub:"OBS Studio", subDesc:"grava tela, câmera e áudio sem limite de tempo", url:"https://obsproject.com",
+   lic:"GPL-2.0 (open source)", roda:"Mac, Windows e Linux", dif:"media",
+   nao:["Não cria link de compartilhamento: você salva o vídeo e sobe no Google Drive ou no YouTube como não listado","Não tem transcrição nem resumo automático","A primeira configuração assusta um pouco (depois é um botão só)"],
+   alts:[{txt:"Prefere algo com a cara do Loom?", nome:"Cap", url:"https://cap.so", extra:"AGPL-3.0, com editor e exportação em 4K. Atenção: o app grátis é pra uso pessoal, pra empresa a licença é paga."}],
+   exportar:"meus vídeos gravados no Loom (baixar os mais importantes)", teste:"gravar 2 minutos de tela com a minha câmera no canto e salvar em MP4"},
+  {cat:"video", pago:"CapCut", plano:"Pro", brl:87.90, precoTxt:"R$ 87,90/mês no mensal (R$ 689,90 no anual)",
+   sub:"DaVinci Resolve", subDesc:"editor profissional usado em cinema, com versão gratuita", url:"https://www.blackmagicdesign.com/products/davinciresolve",
+   lic:"Gratuito, mas não é open source", roda:"Mac, Windows e Linux", dif:"media",
+   nao:["Não tem os modelos prontos de tendência do CapCut","Vários recursos de IA ficam só na versão paga (Studio, compra única)","Pede um computador mais forte e tem mais botões pra aprender"],
+   alts:[{txt:"Computador mais simples?", nome:"Shotcut", url:"https://shotcut.org", extra:"GPL-3.0, mais leve e mais fácil."}],
+   exportar:"meus projetos e vídeos finalizados no CapCut", teste:"editar um reels vertical 1080x1920 de 30 segundos com corte, música e texto"},
+
+  {cat:"design", pago:"Adobe Photoshop", plano:"Photoshop (plano anual pago por mês)", brl:72.09, precoTxt:"R$ 72,09/mês",
+   sub:"Photopea", subDesc:"editor parecido com o Photoshop que abre direto no navegador", url:"https://www.photopea.com",
+   lic:"Gratuito, mas não é open source", roda:"Navegador (qualquer computador)", dif:"facil",
+   nao:["Não tem as ferramentas de IA generativa da Adobe","Arquivos muito pesados ficam lentos, porque roda no navegador","Sem nuvem da Adobe nem integração com os outros apps dela"],
+   alts:[{txt:"Quer um programa instalado?", nome:"GIMP", url:"https://www.gimp.org", extra:"GPL-3.0, roda sem internet."}],
+   exportar:"meus arquivos PSD e fontes que eu uso", teste:"abrir um PSD com camadas, trocar um texto e exportar em PNG"},
+  {cat:"design", pago:"Adobe Lightroom", plano:"Plano Fotografia (já inclui o Photoshop)", brl:62.68, precoTxt:"R$ 62,68/mês", off:true, nota:"Se você paga este plano, não marque o Photoshop também: ele já está incluso.",
+   sub:"darktable", subDesc:"revela e trata fotos RAW, como o Lightroom", url:"https://www.darktable.org",
+   lic:"GPL-3.0 (open source)", roda:"Mac, Windows e Linux", dif:"media",
+   nao:["Não sincroniza com o celular nem com a nuvem","Seus presets do Lightroom não vêm junto","O jeito de trabalhar é diferente e leva uns dias pra acostumar"],
+   exportar:"meu catálogo e as fotos originais do Lightroom (com as edições salvas em arquivo XMP)", teste:"importar uma pasta de fotos, ajustar luz e cor de 5 fotos e exportar em JPG"},
+
+  {cat:"escrita", pago:"Microsoft 365", plano:"Personal", brl:51, precoTxt:"R$ 51/mês no mensal (R$ 509 no anual)",
+   sub:"LibreOffice", subDesc:"editor de texto, planilha e apresentação que abre arquivos do Office", url:"https://www.libreoffice.org",
+   lic:"MPL-2.0 (open source)", roda:"Mac, Windows e Linux", dif:"facil",
+   nao:["Não vem com o 1 TB de nuvem do OneDrive","Arquivo do Word ou Excel muito formatado pode abrir com a formatação diferente","Sem Copilot e sem edição ao vivo com outras pessoas"],
+   exportar:"meus arquivos guardados no OneDrive (baixar pra uma pasta no computador)", teste:"abrir uma planilha .xlsx e um documento .docx meus, editar e salvar de novo no mesmo formato"},
+  {cat:"escrita", pago:"Notion", plano:"Plus", brl:10*USD, precoTxt:"US$ 10 por usuário/mês",
+   sub:"AppFlowy", subDesc:"páginas, tarefas e bancos de dados no estilo Notion", url:"https://appflowy.com",
+   lic:"AGPL-3.0 (open source)", roda:"Mac, Windows, Linux e celular", dif:"media",
+   nao:["Tem menos integrações e modelos prontos que o Notion","A importação do Notion pode não trazer tudo do jeito que estava","Trabalho em equipe é mais limitado"],
+   alts:[{txt:"Usa sozinho e só pra anotar?", nome:"o plano grátis do próprio Notion", url:"https://www.notion.com/pricing", extra:"pode bastar."}],
+   exportar:"todo o meu workspace do Notion (exportar em Markdown e CSV)", teste:"importar minhas páginas principais e conferir se nada sumiu"},
+
+  {cat:"negocio", pago:"Calendly", plano:"Standard", brl:10*USD, precoTxt:"US$ 10 por usuário/mês (preço do plano anual)",
+   sub:"Cal.com", subDesc:"link de agendamento ligado na sua agenda do Google", url:"https://cal.com",
+   lic:"Plano grátis na nuvem (a versão de código aberto se chama Cal.diy)", roda:"Navegador e celular", dif:"facil",
+   nao:["O plano grátis é pra 1 pessoa: agenda de equipe é paga","Leva uns minutos pra reconectar a agenda e refazer os tipos de horário"],
+   alts:[{txt:"Quer 100% open source, no seu servidor?", nome:"Cal.diy", url:"https://github.com/calcom/cal.diy", extra:"MIT. Precisa de servidor, e o próprio projeto avisa que não é recomendado pra uso profissional (produção)."}],
+   exportar:"meus tipos de agendamento e horários do Calendly (o Cal.com tem importação do Calendly)", teste:"criar um link de 30 minutos e agendar um horário de teste comigo mesmo"},
+  {cat:"negocio", pago:"1Password", plano:"Individual", brl:3.99*USD, precoTxt:"US$ 3,99/mês, cobrado por ano",
+   sub:"Bitwarden", subDesc:"cofre de senhas grátis em todos os aparelhos", url:"https://bitwarden.com",
+   lic:"GPL-3.0 (open source)", roda:"Navegador, Mac, Windows, Linux e celular", dif:"facil",
+   nao:["No grátis não tem autenticador de dois fatores embutido, anexo de arquivo nem relatório de segurança","O Premium que libera isso custa US$ 19,80 por ano"],
+   exportar:"meu cofre de senhas do 1Password (exportar em arquivo e apagar o arquivo depois de importar)", teste:"importar as senhas, entrar em 3 sites usando o Bitwarden e só então apagar o arquivo exportado"},
+  {cat:"negocio", pago:"Linktree", plano:"Starter", brl:24.75, precoTxt:"R$ 24,75/mês no mensal (R$ 17,50 no anual)",
+   sub:"BioVenda", subDesc:"link da bio com loja e Pix, feito no Brasil", url:"https://biovenda.app.br",
+   lic:"Plano grátis, não é open source", roda:"Navegador e celular", dif:"facil", own:true,
+   nao:["No plano grátis entra 1 produto digital e a BioVenda fica com 5% de cada venda","Pra mais produtos e sem comissão, os planos pagos começam em R$ 39/mês"],
+   exportar:"a lista de links da minha bio no Linktree", teste:"montar a bio com os mesmos links e trocar o link no Instagram só depois de conferir tudo"},
+  {cat:"video", pago:"Higgsfield", plano:"Starter", brl:15*USD, precoTxt:"US$ 15/mês (plano anual)", off:true,
+   nota:"Aqui a economia não é total: você deixa de pagar a assinatura, mas paga cada geração na sua chave.",
+   sub:"Open Higgsfield", subDesc:"estúdio de imagem e vídeo com IA, vários modelos numa tela só", url:"https://github.com/wide-trace/open-higgsfield",
+   lic:"Código aberto no GitHub, sem licença declarada", roda:"Navegador (tem versão online pronta em openhiggsfield.ai)", dif:"media",
+   nao:["A tela é grátis, mas cada imagem ou vídeo gerado é cobrado na sua própria chave de API, paga à parte","Sem os créditos ilimitados que a Higgsfield dá dentro do site dela","O histórico fica salvo só no navegador que você usou"],
+   exportar:"as imagens e vídeos que eu já gerei na Higgsfield", teste:"gerar 1 imagem simples e conferir quanto custou na minha chave antes de gerar vídeo"},
+
+  {cat:"negocio", pago:"Zendesk", plano:"Support Team", brl:135, precoTxt:"R$ 135 por atendente/mês (plano anual)", off:true,
+   sub:"Chatwoot", subDesc:"central de atendimento: WhatsApp, Instagram, site e e-mail numa caixa só", url:"https://github.com/chatwoot/chatwoot",
+   lic:"MIT (open source, menos a parte Enterprise)", roda:"Precisa de servidor (acessa pelo navegador e celular)", dif:"alta",
+   nao:["Precisa de servidor: alguém tem que instalar, manter e fazer backup","Ligar o WhatsApp oficial exige conta na API da Meta, com regras e custos dela","Alguns recursos ficam só na versão Enterprise, que é paga"],
+   alts:[{txt:"Não quer servidor?", nome:"Chatwoot na nuvem", url:"https://www.chatwoot.com/pricing/", extra:"tem plano grátis pra até 2 atendentes."}],
+   exportar:"meus contatos e o histórico de atendimentos do Zendesk", teste:"receber uma mensagem de teste pelo widget do site e responder pelo celular"},
+  {cat:"negocio", pago:"Semrush", plano:"Pro", brl:139*USD, precoTxt:"US$ 139/mês no mensal (US$ 117,33 no anual)", off:true,
+   sub:"OpenSEO", subDesc:"pesquisa de palavras, posição no Google, concorrentes e auditoria do site", url:"https://github.com/every-app/open-seo",
+   lic:"MIT (open source)", roda:"Precisa de servidor ou conta grátis na Cloudflare", dif:"alta",
+   nao:["Precisa de servidor ou de uma instalação na Cloudflare","Os dados vêm da DataForSEO: você paga por consulta, então o custo depende do quanto usa","Tem menos relatórios prontos que o Semrush"],
+   alts:[{txt:"Quer testar antes?", nome:"a versão hospedada", url:"https://openseo.so", extra:"dá pra testar grátis no site deles."}],
+   exportar:"minhas listas de palavras e projetos do Semrush (CSV)", teste:"pesquisar 10 palavras do meu negócio e comparar com o que o Semrush mostra"},
+  {cat:"negocio", pago:"Asana", plano:"Starter", brl:40.99, precoTxt:"R$ 40,99 por usuário/mês no anual (preço em promoção; cheio R$ 57)", off:true,
+   sub:"OpenProject", subDesc:"projetos, tarefas, cronograma (Gantt) e controle de horas", url:"https://github.com/opf/openproject",
+   lic:"GPL-3.0 (open source)", roda:"Precisa de servidor (acessa pelo navegador)", dif:"alta",
+   nao:["Precisa de servidor: instalar, atualizar e fazer backup fica por sua conta","É mais completo e mais sério que o Asana, então assusta no começo","A versão na nuvem deles é paga e pede no mínimo 25 usuários"],
+   exportar:"meus projetos e tarefas do Asana (CSV)", teste:"criar um projeto com 5 tarefas, prazos e 2 pessoas da equipe"}
+];
+
+const DIF = {facil:"Fácil", media:"Média", alta:"Alta"};
+const brl = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",minimumFractionDigits:0,maximumFractionDigits:0});
+const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const waLink = msg => "https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+
+
+const chipsEl = document.getElementById("chips");
+const catsEl = document.getElementById("cats");
+const all = [{id:"all",nome:"Todas"}].concat(CATS);
+all.forEach((c,i)=>{
+  const b = document.createElement("button");
+  b.className="chip"; b.type="button"; b.textContent=c.nome; b.dataset.cat=c.id;
+  b.setAttribute("aria-pressed", i===0?"true":"false");
+  b.onclick=()=>{
+    chipsEl.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed","false"));
+    b.setAttribute("aria-pressed","true");
+    document.querySelectorAll(".cat").forEach(s=>{s.hidden = !(c.id==="all"||s.dataset.cat===c.id)});
+    document.getElementById("lista").scrollIntoView({behavior:"smooth"});
+  };
+  chipsEl.appendChild(b);
+});
+
+CATS.forEach(c=>{
+  const items = APPS.map((a,i)=>({a,i})).filter(o=>o.a.cat===c.id);
+  const sec = document.createElement("div");
+  sec.className="cat"; sec.dataset.cat=c.id;
+  sec.innerHTML = '<h3>'+c.nome+'</h3><div class="grid"></div>';
+  const grid = sec.querySelector(".grid");
+  items.forEach(({a,i})=>{
+    const el = document.createElement("article");
+    el.className="card reveal"+(a.off?"":" on");
+    el.innerHTML =
+      '<div class="swap">'+
+        '<div class="side paid"><div class="tag">Você paga</div><div class="name">'+esc(a.pago)+'</div><div class="sub">'+esc(a.plano)+'</div></div>'+
+        '<svg class="ico arrow" aria-hidden="true"><use href="#i-arrow"/></svg>'+
+        '<div class="side free"><div class="tag">Grátis</div><div class="name">'+esc(a.sub)+'</div><div class="sub">'+esc(a.subDesc)+'</div></div>'+
+      '</div>'+
+      '<div class="price"><span>Preço visto em 14/11/2026:</span> <b>'+esc(a.precoTxt)+'</b>'+(a.precoTxt.indexOf("US$")>-1?'<span>(cerca de '+brl(a.brl)+')</span>':'')+'</div>'+
+      '<div class="meta"><span class="pill">'+esc(a.lic)+'</span><span class="pill">'+esc(a.roda)+'</span><span class="pill d-'+a.dif+'">Dificuldade: '+DIF[a.dif]+'</span></div>'+
+      (a.own?'<div class="own">Transparência: a BioVenda é da própria Zebubit.</div>':'')+
+      (/servidor/.test(a.roda)?'<div class="own">Precisa de servidor. Se você não quer cuidar disso, a Zebubit instala e mantém pra você.</div>':'')+
+      '<div class="limits"><strong>O que o grátis não faz</strong><ul>'+a.nao.map(n=>'<li>'+esc(n)+'</li>').join("")+'</ul></div>'+
+      (a.alts||[]).map(x=>'<div class="alt">'+esc(x.txt)+' <a href="'+x.url+'" target="_blank" rel="noopener">'+esc(x.nome)+'</a>: '+esc(x.extra)+'</div>').join("")+
+      (a.nota?'<p class="official">'+esc(a.nota)+'</p>':'')+
+      '<label class="pay"><input type="checkbox" data-i="'+i+'"'+(a.off?'':' checked')+'> Eu pago esse</label>'+
+      '<div class="actions">'+
+        '<a class="btn btn-gold" target="_blank" rel="noopener" href="https://t.me/ZebubitVipBot"><svg class="ico"><use href="#i-copy"/></svg> Comando pronto no VIP</a>'+
+        '<a class="btn btn-ghost" target="_blank" rel="noopener" href="'+waLink("Olá! Vi a página de apps grátis da Zebubit e quero ajuda pra trocar o "+a.pago+" pelo "+a.sub+".")+'"><svg class="ico"><use href="#i-chat"/></svg> Quero ajuda da Zebubit</a>'+
+      '</div>'+
+      '<p class="official">Site oficial: <a href="'+a.url+'" target="_blank" rel="noopener">'+esc(a.url.replace(/^https?:\/\/(www\.)?/,""))+'</a></p>';
+    grid.appendChild(el);
+  });
+  catsEl.appendChild(sec);
+});
+
+function total(){
+  let m=0, names=[];
+  document.querySelectorAll('.pay input').forEach(cb=>{
+    const a=APPS[+cb.dataset.i];
+    cb.closest(".card").classList.toggle("on",cb.checked);
+    if(cb.checked){m+=a.brl;names.push(a.pago);}
+  });
+  document.getElementById("sumMonth").textContent=brl(m);
+  document.getElementById("sumYear").textContent=brl(m*12);
+  document.getElementById("barSum").textContent=brl(m)+"/mês";
+  document.getElementById("sumNote").textContent = names.length
+    ? "Somando "+names.length+" "+(names.length===1?"app marcado":"apps marcados")+" abaixo. Desmarque o que você não usa e a conta se ajusta."
+    : "Marque abaixo os apps que você paga e veja quanto deixaria de gastar.";
+}
+document.addEventListener("change",e=>{if(e.target.matches(".pay input"))total();});
+const geral = waLink("Olá! Vi a página de apps grátis da Zebubit e quero ajuda pra parar de pagar mensalidade.");
+document.getElementById("finalWa").href=geral;
+total();
+
+
+const nav=document.getElementById("nav");
+addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>10),{passive:true});
+if("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}}),{rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+}else{document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));}
+</script>
+</body>
+</html>
