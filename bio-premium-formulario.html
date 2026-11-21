@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dados da sua Bio Premium — Zebubit</title>
+<title>Dados da sua Bio Premium | Zebubit</title>
 <meta name="description" content="Pagamento confirmado! Preencha os dados da sua Bio Premium e nós montamos pra você em até 48 horas.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://zebubit.com.br/bio-premium-formulario">
@@ -334,7 +334,7 @@ function enviar(){
   }
   err.textContent = "";
 
-  let m = "*NOVA BIO PREMIUM — DADOS DO CLIENTE*\n";
+  let m = "*NOVA BIO PREMIUM, DADOS DO CLIENTE*\n";
   m += "Pagamento confirmado ✅\n";
   m += "\n*— Identidade —*\n";
   m += "Nome: " + nome + "\n";
@@ -363,10 +363,10 @@ function enviar(){
 
   let extras = "";
   if(document.getElementById('musicPanel').classList.contains('on')){
-    extras += "🎵 MÚSICA — adicional R$19,90 (pago à parte): " + (val('musica')||'(vai dizer qual)') + "\n";
+    extras += "🎵 MÚSICA, adicional R$19,90 (pago à parte): " + (val('musica')||'(vai dizer qual)') + "\n";
   }
   if(document.getElementById('waPanel').classList.contains('on')){
-    extras += "💬 BALÃOZINHO WHATSAPP FLUTUANTE — adicional R$14,99 (pago à parte)\n";
+    extras += "💬 BALÃOZINHO WHATSAPP FLUTUANTE, adicional R$14,99 (pago à parte)\n";
   }
   if(val('horario')) extras += "Horário: " + val('horario') + "\n";
   if(val('obs'))     extras += "Obs: " + val('obs') + "\n";
@@ -381,7 +381,7 @@ function enviar(){
 function toggleMusic(){
   var p=document.getElementById('musicPanel'), b=document.getElementById('musicToggle');
   var on=p.classList.toggle('on'); b.classList.toggle('on', on);
-  b.textContent = on ? T('✓ Música adicionada (+R$19,90) — toque para remover') : T('＋ Quero música na minha bio (+R$19,90)');
+  b.textContent = on ? T('✓ Música adicionada (+R$19,90), toque para remover') : T('＋ Quero música na minha bio (+R$19,90)');
   if(!on){ document.getElementById('musica').value=''; }
   else { p.scrollIntoView({behavior:'smooth', block:'center'}); }
 }
@@ -400,7 +400,7 @@ function copyMusicPix(){
 function toggleWa(){
   var p=document.getElementById('waPanel'), b=document.getElementById('waToggle');
   var on=p.classList.toggle('on'); b.classList.toggle('on', on);
-  b.textContent = on ? T('✓ Balãozinho adicionado (+R$14,99) — toque para remover') : T('＋ Quero o balãozinho flutuante (+R$14,99)');
+  b.textContent = on ? T('✓ Balãozinho adicionado (+R$14,99), toque para remover') : T('＋ Quero o balãozinho flutuante (+R$14,99)');
   if(on){ p.scrollIntoView({behavior:'smooth', block:'center'}); }
 }
 function copyWaPix(){
@@ -415,8 +415,8 @@ function copyWaPix(){
 }
 // ao trocar o idioma, mantém o texto certo dos adicionais que estiverem ligados
 document.addEventListener('zb:lang', function(){
-  if(document.getElementById('musicPanel').classList.contains('on')) document.getElementById('musicToggle').textContent=T('✓ Música adicionada (+R$19,90) — toque para remover');
-  if(document.getElementById('waPanel').classList.contains('on')) document.getElementById('waToggle').textContent=T('✓ Balãozinho adicionado (+R$14,99) — toque para remover');
+  if(document.getElementById('musicPanel').classList.contains('on')) document.getElementById('musicToggle').textContent=T('✓ Música adicionada (+R$19,90), toque para remover');
+  if(document.getElementById('waPanel').classList.contains('on')) document.getElementById('waToggle').textContent=T('✓ Balãozinho adicionado (+R$14,99), toque para remover');
 });
 
 </script>
