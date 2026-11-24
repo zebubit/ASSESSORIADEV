@@ -1,0 +1,45 @@
+# Avisa Bing, Yandex e outros buscadores (IndexNow) quando páginas do site mudam.
+# Em cada push no main: envia só as páginas alteradas que estão no sitemap.xml.
+# Rodando à mão (Actions > IndexNow > Run workflow): envia o sitemap inteiro.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml']
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Montar lista de URLs
+        run: |
+          grep -o '<loc>[^<]*</loc>' sitemap.xml | sed -E 's#</?loc>##g' > todas.txt
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            cp todas.txt urls.txt
+          else
+            git diff --name-only HEAD~1 HEAD -- '*.html' | while read -r f; do
+              p="${f%.html}"
+              case "$p" in
+                index) u="https://zebubit.com.br/" ;;
+                */index) u="https://zebubit.com.br/${p%index}" ;;
+                *) u="https://zebubit.com.br/$p" ;;
+              esac
+              grep -qxF "$u" todas.txt && echo "$u"
+            done > urls.txt || true
+          fi
+          echo "URLs para enviar:"; cat urls.txt
+
+      - name: Enviar para IndexNow
+        run: |
+          [ -s urls.txt ] || { echo "Nenhuma página do sitemap mudou."; exit 0; }
+          jq -R . urls.txt | jq -s '{host:"zebubit.com.br",key:"1a7d7ca4ea1fad4e52413175bad30ff7",keyLocation:"https://zebubit.com.br/1a7d7ca4ea1fad4e52413175bad30ff7.txt",urlList:.}' > body.json
+          code=$(curl -s -o resp.txt -w '%{http_code}' -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' --data @body.json)
+          echo "Resposta IndexNow: $code"; cat resp.txt
+          case "$code" in 200|202) ;; *) exit 1 ;; esac
