@@ -10,7 +10,7 @@
 
   <url>
     <loc>https://zebubit.com.br/cartao-nfc</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -24,7 +24,7 @@
 
   <url>
     <loc>https://zebubit.com.br/atendente-ia/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -134,5 +134,13 @@
   <url>
     <loc>https://zebubit.com.br/apps/</loc>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://zebubit.com.br/marketing-digital-uberaba</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://zebubit.com.br/zebubit-local</loc>
+    <lastmod>2026-11-23</lastmod>
   </url>
 </urlset>

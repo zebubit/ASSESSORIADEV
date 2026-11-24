@@ -166,8 +166,8 @@ window.ZB_PAGE = {
   "Estou com dificuldade de conexão no momento. Tente novamente em instantes.": "I'm having connection trouble right now. Please try again in a moment.",
   "Áudio enviado": "Audio sent",
   "Não consegui acessar o microfone. Verifique a permissão do navegador.": "I couldn't access the microphone. Check your browser permission.",
-  "Arkon, o Atendente de IA da Zebubit": "Arkon, Zebubit's AI Assistant",
-  "Arkon é o atendente de inteligência artificial da Zebubit, que responde seus clientes no WhatsApp na hora, 24 horas por dia. Passa preço, horário, tira dúvida e ajuda a agendar. Sem perder venda.": "Arkon is Zebubit's artificial intelligence assistant that replies to your customers on WhatsApp instantly, 24 hours a day. It shares prices and hours, answers questions and helps book appointments. No lost sales."
+  "Atendente de IA no WhatsApp para Empresas, 24 horas | Zebubit": "AI WhatsApp Assistant for Businesses, 24/7 | Zebubit",
+  "Atendente de IA no WhatsApp para empresas: o Arkon, da Zebubit, responde seus clientes na hora, 24 horas por dia. Passa preço, horário, tira dúvida e ajuda a agendar. Uberaba e todo o Brasil.": "Arkon is Zebubit's artificial intelligence assistant that replies to your customers on WhatsApp instantly, 24 hours a day. It shares prices and hours, answers questions and helps book appointments. No lost sales."
  },
  "es": {
   "Zebu<b>bit</b>": "Zebu<b>bit</b>",
@@ -335,8 +335,8 @@ window.ZB_PAGE = {
   "Estou com dificuldade de conexão no momento. Tente novamente em instantes.": "Estoy con problemas de conexión en este momento. Inténtalo de nuevo en unos instantes.",
   "Áudio enviado": "Audio enviado",
   "Não consegui acessar o microfone. Verifique a permissão do navegador.": "No pude acceder al micrófono. Revisa el permiso del navegador.",
-  "Arkon, o Atendente de IA da Zebubit": "Arkon, el asistente de IA de Zebubit",
-  "Arkon é o atendente de inteligência artificial da Zebubit, que responde seus clientes no WhatsApp na hora, 24 horas por dia. Passa preço, horário, tira dúvida e ajuda a agendar. Sem perder venda.": "Arkon es el asistente de inteligencia artificial de Zebubit, que responde a tus clientes en WhatsApp al instante, las 24 horas del día. Informa precios y horarios, resuelve dudas y ayuda a agendar. Sin perder ventas."
+  "Atendente de IA no WhatsApp para Empresas, 24 horas | Zebubit": "Asistente de IA en WhatsApp para Empresas, 24 horas | Zebubit",
+  "Atendente de IA no WhatsApp para empresas: o Arkon, da Zebubit, responde seus clientes na hora, 24 horas por dia. Passa preço, horário, tira dúvida e ajuda a agendar. Uberaba e todo o Brasil.": "Arkon es el asistente de inteligencia artificial de Zebubit, que responde a tus clientes en WhatsApp al instante, las 24 horas del día. Informa precios y horarios, resuelve dudas y ayuda a agendar. Sin perder ventas."
  },
  "href": {
   "https://wa.me/5534993421500?text=Quero%20saber%20do%20Atendente%20de%20IA%20no%20WhatsApp": {

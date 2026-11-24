@@ -1,7 +1,7 @@
 /* Traduções EN/ES da página /cartao-nfc (usado por /assets/zb-lang.js) */
 window.ZB_PAGE = {
  "en": {
-  "Plaquinha NFC pra Avaliação no Google: Placa e Cartão | Zebubit": "NFC Plate for Google Reviews: Plate and Card | Zebubit",
+  "Plaquinha NFC de Avaliação no Google: Placa, Cartão e Moeda a partir de R$ 29 | Zebubit": "NFC Plate for Google Reviews: Plate, Card and Coin from R$ 29 | Zebubit",
   "Plaquinha, placa de acrílico ou cartão NFC com QR Code: o cliente encosta o celular e cai direto na avaliação do Google. A partir de R$ 69, sem mensalidade.": "NFC plate, acrylic stand or NFC card with QR code: your customer taps their phone and lands right on your Google review page. From R$ 69, no monthly fee.",
   "<span class=\"dot\"></span>Aproxime e Avalie": "<span class=\"dot\"></span>Aproxime e Avalie",
   "Modelos": "Models",
@@ -245,7 +245,7 @@ window.ZB_PAGE = {
   "Nova conversa": "New conversation"
  },
  "es": {
-  "Plaquinha NFC pra Avaliação no Google: Placa e Cartão | Zebubit": "Placa NFC para Reseñas en Google: Placa y Tarjeta | Zebubit",
+  "Plaquinha NFC de Avaliação no Google: Placa, Cartão e Moeda a partir de R$ 29 | Zebubit": "Placa NFC para Reseñas en Google: Placa, Tarjeta y Moneda desde R$ 29 | Zebubit",
   "Plaquinha, placa de acrílico ou cartão NFC com QR Code: o cliente encosta o celular e cai direto na avaliação do Google. A partir de R$ 69, sem mensalidade.": "Placa NFC, placa de acrílico o tarjeta NFC con código QR: tu cliente acerca el celular y llega directo a la reseña en Google. Desde R$ 69, sin mensualidad.",
   "<span class=\"dot\"></span>Aproxime e Avalie": "<span class=\"dot\"></span>Aproxime e Avalie",
   "Modelos": "Modelos",
