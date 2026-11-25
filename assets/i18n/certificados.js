@@ -39,7 +39,7 @@ window.ZB_PAGE = {
   "Voltar ao site": "Back to website",
   "Formação": "Credentials",
   "Estudo para entregar<br><em>o que há de mais novo</em>": "I study to deliver<br><em>the very latest</em>",
-  "Dione Folador, fundador da Zebubit, é certificado pelo Google em cibersegurança, pela Anthropic, empresa criadora da IA Claude, em inteligência artificial aplicada a negócios, e em investigação digital (OSINT). A Zebubit também tem acesso aprovado pelo Google à API oficial do Perfil da Empresa. Todos os certificados podem ser conferidos no site oficial de quem emitiu.": "Dione Folador, founder of Zebubit, is certified by Google in cybersecurity, by Anthropic, the company behind the Claude AI, in artificial intelligence applied to business, and in digital investigation (OSINT). Zebubit also has Google-approved access to the official Business Profile API. Every certificate can be verified on the issuer's official website.",
+  "Dione Folador, sócio-administrador da Zebubit, é certificado pelo Google em cibersegurança, pela Anthropic, empresa criadora da IA Claude, em inteligência artificial aplicada a negócios, e em investigação digital (OSINT). A Zebubit também tem acesso aprovado pelo Google à API oficial do Perfil da Empresa. Todos os certificados podem ser conferidos no site oficial de quem emitiu.": "Dione Folador, managing partner of Zebubit, is certified by Google in cybersecurity, by Anthropic, the company behind the Claude AI, in artificial intelligence applied to business, and in digital investigation (OSINT). Zebubit also has Google-approved access to the official Business Profile API. Every certificate can be verified on the issuer's official website.",
   "Google": "Google",
   "Acesso aprovado": "Approved access",
   "Google Business Profile API · 2026": "Google Business Profile API · 2026",
@@ -81,7 +81,7 @@ window.ZB_PAGE = {
   "Quero meu raio-x grátis": "I want my free x-ray",
   "Desenvolvido por Zebubit Assessoria": "Developed by Zebubit Assessoria",
   "Certificados | Zebubit Assessoria": "Certificates | Zebubit Assessoria",
-  "Formação de Dione Folador, fundador da Zebubit: certificado profissional Google Cybersecurity, certificados oficiais da Anthropic em inteligência artificial aplicada a negócios, OSINT e acesso aprovado à API oficial do Google Business Profile.": "Credentials of Dione Folador, founder of Zebubit: Google Cybersecurity Professional Certificate, official Anthropic certificates in artificial intelligence applied to business, OSINT, plus approved access to the official Google Business Profile API."
+  "Formação de Dione Folador, sócio-administrador da Zebubit: certificado profissional Google Cybersecurity, certificados oficiais da Anthropic em inteligência artificial aplicada a negócios, OSINT e acesso aprovado à API oficial do Google Business Profile.": "Credentials of Dione Folador, managing partner of Zebubit: Google Cybersecurity Professional Certificate, official Anthropic certificates in artificial intelligence applied to business, OSINT, plus approved access to the official Google Business Profile API."
  },
  "es": {
   "Ver o perfil completo de Dione Folador": "Ver el perfil completo de Dione Folador",
@@ -122,7 +122,7 @@ window.ZB_PAGE = {
   "Voltar ao site": "Volver al sitio",
   "Formação": "Formación",
   "Estudo para entregar<br><em>o que há de mais novo</em>": "Estudio para entregar<br><em>lo más nuevo que existe</em>",
-  "Dione Folador, fundador da Zebubit, é certificado pelo Google em cibersegurança, pela Anthropic, empresa criadora da IA Claude, em inteligência artificial aplicada a negócios, e em investigação digital (OSINT). A Zebubit também tem acesso aprovado pelo Google à API oficial do Perfil da Empresa. Todos os certificados podem ser conferidos no site oficial de quem emitiu.": "Dione Folador, fundador de Zebubit, está certificado por Google en ciberseguridad, por Anthropic, la empresa creadora de la IA Claude, en inteligencia artificial aplicada a negocios, y en investigación digital (OSINT). Zebubit también tiene acceso aprobado por Google a la API oficial del Perfil de Empresa. Todos los certificados se pueden verificar en el sitio oficial de quien los emitió.",
+  "Dione Folador, sócio-administrador da Zebubit, é certificado pelo Google em cibersegurança, pela Anthropic, empresa criadora da IA Claude, em inteligência artificial aplicada a negócios, e em investigação digital (OSINT). A Zebubit também tem acesso aprovado pelo Google à API oficial do Perfil da Empresa. Todos os certificados podem ser conferidos no site oficial de quem emitiu.": "Dione Folador, socio administrador de Zebubit, está certificado por Google en ciberseguridad, por Anthropic, la empresa creadora de la IA Claude, en inteligencia artificial aplicada a negocios, y en investigación digital (OSINT). Zebubit también tiene acceso aprobado por Google a la API oficial del Perfil de Empresa. Todos los certificados se pueden verificar en el sitio oficial de quien los emitió.",
   "Google": "Google",
   "Acesso aprovado": "Acceso aprobado",
   "Google Business Profile API · 2026": "Google Business Profile API · 2026",
@@ -164,7 +164,7 @@ window.ZB_PAGE = {
   "Quero meu raio-x grátis": "Quiero mi radiografía gratis",
   "Desenvolvido por Zebubit Assessoria": "Desarrollado por Zebubit Assessoria",
   "Certificados | Zebubit Assessoria": "Certificados | Zebubit Assessoria",
-  "Formação de Dione Folador, fundador da Zebubit: certificado profissional Google Cybersecurity, certificados oficiais da Anthropic em inteligência artificial aplicada a negócios, OSINT e acesso aprovado à API oficial do Google Business Profile.": "Formación de Dione Folador, fundador de Zebubit: certificado profesional Google Cybersecurity, certificados oficiales de Anthropic en inteligencia artificial aplicada a negocios, OSINT y acceso aprobado a la API oficial de Google Business Profile."
+  "Formação de Dione Folador, sócio-administrador da Zebubit: certificado profissional Google Cybersecurity, certificados oficiais da Anthropic em inteligência artificial aplicada a negócios, OSINT e acesso aprovado à API oficial do Google Business Profile.": "Formación de Dione Folador, socio administrador de Zebubit: certificado profesional Google Cybersecurity, certificados oficiales de Anthropic en inteligencia artificial aplicada a negocios, OSINT y acceso aprobado a la API oficial de Google Business Profile."
  },
  "href": {
   "https://wa.me/5534993421500?text=Oi!%20Vi%20os%20certificados%20da%20Zebubit%20e%20quero%20o%20raio-x%20gr%C3%A1tis%20do%20meu%20neg%C3%B3cio.": {
