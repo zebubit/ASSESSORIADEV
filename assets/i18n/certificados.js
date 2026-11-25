@@ -1,6 +1,10 @@
 /* Traduções EN/ES da página /certificados (usado por /assets/zb-lang.js) */
 window.ZB_PAGE = {
  "en": {
+  "Ver o perfil completo de Dione Folador": "See Dione Folador's full profile",
+  "Buscar por curso ou tema": "Search by course or topic",
+  "Todos": "All",
+  "Nenhum certificado encontrado com esse filtro.": "No certificate found with this filter.",
   "Google Cybersecurity": "Google Cybersecurity",
   "Google · Coursera": "Google · Coursera",
   "Os 9 cursos do programa · 2026": "The program's 9 courses · 2026",
@@ -80,6 +84,10 @@ window.ZB_PAGE = {
   "Formação de Dione Folador, fundador da Zebubit: certificado profissional Google Cybersecurity, certificados oficiais da Anthropic em inteligência artificial aplicada a negócios, OSINT e acesso aprovado à API oficial do Google Business Profile.": "Credentials of Dione Folador, founder of Zebubit: Google Cybersecurity Professional Certificate, official Anthropic certificates in artificial intelligence applied to business, OSINT, plus approved access to the official Google Business Profile API."
  },
  "es": {
+  "Ver o perfil completo de Dione Folador": "Ver el perfil completo de Dione Folador",
+  "Buscar por curso ou tema": "Buscar por curso o tema",
+  "Todos": "Todos",
+  "Nenhum certificado encontrado com esse filtro.": "No se encontró ningún certificado con este filtro.",
   "Google Cybersecurity": "Google Cybersecurity",
   "Google · Coursera": "Google · Coursera",
   "Os 9 cursos do programa · 2026": "Los 9 cursos del programa · 2026",
